@@ -1,23 +1,17 @@
-import logo from "./logo.svg";
 import "./App.css";
+import Popup from "./components/Popup/Popup";
+import { Switch, Route, BrowserRouter as Router } from "react-router-dom";
+import WelcomeView from "./components/WelcomeView/WelcomeView";
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>Hello this is a test!</p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Switch>
+        <Route path="/" exact component={WelcomeView} />
+        <Route path="/popup" component={Popup} />
+      </Switch>
+    </Router>
   );
-}
+};
 
 export default App;
