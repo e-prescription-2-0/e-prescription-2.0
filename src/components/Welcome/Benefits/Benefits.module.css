@@ -1,0 +1,54 @@
+.div-benefits{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 2em;
+    margin-bottom: 8em;
+    background-color: #000000bc;
+    border-radius: 5em;
+    padding: 2em;
+    margin-left: 3em;
+    margin-right: 3em;
+    margin-top: 3em;
+}
+
+.section-benefits{
+    display: flex;
+}
+
+.section-benefits article{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-left: 1px solid white;
+    padding-left: 2em;
+    padding-right: 2em;
+}
+
+.title-info{
+    display: flex;
+    column-gap: 1.5em;
+}
+
+.title-info i{
+    font-size: 1.8em;
+    align-self: center;
+    color: white;
+}
+
+.section-benefits article:first-child{
+    border: 0;
+}
+
+.div-benefits h2{
+    color: white;
+    font-size: 3em;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: bold;
+}
+.title-info h3{
+    color: white;
+}
+.section-benefits article p{
+    color: white;
+}

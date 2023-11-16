@@ -1,0 +1,37 @@
+.div-steps {
+    background-color: #8080807a;
+    display: flex;
+    column-gap: 2em;
+    padding: 1.5em 2em 1.5em 2em;
+    border-top-right-radius: 5em;
+    border-bottom-right-radius: 5em;
+    margin-right: 4.5em;
+    /* margin-bottom: 5em; */
+}
+
+.section-title {
+    align-self: center;
+}
+
+.section-title h2 {
+    text-align: center;
+    font-size: 3em;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: bold;
+}
+
+.section-title p {
+    text-align: left;
+    line-height: 30px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.section-steps article {
+    border-bottom: 1px solid #808080a1;
+    margin-bottom: 1em;
+}
+
+.section-steps h4 {
+    font-size: 14px;
+    color: #3498db;
+}

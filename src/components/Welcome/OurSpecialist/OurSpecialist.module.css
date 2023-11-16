@@ -1,0 +1,68 @@
+.div-doctors{
+    margin-top: 1em;
+}
+
+.div-doctors h2{
+    text-align: center;
+    font-size: 3em;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: bold;
+}
+
+.section-doctorList {
+    display: flex;
+    justify-content: space-between;
+    column-gap: 2em;
+    row-gap: 2em;
+    flex-wrap: wrap;
+    padding: 1.5em 4em 1.5em 4em;
+}
+
+.section-doctorList article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 1em;
+    box-shadow: -2px 0px 11px -2px rgba(0, 0, 0, 0.73);
+    -webkit-box-shadow: -2px 0px 11px -2px rgba(0, 0, 0, 0.73);
+    -moz-box-shadow: -2px 0px 11px -2px rgba(0, 0, 0, 0.73);
+    ;
+    border-radius: 2em;
+    padding:1em 2em 2em 2em;
+    width: 17em;
+    color: black;
+}
+
+.doctorInfo h4 {
+    font-size: 0.9em;
+}
+
+.doctorInfo h3 {
+    font-size: 1em;
+    text-overflow: unset;
+    text-align: center;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.section-doctorList article p{
+    height: 150px;
+    overflow: scroll;
+}
+
+.section-doctorList article i{
+    align-self: center;
+    font-size: 40px;
+    margin-bottom: 0.7em;
+}
+
+.cardBtn{
+    align-self: center;
+    width: 8em;
+    border-radius: 2.5em;
+}
+
+.cardBtn:hover{
+    background-color: white;
+    color: green;
+}

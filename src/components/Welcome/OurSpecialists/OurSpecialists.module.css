@@ -1,0 +1,72 @@
+.main{
+    padding: 2em;
+    width: 1200px;
+    margin-left: 160px;
+}
+
+.main .carusel-item {
+    background-color: #808080;
+    display: flex;
+    justify-content:flex-start;
+    column-gap: 3em;
+    padding: 1.5em 4em 1.5em 4.3em;
+    /* border-radius: 2em; */
+    border-top-right-radius: 5em;
+    border-bottom-right-radius: 5em;
+    border-top-left-radius: 2em;
+    border-bottom-left-radius: 2em;
+    background-image: url("https://img.freepik.com/free-photo/young-handsome-physician-medical-robe-with-stethoscope_1303-17818.jpg?w=1800&t=st=1700155504~exp=1700156104~hmac=faf76ec9fcfc65822d44e7d98209e76af0ccb58a69f87cbd1063c35341c6a715");
+    background-position: 1%;
+    background-repeat: no-repeat;
+    background-size: 1300px;
+}
+
+.article{
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 1em;
+    box-shadow: -2px 0px 11px -2px rgba(0, 0, 0, 0.73);
+    -webkit-box-shadow: -2px 0px 11px -2px rgba(0, 0, 0, 0.73);
+    -moz-box-shadow: -2px 0px 11px -2px rgba(0, 0, 0, 0.73);
+    ;
+    border-radius: 2em;
+    padding:1em 2em 2em 2em;
+    width: 17em;
+    color: black;
+}
+
+.doctorInfo h4 {
+    font-size: 0.9em;
+}
+
+.doctorInfo h3 {
+    font-size: 1em;
+    text-overflow: unset;
+    text-align: center;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.article p{
+    height: 150px;
+    overflow: scroll;
+}
+
+.article i{
+    align-self: center;
+    font-size: 40px;
+    margin-bottom: 0.7em;
+}
+
+.cardBtn{
+    align-self: center;
+    width: 8em;
+    border-radius: 2.5em;
+}
+
+.cardBtn:hover{
+    background-color: white;
+    color: green;
+}
