@@ -1,4 +1,4 @@
-*{
+* {
     margin: 0;
     padding: 0;
     outline: none;
@@ -8,7 +8,7 @@
     font-family: "Poppins", sans-serif;
 }
 
-.nav{
+.nav {
     position: fixed;
     top: 0;
     bottom: 0;
@@ -21,24 +21,48 @@
     box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
 }
 
-.nav:hover{
+.nav:hover {
     width: 250px;
     transition: all 0.5s ease;
 }
 
-.nav ul{
+.nav ul {
     list-style: none;
     padding: 0 0 0 10px;
 }
 
-.a{
-   position: relative; 
-   color: rgb(85, 83, 83);
-   font-size: 14px;
-   display: flex;
-   width: 300px;
-   padding: 10px;
-   text-decoration: none;
+.logo {
+    text-align: center;
+    display: flex;
+    transition: all 0.5s ease;
+    text-decoration: none;
+    /* margin: 10px 0 0 10px; */
+    margin-top: 10px;
+}
+
+.logo img {
+    box-shadow: -3px 0px 11px 0px rgba(0, 0, 0, 0.10);
+    -webkit-box-shadow: -3px 0px 11px 0px rgba(0, 0, 0, 0.10);
+    -moz-box-shadow: -3px 0px 11px 0px rgba(0, 0, 0, 0.10);
+    width: 45px;
+    height: 45px;
+}
+
+.logo p {
+    font-weight: bold;
+    padding: 0px 7px 5px 7px;
+    font-size: 17px;
+    text-transform: uppercase;
+}
+
+.a {
+    position: relative;
+    color: rgb(85, 83, 83);
+    font-size: 14px;
+    display: flex;
+    width: 300px;
+    padding: 10px;
+    text-decoration: none;
 }
 
 .a:hover {
@@ -51,7 +75,7 @@
     height: 40px;
     top: 14px;
     font-size: 20px;
-    text-align:start;
+    text-align: start;
 }
 
 .nav-item {
@@ -64,4 +88,32 @@
 .logout {
     position: absolute;
     bottom: 100px;
+}
+
+.logout a:hover {
+    background-color: rgba(113, 44, 44, 0.684);
+    color: white;
+    border-radius: 2em;
+}
+
+.login {
+    position: absolute;
+    bottom: 150px;
+}
+
+.login a:hover {
+    background-color: #276727a6;
+    color: white;
+    border-radius: 2em;
+}
+
+.register {
+    position: absolute;
+    bottom: 100px;
+}
+
+.register a:hover {
+    background-color: rgba(37, 37, 102, 0.634);
+    color: white;
+    border-radius: 2em;
 }

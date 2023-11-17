@@ -6,7 +6,6 @@ import OurSpecialists from './OurSpecialists/OurSpecialists';
 export const Welcome = () => {
     return (
         <div className={style["main"]}>
-            {/* <OurSpecialist /> */}
             <OurSpecialists />
 
             <Steps />
