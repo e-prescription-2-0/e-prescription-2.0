@@ -3,7 +3,7 @@
     flex-direction: column;
     align-items: center;
     row-gap: 2em;
-    margin-bottom: 8em;
+    margin-bottom: 4em;
     background-color: #000000bc;
     border-radius: 5em;
     padding: 2em;
@@ -51,4 +51,28 @@
 }
 .section-benefits article p{
     color: white;
+}
+
+@media(max-width: 800px){
+    .section-benefits{
+        flex-direction: column;
+    }
+
+    .section-benefits article{
+        border-left: none;
+        border-bottom: 1px solid #ffffff;
+        margin-bottom: 1em;
+    }
+
+    .section-benefits article:first-child{
+        border-bottom: 1px solid #ffffff;
+    }
+
+    .section-benefits article:last-child{
+        border-bottom: none;
+    }
+
+    .div-benefits h2{
+        text-align: center;
+    }
 }

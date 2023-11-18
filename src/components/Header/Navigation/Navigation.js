@@ -6,6 +6,7 @@ export const Navigation = () => {
         // role: "patient",
         role: "doctor",
     };
+
     return (
         <nav className={style["nav"]}>
             <ul>

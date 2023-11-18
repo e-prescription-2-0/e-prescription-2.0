@@ -1,6 +1,6 @@
 .main{
     padding: 2em;
-    width: 1200px;
+    max-width: 1200px;
     margin-left: 160px;
 }
 
@@ -69,4 +69,20 @@
 .cardBtn:hover{
     background-color: white;
     color: green;
+}
+
+@media(max-width: 800px){
+    .main{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-left: 0;
+    }
+    .main .carusel-item{
+        display: flex;
+        align-items: center;
+        row-gap: 2em;
+        background-size: 1400px;
+        border-radius: 2em;
+    }
 }

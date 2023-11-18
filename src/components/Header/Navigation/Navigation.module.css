@@ -15,15 +15,16 @@
     height: 100%;
     left: 0;
     background: #fff;
-    width: 70px;
+    max-width: 70px;
     overflow: hidden;
     transition: width 0.2s linear;
     box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
 }
 
 .nav:hover {
-    width: 250px;
+    max-width: 250px;
     transition: all 0.5s ease;
+    z-index: 10;
 }
 
 .nav ul {
@@ -87,7 +88,7 @@
 
 .logout {
     position: absolute;
-    bottom: 100px;
+    bottom: 20px;
 }
 
 .logout a:hover {
@@ -98,7 +99,7 @@
 
 .login {
     position: absolute;
-    bottom: 150px;
+    bottom: 80px;
 }
 
 .login a:hover {
@@ -109,7 +110,7 @@
 
 .register {
     position: absolute;
-    bottom: 100px;
+    bottom: 20px;
 }
 
 .register a:hover {
