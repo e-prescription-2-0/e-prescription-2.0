@@ -1,4 +1,4 @@
-const FormComponent = () => {
+const LogoFormComponent = () => {
   return (
     <>
       <div className="fadeIn first icon-holder">
@@ -94,4 +94,4 @@ const FormComponent = () => {
   );
 };
 
-export default FormComponent;
+export default LogoFormComponent;

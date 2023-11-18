@@ -2,7 +2,7 @@ import { useState } from "react";
 import LogoComponent from "./components/LogoComponent";
 import MedicationsComponent from "./components/MedicationsComponent";
 import "./style.css";
-import LoginPopUpComponent from "./components/LoginPopUpComponent";
+import LoginPopUpComponent from "./LoginRegisterPopUp/LoginPopUpComponent";
 
 const LoginRegisterPage = () => {
   
