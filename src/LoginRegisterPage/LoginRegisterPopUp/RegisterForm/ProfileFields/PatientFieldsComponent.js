@@ -4,9 +4,9 @@ const PatientFieldsComponent = () => {
       <input
         type="text"
         id="patientId"
-        className="fadeIn second"
+        className="fadeIn third"
         name="patientId"
-        placeholder="patientId"
+        placeholder="PatientId"
       />
       
       <select class="form-select fadeIn third" aria-label="Default select example  ">
@@ -19,7 +19,7 @@ const PatientFieldsComponent = () => {
         id="dateOfBirth"
         className="fadeIn third"
         name="dateOfBirth"
-        placeholder="dateOfBirth"
+        placeholder="Date Of Birth"
       />
 
       

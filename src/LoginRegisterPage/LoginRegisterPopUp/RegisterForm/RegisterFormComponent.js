@@ -1,55 +1,25 @@
-import PatientFieldsComponent from './ProfileFields/PatientFieldsComponent';
-import DoctorFieldsComponent from './ProfileFields/DoctorFieldsComponent';
-import PharmacistFieldsComponent from './ProfileFields/PharmacistFieldsComponent';
-import { useState } from 'react';
+import PatientFieldsComponent from "./ProfileFields/PatientFieldsComponent";
+import DoctorFieldsComponent from "./ProfileFields/DoctorFieldsComponent";
+import PharmacistFieldsComponent from "./ProfileFields/PharmacistFieldsComponent";
+import { useState } from "react";
+import CredentialsFieldsComponent from "./BaseFields/CredentialsFieldsComponent";
+import PersonalFieldsComponent from "./BaseFields/PersonalFieldsComponent";
 
 const RegisterFormComponent = () => {
-  const ProfileFields = {
-    patient: <PatientFieldsComponent/>,
-    doctor: <DoctorFieldsComponent/>,
-    pharmacist: <PharmacistFieldsComponent/>
-  }
-  const [profile, setProfile] = useState('patient')
-
+  const [numberPart, setNumberPart] = useState(1)
   return (
     <>
-      {/* <!-- Icon --> */}
-
       <form>
-        <input
-          type="text"
-          id="firstName"
-          className="fadeIn second"
-          name="firstName"
-          placeholder="First Name"
-        />
-        <input
-          type="text"
-          id="lastName"
-          className="fadeIn third"
-          name="lastName"
-          placeholder="Last Name"
-        />
-        <input
-          type="text"
-          id="email"
-          className="fadeIn third"
-          name="email"
-          placeholder="Email"
-        />
-        <select onChange={(e)=>setProfile(e.target.value)} class="form-select fadeIn third" aria-label="Default select example  ">
-          <option value="patient">Patient</option>
-          <option value="pharmacist">Pharmacist</option>
-          <option value="doctor">Doctor</option>
-        </select>
-        {
-          ProfileFields[profile]
-        }
+        <div className={numberPart!==1 && 'hideFields'}>
+          <CredentialsFieldsComponent />
+          <h2 className="next"  onClick={()=>setNumberPart(2)}>Next</h2>
+          
+        </div>
+        <div className={numberPart!==2 && 'hideFields'}>
+          <PersonalFieldsComponent />
+          <input type="submit" className="fadeIn fourth" value="Register" />
+        </div>
 
-
-    
-
-        <input type="submit" className="fadeIn fourth" value="Register" />
       </form>
     </>
   );

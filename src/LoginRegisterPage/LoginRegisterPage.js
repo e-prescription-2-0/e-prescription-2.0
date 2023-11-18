@@ -13,7 +13,7 @@ const LoginRegisterPage = () => {
       <div className="page">
         <MedicationsComponent />
         <LogoComponent setLoginFormPopUp={setLoginFormPopUp}/>
-        {loginFormPopUp && (<LoginPopUpComponent/>)}
+        {loginFormPopUp && (<LoginPopUpComponent setLoginFormPopUp={setLoginFormPopUp}/>)}
       </div>
     </>
   );
