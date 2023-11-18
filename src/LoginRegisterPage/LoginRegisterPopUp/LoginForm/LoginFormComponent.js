@@ -23,6 +23,12 @@ const LoginFormComponent = () => {
         />
         <input type="submit" className="fadeIn fourth" value="Log In" />
       </form>
+      {/* <!-- Remind Password --> */}
+      <div id="formFooter">
+        <a className="underlineHover" href="#">
+          Forgot Password?
+        </a>
+      </div>
     </>
   );
 };

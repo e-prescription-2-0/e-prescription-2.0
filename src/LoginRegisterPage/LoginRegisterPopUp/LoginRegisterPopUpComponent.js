@@ -1,6 +1,6 @@
 import { useState } from "react";
-import LoginFormComponent from "./LoginFormComponent";
-import RegisterFormComponent from "./RegisterFormComponent";
+import LoginFormComponent from "./LoginForm/LoginFormComponent";
+import RegisterFormComponent from "./RegisterForm/RegisterFormComponent";
 
 const LoginPopUpComponent = () => {
   const [formName, setForm] = useState('login')
@@ -18,12 +18,7 @@ const LoginPopUpComponent = () => {
           {formName === 'login'&& <LoginFormComponent/>}
           {formName === 'register'&& <RegisterFormComponent/>}
 
-          {/* <!-- Remind Password --> */}
-          <div id="formFooter">
-            <a className="underlineHover" href="#">
-              Forgot Password?
-            </a>
-          </div>
+
         </div>
       </div>
     </>
