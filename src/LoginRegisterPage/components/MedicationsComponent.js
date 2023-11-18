@@ -4,7 +4,7 @@ const MedicationsComponent = () => {
     <>
       <img
         src={medicationImage}
-        className="img-fluid col-md-6"
+        className="img-fluid col-xs-6 col-md-6"
         alt="medication"
       />
     </>

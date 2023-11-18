@@ -1,7 +1,7 @@
 const LogoComponent = ({setLoginFormPopUp}) => {
   return (
     <>
-      <div className="welcomePart col-md-6">
+      <div className="welcomePart col-xs-6 col-md-6">
         <svg
           width={228}
           height={228}
