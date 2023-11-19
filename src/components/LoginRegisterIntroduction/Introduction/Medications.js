@@ -1,5 +1,5 @@
-import medicationImage from "../Pills.svg";
-const MedicationsComponent = () => {
+import medicationImage from "./Pills.svg";
+const Medications = () => {
   return (
     <>
       <img
@@ -11,4 +11,4 @@ const MedicationsComponent = () => {
   );
 };
 
-export default MedicationsComponent;
+export default Medications;

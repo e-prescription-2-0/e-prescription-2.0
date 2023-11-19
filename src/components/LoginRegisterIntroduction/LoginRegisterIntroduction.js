@@ -1,7 +1,7 @@
 import { useState } from "react";
-import LogoComponent from "./components/LogoComponent";
-import MedicationsComponent from "./components/MedicationsComponent";
-import "./style.css";
+import LogoAndIntroduction from "./Introduction/LogoAndIntroduction";
+import Medications from "./Introduction/Medications";
+import "./LoginRegister.css";
 import LoginPopUpComponent from "./LoginRegisterPopUp/LoginRegisterPopUpComponent";
 
 const LoginRegisterPage = () => {
@@ -11,8 +11,8 @@ const LoginRegisterPage = () => {
     return (
     <>
       <div className="page">
-        <MedicationsComponent />
-        <LogoComponent setLoginFormPopUp={setLoginFormPopUp}/>
+        <Medications />
+        <LogoAndIntroduction setLoginFormPopUp={setLoginFormPopUp}/>
         {loginFormPopUp && (<LoginPopUpComponent setLoginFormPopUp={setLoginFormPopUp}/>)}
       </div>
     </>

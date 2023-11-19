@@ -1,4 +1,4 @@
-const LogoComponent = ({setLoginFormPopUp}) => {
+const LogoAndIntroduction = ({setLoginFormPopUp}) => {
   return (
     <>
       <div className="welcomePart col-xs-6 col-md-6">
@@ -117,4 +117,4 @@ const LogoComponent = ({setLoginFormPopUp}) => {
   );
 };
 
-export default LogoComponent;
+export default LogoAndIntroduction;

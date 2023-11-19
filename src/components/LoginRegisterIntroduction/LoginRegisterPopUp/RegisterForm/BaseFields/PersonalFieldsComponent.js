@@ -1,7 +1,7 @@
 import { useState } from "react";
-import PatientFieldsComponent from "../ProfileFields/PatientFieldsComponent";
-import DoctorFieldsComponent from "../ProfileFields/DoctorFieldsComponent";
-import PharmacistFieldsComponent from "../ProfileFields/PharmacistFieldsComponent";
+import PatientFieldsComponent from "./ProfileFields/PatientFieldsComponent";
+import DoctorFieldsComponent from "./ProfileFields/DoctorFieldsComponent";
+import PharmacistFieldsComponent from "./ProfileFields/PharmacistFieldsComponent";
 
 const PersonalFieldsComponent = () => {
   const ProfileFields = {

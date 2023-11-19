@@ -1,11 +1,11 @@
-import PatientFieldsComponent from "./ProfileFields/PatientFieldsComponent";
-import DoctorFieldsComponent from "./ProfileFields/DoctorFieldsComponent";
-import PharmacistFieldsComponent from "./ProfileFields/PharmacistFieldsComponent";
+import PatientFieldsComponent from "./BaseFields/ProfileFields/PatientFieldsComponent";
+import DoctorFieldsComponent from "./BaseFields/ProfileFields/DoctorFieldsComponent";
+import PharmacistFieldsComponent from "./BaseFields/ProfileFields/PharmacistFieldsComponent";
 import { useState } from "react";
 import CredentialsFieldsComponent from "./BaseFields/CredentialsFieldsComponent";
 import PersonalFieldsComponent from "./BaseFields/PersonalFieldsComponent";
 
-const RegisterFormComponent = () => {
+const RegisterForm = () => {
   const [numberPart, setNumberPart] = useState(1)
   return (
     <>
@@ -25,4 +25,4 @@ const RegisterFormComponent = () => {
   );
 };
 
-export default RegisterFormComponent;
+export default RegisterForm;

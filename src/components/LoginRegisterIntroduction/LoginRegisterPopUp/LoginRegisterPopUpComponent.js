@@ -1,6 +1,6 @@
 import { useRef, useState, useEffect } from "react";
-import LoginFormComponent from "./LoginForm/LoginFormComponent";
-import RegisterFormComponent from "./RegisterForm/RegisterFormComponent";
+import LoginForm from "./LoginForm/LoginForm";
+import RegisterForm from "./RegisterForm/RegisterForm";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleXmark} from "@fortawesome/free-solid-svg-icons";
 
@@ -36,8 +36,8 @@ const LoginPopUpComponent = ({setLoginFormPopUp}) => {
           
           {/* <!-- Login Form --> */}
 
-          {formName === 'login'&& <LoginFormComponent/>}
-          {formName ==='register' && <RegisterFormComponent/>}
+          {formName === 'login'&& <LoginForm/>}
+          {formName ==='register' && <RegisterForm/>}
 
 
         </div>

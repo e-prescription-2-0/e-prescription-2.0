@@ -1,11 +1,11 @@
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import LoginRegisterPage from "./LoginRegisterPage/LoginRegisterPage";
+import LoginRegisterIntroduction from "./components/LoginRegisterIntroduction/LoginRegisterIntroduction";
 function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<LoginRegisterPage/>}>
+        <Route path="/" element={<LoginRegisterIntroduction/>}>
         </Route>
       </Routes>
     </BrowserRouter>

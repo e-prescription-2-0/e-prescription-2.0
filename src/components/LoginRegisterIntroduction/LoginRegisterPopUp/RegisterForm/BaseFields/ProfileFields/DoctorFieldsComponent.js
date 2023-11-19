@@ -4,7 +4,7 @@ const DoctorFieldsComponent = () => {
       <input
         type="text"
         id="doctorId"
-        className="fadeIn second"
+        className="fadeIn third"
         name="doctorId"
         placeholder="doctorId"
       />

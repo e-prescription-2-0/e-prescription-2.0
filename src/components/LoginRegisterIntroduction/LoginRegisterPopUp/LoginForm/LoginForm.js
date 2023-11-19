@@ -1,11 +1,11 @@
-import LogoFormComponent from "./LogoFormPopUpComponent";
+import LogoScroll from "./LogoScroll";
 
-const LoginFormComponent = () => {
+const LoginForm = () => {
   return (
     <>
       {/* <!-- Icon --> */}
 
-      <LogoFormComponent />
+      <LogoScroll />
       <form>
         <input
           type="text"
@@ -33,4 +33,4 @@ const LoginFormComponent = () => {
   );
 };
 
-export default LoginFormComponent;
+export default LoginForm;
