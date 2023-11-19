@@ -367,7 +367,16 @@ select option{
 .hideFields{
   display: none;
 }
-
+.closeIcon{
+  color: #39ace7;
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  height: 26px;
+}
+.closeIcon:hover{
+  color: red;
+}
 @media only screen and (max-width:600px){
 
   .page{
