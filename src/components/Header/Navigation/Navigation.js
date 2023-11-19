@@ -1,11 +1,20 @@
+import { useState } from "react";
 import style from "./Navigation.module.css"
 
 export const Navigation = () => {
-    const user = {
-        // role: "pharmaceft",
-        // role: "patient",
-        role: "doctor",
-    };
+    // const user = {
+    //     // role: "pharmaceft",
+    //     // role: "patient",
+    //     role: "doctor",
+    // };
+
+    let user = false;
+
+    const [isLoginClick, setLogin] = useState(false);
+
+    const onLoginCclick = () => {
+        setLogin(isLoginClick = !isLoginClick)
+    }
 
     return (
         <nav className={style["nav"]}>
