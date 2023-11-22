@@ -7,7 +7,7 @@ const Hero = () => {
             <div className={style["div-content"]}>
                 <h2>E-Prescription</h2>
                 <p>Здравеопазване от бъдещето</p>
-                <button>Добави!</button>
+                <button>Добави</button>
             </div>
             <div className={style["div-pils"]}>
                 <img src="pills.png"></img>
