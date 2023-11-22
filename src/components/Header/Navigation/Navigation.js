@@ -2,52 +2,37 @@ import { useState } from "react";
 import style from "./Navigation.module.css"
 
 export const Navigation = () => {
-    // const user = {
-    //     // role: "pharmaceft",
-    //     // role: "patient",
-    //     role: "doctor",
-    // };
+    const user = {
+        // role: "pharmaceft",
+        // role: "patient",
+        role: "doctor",
+    };
 
-    let user = false;
+    // let user = false;
 
     const [isLoginClick, setLogin] = useState(false);
 
-    const onLoginCclick = () => {
-        setLogin(isLoginClick = !isLoginClick)
+    const onClick = () => {
+        // setLogin(isLoginClick = !isLoginClick)
     }
 
     return (
         <nav className={style["nav"]}>
             <ul>
-                <li>
-                    <a className={style["logo"]}>
-                        <img src="/logo.png"></img>
-                        <p className={style["nav-item"]} >Prescription</p>
-                    </a>
-                </li>
 
                 <li>
-                    <a className={style["a"]}>
-                        <i class="fa-solid fa-house"></i>
-                        <p className={style["nav-item"]}>Home</p>
-                    </a>
+                    <a onClick={onClick} className={style["a"]}>Home</a>
                 </li>
 
                 {(user.role === "doctor" || user.role === "patient") &&
                     <>
                         <li>
-                            <a className={style["a"]}>
-                                <i class="fa-solid fa-pills"></i>
-                                <p className={style["nav-item"]} >My persriptions</p>
-                            </a>
+                            <a onClick={onClick} className={style["a"]}>My persriptions</a>
                         </li>
 
                         {user.role === "doctor" &&
                             <li>
-                                <a className={style["a"]}>
-                                    <i class="fa-solid fa-users"></i>
-                                    <p className={style["nav-item"]} >My patients</p>
-                                </a>
+                                <a onClick={onClick} className={style["a"]}>My patients</a>
                             </li>
                         }
                     </>
@@ -56,60 +41,41 @@ export const Navigation = () => {
                 {user.role === "pharmaceft" &&
                     <>
                         <li>
-                            <a className={style["a"]}>
-                                <i class="fa-solid fa-magnifying-glass"></i>
-                                <p className={style["nav-item"]} >Serch persription</p>
-                            </a>
+                            <a onClick={onClick} className={style["a"]}>Serch persription</a>
                         </li>
                     </>
                 }
-
-                <li>
-                    <a className={style["a"]}>
-                        <i className={style["fas"]} class="fa-solid fa-address-card"></i>
-                        <p className={style["nav-item"]} >Profile</p>
-                    </a>
-                </li>
-
-                <li>
-                    <a className={style["a"]}>
-                        <i className={style["fas"]} class="fa-solid fa-gear"></i>
-                        <p className={style["nav-item"]} >Setings</p>
-                    </a>
-                </li>
-
-                <li>
-                    <a className={style["a"]}>
-                        <i className={style["fas"]} class="fa-solid fa-circle-info"></i>
-                        <p className={style["nav-item"]} >Help</p>
-                    </a>
-                </li>
 
                 {!user &&
                     <>
                         <li className={style["login"]}>
-                            <a className={style["a"]}>
-                                <i class="fa-solid fa-user"></i>
-                                <p className={style["nav-item"]} >Login</p>
-                            </a>
+                            <a onClick={onClick} className={style["a"]}>Login</a>
                         </li>
 
                         <li className={style["register"]}>
-                            <a className={style["a"]}>
-                                <i class="fa-solid fa-pen-to-square"></i>
-                                <p className={style["nav-item"]} >Register</p>
-                            </a>
+                            <a onClick={onClick} className={style["a"]}>Register</a>
                         </li>
                     </>
                 }
 
+                <li>
+                    <a onClick={onClick} className={style["a"]}>Help</a>
+                </li>
+
                 {user &&
-                    <li className={style["logout"]}>
-                        <a className={style["a"]}>
-                            <i class="fa-solid fa-arrow-right-from-bracket"></i>
-                            <p className={style["nav-item"]} >Logout</p>
-                        </a>
-                    </li>
+                    <>
+
+                        <li>
+                            <a onClick={onClick} className={style["a"]}>Profile</a>
+                        </li>
+
+                        <li>
+                            <a onClick={onClick} className={style["a"]}>Setings</a>
+                        </li>
+                        <li className={style["logout"]}>
+                            <a onClick={onClick} className={style["a"]}>Logout</a>
+                        </li>
+                    </>
                 }
             </ul>
         </nav>

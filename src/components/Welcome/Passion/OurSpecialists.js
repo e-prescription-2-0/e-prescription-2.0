@@ -8,7 +8,7 @@ function OurSpecialists() {
         <Carousel className={style["main"]} fade>
             <Carousel.Item className={style["carusel-item"]}>
                 <article className={style["article"]}>
-                    <i class="fa-solid fa-hand-dots"></i>
+                    <i className="fa-solid fa-hand-dots"></i>
                     <div className={style["doctorInfo"]}>
                         <h3>Dr. Smith Jonshon</h3>
                         <h4>Type: Allergists</h4>
@@ -18,7 +18,7 @@ function OurSpecialists() {
                 </article>
 
                 <article className={style["article"]}>
-                    <i class="fa-solid fa-user-doctor"></i>
+                    <i className="fa-solid fa-user-doctor"></i>
                     <div className={style["doctorInfo"]}>
                         <h3>Dr. Sara Li</h3>
                         <h4>Type: Anesthesiologists</h4>
@@ -30,7 +30,7 @@ function OurSpecialists() {
 
             <Carousel.Item className={style["carusel-item"]} >
                 <article className={style["article"]}>
-                    <i class="fa-solid fa-heart-pulse"></i>
+                    <i className="fa-solid fa-heart-pulse"></i>
                     <div className={style["doctorInfo"]}>
                         <h3>Dr. Joerg Dalshman</h3>
                         <h4>Type: Cardiologists</h4>
@@ -40,7 +40,7 @@ function OurSpecialists() {
                 </article>
 
                 <article className={style["article"]}>
-                    <i class="fa-solid fa-hand-holding-medical"></i>
+                    <i className="fa-solid fa-hand-holding-medical"></i>
                     <div className={style["doctorInfo"]}>
                         <h3>Dr. Ivan Kuzmanov</h3>
                         <h4>Type: Dermatologists</h4>
@@ -52,7 +52,7 @@ function OurSpecialists() {
 
             <Carousel.Item className={style["carusel-item"]}>
                 <article className={style["article"]}>
-                    <i class="fa-solid fa-user-nurse icons"></i>
+                    <i className="fa-solid fa-user-nurse icons"></i>
                     <div className={style["doctorInfo"]}>
                         <h3>Dr. Eleonor Bard</h3>
                         <h4>Type: Physiatrists</h4>
@@ -62,7 +62,7 @@ function OurSpecialists() {
                 </article>
 
                 <article className={style["article"]}>
-                    <i class="fa-solid fa-user-doctor"></i>
+                    <i className="fa-solid fa-user-doctor"></i>
                     <div className={style["doctorInfo"]}>
                         <h3>Dr. Sara Li</h3>
                         <h4>Type: Anesthesiologists</h4>

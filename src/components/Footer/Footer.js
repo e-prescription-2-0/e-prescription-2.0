@@ -35,10 +35,10 @@ export const Footer = () => {
                     <div className={style["footer-col"]}>
                         <h4>follow us</h4>
                         <div className={style["social-links"]}>
-                            <a href="#"><i class="fa-brands fa-facebook"></i></a>
-                            <a href="#"><i class="fa-brands fa-twitter"></i></a>
-                            <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                            <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                            <a href="#"><i className="fa-brands fa-facebook"></i></a>
+                            <a href="#"><i className="fa-brands fa-twitter"></i></a>
+                            <a href="#"><i className="fa-brands fa-instagram"></i></a>
+                            <a href="#"><i className="fa-brands fa-linkedin"></i></a>
                         </div>
                     </div>
                 </div>
