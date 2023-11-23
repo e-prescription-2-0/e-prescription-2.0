@@ -1,7 +1,11 @@
 .main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: end;
     max-width: 1920px;
     max-height: 905px;
-    min-height: 400px;
+    min-height: 500px;
     /* background-image: url(../../../../public/passion.jpg); */
     /* background-size: 1500px;
     background-repeat: no-repeat; */
@@ -9,4 +13,41 @@
     background-size: 1500px;
     background-position: bottom;
     background-repeat: no-repeat;
+    padding-right: 4em;
+}
+
+.main > h3{
+    margin-right: 6em;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.carusel {
+    width: 600px;
+    height: 400px;
+}
+
+.imgCarusel {
+    width: 600px;
+    height: 400px;
+    background-position: 50%;
+    border-radius: 1em;
+}
+
+.content {
+    background-color: #d9d9d99e;
+    border-radius: 1em;
+    color: black;
+}
+
+.content h3 {
+    margin-right: 0;
+    color: #3C6E71;
+}
+
+.content ul{
+    text-align: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
