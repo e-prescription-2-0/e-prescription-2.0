@@ -1,19 +1,22 @@
 .div-steps {
-    background-color: #8080807a;
+    background-color: #658B9F;
     display: flex;
     column-gap: 2em;
     padding: 1.5em 2em 1.5em 2em;
     border-top-right-radius: 5em;
     border-bottom-right-radius: 5em;
-    margin-right: 4.5em;
+    margin-right: 3em;
+    margin-top: 1em;
     /* margin-bottom: 5em; */
 }
 
 .section-title {
+    width: 700px;
     align-self: center;
 }
 
 .section-title h2 {
+    color: #FFFFFF;
     text-align: center;
     font-size: 3em;
     font-family: Georgia, 'Times New Roman', Times, serif;
@@ -21,19 +24,24 @@
 }
 
 .section-title p {
-    text-align: left;
+    font-size: 19px;
+    text-align: center;
     line-height: 30px;
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 .section-steps article {
-    border-bottom: 1px solid #808080a1;
+    border-bottom: 1px solid #ffffff;
     margin-bottom: 1em;
+}
+
+.section-steps article:last-child{
+    border-bottom: none;
 }
 
 .section-steps h4 {
     font-size: 14px;
-    color: #3498db;
+    color: #ffffff;
 }
 
 @media(max-width: 800px){

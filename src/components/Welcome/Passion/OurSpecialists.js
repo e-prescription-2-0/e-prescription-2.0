@@ -5,7 +5,10 @@ function Passion() {
 
     return (
         <div className={style["main"]}>
-            <h3>За всеки по нещо</h3>
+            <div className={style["title"]}>
+                <h3>За всеки по нещо</h3>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+            </div>
             <Carousel className={style["carusel"]}>
                 <Carousel.Item>
                     <img className={style["imgCarusel"]} src="https://img.freepik.com/free-photo/doctor-work_144627-40436.jpg?w=1800&t=st=1700758297~exp=1700758897~hmac=8c0f92cedd5cb409728bad60a3d62ba0282acfcd54d424a3fc1928984b906ff5" ></img>

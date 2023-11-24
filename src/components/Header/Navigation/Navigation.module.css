@@ -1,9 +1,16 @@
+.nav{
+    position:fixed ;
+    width: 100%;
+    z-index: 10;
+}
+
 .nav ul{
-    padding: 1em;
+    padding: 0.7em;
     max-width: 1920px;
     max-height: 100px;
     list-style: none;
     display: flex;
+    justify-content: start;
     align-items: center;
     column-gap: 1em;
     background-color: #3C6E71;
@@ -22,6 +29,27 @@
     cursor: pointer;
 }
 
+.logout{
+    margin-left: 68em;
+    padding: 5px;
+    border-radius: 8px;
+}
+
+.login{
+    border-right: 2px solid black;
+    margin-left: 72em;
+    padding-right: 12px;
+}
+
+.register{
+    padding: 5px 8px;
+    background-color: #353535;
+    border-radius: 8px;
+}
+
+.register a {
+    color: #ffffff;
+}
 /* * {
     margin: 0;
     padding: 0;

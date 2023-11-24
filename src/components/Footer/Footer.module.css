@@ -9,7 +9,7 @@
 .footer{
     font-family: 'Poppins', sans-serif;
     background-color: #24262b;
-    padding-top: 3em ;
+    padding-top: 1.7em ;
 }
 
 
@@ -66,7 +66,7 @@
     position: absolute;
     left: 0;
     bottom: -10px;
-    background-color: #95D5B2;
+    background-color: #3C6E71;
     height: 2px;
     box-sizing: border-box;
     width: 50px;

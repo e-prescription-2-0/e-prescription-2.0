@@ -5,7 +5,7 @@ const Hero = () => {
     return (
         <div className={style["main"]}>
             <div className={style["div-content"]}>
-                <h2>E-Prescription</h2>
+                <h2>E-Рецепта</h2>
                 <p>Здравеопазване от бъдещето</p>
                 <button>Добави</button>
             </div>

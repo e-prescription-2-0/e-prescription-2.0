@@ -11,7 +11,6 @@ export const Footer = () => {
                             <li><a href="#">Example text</a></li>
                             <li><a href="#">Example text</a></li>
                             <li><a href="#">Example text</a></li>
-                            <li><a href="#">Example text</a></li>
                         </ul>
                     </div>
                     <div className={style["footer-col"]}>
@@ -20,13 +19,11 @@ export const Footer = () => {
                             <li><a href="#">Example text</a></li>
                             <li><a href="#">Example text</a></li>
                             <li><a href="#">Example text</a></li>
-                            <li><a href="#">Example text</a></li>
                         </ul>
                     </div>
                     <div className={style["footer-col"]}>
                         <h4>title</h4>
                         <ul>
-                            <li><a href="#">Example text</a></li>
                             <li><a href="#">Example text</a></li>
                             <li><a href="#">Example text</a></li>
                             <li><a href="#">Example text</a></li>

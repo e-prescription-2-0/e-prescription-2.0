@@ -1,13 +1,11 @@
 .main{
     max-width: 1920px;
-    max-height: 905px;
-    min-height: 400px;
+    height: 600px;
     padding: 1em;
-    /* background-color: #D9D9D9; */
     background: linear-gradient(180deg, rgba(40, 75, 99, 0.38) 52.6%, #284B63 100%), #FFF;
     display: flex;
     justify-content: center;
-    column-gap: 10em;
+    column-gap: 15em;
 }
 
 .div-content{
@@ -35,7 +33,18 @@
     font-weight: bold;
 }
 
+.div-content button:hover{
+    background-color: #ffffff;
+    color: #3C6E71;
+}
+
+.div-pils {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .div-pils img{
-    width: 410px;
-    height: 350px;
+    width: 450px;
+    height: 420px;
 }

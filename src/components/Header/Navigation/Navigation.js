@@ -2,13 +2,13 @@ import { useState } from "react";
 import style from "./Navigation.module.css"
 
 export const Navigation = () => {
-    const user = {
-        // role: "pharmaceft",
-        // role: "patient",
-        role: "doctor",
-    };
+    // const user = {
+    //     // role: "pharmaceft",
+    //     // role: "patient",
+    //     role: "doctor",
+    // };
 
-    // let user = false;
+    let user = false;
 
     const [isLoginClick, setLogin] = useState(false);
 
@@ -46,6 +46,11 @@ export const Navigation = () => {
                     </>
                 }
 
+                <li>
+                    <a onClick={onClick} className={style["a"]}>Help</a>
+                </li>
+
+
                 {!user &&
                     <>
                         <li className={style["login"]}>
@@ -57,10 +62,6 @@ export const Navigation = () => {
                         </li>
                     </>
                 }
-
-                <li>
-                    <a onClick={onClick} className={style["a"]}>Help</a>
-                </li>
 
                 {user &&
                     <>

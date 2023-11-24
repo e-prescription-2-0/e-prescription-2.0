@@ -4,25 +4,34 @@ export const Steps = () => {
     return (
         <div className={style["div-steps"]}>
             <section className={style["section-title"]}>
-                <h2>How It Works</h2>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                <h2>Как работи?</h2>
+                <p>Този онлайн ресурс не само предоставя медицински рецепти, но и насърчава отговорността към собственото здраве, осигурявайки достъп до ценна информация и персонализирани решения за поддържане на здравословен начин на живот.</p>
             </section>
 
             <section className={style["section-steps"]}>
                 <article>
                     <h4>Step 1</h4>
-                    <h3>Make an appointment</h3>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                    <h3>Регистрация и Аутентикация</h3>
+                    <ul>
+                        <li>Новите потребители могат да създадат акаунт, предоставяйки основна информация и предпочитания за здраве.</li>
+                        <li>Аутентикацията гарантира сигурността на личните данни на потребителите.</li>
+                    </ul>
                 </article>
                 <article>
                     <h4>Step 2</h4>
-                    <h3>Go to the Doctor</h3>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                    <h3>Завършиш своя профил</h3>
+                    <ul>
+                        <li>Въведи или актуализирай основните данни като име, фамилия, пол и дата на раждане.</li>
+                        <li>Не забравяй да запазиш промените след като завършиш редактирането на профила си.</li>
+                    </ul>
                 </article>
                 <article>
                     <h4>Step 3</h4>
-                    <h3>Go to the Pharmacist</h3>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+                    <h3>Стартирай използването на сайта</h3>
+                    <ul>
+                        <li>Разгледай различните раздели и категории на сайта, за да разбереш какви възможности предоставя</li>
+                        <li>След като си запознал с основните функции, просто започни да използваш сайта и се наслаждавай на предоставените възможности.</li>
+                    </ul>
                 </article>
             </section>
         </div>
