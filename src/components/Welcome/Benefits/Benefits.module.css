@@ -24,17 +24,6 @@
     margin-top: 3em;
 }
 
-.title-info{
-    display: flex;
-    column-gap: 1.5em;
-}
-
-.title-info i{
-    font-size: 1.8em;
-    align-self: center;
-    color: white;
-}
-
 .section-benefits article:first-child{
     border: 0;
 }
@@ -49,9 +38,7 @@
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-weight: bold;
 }
-.title-info h3{
-    color: white;
-}
+
 .section-benefits article p{
     color: white;
 }
