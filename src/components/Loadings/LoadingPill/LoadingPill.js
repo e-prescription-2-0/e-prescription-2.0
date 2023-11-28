@@ -1,5 +1,5 @@
-import './Loading.css'
-const Loading = () => {
+import './LoadingPill.css'
+const LoadingPill = () => {
   return (
     <div class="absCenter ">
       <div class="loaderPill">
@@ -19,4 +19,4 @@ const Loading = () => {
   );
 };
 
-export default Loading
+export default LoadingPill
