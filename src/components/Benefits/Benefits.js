@@ -52,8 +52,8 @@ const Benefits = () => {
     },
   ];
   return (
-    <div class="feat bg-gray pt-5 pb-5">
-      <div class="container">
+    <div className="feat bg-gray pt-5 pb-5">
+      <div className="container">
         <div class="row">
           <div class="section-head col-sm-12">
             <h4>
