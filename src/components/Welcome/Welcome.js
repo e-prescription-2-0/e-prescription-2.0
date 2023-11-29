@@ -1,4 +1,5 @@
 import Benefits from "./Benefits/Benefits"
+import DemoSteps from "./DemoSteps/DemoSteps"
 import Hero from "./Hero/Hero"
 import Passion from "./Passion/Passion"
 import Steps from "./Steps/Steps"
@@ -11,6 +12,7 @@ export const Welcome = () => {
       <Passion />
       <Steps />
       <Benefits />
+      <DemoSteps/>
     </div>
   )
 }
