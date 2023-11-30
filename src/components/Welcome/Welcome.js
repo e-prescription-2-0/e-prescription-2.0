@@ -10,9 +10,11 @@ export const Welcome = () => {
     <div className={style["main"]}>
       <Hero />
       <Passion />
-      <Steps />
-      <Benefits />
+      
       <DemoSteps/>
+      
+      <Benefits />
+      
     </div>
   )
 }
