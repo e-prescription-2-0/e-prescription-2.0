@@ -1,6 +1,7 @@
 import { useState } from "react"
 import { navLinkConfig } from "../../../constants/navigation"
 import style from "./Navigation.module.css"
+import { Link } from "react-router-dom"
 
 export const Navigation = () => {
   const [currentUser, setCurrentUser] = useState("patient")
@@ -19,9 +20,9 @@ export const Navigation = () => {
         {navLinkConfig.map((link) =>
           !link.hideFor.includes(currentUser) ? (
             <li className={style["navigation-list-item"]}>
-              <a className={style["a"]} onClick={link.onClick}>
+              <Link to={link.linkTo} className={style["a"]} onClick={link.onClick}>
                 {link.linkName}
-              </a>
+              </Link>
             </li>
           ) : null
         )}
