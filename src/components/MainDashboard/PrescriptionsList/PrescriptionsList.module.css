@@ -8,7 +8,7 @@
   align-items: center;
   gap: 10px;
   padding: 10px 20px;
-  width: 350px;
+  width: 260px;
   border-radius: 10px;
   margin: 20px;
 }
@@ -23,7 +23,7 @@
 }
 .prescriptions-list-item {
   background-color: white;
-  width: 350px;
+  width: 260px;
   padding: 15px;
   border-radius: 10px;
   overflow: hidden;
@@ -49,8 +49,8 @@
 .prescriptions-list-item svg {
 
   color: #284b63;
-  width: 17.214px;
-  height: 27.76px;
+  width: 15px;
+  height: 24px;
 }
 
 @media only screen and (max-width: 600px) {
