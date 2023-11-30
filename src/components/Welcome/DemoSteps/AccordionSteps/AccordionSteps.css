@@ -63,3 +63,6 @@
 .accordion:hover .steps-accordion-icon{
   color: #78D6C6;
 }
+.open .steps-accordion-icon{
+  color: #78D6C6;
+}

@@ -18,13 +18,13 @@ const AccordionSteps = ({ title, content, icon }) => {
           `}
     >
       <div className="title">
-      <span className="steps-accordion-icon">{icon}</span>
+        <span className="steps-accordion-icon">{icon}</span>
         <h4>{title}</h4>
-        <div class="arrow-down"></div>
+        <div className="arrow-down"></div>
       </div>
       <p>{content}</p>
     </div>
   );
 };
 
-export default AccordionSteps
+export default AccordionSteps;

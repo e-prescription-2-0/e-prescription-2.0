@@ -57,3 +57,9 @@
 .steps-demo-div-info img{
   width: 30rem;
 }
+
+@media only screen and (max-width: 600px) {
+  .steps-demo-div-wrapper-border{
+    display: none;
+  }
+}
