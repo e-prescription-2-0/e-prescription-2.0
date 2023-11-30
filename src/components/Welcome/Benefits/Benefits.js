@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import "./Benefits-style.css";
+import style from "./Benefits.module.css";
 import {
   faAnchor,
   faCommentMedical,
@@ -53,10 +53,10 @@ const Benefits = () => {
   ];
   return (
     <section>
-      <div className="feat bg-gray pt-5 pb-5">
-        <div className="container">
-          <div class="row">
-            <div class="section-head col-sm-12">
+      <div className={["feat bg-gray pt-5 pb-5"]}>
+        <div className={["container"]}>
+          <div class={["row"]}>
+            <div class={style["section-head"]+[" col-sm-12"]}>
               <h4>
                 <span>Защо да изберете</span> нас?
               </h4>
