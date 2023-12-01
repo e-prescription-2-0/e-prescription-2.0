@@ -28,6 +28,41 @@
   color: #284b63;
 }
 
+
+/* Add this to your existing CSS */
+.mobile-menu-icon {
+  display: none; /* Initially hide the mobile menu icon */
+  color: #ffffff;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 18px;
+
+}
+
+@media (max-width: 768px) {
+  .navigation{
+    height: auto;
+  }
+  .navigation-list {
+    display: none; /* Hide the navigation links for small screens */
+    flex-direction: column;
+    position: absolute;
+    gap: 0;
+    height: 100vh;
+   
+    width: 100%;
+    background-color: #3c6e71;
+  }
+
+  .navigation-list.open {
+    display: flex; /* Show the navigation links when the mobile menu is open */
+  }
+
+  .mobile-menu-icon {
+    display: block; /* Show the mobile menu icon for small screens */
+  }
+}
+
 /* .nav ul {
   padding: 0.7em;
   max-width: 1920px;
