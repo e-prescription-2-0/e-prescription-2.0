@@ -1,7 +1,6 @@
 import style from "./Benefits.module.css";
 
 const BenefitCard = (data) => {
-    console.log(data)
   return (
     <div className={["col-lg-4 col-sm-6"]}>
       <div className={style["item"]}>

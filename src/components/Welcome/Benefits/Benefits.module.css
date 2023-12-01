@@ -32,9 +32,9 @@ img {
   max-width: 100%;
   height: auto;
 }
-span,
-a,
-a:hover {
+.item span,
+.item a,
+.item a:hover {
   display: inline-block;
   text-decoration: none;
   color: inherit;
