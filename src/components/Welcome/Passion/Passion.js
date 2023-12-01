@@ -1,7 +1,7 @@
 import Carousel from "react-bootstrap/Carousel";
 import style from "./Passion.module.css";
 
-import doctorImage from "./passion-images/pexels-gustavo-fring-4173249.jpg";
+import doctorImage from "./passion-images/Becoming-a-medical-doctor-or-physician-in-Germany.jpg"
 import pharmacistImage from "./passion-images/pexels-edward-jenner-4031417.jpg";
 import doctorAndPatientImage from "./passion-images/pexels-cottonbro-studio-7579831.jpg";
 import PassionCard from "./PassionCard";
