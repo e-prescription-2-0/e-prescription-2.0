@@ -119,7 +119,7 @@ p.awesome_line {
   -webkit-transition: all 0.5s ease 0;
   transition: all 0.5s ease 0;
   transition: all 0.5s ease 0s;
-  height: auto !important;
+  height: 20rem;
 }
 .item:hover {
   background: #78d6c6;
@@ -151,7 +151,7 @@ p.awesome_line {
   height: 90px;
   line-height: 96px;
   border-radius: 50px;
-  background: rgb(246, 252, 207, 015);
+  background: rgb(246, 252, 207, 0.8);
   color: #78d6c6;
 }
 .item .feature_box_col_two {
