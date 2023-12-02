@@ -34,6 +34,42 @@ const OpenPerscription = () => {
                                 Начин на употреба?  След храна за 5 дни.
                             </Accordion.Body>
                         </Accordion.Item>
+                        <Accordion.Item eventKey="2">
+                            <Accordion.Header><span className={style["div-articels-accordion-item-span"]}>Rp/</span> Нурофен 200мг.</Accordion.Header>
+                            <Accordion.Body className={style["div-articels-accordion-item-content"]}>
+                                Колко пъти дневно?  3 х 1тб.
+                            </Accordion.Body>
+                            <Accordion.Body className={style["div-articels-accordion-item-content"]}>
+                                Начин на употреба?  След храна за 5 дни.
+                            </Accordion.Body>
+                        </Accordion.Item>
+                        <Accordion.Item eventKey="3">
+                            <Accordion.Header><span className={style["div-articels-accordion-item-span"]}>Rp/</span> Нурофен 200мг.</Accordion.Header>
+                            <Accordion.Body className={style["div-articels-accordion-item-content"]}>
+                                Колко пъти дневно?  3 х 1тб.
+                            </Accordion.Body>
+                            <Accordion.Body className={style["div-articels-accordion-item-content"]}>
+                                Начин на употреба?  След храна за 5 дни.
+                            </Accordion.Body>
+                        </Accordion.Item>
+                        <Accordion.Item eventKey="4">
+                            <Accordion.Header><span className={style["div-articels-accordion-item-span"]}>Rp/</span> Нурофен 200мг.</Accordion.Header>
+                            <Accordion.Body className={style["div-articels-accordion-item-content"]}>
+                                Колко пъти дневно?  3 х 1тб.
+                            </Accordion.Body>
+                            <Accordion.Body className={style["div-articels-accordion-item-content"]}>
+                                Начин на употреба?  След храна за 5 дни.
+                            </Accordion.Body>
+                        </Accordion.Item>
+                        <Accordion.Item eventKey="5">
+                            <Accordion.Header><span className={style["div-articels-accordion-item-span"]}>Rp/</span> Нурофен 200мг.</Accordion.Header>
+                            <Accordion.Body className={style["div-articels-accordion-item-content"]}>
+                                Колко пъти дневно?  3 х 1тб.
+                            </Accordion.Body>
+                            <Accordion.Body className={style["div-articels-accordion-item-content"]}>
+                                Начин на употреба?  След храна за 5 дни.
+                            </Accordion.Body>
+                        </Accordion.Item>
                     </Accordion>
                 </div>
 
