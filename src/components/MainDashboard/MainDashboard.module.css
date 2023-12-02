@@ -1,0 +1,10 @@
+.mainDashboard {
+    display: flex;
+    justify-content: space-around;
+    padding-block: 1em;
+}
+
+.mainDashboard-content {
+    display: flex;
+    column-gap: 20px;
+}
