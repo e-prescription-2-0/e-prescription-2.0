@@ -6,28 +6,36 @@
   z-index: 1100;
   height: 80px;
   background-color: #3c6e71;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.navigation-logo-name{
+  padding-inline: 1rem;
+  font-family: "Kaushan Script", cursive;
+  color: white;
+  cursor: pointer;
 }
 
 .navigation-list {
   display: flex;
   flex-direction: row;
-  justify-content: center;
   align-items: center;
   list-style: none;
-  gap: 4rem;
   height: 100%;
 }
 
 .navigation-list-item {
+  padding: 1rem ;
   color: #ffffff;
   font-size: 18px;
 }
 
 .navigation-list-item:hover {
   cursor: pointer;
-  color: #284b63;
+  background: rgb(246, 252, 207, 0.8);
+  color: #78d6c6;
 }
-
 
 /* Add this to your existing CSS */
 .mobile-menu-icon {
@@ -36,22 +44,35 @@
   font-size: 24px;
   cursor: pointer;
   padding: 18px;
-
+}
+.mobile-menu-icon:hover {
+  background: rgb(246, 252, 207, 0.8);
+  color: #78d6c6;
 }
 
 @media (max-width: 768px) {
-  .navigation{
-    height: auto;
+  .navigation {
+    height: 60px;
   }
   .navigation-list {
     display: none; /* Hide the navigation links for small screens */
     flex-direction: column;
     position: absolute;
     gap: 0;
-    height: 100vh;
-   
+
     width: 100%;
     background-color: #3c6e71;
+    height: auto;
+    top: 60px;
+
+  }
+  .navigation-list li {
+    width: 100%;
+    text-align: center;
+  }
+  .navigation-list li:hover {
+    background: rgb(246, 252, 207, 0.8);
+    color: #78d6c6;
   }
 
   .navigation-list.open {

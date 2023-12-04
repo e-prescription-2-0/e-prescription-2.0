@@ -14,6 +14,7 @@ export const Navigation = () => {
 
   return (
     <nav className={`${style["navigation"]} ${isMobileMenuOpen ? style["open"] : ""}`}>
+      <h3 className={style['navigation-logo-name']}>e-Prescription</h3>
       <FontAwesomeIcon icon={faBars} className={style["mobile-menu-icon"]} onClick={toggleMobileMenu} />
       <ul className={`${style["navigation-list"]} ${isMobileMenuOpen ? style["open"] : ""}`}>
         {navLinkConfig.map((link) =>
