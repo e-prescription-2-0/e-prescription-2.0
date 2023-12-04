@@ -1,25 +1,28 @@
+import { faAngleRight } from "@fortawesome/free-solid-svg-icons"
 import { ListGroup } from "react-bootstrap"
+import style from "./PrescriptionsList.module.css"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
-const PrescriptionCard = ()=>{
+const PrescriptionCard = ({number, doctor, patient, date})=>{
     return(
-        <ListGroup.Item className={style["prescriptions-list-item"]}>
+        <li className={style["prescriptions-list-item"]}>
         <div>
           <p>
-            <span>Rp №:</span> 1234
+            <span>Rp №:</span> {number}
           </p>
           <p>
-            <span>От:</span> д-р Радева
+            <span>От:</span> {doctor}
           </p>
           <p>
-            <span>За:</span> Пешо Пешев
+            <span>За:</span> {patient}
           </p>
           <p>
-            <span>Дата:</span> 12.12.2023
+            <span>Дата:</span> {date}
           </p>
         </div>
 
         <FontAwesomeIcon icon={faAngleRight} />
-      </ListGroup.Item>
+      </li>
     )
 }
 export default PrescriptionCard
