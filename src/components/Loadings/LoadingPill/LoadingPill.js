@@ -1,22 +1,23 @@
-import './LoadingPill.css'
+import style from "./LoadingPill.module.css"
+
 const LoadingPill = () => {
   return (
-    <div class="absCenter ">
-      <div class="loaderPill">
-        <div class="loaderPill-anim">
-          <div class="loaderPill-anim-bounce">
-            <div class="loaderPill-anim-flop">
-              <div class="loaderPill-pill"></div>
+    <div className={style["absCenter"]}>
+      <div className={style["loaderPill"]}>
+        <div className={style["loaderPill-anim"]}>
+          <div className={style["loaderPill-anim-bounce"]}>
+            <div className={style["loaderPill-anim-flop"]}>
+              <div className={style["loaderPill-pill"]}></div>
             </div>
           </div>
         </div>
-        <div class="loaderPill-floor">
-          <div class="loaderPill-floor-shadow"></div>
+        <div className={style["loaderPill-floor"]}>
+          <div className={style["loaderPill-floor-shadow"]}></div>
         </div>
-        <div class="loaderPill-text">Loading your RX</div>
+        <div className={style["loaderPill-text"]}>Loading your RX</div>
       </div>
     </div>
-  );
-};
+  )
+}
 
 export default LoadingPill
