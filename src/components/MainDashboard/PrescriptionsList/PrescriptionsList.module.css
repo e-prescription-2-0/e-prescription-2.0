@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
 
 .prescriptions-list-div p {
   margin: 0;
@@ -36,7 +36,7 @@
   text-align: justify;
   text-overflow: ellipsis;
   white-space: nowrap;
-  font-family: Inter;
+  font-family: "Inter", sans-serif;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
@@ -51,10 +51,9 @@
 }
 
 @media only screen and (max-width: 600px) {
-  .prescriptions-list-div{
+  .prescriptions-list-div {
     max-height: 100%;
     display: block;
-
   }
   .prescriptions-list-div {
     width: auto;
@@ -62,6 +61,5 @@
   .prescriptions-list-item {
     height: auto;
     width: auto;
-    
   }
 }
