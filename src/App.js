@@ -1,17 +1,20 @@
-import "./App.css";
-import Popup from "./components/Popup/Popup";
-import { Switch, Route, BrowserRouter as Router } from "react-router-dom";
-import WelcomeView from "./components/WelcomeView/WelcomeView";
+import { Route, Routes } from "react-router-dom"
+import style from "./App.module.css"
+import { Footer } from "./components/Footer/Footer"
+import Header from "./components/Header/Header"
+import { Welcome } from "./components/Welcome/Welcome"
 
 const App = () => {
   return (
-    <Router>
-      <Switch>
-        <Route path="/" exact component={WelcomeView} />
-        <Route path="/popup" component={Popup} />
-      </Switch>
-    </Router>
-  );
-};
+    <main className={style["main-content"]}>
+      <Header />
+      <Routes>
+        <Route path="/" element={<Welcome />} />
+      </Routes>
 
-export default App;
+      <Footer />
+    </main>
+  )
+}
+
+export default App
