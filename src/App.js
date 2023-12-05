@@ -1,17 +1,17 @@
 import "./App.css";
 import Popup from "./components/Popup/Popup";
-import { Switch, Route, BrowserRouter as Router } from "react-router-dom";
+import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import WelcomeView from "./components/WelcomeView/WelcomeView";
 import MainDashboard from "./components/MainDashboard/MainDashboard";
 
 const App = () => {
   return (
     <Router>
-      <Switch>
-        <Route path="/" exact component={WelcomeView} />
-        <Route path="/popup" component={Popup} />
-        <Route path="/dashboard" component={MainDashboard}/>
-      </Switch>
+      <Routes>
+        <Route path="/" exact element={<WelcomeView/>} />
+        <Route path="/popup" element={<Popup/>} />
+        <Route path="/dashboard" element={<MainDashboard/>}/>
+      </Routes>
     </Router>
   );
 };
