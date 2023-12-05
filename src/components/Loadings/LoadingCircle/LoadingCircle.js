@@ -1,9 +1,7 @@
-import './LoadingCircle.css'
-const LoadingCircle= () => {
-  return (
-    <div class="spinner"></div>
+import style from "./LoadingCircle.module.css"
 
-  );
-};
+const LoadingCircle = () => {
+  return <div className={style["spinner"]}></div>
+}
 
 export default LoadingCircle

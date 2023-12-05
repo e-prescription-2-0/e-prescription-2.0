@@ -1,17 +1,15 @@
-import "./App.css";
-import Popup from "./components/Popup/Popup";
-import { Switch, Route, BrowserRouter as Router } from "react-router-dom";
-import WelcomeView from "./components/WelcomeView/WelcomeView";
+import { Route, BrowserRouter as Router, Routes } from "react-router-dom"
+import "./App.css"
+import LoadingPill from "./components/Loadings/LoadingPill/LoadingPill"
 
 const App = () => {
   return (
     <Router>
-      <Switch>
-        <Route path="/" exact component={WelcomeView} />
-        <Route path="/popup" component={Popup} />
-      </Switch>
+      <Routes>
+        <Route path="/" exact element={<LoadingPill />} />
+      </Routes>
     </Router>
-  );
-};
+  )
+}
 
-export default App;
+export default App
