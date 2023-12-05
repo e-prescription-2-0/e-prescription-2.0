@@ -1,14 +1,19 @@
-import { Route, BrowserRouter as Router, Routes } from "react-router-dom"
-import "./App.css"
-import LoadingPill from "./components/Loadings/LoadingPill/LoadingPill"
+import { Route, Routes } from "react-router-dom"
+import style from "./App.module.css"
+import { Footer } from "./components/Footer/Footer"
+import Header from "./components/Header/Header"
+import { Welcome } from "./components/Welcome/Welcome"
 
 const App = () => {
   return (
-    <Router>
+    <main className={style["main-content"]}>
+      <Header />
       <Routes>
-        <Route path="/" exact element={<LoadingPill />} />
+        <Route path="/" element={<Welcome />} />
       </Routes>
-    </Router>
+
+      <Footer />
+    </main>
   )
 }
 
