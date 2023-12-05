@@ -75,3 +75,18 @@ width: 20rem;
     align-items: center;
   }
 }
+.steps-demo-pill-svg{
+  color: white;
+  position: absolute;
+  height: 2.5rem;
+
+}
+.steps-demo-pill-svg:nth-child(1){
+  top: 5px;
+  left: 5px;
+}
+
+.steps-demo-pill-svg:nth-child(2){
+  bottom: 5px;
+  right: 5px;
+}
