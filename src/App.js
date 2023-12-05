@@ -1,19 +1,17 @@
-import "./App.css";
-import Popup from "./components/Popup/Popup";
-import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
-import WelcomeView from "./components/WelcomeView/WelcomeView";
-import MainDashboard from "./components/MainDashboard/MainDashboard";
+import { Route, BrowserRouter as Router, Routes } from "react-router-dom"
+import "./App.css"
+import Popup from "./components/Popup/Popup"
+import WelcomeView from "./components/WelcomeView/WelcomeView"
 
 const App = () => {
   return (
     <Router>
       <Routes>
-        <Route path="/" exact element={<WelcomeView/>} />
-        <Route path="/popup" element={<Popup/>} />
-        <Route path="/dashboard" element={<MainDashboard/>}/>
+        <Route path="/" exact element={<WelcomeView />} />
+        <Route path="/popup" element={<Popup />} />
       </Routes>
     </Router>
-  );
-};
+  )
+}
 
-export default App;
+export default App
