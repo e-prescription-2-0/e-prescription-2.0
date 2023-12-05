@@ -1,0 +1,65 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
+
+.prescriptions-list-div p {
+  margin: 0;
+}
+
+.prescriptions-list-div {
+  background-color: #d9d9d9;
+  display: inline-block;
+  gap: 10px;
+  padding: 10px 20px;
+  border-radius: 10px;
+  margin: 20px;
+  max-height: 35rem;
+  overflow-x: visible;
+  overflow-y: auto;
+}
+
+.prescriptions-list-item {
+  background-color: white;
+  height: 5rem;
+  width: 15rem; /* Fixed width for each item */
+  padding: 15px;
+  border-radius: 10px;
+  overflow: hidden;
+  color: #284b63;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.prescriptions-list-item span {
+  overflow: hidden;
+  color: #284b63;
+  text-align: justify;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  text-transform: capitalize;
+}
+
+.prescriptions-list-item svg {
+  color: #284b63;
+  width: 15px;
+  height: 24px;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 600px) {
+  .prescriptions-list-div {
+    max-height: 100%;
+    display: block;
+  }
+  .prescriptions-list-div {
+    width: auto;
+  }
+  .prescriptions-list-item {
+    height: auto;
+    width: auto;
+  }
+}
