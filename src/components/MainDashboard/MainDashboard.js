@@ -1,9 +1,9 @@
-import OpenPerscription from "./OpenPerscription/OpenPerscription";
+import Prescription from "./Prescription/Prescription";
 
 const MainDashboard = () => {
     return (
         <div>
-            <OpenPerscription />
+            <Prescription />
         </div>
     )
 }
