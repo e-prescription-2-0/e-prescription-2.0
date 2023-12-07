@@ -1,29 +1,40 @@
 export const navLinkConfig = [
-  { linkName: "Home", hideFor: [], onClick: () => {} },
+  {
+    linkName: "Home",
+    hideFor: [],
+    onClick: () => { },
+    linkTo: "/"
+  },
   {
     linkName: "My Prescriptions",
     hideFor: ["guest", "pharmacist"],
-    onClick: () => {},
+    onClick: () => { },
   },
   {
     linkName: "My Patients",
     hideFor: ["pharmacist", "patient", "guest"],
-    onClick: () => {},
+    onClick: () => { },
   },
-  { linkName: "Search", hideFor: ["guest"], onClick: () => {} },
-  { linkName: "Help", hideFor: [], onClick: () => {} },
+  { linkName: "Search", hideFor: ["guest"], onClick: () => { } },
+  { linkName: "Help", hideFor: [], onClick: () => { } },
   {
     linkName: "Login",
     hideFor: ["pharmacist", "doctor", "patient"],
-    onClick: () => {},
+    onClick: () => { },
   },
   {
     linkName: "Register",
     hideFor: ["pharmacist", "doctor", "patient"],
-    onClick: () => {},
+    onClick: () => { },
   },
-  { linkName: "Profile", hideFor: ["guest"], onClick: () => {} },
-  { linkName: "Logout", hideFor: ["guest"], onClick: () => {} },
+  { linkName: "Profile", hideFor: ["guest"], onClick: () => { } },
+  {
+    linkName: "Dashboard",
+    hideFor: ["guest"],
+    onClick: () => { },
+    linkTo: "/dashboard"
+  },
+  { linkName: "Logout", hideFor: ["guest"], onClick: () => { } },
 ]
 
 const userRolesConfig = ["doctor", "pharmacist", "patient", "guest"]
