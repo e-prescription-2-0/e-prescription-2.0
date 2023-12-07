@@ -15,3 +15,33 @@ export const medicinesData = [
     description: "",
   },
 ]
+
+export const doctorsData = [
+  {
+    id: "1",
+    userId: "1",
+    name: "Петров", //УИН номер
+    hospitalName: "Първа Градска",
+    specialty: "Педиатър",
+    patients: ["Пешо", "Гошо", "Тошо"],
+    prescriptions: ["12", "23", "34"],
+  },
+  {
+    id: "2",
+    userId: "2",
+    name: "Георгиев", //УИН номер
+    hospitalName: "Първа Градска",
+    specialty: "Педиатър",
+    patients: ["Пешо", "Гошо", "Тошо"],
+    prescriptions: ["12", "23", "34"],
+  },
+  {
+    id: "3",
+    userId: "3",
+    name: "Иванов", //УИН номер
+    hospitalName: "Първа Градска",
+    specialty: "Педиатър",
+    patients: ["Пешо", "Гошо", "Тошо"],
+    prescriptions: ["12", "23", "34"],
+  },
+]

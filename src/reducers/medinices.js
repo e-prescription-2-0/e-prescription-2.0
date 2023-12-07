@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit"
 
 const initialState = {
-  medicines: [],
+  allMedicines: [],
 }
 
 export const medicinesSlice = createSlice({
@@ -10,7 +10,8 @@ export const medicinesSlice = createSlice({
   reducers: {
     fetchMedicines: () => {},
     setMedicines: (state, action) => {
-      state.medicines = [...action.payload]
+      console.log("action", action)
+      state.allMedicines = [...action.payload]
     },
   },
 })
