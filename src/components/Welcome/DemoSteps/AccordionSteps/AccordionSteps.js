@@ -22,7 +22,7 @@ const AccordionSteps = ({ title, content, icon }) => {
         <h4>{title}</h4>
         <div className="arrow-down"></div>
       </div>
-      <p>{content}</p>
+      <p>{content.join(' ')}</p>
     </div>
   );
 };

@@ -3,7 +3,7 @@ import AuthenticationAnimatedImage from "./7e8f9698371d551c82f3a74e8cc301fd.png"
 import "./DemoSteps.css";
 import AccordionSteps from "./AccordionSteps/AccordionSteps";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { fa1, fa2, fa3 } from "@fortawesome/free-solid-svg-icons";
+import { fa1, fa2, fa3, faTablets } from "@fortawesome/free-solid-svg-icons";
 
 const steps = [
   {
@@ -24,18 +24,16 @@ const steps = [
       "Не забравяй да запазиш промените след като завършиш редактирането на профила си.",
     ],
     icon: <FontAwesomeIcon icon={fa2} />,
-
   },
 
   {
     step: "3",
     title: "Стартирай използването на сайта",
     text: [
-      "Разгледай различните раздели и категории на сайта, за да разбереш какви възможности предоставя",
+      "Разгледай различните раздели и категории на сайта, за да разбереш какви възможности предоставя.",
       "След като си запознал с основните функции, просто започни да използваш сайта и се наслаждавай на предоставените възможности.",
     ],
     icon: <FontAwesomeIcon icon={fa3} />,
-
   },
 ];
 
@@ -44,6 +42,8 @@ const DemoSteps = () => {
     <section className="steps-demo-section">
       <div className="steps-demo-div-wrapper">
         <div className="steps-demo-div-content">
+          <FontAwesomeIcon className='steps-demo-pill-svg' icon={faTablets} />
+          <FontAwesomeIcon className='steps-demo-pill-svg' icon={faTablets} />
           <div className=" text-center">
             <h1>Как работи?</h1>
           </div>
@@ -53,10 +53,15 @@ const DemoSteps = () => {
 
             <ul className="col-sm-4">
               {steps.map((data) => {
-                return<li key={data.step}>
-                  <AccordionSteps title={data.title} content={data.text} icon={data.icon} />
-                </li>;
-                
+                return (
+                  <li key={data.step}>
+                    <AccordionSteps
+                      title={data.title}
+                      content={data.text}
+                      icon={data.icon}
+                    />
+                  </li>
+                );
               })}
             </ul>
           </div>
