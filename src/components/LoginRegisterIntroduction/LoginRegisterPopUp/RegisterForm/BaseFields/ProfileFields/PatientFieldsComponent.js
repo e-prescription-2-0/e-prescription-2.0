@@ -1,23 +1,25 @@
+import { Form } from "react-bootstrap";
+
 const PatientFieldsComponent = () => {
   return (
     <>
-      <input
+      <Form.Control
         type="text"
         id="patientId"
-        className="fadeIn third"
+        className="fadeIn fourth"
         name="patientId"
         placeholder="PatientId"
       />
       
-      <select class="form-select fadeIn third" aria-label="Default select example  ">
+      <select class="form-select fadeIn fourth" aria-label="Default select example  ">
           <option value="male">Male</option>
-          <option value="famale">Famale</option>
+          <option value="female">Female</option>
       </select>
 
-      <input
+      <Form.Control
         type="date"
         id="dateOfBirth"
-        className="fadeIn third"
+        className="fadeIn fourth"
         name="dateOfBirth"
         placeholder="Date Of Birth"
       />

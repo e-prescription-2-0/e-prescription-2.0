@@ -1,17 +1,19 @@
+import { Form } from "react-bootstrap";
+
 const PharmacistFieldsComponent = () => {
   return (
     <>
-      <input
+      <Form.Control
         type="text"
         id="pharmacistId"
-        className="fadeIn third"
+        className="fadeIn fourth"
         name="pharmacistId"
         placeholder="pharmacistId"
       />
-      <input
+      <Form.Control
         type="text"
         id="pharmacyName"
-        className="fadeIn third"
+        className="fadeIn fourth"
         name="pharmacyName"
         placeholder="pharmacyName"
       />

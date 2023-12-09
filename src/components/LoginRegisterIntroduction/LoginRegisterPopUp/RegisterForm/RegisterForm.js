@@ -1,23 +1,24 @@
-import PatientFieldsComponent from "./BaseFields/ProfileFields/PatientFieldsComponent";
-import DoctorFieldsComponent from "./BaseFields/ProfileFields/DoctorFieldsComponent";
-import PharmacistFieldsComponent from "./BaseFields/ProfileFields/PharmacistFieldsComponent";
+
 import { useState } from "react";
 import CredentialsFieldsComponent from "./BaseFields/CredentialsFieldsComponent";
 import PersonalFieldsComponent from "./BaseFields/PersonalFieldsComponent";
 
 const RegisterForm = () => {
   const [numberPart, setNumberPart] = useState(1)
+  const [profile, setProfile] = useState("patient");
+
   return (
     <>
       <form>
+        <h3>Register</h3>
         <div className={numberPart!==1 && 'hideFields'}>
-          <CredentialsFieldsComponent />
-          <h2 className="next"  onClick={()=>setNumberPart(2)}>Next</h2>
+          <CredentialsFieldsComponent setProfile={setProfile}/>
+          <button type="button" className="fadeIn fourth popup-form-button-next popup-form-button"  onClick={()=>setNumberPart(2)}>Next</button>
           
         </div>
         <div className={numberPart!==2 && 'hideFields'}>
-          <PersonalFieldsComponent />
-          <input type="submit" className="fadeIn fourth" value="Register" />
+          <PersonalFieldsComponent profile={profile}/>
+          <button type="submit" className="fadeIn fourth popup-form-button" >Register</button>
         </div>
 
       </form>

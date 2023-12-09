@@ -4,30 +4,30 @@
 
 html, body {
   padding: 0;
-  margin: 0 !important;
+  margin: 0 ;
   position: relative;
   min-height: 100vh;
-
 }
 
-.page {
+.page-pop-up {
   min-height: 100vh;
-  background-color: #54939c !important;
+  background-color: rgba(0, 0, 0, 0.8) ;
   display: flex;
   position: absolute;
   align-items: center;
   padding: 0;
   margin: 0;
+  width: 100%;
 }
 
-a {
-  color: #39ace7;
+.page-pop-up a {
+  color: #12486B;
   display: inline-block;
-  text-decoration: none;
+  text-decoration: none !important;
   font-weight: 400;
 }
 
-h2 {
+.page-pop-up h2 {
   text-align: center;
   font-size: 16px;
   font-weight: 600;
@@ -36,10 +36,14 @@ h2 {
   margin: 40px 8px 10px 8px;
   color: #cccccc;
 }
+.page-pop-up h3{
+  color: #f6f6f6;
+  margin-top: 40px;
+}
 
 /* STRUCTURE */
 
-.wrapper {
+.page-pop-up .wrapper {
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -53,7 +57,7 @@ h2 {
 #formContent {
   -webkit-border-radius: 10px 10px 10px 10px;
   border-radius: 10px 10px 10px 10px;
-  background: #fff;
+  background: #419197;
   padding: 30px;
   width: 90%;
   max-width: 450px;
@@ -75,21 +79,20 @@ h2 {
 
 /* TABS */
 
-h2.inactive {
+.page-pop-up h2.inactive {
   color: #cccccc;
 }
 
-h2.active {
+.page-pop-up h2.active {
   color: #0d0d0d;
   border-bottom: 2px solid #39ace7;
 }
 
 /* FORM TYPOGRAPHY*/
 
-input[type="button"],
-input[type="submit"],
-input[type="reset"] {
-  background-color: #39ace7;
+.popup-form-button{
+  font-weight: bold;
+  background-color: #12486B;
   border: none;
   color: white;
   padding: 15px 80px;
@@ -109,11 +112,8 @@ input[type="reset"] {
   -o-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
 }
-
-input[type="button"]:hover,
-input[type="submit"]:hover,
-input[type="reset"]:hover {
-  background-color: #39ace7;
+.popup-form-button:hover{
+  background-color: #12476bd5;
 }
 
 input[type="button"]:active,
@@ -130,7 +130,7 @@ input[type="text"],input[type="date"] {
   background-color: #f6f6f6;
   border: none;
   color: #0d0d0d;
-  padding: 15px 32px;
+  padding: 25px 32px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
@@ -147,10 +147,7 @@ input[type="text"],input[type="date"] {
   border-radius: 5px 5px 5px 5px;
 }
 
-input[type="text"]:focus {
-  background-color: #fff;
-  border-bottom: 2px solid #5fbae9;
-}
+
 
 input[type="text"]:placeholder {
   color: #cccccc;
@@ -166,6 +163,31 @@ input[type="text"]:placeholder {
   animation-duration: 1s;
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
+}
+
+select{
+  color: #12486B;
+  font-weight: bold;
+  background-color: #f6f6f6;
+  border: none;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 5px;
+  width: 85%;
+  border: 2px solid #f6f6f6;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -ms-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  -webkit-border-radius: 5px 5px 5px 5px;
+  border-radius: 5px 5px 5px 5px;
+}
+select option{
+  color: #cccccc;
 }
 
 @-webkit-keyframes fadeInDown {
@@ -220,6 +242,8 @@ input[type="text"]:placeholder {
   }
 }
 
+
+
 .fadeIn {
   opacity: 0;
   -webkit-animation: fadeIn ease-in 1;
@@ -260,28 +284,24 @@ input[type="text"]:placeholder {
 }
 
 /* Simple CSS3 Fade-in Animation */
-.underlineHover:after {
+.page-pop-up .underlineHover:after {
   display: block;
   left: 0;
   bottom: -10px;
   width: 0;
   height: 2px;
-  background-color: #56baed;
+  background-color: #0056b3;
   content: "";
   transition: width 0.2s;
 }
 
-.underlineHover:hover {
-  color: #0d0d0d;
-}
-
-.underlineHover:hover:after {
+.page-pop-up .underlineHover:hover:after {
   width: 100%;
 }
 
 /* OTHERS */
 
-*:focus {
+.page-pop-up *:focus {
   outline: none;
 }
 
@@ -293,11 +313,11 @@ input[type="text"]:placeholder {
   box-sizing: border-box;
 }
 
-.welcomePart {
+.page-pop-up .welcomePart {
   flex-direction: column;
   text-align: center;
 }
-.welcomePart h1 {
+.page-pop-up .welcomePart h1 {
   flex-shrink: 0;
   color: #fff;
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -307,7 +327,7 @@ input[type="text"]:placeholder {
   font-weight: 400;
   line-height: normal;
 }
-.welcomePart h2 {
+.page-pop-up .welcomePart h2 {
   color: #fff;
 
   text-align: center;
@@ -318,7 +338,7 @@ input[type="text"]:placeholder {
   font-weight: 400;
   line-height: normal;
 }
-.welcomePart button {
+.page-pop-up .welcomePart button {
   width: 300px;
   height: 57px;
   flex-shrink: 0;
@@ -335,51 +355,33 @@ input[type="text"]:placeholder {
   line-height: normal;
 }
 
-select{
-  color: #54939c;
-  font-weight: bold;
+
+
+.popup-form-button-next{
   background-color: #f6f6f6;
-  border: none;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 5px;
-  width: 85%;
-  border: 2px solid #f6f6f6;
-  -webkit-transition: all 0.5s ease-in-out;
-  -moz-transition: all 0.5s ease-in-out;
-  -ms-transition: all 0.5s ease-in-out;
-  -o-transition: all 0.5s ease-in-out;
-  transition: all 0.5s ease-in-out;
-  -webkit-border-radius: 5px 5px 5px 5px;
-  border-radius: 5px 5px 5px 5px;
-}
-select option{
-  color: #cccccc;
+  color: #12486B;
+
 }
 
-.next{
-  color: #39ace7;
-  display: block;
+.popup-form-button-next:hover{
+  background-color: #cccccce0;
 }
-.hideFields{
+.page-pop-up .hideFields{
   display: none;
 }
-.closeIcon{
-  color: #39ace7;
+.page-pop-up .closeIcon{
+  color: #12486B;
   position: absolute;
   right: 5px;
   top: 5px;
   height: 26px;
 }
-.closeIcon:hover{
-  color: red;
+.page-pop-up .closeIcon:hover{
+  color: #F5FCCD;
 }
 @media only screen and (max-width:600px){
 
-  .page{
+  .page-pop-up{
     flex-direction: column;
     justify-content: center;
     margin: 0px auto;

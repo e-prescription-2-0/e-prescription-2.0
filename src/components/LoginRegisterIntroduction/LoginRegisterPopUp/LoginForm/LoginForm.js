@@ -1,28 +1,27 @@
-import LogoScroll from "./LogoScroll";
+import Form from 'react-bootstrap/Form';
 
 const LoginForm = () => {
   return (
     <>
-      {/* <!-- Icon --> */}
+      <h3>Login</h3>
 
-      <LogoScroll />
-      <form>
-        <input
+      <Form>
+        <Form.Control
           type="text"
           id="login"
           className="fadeIn second"
           name="login"
-          placeholder="email"
+          placeholder="Email"
         />
-        <input
+        <Form.Control
           type="text"
           id="password"
           className="fadeIn third"
           name="login"
-          placeholder="password"
+          placeholder="Password"
         />
-        <input type="submit" className="fadeIn fourth" value="Log In" />
-      </form>
+        <button type="submit" className="fadeIn fourth popup-form-button">Log In</button>
+      </Form>
       {/* <!-- Remind Password --> */}
       <div id="formFooter">
         <a className="underlineHover" href="#">

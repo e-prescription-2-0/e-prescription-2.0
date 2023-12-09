@@ -1,24 +1,26 @@
+import { Form } from "react-bootstrap";
+
 const DoctorFieldsComponent = () => {
   return (
     <>
-      <input
+      <Form.Control
         type="text"
         id="doctorId"
         className="fadeIn third"
         name="doctorId"
         placeholder="doctorId"
       />
-      <input
+      <Form.Control
         type="text"
         id="hospitalName"
-        className="fadeIn third"
+        className="fadeIn fourth"
         name="hospitalName"
         placeholder="hospitalName"
       />
-      <input
+      <Form.Control
         type="text"
         id="specialty"
-        className="fadeIn third"
+        className="fadeIn fourth"
         name="specialty"
         placeholder="specialty"
       />

@@ -1,32 +1,39 @@
-import PatientFieldsComponent from "./ProfileFields/PatientFieldsComponent";
-import DoctorFieldsComponent from "./ProfileFields/DoctorFieldsComponent";
-import PharmacistFieldsComponent from "./ProfileFields/PharmacistFieldsComponent";
-import { useState } from "react";
+import Form from "react-bootstrap/Form";
 
-const CredentialsFieldsComponent = () => {
+const CredentialsFieldsComponent = ({setProfile}) => {
+
   return (
     <>
-      <input
+      <Form.Control
         type="text"
         id="email"
         className="fadeIn first col"
         name="email"
         placeholder="Email"
       />
-      <input
+      <Form.Control
         type="text"
         id="password"
         className="fadeIn second col"
         name="password"
         placeholder="Password"
       />
-      <input
+      <Form.Control
         type="text"
         id="repeatPassword"
         className="fadeIn third col"
         name="repeatPassword"
         placeholder="Repeat Password"
       />
+      <select
+        onChange={(e) => setProfile(e.target.value)}
+        class="form-select fadeIn fourth"
+        aria-label="Default select example  "
+      >
+        <option value="patient">Patient</option>
+        <option value="pharmacist">Pharmacist</option>
+        <option value="doctor">Doctor</option>
+      </select>
     </>
   );
 };
