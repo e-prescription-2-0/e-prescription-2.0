@@ -1,0 +1,26 @@
+.form-container {
+    flex-basis: 25%;
+    max-width: 20em;
+    padding: 2em;
+    background-color: #284b63 ;
+    border-radius: 0.5em;
+    position: absolute;
+    top: 39%;
+    left: 49%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+}
+
+
+.confirm {
+    background-color: #3c6e71;
+    border: none;
+    margin-top: 10px;
+    margin-right: 20px;
+}
+
+.reject {
+    margin-top: 10px;
+    margin-right: 20px; 
+}
+
