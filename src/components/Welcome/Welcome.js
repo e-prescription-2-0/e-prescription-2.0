@@ -7,6 +7,7 @@ import DemoSteps from "./DemoSteps/DemoSteps"
 import Hero from "./Hero/Hero"
 import Passion from "./Passion/Passion"
 import style from "./Welcome.module.css"
+import { prescriptionsSlice } from "../../reducers/prescriptions"
 
 export const Welcome = () => {
   const [inputValue, setInputValue] = useState("1")
@@ -16,6 +17,10 @@ export const Welcome = () => {
   const getDoctorById = useReduxAction(usersSlice.actions.fetchDoctorById)
   // const medicines = useReduxState((state) => state.medicines.allMedicines)
   const doctors = useReduxState((state) => state.users.doctors)
+
+  const myPrescriptions = useReduxState((state)=> state.prescriptions.allMyPrescriptions)
+  const getAllMyPrescriptions = useReduxAction(prescriptionsSlice.actions.fetchMyPrescriptions)
+
 
   const handleChange = (e) => {
     setInputValue(e.target.value)
@@ -57,6 +62,23 @@ export const Welcome = () => {
           )
         })}
       </div> */}
+      {/* <button
+        style={{ width: 50, height: 100, fontSize: 32 }}
+        onClick={() => getAllMyPrescriptions()}
+      >
+        Click
+      </button>
+      <div style={{ marginTop: 10 }}>
+        {myPrescriptions.map((d) => {
+          return (
+            <>
+              <p>Doctor {d.prescribedBy} - Patient {d.prescribedTo}</p>
+            </>
+          )
+        })}
+      </div> */}
+
+      
 
       <DemoSteps />
 
