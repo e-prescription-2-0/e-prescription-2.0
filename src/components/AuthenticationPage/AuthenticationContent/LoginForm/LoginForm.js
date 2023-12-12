@@ -14,7 +14,7 @@ const LoginForm = () => {
           placeholder="Email"
         />
         <Form.Control
-          type="text"
+          type="password"
           id="password"
           className="fadeIn third"
           name="login"

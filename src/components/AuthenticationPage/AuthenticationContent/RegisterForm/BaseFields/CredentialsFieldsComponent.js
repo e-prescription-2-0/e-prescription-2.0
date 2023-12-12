@@ -12,14 +12,14 @@ const CredentialsFieldsComponent = ({setProfile}) => {
         placeholder="Email"
       />
       <Form.Control
-        type="text"
+        type="password"
         id="password"
         className="fadeIn second col"
         name="password"
         placeholder="Password"
       />
       <Form.Control
-        type="text"
+        type="password"
         id="repeatPassword"
         className="fadeIn third col"
         name="repeatPassword"
@@ -27,7 +27,7 @@ const CredentialsFieldsComponent = ({setProfile}) => {
       />
       <select
         onChange={(e) => setProfile(e.target.value)}
-        class="form-select fadeIn fourth"
+        className="form-select fadeIn fourth"
         aria-label="Default select example  "
       >
         <option value="patient">Patient</option>

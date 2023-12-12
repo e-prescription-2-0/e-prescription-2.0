@@ -4,7 +4,7 @@ import RegisterForm from "./RegisterForm/RegisterForm";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 
-const LoginPopUpComponent = ({ formName, setForm }) => {
+const AuthenticationContent = ({ formName, setForm }) => {
   const newRef = useRef(null);
 
   const handleOutsideClick = (e) => {
@@ -44,4 +44,4 @@ const LoginPopUpComponent = ({ formName, setForm }) => {
   );
 };
 
-export default LoginPopUpComponent;
+export default AuthenticationContent;

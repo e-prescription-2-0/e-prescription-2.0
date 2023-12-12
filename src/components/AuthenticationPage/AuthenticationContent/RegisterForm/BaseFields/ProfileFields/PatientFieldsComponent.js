@@ -11,7 +11,7 @@ const PatientFieldsComponent = () => {
         placeholder="PatientId"
       />
       
-      <select class="form-select fadeIn fourth" aria-label="Default select example  ">
+      <select className="form-select fadeIn fourth" aria-label="Default select example  ">
           <option value="male">Male</option>
           <option value="female">Female</option>
       </select>
