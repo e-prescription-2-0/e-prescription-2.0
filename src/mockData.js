@@ -45,3 +45,43 @@ export const doctorsData = [
     prescriptions: ["12", "23", "34"],
   },
 ]
+
+export const prescriptionsData = [
+  {
+    prescriptionId: '12',
+    medicines: ['1234', '5678'],
+    issuedOn: 'string',
+    isCompleted: true,
+    validPeriod: '10.10.2010',
+    prescribedBy: 'Pensho10',
+    prescribedTo: 'Ivan10'
+},
+
+{
+  prescriptionId: '23',
+  medicines: ['1234', '5678'],
+  issuedOn: 'string',
+  isCompleted: true,
+  validPeriod: '10.10.2010',
+  prescribedBy: 'Ivan2',
+  prescribedTo: 'Pesho2'
+},
+{
+  prescriptionId: '34',
+  medicines: ['1234', '5678'],
+  issuedOn: 'string',
+  isCompleted: true,
+  validPeriod: '10.10.2010',
+  prescribedBy: 'Ivan',
+  prescribedTo: 'RandomName'
+},
+{
+  prescriptionId: '43',
+  medicines: ['1234', '5678'],
+  issuedOn: 'string',
+  isCompleted: true,
+  validPeriod: '10.10.2010',
+  prescribedBy: 'Pesho',
+  prescribedTo: 'Gosho'
+},
+]
