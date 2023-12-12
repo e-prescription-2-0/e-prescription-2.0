@@ -1,0 +1,89 @@
+.navigation {
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1100;
+  height: 80px;
+  background-color: #3c6e71;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.navigation-logo-name {
+  padding-inline: 1rem;
+  font-family: "Kaushan Script", cursive;
+  color: white;
+}
+
+.navigation-logo-name:hover {
+  color: rgb(246, 252, 207, 0.8);
+  cursor: pointer;
+}
+
+.navigation-list {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  list-style: none;
+  height: 100%;
+}
+
+.navigation-list-item {
+  padding: 1rem;
+  color: #ffffff;
+  font-size: 18px;
+}
+
+.navigation-list-item:hover {
+  cursor: pointer;
+  background: rgb(246, 252, 207, 0.8);
+  color: #78d6c6;
+}
+
+/* Add this to your existing CSS */
+.mobile-menu-icon {
+  display: none; /* Initially hide the mobile menu icon */
+  color: #ffffff;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 18px;
+}
+.mobile-menu-icon:hover {
+  background: rgb(246, 252, 207, 0.8);
+  color: #78d6c6;
+}
+
+@media (max-width: 768px) {
+  .navigation {
+    height: 60px;
+    justify-content: space-between;
+  }
+  .navigation-list {
+    display: none; /* Hide the navigation links for small screens */
+    flex-direction: column;
+    position: absolute;
+    gap: 0;
+
+    width: 100%;
+    background-color: #3c6e71;
+    height: auto;
+    top: 60px;
+  }
+  .navigation-list li {
+    width: 100%;
+    text-align: center;
+  }
+  .navigation-list li:hover {
+    background: rgb(246, 252, 207, 0.8);
+    color: #78d6c6;
+  }
+
+  .navigation-list.open {
+    display: flex; /* Show the navigation links when the mobile menu is open */
+  }
+
+  .mobile-menu-icon {
+    display: block; /* Show the mobile menu icon for small screens */
+  }
+}
