@@ -15,3 +15,73 @@ export const medicinesData = [
     description: "",
   },
 ]
+
+export const doctorsData = [
+  {
+    id: "1",
+    userId: "1",
+    name: "Петров", //УИН номер
+    hospitalName: "Първа Градска",
+    specialty: "Педиатър",
+    patients: ["Пешо", "Гошо", "Тошо"],
+    prescriptions: ["12", "23", "34"],
+  },
+  {
+    id: "2",
+    userId: "2",
+    name: "Георгиев", //УИН номер
+    hospitalName: "Първа Градска",
+    specialty: "Педиатър",
+    patients: ["Пешо", "Гошо", "Тошо"],
+    prescriptions: ["12", "23", "34"],
+  },
+  {
+    id: "3",
+    userId: "3",
+    name: "Иванов", //УИН номер
+    hospitalName: "Първа Градска",
+    specialty: "Педиатър",
+    patients: ["Пешо", "Гошо", "Тошо"],
+    prescriptions: ["12", "23", "34"],
+  },
+]
+
+export const prescriptionsData = [
+  {
+    prescriptionId: '12',
+    medicines: ['1234', '5678'],
+    issuedOn: 'string',
+    isCompleted: true,
+    validPeriod: '10.10.2010',
+    prescribedBy: 'Pensho10',
+    prescribedTo: 'Ivan10'
+},
+
+{
+  prescriptionId: '23',
+  medicines: ['1234', '5678'],
+  issuedOn: 'string',
+  isCompleted: true,
+  validPeriod: '10.10.2010',
+  prescribedBy: 'Ivan2',
+  prescribedTo: 'Pesho2'
+},
+{
+  prescriptionId: '34',
+  medicines: ['1234', '5678'],
+  issuedOn: 'string',
+  isCompleted: true,
+  validPeriod: '10.10.2010',
+  prescribedBy: 'Ivan',
+  prescribedTo: 'RandomName'
+},
+{
+  prescriptionId: '43',
+  medicines: ['1234', '5678'],
+  issuedOn: 'string',
+  isCompleted: true,
+  validPeriod: '10.10.2010',
+  prescribedBy: 'Pesho',
+  prescribedTo: 'Gosho'
+},
+]
