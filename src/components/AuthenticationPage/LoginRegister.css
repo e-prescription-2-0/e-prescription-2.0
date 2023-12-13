@@ -116,7 +116,7 @@ html, body {
   background-color: #12476bd5;
 }
 
-input[type="button"]:active,
+/* input[type="button"]:active,
 input[type="submit"]:active,
 input[type="reset"]:active {
   -moz-transform: scale(0.95);
@@ -124,9 +124,9 @@ input[type="reset"]:active {
   -o-transform: scale(0.95);
   -ms-transform: scale(0.95);
   transform: scale(0.95);
-}
+} */
 
-input[type="text"],input[type="date"],input[type="password"] {
+.page-pop-up input[type="text"], .page-pop-up input[type="date"], .page-pop-up input[type="password"] {
   background-color: #f6f6f6;
   border: none;
   color: #0d0d0d;
@@ -149,7 +149,7 @@ input[type="text"],input[type="date"],input[type="password"] {
 
 
 
-input[type="text"]:placeholder {
+.page-pop-up input[type="text"]:placeholder {
   color: #cccccc;
 }
 
@@ -165,12 +165,13 @@ input[type="text"]:placeholder {
   animation-fill-mode: both;
 }
 
-select{
+.page-pop-up select{
   color: #12486B;
   font-weight: bold;
   background-color: #f6f6f6;
   border: none;
-  padding: 15px 32px;
+  padding-top: 10px;
+  padding-bottom: 10px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
@@ -186,7 +187,8 @@ select{
   -webkit-border-radius: 5px 5px 5px 5px;
   border-radius: 5px 5px 5px 5px;
 }
-select option{
+.page-pop-up option{
+  padding: 0;
   color: #cccccc;
 }
 
@@ -312,6 +314,16 @@ select option{
 * {
   box-sizing: border-box;
 }
+.page-pop-up select {
+  /* Your existing styles */
+
+  /* Center options text */
+  text-align: center;
+}
+.page-pop-up select option{
+  margin: 0;
+  padding: 0;
+}
 
 .page-pop-up .welcomePart {
   flex-direction: column;
@@ -357,13 +369,29 @@ select option{
 
 
 
-.popup-form-button-next{
+.popup-form-button-next, .popup-form-button-back{
   background-color: #f6f6f6;
   color: #12486B;
 
 }
+.popup-form-button-back{
+  margin-bottom: 10px;
+}
+.popup-form-button-holder{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.popup-form-button-holder button{
+  margin-bottom: 10px;
+  width: 40%;
+  padding: 15px 10px;
+  margin-bottom: 40px;
 
-.popup-form-button-next:hover{
+
+
+}
+.popup-form-button-next:hover, .popup-form-button-back:hover{
   background-color: #cccccce0;
 }
 .page-pop-up .hideFields{
@@ -387,4 +415,7 @@ select option{
     margin: 0px auto;
   }
   
+}
+select{
+  text-align: left;
 }
