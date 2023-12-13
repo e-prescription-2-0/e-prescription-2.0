@@ -6,17 +6,17 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 const PrescriptionCard = ({number, doctor, patient, date})=>{
     return(
         <li className={style["prescriptions-list-item"]}>
-        <div>
-          <p>
+        <div className={style["prescriptions-list-item-content"]}>
+          <p className={style["prescriptions-list-item-content-item"]}>
             <span>Rp №:</span> {number}
           </p>
-          <p>
+          <p className={style["prescriptions-list-item-content-item"]}>
             <span>От:</span> {doctor}
           </p>
-          <p>
+          <p className={style["prescriptions-list-item-content-item"]}>
             <span>За:</span> {patient}
           </p>
-          <p>
+          <p className={style["prescriptions-list-item-content-item"]}>
             <span>Дата:</span> {date}
           </p>
         </div>

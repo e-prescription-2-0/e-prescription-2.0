@@ -3,7 +3,8 @@ import style from "./App.module.css"
 import { Footer } from "./components/Footer/Footer"
 import Header from "./components/Header/Header"
 import MainDashboard from "./components/MainDashboard/MainDashboard"
-import { Welcome } from "./components/Welcome/Welcome"
+import { Welcome } from "./components/Welcome/Welcome";
+import './App.module.css'
 
 const App = () => {
   return (
