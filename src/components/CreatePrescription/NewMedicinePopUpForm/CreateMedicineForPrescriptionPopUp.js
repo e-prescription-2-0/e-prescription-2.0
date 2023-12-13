@@ -66,8 +66,10 @@ return (
          value={formValues.instructions}
          onChange={(e) => onChangeHandler(e)}/>
       </FloatingLabel>
+      <div className={style['button-container']}>
       <Button type="submit" className={style['confirm']}>Добави</Button>
       <Button onClick={()=> hidePopUpModal()} type="button" className={style['reject']} variant="danger">Откажи</Button>
+      </div>
     </Form>
     </div>
 )

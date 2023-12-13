@@ -1,12 +1,16 @@
 .form-container {
+    display: flex;
+    flex-direction: column;
+    
     flex-basis: 25%;
-    max-width: 20em;
+    max-width: 30em;
+    min-height: 30em;
     padding: 2em;
     background-color: #284b63 ;
     border-radius: 0.5em;
     position: absolute;
-    top: 39%;
-    left: 49%;
+    top: 30%;
+    left: 50%;
     transform: translate(-50%, -50%);
     z-index: 1000;
 }
@@ -22,5 +26,15 @@
 .reject {
     margin-top: 10px;
     margin-right: 20px; 
+}
+
+.form-container form {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.button-container {
+    margin-top: 75px;
 }
 

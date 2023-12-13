@@ -66,3 +66,7 @@
     color: #284b63;
     font-weight: 700;
 }
+.div-articels-accordion-item-content button {
+    margin-right: 5px;
+}
+
