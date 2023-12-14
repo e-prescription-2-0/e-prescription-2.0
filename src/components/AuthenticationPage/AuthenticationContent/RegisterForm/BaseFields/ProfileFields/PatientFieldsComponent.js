@@ -9,6 +9,7 @@ const PatientFieldsComponent = () => {
         className="fadeIn fourth"
         name="patientId"
         placeholder="PatientId"
+        required
       />
       
       <select className="form-select fadeIn fourth" aria-label="Default select example  ">
@@ -22,6 +23,7 @@ const PatientFieldsComponent = () => {
         className="fadeIn fourth"
         name="dateOfBirth"
         placeholder="Date Of Birth"
+        required
       />
 
       

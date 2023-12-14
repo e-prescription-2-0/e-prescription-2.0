@@ -126,7 +126,7 @@ input[type="reset"]:active {
   transform: scale(0.95);
 } */
 
-.page-pop-up input[type="text"], .page-pop-up input[type="date"], .page-pop-up input[type="password"] {
+.page-pop-up input[type="text"],.page-pop-up input[type="email"], .page-pop-up input[type="date"], .page-pop-up input[type="password"] {
   background-color: #f6f6f6;
   border: none;
   color: #0d0d0d;

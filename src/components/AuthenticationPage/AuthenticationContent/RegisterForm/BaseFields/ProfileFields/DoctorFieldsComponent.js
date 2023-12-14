@@ -9,6 +9,7 @@ const DoctorFieldsComponent = () => {
         className="fadeIn third"
         name="doctorId"
         placeholder="doctorId"
+        required
       />
       <Form.Control
         type="text"
@@ -16,6 +17,7 @@ const DoctorFieldsComponent = () => {
         className="fadeIn fourth"
         name="hospitalName"
         placeholder="hospitalName"
+        required
       />
       <Form.Control
         type="text"
@@ -23,6 +25,7 @@ const DoctorFieldsComponent = () => {
         className="fadeIn fourth"
         name="specialty"
         placeholder="specialty"
+        required
       />
     </>
   );

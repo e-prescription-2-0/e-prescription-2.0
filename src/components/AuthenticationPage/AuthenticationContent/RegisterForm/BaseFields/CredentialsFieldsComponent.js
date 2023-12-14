@@ -5,11 +5,12 @@ const CredentialsFieldsComponent = ({setProfile}) => {
   return (
     <>
       <Form.Control
-        type="text"
+        type="email"
         id="email"
         className="fadeIn first col"
         name="email"
         placeholder="Email"
+        required 
       />
       <Form.Control
         type="password"
@@ -17,6 +18,8 @@ const CredentialsFieldsComponent = ({setProfile}) => {
         className="fadeIn second col"
         name="password"
         placeholder="Password"
+        required 
+        hasValidation
       />
       <Form.Control
         type="password"
@@ -24,6 +27,7 @@ const CredentialsFieldsComponent = ({setProfile}) => {
         className="fadeIn third col"
         name="repeatPassword"
         placeholder="Repeat Password"
+        required 
       />
       <select
         onChange={(e) => setProfile(e.target.value)}

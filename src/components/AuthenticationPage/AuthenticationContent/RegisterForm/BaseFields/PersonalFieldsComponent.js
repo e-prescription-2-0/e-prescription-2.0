@@ -19,6 +19,7 @@ const PersonalFieldsComponent = ({profile}) => {
           className="fadeIn first"
           name="firstName"
           placeholder="First Name"
+          required
         />
         <Form.Control
           type="text"
@@ -26,6 +27,7 @@ const PersonalFieldsComponent = ({profile}) => {
           className="fadeIn second"
           name="lastName"
           placeholder="Last Name"
+          required
         />
 
       

@@ -1,10 +1,25 @@
 import { useCallback, useState } from "react";
 import CredentialsFieldsComponent from "./BaseFields/CredentialsFieldsComponent";
 import PersonalFieldsComponent from "./BaseFields/PersonalFieldsComponent";
+import { Button, Form } from "react-bootstrap";
 
 const RegisterForm = () => {
   const [registrationStep, setRegistrationStep] = useState(1);
   const [profile, setProfile] = useState("patient");
+  const [validated, setValidated] = useState(false);
+
+  const handleSubmit = (event) => {
+    const form = event.currentTarget;
+    event.preventDefault();
+    console.log(form.checkValidity());
+    if (form.checkValidity() === false) {
+      event.stopPropagation();
+      setValidated(true);
+    } else {
+      setRegistrationStep(2);
+      setValidated(false);
+    }
+  };
 
   const renderRegistrationStep = useCallback(() => {
     switch (registrationStep) {
@@ -12,13 +27,13 @@ const RegisterForm = () => {
         return (
           <>
             <CredentialsFieldsComponent setProfile={setProfile} />
-            <button
-              type="button"
+            <Button
+              type="submit"
               className="fadeIn fourth popup-form-button-next popup-form-button"
-              onClick={() => setRegistrationStep(2)}
+              // onClick={() => setRegistrationStep(2)}
             >
               Next
-            </button>
+            </Button>
           </>
         );
       case 2:
@@ -26,16 +41,19 @@ const RegisterForm = () => {
           <>
             <PersonalFieldsComponent profile={profile} />
             <div className="popup-form-button-holder">
-              <button
+              <Button
                 type="button"
                 className="fadeIn fourth popup-form-button popup-form-button-back"
-                onClick={() => setRegistrationStep(1)}
+                onClick={() => {
+                  setValidated(false);
+                  setRegistrationStep(1);
+                }}
               >
                 Back
-              </button>
-              <button type="button" className="fadeIn fourth popup-form-button">
+              </Button>
+              <Button type="submit" className="fadeIn fourth popup-form-button">
                 Register
-              </button>
+              </Button>
             </div>
           </>
         );
@@ -44,11 +62,11 @@ const RegisterForm = () => {
 
   return (
     <>
-      <form>
+      <Form noValidate validated={validated} onSubmit={handleSubmit}>
         <h3>Register</h3>
 
         {renderRegistrationStep()}
-      </form>
+      </Form>
     </>
   );
 };
