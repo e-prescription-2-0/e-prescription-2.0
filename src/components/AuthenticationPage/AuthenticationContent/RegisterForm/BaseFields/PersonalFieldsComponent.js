@@ -20,6 +20,9 @@ const PersonalFieldsComponent = ({profile}) => {
           name="firstName"
           placeholder="First Name"
           required
+          pattern="^[A-Za-z]+(?: [A-Za-z]+)?$"
+
+
         />
         <Form.Control
           type="text"
@@ -28,6 +31,7 @@ const PersonalFieldsComponent = ({profile}) => {
           name="lastName"
           placeholder="Last Name"
           required
+          pattern="^[A-Za-z]+(?: [A-Za-z]+)?$"
         />
 
       

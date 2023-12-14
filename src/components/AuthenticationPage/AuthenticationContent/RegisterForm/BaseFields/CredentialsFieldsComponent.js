@@ -1,6 +1,13 @@
+import { useEffect } from "react";
 import Form from "react-bootstrap/Form";
 
-const CredentialsFieldsComponent = ({setProfile}) => {
+const CredentialsFieldsComponent = ({
+  setProfile,
+  registrationFormData,
+  handleChange,
+}) => {
+ 
+
 
   return (
     <>
@@ -10,7 +17,10 @@ const CredentialsFieldsComponent = ({setProfile}) => {
         className="fadeIn first col"
         name="email"
         placeholder="Email"
-        required 
+        required
+        pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"
+        value={registrationFormData?.email || ''}
+        onChange={handleChange}
       />
       <Form.Control
         type="password"
@@ -18,8 +28,10 @@ const CredentialsFieldsComponent = ({setProfile}) => {
         className="fadeIn second col"
         name="password"
         placeholder="Password"
-        required 
-        hasValidation
+        required
+        pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$"
+        value={registrationFormData?.password || ''}
+        onChange={handleChange}
       />
       <Form.Control
         type="password"
@@ -27,7 +39,9 @@ const CredentialsFieldsComponent = ({setProfile}) => {
         className="fadeIn third col"
         name="repeatPassword"
         placeholder="Repeat Password"
-        required 
+        required
+        value={registrationFormData?.repeatPassword || ''}
+        onChange={handleChange}
       />
       <select
         onChange={(e) => setProfile(e.target.value)}

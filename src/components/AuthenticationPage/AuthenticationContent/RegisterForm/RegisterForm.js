@@ -7,17 +7,35 @@ const RegisterForm = () => {
   const [registrationStep, setRegistrationStep] = useState(1);
   const [profile, setProfile] = useState("patient");
   const [validated, setValidated] = useState(false);
+  const [registrationFormData, setRegistrationFormData] = useState({})
 
   const handleSubmit = (event) => {
     const form = event.currentTarget;
     event.preventDefault();
-    console.log(form.checkValidity());
+    // console.log(form.checkValidity());
     if (form.checkValidity() === false) {
-      event.stopPropagation();
+      // event.stopPropagation();
       setValidated(true);
     } else {
       setRegistrationStep(2);
       setValidated(false);
+    }
+  };
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    const newData = {
+      ...registrationFormData,
+      [name]: value,
+    };
+    setRegistrationFormData(newData);
+    
+    if (name === 'repeatPassword') {
+      const passwordField = document.getElementById('password');
+      if (passwordField && passwordField.value !== value) {
+        e.target.setCustomValidity('Passwords do not match.');
+      } else {
+        e.target.setCustomValidity('');
+      }
     }
   };
 
@@ -26,7 +44,13 @@ const RegisterForm = () => {
       case 1:
         return (
           <>
-            <CredentialsFieldsComponent setProfile={setProfile} />
+             
+            <CredentialsFieldsComponent
+              setProfile={setProfile}
+              registrationFormData={registrationFormData}
+              handleChange={handleChange}
+
+            />
             <Button
               type="submit"
               className="fadeIn fourth popup-form-button-next popup-form-button"
@@ -39,7 +63,7 @@ const RegisterForm = () => {
       case 2:
         return (
           <>
-            <PersonalFieldsComponent profile={profile} />
+            <PersonalFieldsComponent profile={profile} registrationFormData={registrationFormData} handleSubmit={handleSubmit} />
             <div className="popup-form-button-holder">
               <Button
                 type="button"
@@ -58,12 +82,13 @@ const RegisterForm = () => {
           </>
         );
     }
-  }, [registrationStep, setRegistrationStep]);
+  }, [registrationStep, setRegistrationStep, registrationFormData, profile]);
 
   return (
     <>
       <Form noValidate validated={validated} onSubmit={handleSubmit}>
         <h3>Register</h3>
+       
 
         {renderRegistrationStep()}
       </Form>
