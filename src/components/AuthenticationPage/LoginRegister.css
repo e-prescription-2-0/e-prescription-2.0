@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Poppins");
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Mina&family=Miniver&family=PT+Sans&family=Roboto:wght@400;500;900&display=swap');
 
 /* BASIC */
 
@@ -37,8 +38,12 @@ html, body {
   color: #cccccc;
 }
 .page-pop-up h3{
+  font-size: 40px;
+
   color: #f6f6f6;
   margin-top: 40px;
+  font-family: Kaushan Script;
+
 }
 
 /* STRUCTURE */

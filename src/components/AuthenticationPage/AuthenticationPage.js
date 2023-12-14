@@ -3,7 +3,7 @@ import AuthenticationContent from "./AuthenticationContent/AuthenticationContent
 import "./LoginRegister.css"
 
 const AuthenticationPage = () => {
-  const [formName, setForm] = useState("register") // the formName should be one of the three login register or null
+  const [formName, setForm] = useState("login") // the formName should be one of the three login register or null
   return (
     <>
       <div className="page-pop-up">
