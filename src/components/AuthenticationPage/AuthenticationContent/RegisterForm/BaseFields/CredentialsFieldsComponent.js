@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import Form from "react-bootstrap/Form";
+import style from "../../../AuthenticationPage.module.css"
 
 const CredentialsFieldsComponent = ({
   setProfile,
@@ -14,7 +15,7 @@ const CredentialsFieldsComponent = ({
       <Form.Control
         type="email"
         id="email"
-        className="fadeIn first col"
+        className={[style["fadeIn"], style["first"], style["col"]].join(' ')}
         name="email"
         placeholder="Email"
         required
@@ -25,7 +26,7 @@ const CredentialsFieldsComponent = ({
       <Form.Control
         type="password"
         id="password"
-        className="fadeIn second col"
+        className={[style["fadeIn"], style["second"], style["col"]].join(' ')}
         name="password"
         placeholder="Password"
         required
@@ -36,7 +37,7 @@ const CredentialsFieldsComponent = ({
       <Form.Control
         type="password"
         id="repeatPassword"
-        className="fadeIn third col"
+        className={[style["fadeIn"], style["third"], style["col"]].join(' ')}
         name="repeatPassword"
         placeholder="Repeat Password"
         required
@@ -45,7 +46,7 @@ const CredentialsFieldsComponent = ({
       />
       <select
         onChange={(e) => setProfile(e.target.value)}
-        className="form-select fadeIn fourth"
+        className={[style["fadeIn"], style["fourth"], style["form-select"]].join(' ')}
         aria-label="Default select example  "
       >
         <option value="patient">Patient</option>

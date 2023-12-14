@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import Form from 'react-bootstrap/Form';
+import style from "../../AuthenticationPage.module.css"
 
 const LoginForm = () => {
   const [validated, setValidated] = useState(false);
@@ -23,7 +24,7 @@ const LoginForm = () => {
         <Form.Control
           type="text"
           id="login"
-          className="fadeIn second"
+          className={[style["fadeIn"], style["second"]].join(' ')}
           name="login"
           placeholder="Email"
           required
@@ -33,17 +34,17 @@ const LoginForm = () => {
         <Form.Control
           type="password"
           id="password"
-          className="fadeIn third"
+          className={[style["fadeIn"], style["third"]].join(' ')}
           name="login"
           placeholder="Password"
           required
           pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$"
         />
-        <button type="submit" className="fadeIn fourth popup-form-button">Log In</button>
+        <button type="submit" className={[style["fadeIn"], style["fourth"], style["popup-form-button"]].join(' ')}>Log In</button>
       </Form>
       {/* <!-- Remind Password --> */}
-      <div id="formFooter">
-        <a className="underlineHover" href="#">
+      <div id={style["formFooter"]}>
+        <a className={style["underlineHover"]} href="#">
           Forgot Password?
         </a>
       </div>

@@ -1,4 +1,6 @@
 import { Form } from "react-bootstrap";
+import style from "../../../../AuthenticationPage.module.css"
+
 
 const DoctorFieldsComponent = () => {
   return (
@@ -6,7 +8,7 @@ const DoctorFieldsComponent = () => {
       <Form.Control
         type="text"
         id="doctorId"
-        className="fadeIn third"
+        className={[style["fadeIn"], style["third"]].join(' ')}
         name="doctorId"
         placeholder="doctorId"
         required
@@ -14,7 +16,7 @@ const DoctorFieldsComponent = () => {
       <Form.Control
         type="text"
         id="hospitalName"
-        className="fadeIn fourth"
+        className={[style["fadeIn"], style["fourth"]].join(' ')}
         name="hospitalName"
         placeholder="hospitalName"
         required
@@ -22,7 +24,7 @@ const DoctorFieldsComponent = () => {
       <Form.Control
         type="text"
         id="specialty"
-        className="fadeIn fourth"
+        className={[style["fadeIn"], style["fourth"]].join(' ')}
         name="specialty"
         placeholder="specialty"
         required

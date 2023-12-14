@@ -1,4 +1,6 @@
 import { Form } from "react-bootstrap";
+import style from "../../../../AuthenticationPage.module.css"
+
 
 const PatientFieldsComponent = () => {
   return (
@@ -6,13 +8,13 @@ const PatientFieldsComponent = () => {
       <Form.Control
         type="text"
         id="patientId"
-        className="fadeIn fourth"
+        className={[style["fadeIn"], style["fourth"]].join(' ')}
         name="patientId"
         placeholder="PatientId"
         required
       />
       
-      <select className="form-select fadeIn fourth" aria-label="Default select example  ">
+      <select className={[style["form-select"], style["fadeIn"], style["fourth"]].join(' ')} aria-label="Default select example  ">
           <option value="male">Male</option>
           <option value="female">Female</option>
       </select>
@@ -20,7 +22,7 @@ const PatientFieldsComponent = () => {
       <Form.Control
         type="date"
         id="dateOfBirth"
-        className="fadeIn fourth"
+        className={[style["fadeIn"], style["fourth"]].join(' ')}
         name="dateOfBirth"
         placeholder="Date Of Birth"
         required

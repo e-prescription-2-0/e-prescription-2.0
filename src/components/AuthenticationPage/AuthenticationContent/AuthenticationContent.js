@@ -3,6 +3,7 @@ import LoginForm from "./LoginForm/LoginForm";
 import RegisterForm from "./RegisterForm/RegisterForm";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
+import style from "../AuthenticationPage.module.css"
 
 const AuthenticationContent = ({ formName, setForm }) => {
   const newRef = useRef(null);
@@ -22,10 +23,10 @@ const AuthenticationContent = ({ formName, setForm }) => {
 
   return (
     <>
-      <div className="wrapper fadeInDown">
-        <div id="formContent" ref={newRef}>
+      <div className={[style.wrapper, style.fadeInDown].join(' ')}>
+        <div id={style["formContent"]} ref={newRef}>
           <FontAwesomeIcon
-            className="closeIcon"
+            className={style["closeIcon"]}
             onClick={() => setForm(null)}
             icon={faXmark}
           />

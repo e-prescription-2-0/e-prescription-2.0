@@ -2,6 +2,7 @@ import { useCallback, useState } from "react";
 import CredentialsFieldsComponent from "./BaseFields/CredentialsFieldsComponent";
 import PersonalFieldsComponent from "./BaseFields/PersonalFieldsComponent";
 import { Button, Form } from "react-bootstrap";
+import style from "../../AuthenticationPage.module.css"
 
 const RegisterForm = () => {
   const [registrationStep, setRegistrationStep] = useState(1);
@@ -53,7 +54,7 @@ const RegisterForm = () => {
             />
             <Button
               type="submit"
-              className="fadeIn fourth popup-form-button-next popup-form-button"
+              className={[style["fadeIn"], style["fourth"], style["popup-form-button-next"], style['popup-form-button'] ].join(' ')}
               // onClick={() => setRegistrationStep(2)}
             >
               Next
@@ -64,10 +65,10 @@ const RegisterForm = () => {
         return (
           <>
             <PersonalFieldsComponent profile={profile} registrationFormData={registrationFormData} handleSubmit={handleSubmit} />
-            <div className="popup-form-button-holder">
+            <div className={style["popup-form-button-holder"]}>
               <Button
                 type="button"
-                className="fadeIn fourth popup-form-button popup-form-button-back"
+                className={[style["fadeIn"], style["fourth"], style["popup-form-button-back"], style['popup-form-button'] ].join(' ')}
                 onClick={() => {
                   setValidated(false);
                   setRegistrationStep(1);
@@ -75,7 +76,7 @@ const RegisterForm = () => {
               >
                 Back
               </Button>
-              <Button type="submit" className="fadeIn fourth popup-form-button">
+              <Button type="submit" className={[style["fadeIn"], style["fourth"], style['popup-form-button'] ].join(' ')}>
                 Register
               </Button>
             </div>
