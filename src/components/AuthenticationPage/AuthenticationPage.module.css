@@ -19,6 +19,7 @@ html, body {
   padding: 0;
   margin: 0;
   width: 100%;
+  
 }
 
 .page-pop-up a {
@@ -39,6 +40,7 @@ html, body {
 }
 .page-pop-up h3{
   font-size: 40px;
+  margin-bottom: 40px;
 
   color: #f6f6f6;
   margin-top: 40px;
@@ -71,6 +73,9 @@ html, body {
   -webkit-box-shadow: 0 30px 60px 0 rgba(0, 0, 0, 0.3);
   box-shadow: 0 30px 60px 0 rgba(0, 0, 0, 0.3);
   text-align: center;
+  overflow: hidden;
+
+  
 }
 
 #formFooter {
@@ -298,13 +303,17 @@ input[type="reset"]:active {
   bottom: -10px;
   width: 0;
   height: 2px;
-  background-color: #0056b3;
+  background-color: #6DA9E4;
   content: "";
   transition: width 0.2s;
 }
 
 .page-pop-up .underlineHover:hover:after {
   width: 100%;
+
+}
+.page-pop-up a:hover{
+  color: #6DA9E4;
 }
 
 /* OTHERS */
@@ -406,12 +415,26 @@ input[type="reset"]:active {
 .page-pop-up .closeIcon{
   color: #12486B;
   position: absolute;
-  right: 5px;
-  top: 5px;
+
   height: 26px;
+  background-color: #f6f6f6;
+  padding: 0.4rem;
+  border-bottom: solid 3px #12486B;
+  border-left: solid 3px #12486B;
+  right: 0;
+  top: 0;
+  /* border-top-right-radius: 30%; */
+
+  
 }
 .page-pop-up .closeIcon:hover{
-  color: #F5FCCD;
+  color: #F6BA6F;
+  background-color: #12486B;
+  border-bottom: solid 3px #F6BA6F;
+  border-left: solid 3px #F6BA6F;
+
+  cursor: pointer;
+  
 }
 @media only screen and (max-width:600px){
 
@@ -424,4 +447,17 @@ input[type="reset"]:active {
 }
 select{
   text-align: left;
+}
+
+.page-pop-up .error{
+  position: absolute;
+  color: #dc3545;
+  top: -20px;
+  width: 100%;
+  font-size: 80%;
+
+
+}
+.page-pop-up form{
+  position: relative;
 }

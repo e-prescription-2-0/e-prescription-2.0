@@ -2,7 +2,7 @@ import { Form } from "react-bootstrap";
 import style from "../../../../AuthenticationPage.module.css"
 
 
-const DoctorFieldsComponent = () => {
+const DoctorFieldsComponent = ({handleChange, registrationFormData}) => {
   return (
     <>
       <Form.Control
@@ -12,6 +12,8 @@ const DoctorFieldsComponent = () => {
         name="doctorId"
         placeholder="doctorId"
         required
+        value={registrationFormData?.doctorId || ""}
+        onChange={handleChange}
       />
       <Form.Control
         type="text"
@@ -20,6 +22,8 @@ const DoctorFieldsComponent = () => {
         name="hospitalName"
         placeholder="hospitalName"
         required
+        value={registrationFormData?.hospitalName || ""}
+        onChange={handleChange}
       />
       <Form.Control
         type="text"
@@ -28,6 +32,8 @@ const DoctorFieldsComponent = () => {
         name="specialty"
         placeholder="specialty"
         required
+        value={registrationFormData?.specialty || ""}
+        onChange={handleChange}
       />
     </>
   );

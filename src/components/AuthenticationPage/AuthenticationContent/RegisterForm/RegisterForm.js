@@ -2,13 +2,14 @@ import { useCallback, useState } from "react";
 import CredentialsFieldsComponent from "./BaseFields/CredentialsFieldsComponent";
 import PersonalFieldsComponent from "./BaseFields/PersonalFieldsComponent";
 import { Button, Form } from "react-bootstrap";
-import style from "../../AuthenticationPage.module.css"
+import style from "../../AuthenticationPage.module.css";
+import { registrationValidationRegex } from "./registrationValidationRegex";
 
 const RegisterForm = () => {
   const [registrationStep, setRegistrationStep] = useState(1);
-  const [profile, setProfile] = useState("patient");
+  const [profileType, setProfileType] = useState("patient");
   const [validated, setValidated] = useState(false);
-  const [registrationFormData, setRegistrationFormData] = useState({})
+  const [registrationFormData, setRegistrationFormData] = useState({});
 
   const handleSubmit = (event) => {
     const form = event.currentTarget;
@@ -29,13 +30,21 @@ const RegisterForm = () => {
       [name]: value,
     };
     setRegistrationFormData(newData);
-    
-    if (name === 'repeatPassword') {
-      const passwordField = document.getElementById('password');
+
+    if (name === "repeatPassword") {
+      const passwordField = document.getElementById("password");
       if (passwordField && passwordField.value !== value) {
-        e.target.setCustomValidity('Passwords do not match.');
+        e.target.setCustomValidity("Passwords do not match.");
       } else {
-        e.target.setCustomValidity('');
+        e.target.setCustomValidity("");
+      }
+    } else if (name in registrationValidationRegex) {
+      const regex = registrationValidationRegex[name]["validation"];
+
+      if (!regex.test(value)) {
+        e.target.setCustomValidity(registrationValidationRegex[name]['errorMessage']);
+      } else {
+        e.target.setCustomValidity("");
       }
     }
   };
@@ -45,16 +54,20 @@ const RegisterForm = () => {
       case 1:
         return (
           <>
-             
             <CredentialsFieldsComponent
-              setProfile={setProfile}
+              profileType={profileType}
+              setProfileType={setProfileType}
               registrationFormData={registrationFormData}
               handleChange={handleChange}
-
             />
             <Button
               type="submit"
-              className={[style["fadeIn"], style["fourth"], style["popup-form-button-next"], style['popup-form-button'] ].join(' ')}
+              className={[
+                style["fadeIn"],
+                style["fourth"],
+                style["popup-form-button-next"],
+                style["popup-form-button"],
+              ].join(" ")}
               // onClick={() => setRegistrationStep(2)}
             >
               Next
@@ -64,11 +77,20 @@ const RegisterForm = () => {
       case 2:
         return (
           <>
-            <PersonalFieldsComponent profile={profile} registrationFormData={registrationFormData} handleSubmit={handleSubmit} />
+            <PersonalFieldsComponent
+              profileType={profileType}
+              registrationFormData={registrationFormData}
+              handleChange={handleChange}
+            />
             <div className={style["popup-form-button-holder"]}>
               <Button
                 type="button"
-                className={[style["fadeIn"], style["fourth"], style["popup-form-button-back"], style['popup-form-button'] ].join(' ')}
+                className={[
+                  style["fadeIn"],
+                  style["fourth"],
+                  style["popup-form-button-back"],
+                  style["popup-form-button"],
+                ].join(" ")}
                 onClick={() => {
                   setValidated(false);
                   setRegistrationStep(1);
@@ -76,20 +98,35 @@ const RegisterForm = () => {
               >
                 Back
               </Button>
-              <Button type="submit" className={[style["fadeIn"], style["fourth"], style['popup-form-button'] ].join(' ')}>
+              <Button
+                type="submit"
+                className={[
+                  style["fadeIn"],
+                  style["fourth"],
+                  style["popup-form-button"],
+                ].join(" ")}
+              >
                 Register
               </Button>
             </div>
           </>
         );
+      default:
+        return <>Wrong Step!</>;
     }
-  }, [registrationStep, setRegistrationStep, registrationFormData, profile]);
+  }, [
+    registrationStep,
+    setRegistrationStep,
+    registrationFormData,
+    profileType,
+    setProfileType,
+    handleChange,
+  ]);
 
   return (
     <>
       <Form noValidate validated={validated} onSubmit={handleSubmit}>
         <h3>Register</h3>
-       
 
         {renderRegistrationStep()}
       </Form>
