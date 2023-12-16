@@ -1,6 +1,12 @@
 import { Form } from "react-bootstrap";
 import style from "../../../../AuthenticationPage.module.css"
 
+export const DoctorFields = [
+  {name: 'doctorId', classes: [style["fadeIn"], style["third"]].join(' '), fieldType: 'text'},
+  {name: 'hospitalName', classes: [style["fadeIn"], style["fourth"]].join(' '), fieldType: 'text'},
+  {name: 'specialty', classes: [style["fadeIn"], style["fourth"]].join(' '), fieldType: 'text'}
+
+]
 
 const DoctorFieldsComponent = ({handleChange, registrationFormData}) => {
   return (

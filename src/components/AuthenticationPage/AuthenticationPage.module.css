@@ -461,3 +461,11 @@ select{
 .page-pop-up form{
   position: relative;
 }
+.page-pop-up .input-group{
+  padding-bottom: 15px;
+  position: relative;
+}
+.page-pop-up .input-group .register-form-error{
+  position: absolute;
+  bottom: 0;
+}
