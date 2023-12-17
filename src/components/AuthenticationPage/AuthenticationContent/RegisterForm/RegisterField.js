@@ -1,6 +1,6 @@
 import React from "react";
 import { Form } from "react-bootstrap";
-import style from "../../AuthenticationPage.module.css"
+import style from "../../AuthenticationPage.module.css";
 import { registrationValidationRegex } from "./registrationValidationRegex";
 
 const RegisterField = ({ handleChange, registrationFormData, fieldData }) => {
@@ -9,7 +9,7 @@ const RegisterField = ({ handleChange, registrationFormData, fieldData }) => {
       return (
         <Form.Control
           type={fieldData.fieldType}
-          key={fieldData.name}
+          id={fieldData.name}
           className={fieldData.classes}
           name={fieldData.name}
           placeholder={fieldData.placeholder}
@@ -17,7 +17,6 @@ const RegisterField = ({ handleChange, registrationFormData, fieldData }) => {
           value={registrationFormData[fieldData.name] || ""}
           onChange={handleChange}
         />
-
       );
     } else if (fieldData.fieldType === "select") {
       return (
@@ -48,7 +47,9 @@ const RegisterField = ({ handleChange, registrationFormData, fieldData }) => {
           type="invalid"
           className={style["register-form-error"]}
         >
-            {fieldData.name in registrationValidationRegex? registrationValidationRegex[fieldData.name].errorMessage: ''}
+          {fieldData.name in registrationValidationRegex
+            ? registrationValidationRegex[fieldData.name].errorMessage
+            : ""}
         </Form.Control.Feedback>
       </Form.Group>
     </>

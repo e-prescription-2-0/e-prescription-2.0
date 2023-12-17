@@ -31,12 +31,16 @@ const RegisterForm = () => {
     };
     setRegistrationFormData(newData);
 
-    if (name === "repeatPassword") {
-      const passwordField = document.getElementById("password");
-      if (passwordField && passwordField.value !== value) {
-        e.target.setCustomValidity("Passwords do not match.");
+    if (name === 'password' || name === 'repeatPassword') {
+      const repeatPassword = document.getElementById('repeatPassword')
+      // console.log(repeatPassword.value)
+      // console.log(registrationFormData[name === 'password'? 'repeatPassword': 'password'] !== value)
+
+      if (registrationFormData[name === 'password'? 'repeatPassword': 'password'] !== value) {
+
+        repeatPassword.setCustomValidity('Passwords do not match.');
       } else {
-        e.target.setCustomValidity("");
+        repeatPassword.setCustomValidity('');
       }
     } else if (name in registrationValidationRegex) {
       const regex = registrationValidationRegex[name]["validation"];

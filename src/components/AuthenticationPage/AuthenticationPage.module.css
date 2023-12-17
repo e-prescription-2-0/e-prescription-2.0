@@ -177,19 +177,13 @@ input[type="reset"]:active {
 }
 
 .page-pop-up select{
-  color: #12486B;
-  font-weight: bold;
-  background-color: #f6f6f6;
   border: none;
-  padding-top: 10px;
-  padding-bottom: 10px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
   margin: 5px;
   width: 85%;
-  border: 2px solid #f6f6f6;
   -webkit-transition: all 0.5s ease-in-out;
   -moz-transition: all 0.5s ease-in-out;
   -ms-transition: all 0.5s ease-in-out;
@@ -407,32 +401,35 @@ input[type="reset"]:active {
 
 }
 .popup-form-button-next:hover, .popup-form-button-back:hover{
-  background-color: #F6BA6F;
+  background-color: #5c6664;
 }
 .page-pop-up .hideFields{
   display: none;
 }
 .page-pop-up .closeIcon{
-  color: #12486B;
   position: absolute;
 
   height: 26px;
-  background-color: #f6f6f6;
+
   padding: 0.4rem;
-  border-bottom: solid 3px #12486B;
-  border-left: solid 3px #12486B;
+  
   right: 0;
   top: 0;
   /* border-top-right-radius: 30%; */
 
+  color: white;
+  background-color: #5c6664;
+  border-bottom: solid 3px white;
+  border-left: solid 3px white;
+
+
   
 }
 .page-pop-up .closeIcon:hover{
-  color: #F6BA6F;
-  background-color: #12486B;
-  border-bottom: solid 3px #F6BA6F;
-  border-left: solid 3px #F6BA6F;
-
+  color: #12486B;
+  background-color: #f6f6f6;
+  border-bottom: solid 3px #12486B;
+  border-left: solid 3px #12486B;
   cursor: pointer;
   
 }
@@ -446,8 +443,59 @@ input[type="reset"]:active {
   
 }
 select{
-  text-align: left;
+  text-align: center;
+  
 }
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  outline: 0;
+  box-shadow: none;
+  border: 0!important;
+  background: #5c6664;
+  background-image: none;
+  flex: 1;
+  padding: 0 .5em;
+  color: #fff;
+  cursor: pointer;
+  font-size: 1em;
+  font-family: 'Open Sans', sans-serif;
+}
+
+/* select::-ms-expand {
+  display: none;
+} */
+
+select {
+  position: relative;
+  display: flex;
+  width: 20em;
+  padding: 15px ;
+  background: #5c6664;
+  overflow: hidden;
+}
+
+
+
+/* select::after {
+  content: '\25BC';
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0 1em;
+  background: #2b2e2e;
+  cursor: pointer;
+  pointer-events: none;
+  transition: .25s all ease;
+}
+
+select:hover::after {
+  color: #23b499;
+} */
+
 
 .page-pop-up .error{
   position: absolute;
