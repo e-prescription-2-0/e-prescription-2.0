@@ -1,59 +1,37 @@
-import PatientFieldsComponent from "./ProfileFields/PatientFieldsComponent";
-import DoctorFieldsComponent from "./ProfileFields/DoctorFieldsComponent";
-import PharmacistFieldsComponent from "./ProfileFields/PharmacistFieldsComponent";
-import { Form } from "react-bootstrap";
-import style from "../../../AuthenticationPage.module.css";
+import { PatientFields } from "./PersonalFields/PatientFieldsComponent";
+import { DoctorFields } from "./PersonalFields/DoctorFieldsComponent";
+import { PharmacistFields } from "./PersonalFields/PharmacistFieldsComponent";
+import { NameFields } from "./PersonalFields/NameFields";
+import RegisterField from "../RegisterField";
 
-const PersonalFieldsComponent = ({ profileType, registrationFormData , handleChange}) => {
+const PersonalFieldsComponent = ({
+  profileType,
+  registrationFormData,
+  handleChange,
+}) => {
   const ProfileFields = {
-    patient: (
-      <PatientFieldsComponent
-        registrationFormData={registrationFormData}
-        handleChange={handleChange}
-      />
-    ),
-    doctor: (
-      <DoctorFieldsComponent
-        registrationFormData={registrationFormData}
-        handleChange={handleChange}
-      />
-    ),
-    pharmacist: (
-      <PharmacistFieldsComponent
-        registrationFormData={registrationFormData}
-        handleChange={handleChange}
-      />
-    ),
+    patient: PatientFields,
+    doctor: DoctorFields,
+    pharmacist: PharmacistFields,
   };
+
+  const fields = NameFields.concat(
+    ProfileFields[registrationFormData?.profileType || "patient"]
+  );
 
   return (
     <>
-      <Form.Control
-        type="text"
-        id="firstName"
-        className={[style["fadeIn"], style["first"]].join(" ")}
-        name="firstName"
-        placeholder="First Name"
-        required
-        value={registrationFormData?.firstName || ""}
-        onChange={handleChange}
+      {fields.map((fieldData) => {
+        console.log(fieldData);
 
-        // pattern="^[A-Za-z]+(?: [A-Za-z]+)?$"
-      />
-      <Form.Control
-        type="text"
-        id="lastName"
-        className={[style["fadeIn"], style["second"]].join(" ")}
-        name="lastName"
-        placeholder="Last Name"
-        required
-        value={registrationFormData?.lastName || ""}
-        onChange={handleChange}
-
-        // pattern="^[A-Za-z]+(?: [A-Za-z]+)?$"
-      />
-
-      {ProfileFields[profileType]}
+        return (
+          <RegisterField
+            handleChange={handleChange}
+            registrationFormData={registrationFormData}
+            fieldData={fieldData}
+          />
+        );
+      })}
     </>
   );
 };

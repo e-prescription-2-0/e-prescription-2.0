@@ -462,10 +462,10 @@ select{
   position: relative;
 }
 .page-pop-up .input-group{
-  padding-bottom: 15px;
+  padding-bottom: 10px;
   position: relative;
 }
 .page-pop-up .input-group .register-form-error{
   position: absolute;
-  bottom: 0;
+  top: -20px;
 }

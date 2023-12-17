@@ -1,6 +1,8 @@
 import Form from "react-bootstrap/Form";
 import style from "../../../AuthenticationPage.module.css";
 import { registrationValidationRegex } from "../registrationValidationRegex";
+import { CredentialsFields } from "./CredentialsFields";
+import RegisterField from "../RegisterField";
 
 const CredentialsFieldsComponent = ({
   profileType,
@@ -8,9 +10,10 @@ const CredentialsFieldsComponent = ({
   registrationFormData,
   handleChange,
 }) => {
+  const fields = CredentialsFields;
   return (
     <>
-      <Form.Group className={style["input-group"]}>
+      {/* <Form.Group className={style["input-group"]}>
         <Form.Control
           type="email"
           id="email"
@@ -69,8 +72,9 @@ const CredentialsFieldsComponent = ({
 
       <Form.Group className={style["input-group"]}>
         <select
-          onChange={(e) => setProfileType(e.target.value)}
-          value={profileType}
+          onChange={handleChange}
+          value={registrationFormData?.profileType || "patient"}
+          name="profileType"
           className={[
             style["fadeIn"],
             style["fourth"],
@@ -82,7 +86,18 @@ const CredentialsFieldsComponent = ({
           <option value="pharmacist">Pharmacist</option>
           <option value="doctor">Doctor</option>
         </select>
-      </Form.Group>
+      </Form.Group> */}
+      {fields.map((fieldData) => {
+        console.log(fieldData);
+
+        return (
+          <RegisterField
+            handleChange={handleChange}
+            registrationFormData={registrationFormData}
+            fieldData={fieldData}
+          />
+        );
+      })}
     </>
   );
 };
