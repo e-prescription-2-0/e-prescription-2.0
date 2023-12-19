@@ -2,8 +2,10 @@ import CreatePrescriptionTemplate from "./CreatePrescriptionTemplate/CreatePresc
 import style from "./CreatePresscription.module.css";
 import { useState } from "react";
 import CreateMedicineForPrescriptionPopUp from "./NewMedicinePopUpForm/CreateMedicineForPrescriptionPopUp";
+import PatientTable from "./PatientsTablePopUp/PatientsTable";
 
 const CreatePrescription = () => {
+  const [isPatientChooseMode, setisPatientChooseMode] = useState(true)
   const [medicineItems, setMedicineItems] = useState([]);
   const [isEditMode, setIsEditMode] = useState(false);
   const [editIndex, setEditIndex] = useState(-1);
@@ -76,7 +78,15 @@ const CreatePrescription = () => {
     setFormaValues(medicineItems[index]);
   };
 
+  const hidePatientList = () => {
+    setisPatientChooseMode(false)
+  }
+
   return (
+   
+    isPatientChooseMode ? <PatientTable hidePatientList={hidePatientList} />
+    :
+    (
     <div className={style["create-prescription-container"]}>
       <CreatePrescriptionTemplate
         showPopUpModal={showPopUpModal}
@@ -93,7 +103,10 @@ const CreatePrescription = () => {
         />
       )}
     </div>
-  );
+    )
+   
+  )
+
 };
 
 export default CreatePrescription;

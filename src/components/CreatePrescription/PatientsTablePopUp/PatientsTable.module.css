@@ -1,0 +1,16 @@
+.patient-table-container {
+    max-width: 40em;
+    margin: 0 auto;
+    padding: 2em;
+}
+
+.table-row button {
+    background-color: #3c6e71;
+    color: #fff;
+    border: none;
+}
+
+
+
+
+
