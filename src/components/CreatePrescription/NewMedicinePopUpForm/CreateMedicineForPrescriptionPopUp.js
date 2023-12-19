@@ -35,10 +35,12 @@ return (
       <Form.Select aria-label="Default select example" name='dosageType'
        value={formValues.dosageType}
        onChange={(e) => onChangeHandler(e)}>
-      <option>Open this select menu</option>
+      <option>Изберете единица</option>
       <option value="ml">ml</option>
       <option value="mg">mg</option>
-      <option value="drops">drops</option>
+      <option value="g">g</option>
+      <option value="µg">µg</option>
+      <option value="mmol">mmol</option>
      
     </Form.Select>
     </InputGroup>
@@ -52,10 +54,12 @@ return (
       <Form.Select aria-label="Default select example" name='admissionType'
        value={formValues.admissionType}
        onChange={(e) => onChangeHandler(e)}>
-      <option>Open this select menu</option>
+      <option>Изберете форма</option>
       <option value="tablet">таблетка</option>
+      <option value="capsule">капсула</option>
       <option value="sashe">саше</option>
       <option value="drop">капка</option>
+      <option value="injection">инжекция</option>
      
     </Form.Select>
     </InputGroup>
