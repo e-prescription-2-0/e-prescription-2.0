@@ -1,57 +1,61 @@
-import { useCallback, useState } from "react";
-import CredentialsFieldsComponent from "./BaseFields/CredentialsFieldsComponent";
-import PersonalFieldsComponent from "./BaseFields/PersonalFieldsComponent";
-import { Button, Form } from "react-bootstrap";
-import style from "../../AuthenticationPage.module.css";
-import { registrationValidationRegex } from "./registrationValidationRegex";
+import { useCallback, useState } from "react"
+import { Button, Form } from "react-bootstrap"
+import style from "../../AuthenticationPage.module.css"
+import CredentialsFieldsComponent from "./BaseFields/CredentialsFieldsComponent"
+import PersonalFieldsComponent from "./BaseFields/PersonalFieldsComponent"
+import { registrationValidationRegex } from "./registrationValidationRegex"
 
 const RegisterForm = () => {
-  const [registrationStep, setRegistrationStep] = useState(1);
-  const [profileType, setProfileType] = useState("patient");
-  const [validated, setValidated] = useState(false);
-  const [registrationFormData, setRegistrationFormData] = useState({});
+  const [registrationStep, setRegistrationStep] = useState(1)
+  const [profileType, setProfileType] = useState("patient")
+  const [validated, setValidated] = useState(false)
+  const [registrationFormData, setRegistrationFormData] = useState({})
 
   const handleSubmit = (event) => {
-    const form = event.currentTarget;
-    event.preventDefault();
+    const form = event.currentTarget
+    event.preventDefault()
     // console.log(form.checkValidity());
     if (form.checkValidity() === false) {
       // event.stopPropagation();
-      setValidated(true);
+      setValidated(true)
     } else {
-      setRegistrationStep(2);
-      setValidated(false);
+      setRegistrationStep(2)
+      setValidated(false)
     }
-  };
+  }
   const handleChange = (e) => {
-    const { name, value } = e.target;
+    const { name, value } = e.target
     const newData = {
       ...registrationFormData,
       [name]: value,
-    };
-    setRegistrationFormData(newData);
-
-    if (name === 'password' || name === 'repeatPassword') {
-      const repeatPassword = document.getElementById('repeatPassword')
+    }
+    setRegistrationFormData(newData)
+    if (name === "password" || name === "repeatPassword") {
+      const repeatPassword = document.getElementById("repeatPassword")
       // console.log(repeatPassword.value)
       // console.log(registrationFormData[name === 'password'? 'repeatPassword': 'password'] !== value)
+      const filedToCheck = name === "password" ? "repeatPassword" : "password"
+      const arePasswordsMatching = registrationFormData[filedToCheck] === value
 
-      if (registrationFormData[name === 'password'? 'repeatPassword': 'password'] !== value) {
-
-        repeatPassword.setCustomValidity('Passwords do not match.');
+      if (!arePasswordsMatching) {
+        repeatPassword.setCustomValidity("Passwords do not match.")
       } else {
-        repeatPassword.setCustomValidity('');
-      }
-    } else if (name in registrationValidationRegex) {
-      const regex = registrationValidationRegex[name]["validation"];
-
-      if (!regex.test(value)) {
-        e.target.setCustomValidity(registrationValidationRegex[name]['errorMessage']);
-      } else {
-        e.target.setCustomValidity("");
+        repeatPassword.setCustomValidity("")
       }
     }
-  };
+
+    if (name in registrationValidationRegex) {
+      const regex = registrationValidationRegex[name].validation
+
+      if (!regex.test(value)) {
+        e.target.setCustomValidity(
+          registrationValidationRegex[name].errorMessage
+        )
+      } else {
+        e.target.setCustomValidity("")
+      }
+    }
+  }
 
   const renderRegistrationStep = useCallback(() => {
     switch (registrationStep) {
@@ -77,7 +81,7 @@ const RegisterForm = () => {
               Next
             </Button>
           </>
-        );
+        )
       case 2:
         return (
           <>
@@ -96,8 +100,8 @@ const RegisterForm = () => {
                   style["popup-form-button"],
                 ].join(" ")}
                 onClick={() => {
-                  setValidated(false);
-                  setRegistrationStep(1);
+                  setValidated(false)
+                  setRegistrationStep(1)
                 }}
               >
                 Back
@@ -114,9 +118,9 @@ const RegisterForm = () => {
               </Button>
             </div>
           </>
-        );
+        )
       default:
-        return <>Wrong Step!</>;
+        return <>Wrong Step!</>
     }
   }, [
     registrationStep,
@@ -125,7 +129,7 @@ const RegisterForm = () => {
     profileType,
     setProfileType,
     handleChange,
-  ]);
+  ])
 
   return (
     <>
@@ -135,7 +139,7 @@ const RegisterForm = () => {
         {renderRegistrationStep()}
       </Form>
     </>
-  );
-};
+  )
+}
 
-export default RegisterForm;
+export default RegisterForm
