@@ -42,7 +42,7 @@ html, body {
   font-size: 40px;
   margin-bottom: 40px;
 
-  color: #f6f6f6;
+  color: #23b499;
   margin-top: 40px;
   font-family: Kaushan Script;
 
@@ -64,7 +64,7 @@ html, body {
 #formContent {
   -webkit-border-radius: 10px 10px 10px 10px;
   border-radius: 10px 10px 10px 10px;
-  background: #419197;
+  background: white;
   padding: 30px;
   width: 90%;
   max-width: 450px;
@@ -138,7 +138,7 @@ input[type="reset"]:active {
 } */
 
 .page-pop-up input[type="text"],.page-pop-up input[type="email"], .page-pop-up input[type="date"], .page-pop-up input[type="password"] {
-  background-color: #f6f6f6;
+  background-color: white;
   border: none;
   color: #0d0d0d;
   padding: 25px 32px;
@@ -148,7 +148,7 @@ input[type="reset"]:active {
   font-size: 16px;
   margin: 5px;
   width: 85%;
-  border: 2px solid #f6f6f6;
+  border: 2px solid #dce8f1;
   -webkit-transition: all 0.5s ease-in-out;
   -moz-transition: all 0.5s ease-in-out;
   -ms-transition: all 0.5s ease-in-out;
@@ -379,7 +379,8 @@ input[type="reset"]:active {
 
 
 .popup-form-button-next, .popup-form-button-back{
-  background-color: #f6f6f6;
+  background-color: white;
+  border: solid 2px #12486B;
   color: #12486B;
 
 }
@@ -402,6 +403,7 @@ input[type="reset"]:active {
 }
 .popup-form-button-next:hover, .popup-form-button-back:hover{
   background-color: #5c6664;
+  border: solid 2px #5c6664;
 }
 .page-pop-up .hideFields{
   display: none;
@@ -409,27 +411,26 @@ input[type="reset"]:active {
 .page-pop-up .closeIcon{
   position: absolute;
 
-  height: 26px;
 
   padding: 0.4rem;
   
   right: 0;
   top: 0;
   /* border-top-right-radius: 30%; */
+  color: #12486B;
+  background-color: #f6f6f6;
+  border-bottom: solid 3px #12486B;
+  border-left: solid 3px #12486B;
 
-  color: white;
-  background-color: #5c6664;
-  border-bottom: solid 3px white;
-  border-left: solid 3px white;
 
 
   
 }
 .page-pop-up .closeIcon:hover{
-  color: #12486B;
-  background-color: #f6f6f6;
-  border-bottom: solid 3px #12486B;
-  border-left: solid 3px #12486B;
+  color: white;
+  background-color: #dc3545;
+  border-bottom: solid 3px white;
+  border-left: solid 3px white;
   cursor: pointer;
   
 }
