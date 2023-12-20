@@ -21,10 +21,10 @@ export const validationRegex = {
     errorMessage: "Last name is not a valid",
   },
 
-  dateOfBirth: { validation: /.+/, errorMessage: "dateOfBirth is required" },
-  patientId: { validation: /^\d{10}$/, errorMessage: "Id is not valid" },
+  dateOfBirth: { validation: /.+/, errorMessage: "Date of birth is required" },
+  patientId: { validation: /^\d{10}$/, errorMessage: "Identification number is not valid" },
 
-  pharmacistId: { validation: /^\d{10}$/, errorMessage: "Id is not valid" },
+  pharmacistId: { validation: /^\d{10}$/, errorMessage: "Identification number is not valid" },
   pharmacyName: {
     validation: /^[a-zA-Z]{3,}$/,
     errorMessage: "Pharmacy name is not a valid",
@@ -34,7 +34,7 @@ export const validationRegex = {
     validation: /^[a-zA-Z]{3,}$/,
     errorMessage: "Hospital name is not a valid",
   },
-  doctorId: { validation: /^\d{10}$/, errorMessage: "Id is not valid" },
+  doctorId: { validation: /^\d{10}$/, errorMessage: "Identification number is not valid" },
   specialty: {
     validation: /^[a-zA-Z]{3,}$/,
     errorMessage: "Specialty is not a valid",
