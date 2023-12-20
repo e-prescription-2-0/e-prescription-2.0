@@ -1,8 +1,9 @@
 import CreatePrescriptionTemplate from "./CreatePrescriptionTemplate/CreatePrescriptionTemplate";
 import style from "./CreatePresscription.module.css";
-import { useState } from "react";
+import { useState,useEffect} from "react";
 import CreateMedicineForPrescriptionPopUp from "./NewMedicinePopUpForm/CreateMedicineForPrescriptionPopUp";
 import PatientTable from "./PatientsTablePopUp/PatientsTable";
+import mockedPatients from '../../constants/mockedPatients';
 
 const CreatePrescription = () => {
   const [isPatientChooseMode, setisPatientChooseMode] = useState(true)
@@ -10,6 +11,8 @@ const CreatePrescription = () => {
   const [isEditMode, setIsEditMode] = useState(false);
   const [editIndex, setEditIndex] = useState(-1);
   const [showPopUpForm, setShowPopUpForm] = useState(false);
+  const [patientsList, setPatientsList] = useState([]);
+  const [currentPatient,setCurrentPatient] = useState(null);
 
   const [formValues, setFormaValues] = useState({
     _id: "",
@@ -20,6 +23,13 @@ const CreatePrescription = () => {
     admissionType: "",
     instructions: "",
   });
+
+    
+  useEffect(() => {
+     
+    setPatientsList(mockedPatients)
+
+},[])
 
   const showPopUpModal = () => {
     setFormaValues({
@@ -54,7 +64,7 @@ const CreatePrescription = () => {
       });
     }
 
-    console.log(formValues);
+    
 
     setShowPopUpForm(false);
   };
@@ -78,22 +88,33 @@ const CreatePrescription = () => {
     setFormaValues(medicineItems[index]);
   };
 
-  const hidePatientList = () => {
-    setisPatientChooseMode(false)
+  const hidePatientList = (id) => {
+  
+   setCurrentPatient(patientsList.find(p => p.id === id))
+   setisPatientChooseMode(false)
   }
+
+  const showPatientList = () => {
+    setCurrentPatient(null)
+    setisPatientChooseMode(true)
+  }
+ 
 
   return (
    
-    isPatientChooseMode ? <PatientTable hidePatientList={hidePatientList} />
-    :
-    (
-    <div className={style["create-prescription-container"]}>
+  
+      <div className={style["create-prescription-container"]}>
       <CreatePrescriptionTemplate
         showPopUpModal={showPopUpModal}
         medicineItems={medicineItems}
         onDeleteMedicineItemHandler={onDeleteMedicineItemHandler}
         onEditItemHandler={onEditItemHandler}
+        currentPatient={currentPatient}
+        showPatientList={showPatientList}
       />
+  
+      {isPatientChooseMode && <PatientTable hidePatientList={hidePatientList} patientsList={patientsList} />}
+  
       {showPopUpForm && (
         <CreateMedicineForPrescriptionPopUp
           addMedicineHandler={addMedicineHandler}
@@ -105,7 +126,7 @@ const CreatePrescription = () => {
     </div>
     )
    
-  )
+  
 
 };
 

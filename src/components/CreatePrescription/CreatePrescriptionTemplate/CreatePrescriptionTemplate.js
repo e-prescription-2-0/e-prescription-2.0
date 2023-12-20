@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import CreatePerscriptionTemplateItem from "./CreatePerscriptionTemplateItem";
 import style from "./CreatePrescriptionTemplate.module.css";
 import Accordion from 'react-bootstrap/Accordion';
@@ -8,14 +9,13 @@ const CreatePrescriptionTemplate = ({
     medicineItems, 
     onDeleteMedicineItemHandler,
      onEditItemHandler,
-     showPopUpModal
+     showPopUpModal,
+     currentPatient,
+     showPatientList
     }) => {
 
-
-    
-
     return (
-        <section className={style["section-openPerscription"]}>
+        <section className={style["section-openPerscription"]} onClick={() => console.log('clicked')}>
             <div className={style["div-main-content"]}>
                 <div className={style["div-header"]}>
                     <h2 className={style["div-header-mainTitile"]}>Рецептурна Бланка</h2>
@@ -39,9 +39,10 @@ const CreatePrescriptionTemplate = ({
                 </div>
                         <Button>Запази рецепта</Button>
                 <div className={style["div-userInfo"]}>
-                    <p>Пациент: Пешо Пешев Петров</p>
-                    <p>Възраст: 33</p>
-                    <p>Специфики: няма</p>
+                <Button onClick={showPatientList}>Обратно към списъка с пациенти</Button>
+                    <p>Пациент: {`${currentPatient?.firstName || ''} ${currentPatient?.lastName || ''} `}</p>
+                    <p>Възраст: {currentPatient?.age}</p>
+                    <p>Специфики: {currentPatient?.specifics && currentPatient?.specifics.length > 0 ? currentPatient.specifics.join(',') : 'няма'}</p>
                 </div>
             </div>
         </ section>

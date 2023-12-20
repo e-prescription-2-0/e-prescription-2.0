@@ -1,7 +1,18 @@
 .patient-table-container {
     max-width: 40em;
-    margin: 0 auto;
+    margin: 20px auto;
     padding: 2em;
+    background-color: #3c6e71;
+    text-align: center;
+    color: #fff;
+    position: absolute;
+    top: 56.3%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.patient-table-container h2 {
+    padding: 0.2em;
 }
 
 .table-row button {

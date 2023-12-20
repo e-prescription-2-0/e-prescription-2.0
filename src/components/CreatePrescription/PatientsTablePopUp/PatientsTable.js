@@ -1,30 +1,26 @@
-import { useEffect, useState } from 'react';
+
 import Table from 'react-bootstrap/Table';
 import styles from './PatientsTable.module.css'
 
-import mockedPatients from '../../../constants/mockedPatients'
+
 import PatientData from './PatientData';
 
 
-const PatientTable = ({hidePatientList}) => {
+const PatientTable = ({hidePatientList,patientsList}) => {
 
     
     
 
-    const [patientsLlist, setPatientsList] = useState([]);
+  
    
-    
-    useEffect(() => {
-     
-        setPatientsList(mockedPatients)
-
-    },[])
+  
 
  
 
     return (
 
         <div className={styles['patient-table-container']}>
+            <h2>Моля, изберете пациент</h2>
             <Table striped responsive="sm" className={styles['stripped-table']}>
                 <thead>
                     <tr>
@@ -32,12 +28,12 @@ const PatientTable = ({hidePatientList}) => {
                         <th>Собствено Име</th>
                         <th>Фамилия</th>
                         <th>ЕГН</th>
-                        <th>#</th>
+                        <th></th>
 
                     </tr>
                 </thead>
                 <tbody className={styles['tbody-list']}>
-                    {patientsLlist.map(p => <PatientData key={p.id} {...p} hidePatientList={hidePatientList}/>)}
+                    {patientsList.map(p => <PatientData key={p.id} {...p} hidePatientList={hidePatientList}/>)}
                 </tbody>
             </Table>
         </div>
