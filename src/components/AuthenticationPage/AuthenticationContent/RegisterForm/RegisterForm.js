@@ -95,7 +95,7 @@ const RegisterForm = () => {
                 type="button"
                 className={[
                   style["fadeIn"],
-                  style["fourth"],
+                  style["third"],
                   style["popup-form-button-back"],
                   style["popup-form-button"],
                 ].join(" ")}
@@ -110,7 +110,7 @@ const RegisterForm = () => {
                 type="submit"
                 className={[
                   style["fadeIn"],
-                  style["fourth"],
+                  style["third"],
                   style["popup-form-button"],
                 ].join(" ")}
               >

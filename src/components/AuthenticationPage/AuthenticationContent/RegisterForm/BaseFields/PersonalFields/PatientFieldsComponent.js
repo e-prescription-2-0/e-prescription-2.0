@@ -4,14 +4,14 @@ export const PatientFields = [
   {
     name: "patientId",
     placeholder: "Patient ID",
-    classes: [style["fadeIn"], style["fourth"]].join(" "),
+    classes: [style["fadeIn"], style["second"]].join(" "),
     fieldType: "text",
     option: undefined,
   },
   {
     name: "gender",
     placeholder: "Gender",
-    classes: [style["form-select"], style["fadeIn"], style["fourth"]].join(" "),
+    classes: [style["form-select"], style["fadeIn"], style["second"]].join(" "),
     fieldType: "select",
     options: [
       { text: "Male", value: "male" },
@@ -21,7 +21,7 @@ export const PatientFields = [
   {
     name: "dateOfBirth",
     placeholder: "Date Of Birth",
-    classes: [style["fadeIn"], style["fourth"]].join(" "),
+    classes: [style["fadeIn"], style["second"]].join(" "),
     fieldType: "date",
     option: undefined,
   },
