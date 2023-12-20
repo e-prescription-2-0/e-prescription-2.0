@@ -1,6 +1,6 @@
 import Form from "react-bootstrap/Form";
 import style from "../../../AuthenticationPage.module.css";
-import { registrationValidationRegex } from "../registrationValidationRegex";
+import { registrationValidationRegex } from "../../validationRegex";
 import { CredentialsFields } from "./CredentialsFields";
 import RegisterField from "../RegisterField";
 

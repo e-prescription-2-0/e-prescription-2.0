@@ -1,4 +1,4 @@
-export const registrationValidationRegex = {
+export const validationRegex = {
   email: {
     validation: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
     errorMessage: "Email is not a valid",
@@ -6,6 +6,11 @@ export const registrationValidationRegex = {
   password: {
     validation: /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/,
     errorMessage: "Password should be at least 8 characters and digits",
+  },
+
+  repeatPassword: {
+    validation: /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/,
+    errorMessage: "Passwords do not match",
   },
   firstName: {
     validation: /^[a-zA-Z]{3,}$/,

@@ -1,7 +1,7 @@
 import React from "react";
 import { Form } from "react-bootstrap";
 import style from "../../AuthenticationPage.module.css";
-import { registrationValidationRegex } from "./registrationValidationRegex";
+import { validationRegex } from "../validationRegex";
 
 const RegisterField = ({ handleChange, registrationFormData, fieldData }) => {
   const field = () => {
@@ -47,8 +47,8 @@ const RegisterField = ({ handleChange, registrationFormData, fieldData }) => {
           type="invalid"
           className={style["register-form-error"]}
         >
-          {fieldData.name in registrationValidationRegex
-            ? registrationValidationRegex[fieldData.name].errorMessage
+          {fieldData.name in validationRegex
+            ? validationRegex[fieldData.name].errorMessage
             : ""}
         </Form.Control.Feedback>
       </Form.Group>

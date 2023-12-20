@@ -2,10 +2,13 @@ import { useState } from "react";
 import Form from "react-bootstrap/Form";
 import style from "../../AuthenticationPage.module.css";
 import { InputGroup } from "react-bootstrap";
+import { validateInputBaseOnRegex} from "../helperAuthenticationFunctions";
+import { validationRegex } from "../validationRegex";
 
 const LoginForm = () => {
   const [validated, setValidated] = useState(false);
   const [invalidLoginForm, setInvalidLoginForm] = useState(false)
+  const [loginFormData, setLoginFormData] = useState({email: '', password: ''})
 
   const handleSubmit = (event) => {
     const form = event.currentTarget;
@@ -21,6 +24,19 @@ const LoginForm = () => {
     }
   };
 
+  const handleChange = (event)=>{
+    const {name, value} = event.target
+    setLoginFormData({
+      ...loginFormData,
+      [name]: value
+    })
+
+    const regex = validationRegex[name].validation;
+    const errorMessage = validationRegex[name].errorMessage
+    validateInputBaseOnRegex(event, regex, value, errorMessage)
+
+  }
+
   return (
     <>
       <h3>Login</h3>
@@ -34,8 +50,8 @@ const LoginForm = () => {
             name="login"
             placeholder="Email"
             required
-            pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"
           />
+
 
           <Form.Control
             type="password"
@@ -44,7 +60,6 @@ const LoginForm = () => {
             name="login"
             placeholder="Password"
             required
-            pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$"
           />
         
 
