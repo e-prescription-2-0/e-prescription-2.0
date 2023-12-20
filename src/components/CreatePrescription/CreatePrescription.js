@@ -89,16 +89,20 @@ const CreatePrescription = () => {
   };
 
   const hidePatientList = (id) => {
-  
-   setCurrentPatient(patientsList.find(p => p.id === id))
+    
+  if(id) {
+    setCurrentPatient(patientsList.find(p => p.id === id))
+
+  }
    setisPatientChooseMode(false)
   }
 
   const showPatientList = () => {
+    setisPatientChooseMode(true);
     setCurrentPatient(null)
-    setisPatientChooseMode(true)
   }
  
+ ;
 
   return (
    
@@ -111,6 +115,8 @@ const CreatePrescription = () => {
         onEditItemHandler={onEditItemHandler}
         currentPatient={currentPatient}
         showPatientList={showPatientList}
+        hidePatientList={hidePatientList}
+
       />
   
       {isPatientChooseMode && <PatientTable hidePatientList={hidePatientList} patientsList={patientsList} />}

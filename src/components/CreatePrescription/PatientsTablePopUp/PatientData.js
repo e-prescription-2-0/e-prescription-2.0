@@ -10,7 +10,7 @@ return (
     <td>{firstName}</td>
     <td>{lastName}</td>
     <td>{patientId}</td>
-    <td><Button variant="info" onClick={() =>hidePatientList(id) }>Избери</Button></td>
+    <td><Button variant="info" onClick={(e) =>hidePatientList(id) }>Избери</Button></td>
   </tr>
 )
 

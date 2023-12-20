@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+
 import CreatePerscriptionTemplateItem from "./CreatePerscriptionTemplateItem";
 import style from "./CreatePrescriptionTemplate.module.css";
 import Accordion from 'react-bootstrap/Accordion';
@@ -11,11 +11,12 @@ const CreatePrescriptionTemplate = ({
      onEditItemHandler,
      showPopUpModal,
      currentPatient,
-     showPatientList
+     showPatientList,
+     hidePatientList
     }) => {
 
     return (
-        <section className={style["section-openPerscription"]} onClick={() => console.log('clicked')}>
+        <section className={style["section-openPerscription"]} >
             <div className={style["div-main-content"]}>
                 <div className={style["div-header"]}>
                     <h2 className={style["div-header-mainTitile"]}>Рецептурна Бланка</h2>
