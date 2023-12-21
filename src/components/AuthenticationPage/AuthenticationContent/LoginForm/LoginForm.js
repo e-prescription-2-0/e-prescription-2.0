@@ -17,15 +17,8 @@ const LoginForm = ({ setForm }) => {
   const handleSubmit = (event) => {
     const form = event.currentTarget;
     event.preventDefault();
-    // console.log(form.checkValidity());
-    if (form.checkValidity() === false) {
-      setInvalidLoginForm(true);
-      // event.stopPropagation();
-      setValidated(true);
-    } else {
-      setInvalidLoginForm(false);
-      setValidated(false);
-    }
+    setInvalidLoginForm(!invalidLoginForm)
+    
   };
 
   const handleChange = (event) => {
@@ -35,9 +28,6 @@ const LoginForm = ({ setForm }) => {
       [name]: value,
     });
 
-    const regex = validationRegex[name].validation;
-    const errorMessage = validationRegex[name].errorMessage;
-    validateInputBaseOnRegex(event, regex, value, errorMessage);
   };
 
   return (

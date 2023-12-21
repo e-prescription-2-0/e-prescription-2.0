@@ -517,9 +517,17 @@ select:hover::after {
 .password-field-eye-icon{
   position: absolute;
   height: 1.3rem;
-  right: -8px;
+  right: 6.5%;
   top: 44%;
   transform: translate(-50%, -50%);
   color: #12476bab;
 
+}
+.password-field-eye-icon-slash{
+  right: 6%;
+}
+
+
+input{
+  background-image: none !important;
 }

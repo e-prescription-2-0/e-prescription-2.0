@@ -4,6 +4,7 @@ import RegisterForm from "./RegisterForm/RegisterForm";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import style from "../AuthenticationPage.module.css"
+import ForgotPasswordForm from "./ForgotPasswordForm/ForgotPasswordForm";
 
 const AuthenticationContent = ({ formName, setForm }) => {
   const newRef = useRef(null);
@@ -39,7 +40,7 @@ const AuthenticationContent = ({ formName, setForm }) => {
 
           {formName === "login" && <LoginForm setForm = {setForm}/>}
           {formName === "register" && <RegisterForm />}
-          {formName === 'forgotPassword'}
+          {formName === 'forgotPassword' && <ForgotPasswordForm/>}
           
         </div>
       </div>

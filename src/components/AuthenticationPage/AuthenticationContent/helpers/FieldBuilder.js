@@ -8,8 +8,14 @@ import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
 const FieldBuilder = ({ handleChange, formData, fieldData }) => {
   const [visiblePassword, setVisiblePassword] = useState(false);
 
-  const {fieldType, name, classes, placeholder, autoComplete, options} = fieldData
-
+  const {
+    fieldType,
+    name,
+    classes,
+    placeholder,
+    autoComplete,
+    options,
+  } = fieldData;
 
   const fieldTypeChoice =
     fieldData.fieldType === "password"
@@ -17,8 +23,6 @@ const FieldBuilder = ({ handleChange, formData, fieldData }) => {
         ? "text"
         : "password"
       : fieldData.fieldType;
-
-
 
   const field = () => {
     if (["text", "date", "password"].includes(fieldType)) {
@@ -59,17 +63,25 @@ const FieldBuilder = ({ handleChange, formData, fieldData }) => {
     <>
       <Form.Group key={name} className={style["input-group"]}>
         {field()}
-        <Form.Control.Feedback
-          type="invalid"
-          className={style["register-form-error"]}
-        >
-          {name in validationRegex
-            ? validationRegex[name].errorMessage
-            : ""}
-        </Form.Control.Feedback>
+        {name in validationRegex ? (
+          <Form.Control.Feedback
+            type="invalid"
+            className={style["register-form-error"]}
+          >
+            validationRegex[name].errorMessage
+          </Form.Control.Feedback>
+        ) : (
+          ""
+        )}
+
         {fieldData.fieldType === "password" && (
           <FontAwesomeIcon
-            className={[style['password-field-eye-icon'], style["fadeIn"], style["fourth"]].join(" ")}
+            className={[
+              style["password-field-eye-icon"],
+              style["fadeIn"],
+              style["fourth"],
+              visiblePassword ? style["password-field-eye-icon-slash"] : "",
+            ].join(" ")}
             onClick={() => {
               setVisiblePassword(!visiblePassword);
             }}
