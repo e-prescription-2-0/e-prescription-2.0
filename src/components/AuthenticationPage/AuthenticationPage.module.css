@@ -428,9 +428,9 @@ input[type="reset"]:active {
 }
 .page-pop-up .closeIcon:hover{
   color: white;
-  background-color: #dc3545;
-  border-bottom: solid 3px white;
-  border-left: solid 3px white;
+  background-color: #6DA9E4;
+  border-bottom: solid 3px #6DA9E4;
+  border-left: solid 3px #6DA9E4;
   cursor: pointer;
   
 }
