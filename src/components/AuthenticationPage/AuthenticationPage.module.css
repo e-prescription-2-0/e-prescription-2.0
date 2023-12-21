@@ -527,6 +527,12 @@ select:hover::after {
   right: 6%;
 }
 
+.password-field-eye-icon:hover, .password-field-eye-icon-slash:hover{
+  color: rgba(0,123,255,.25);
+  cursor: pointer;
+
+}
+
 
 input{
   background-image: none !important;

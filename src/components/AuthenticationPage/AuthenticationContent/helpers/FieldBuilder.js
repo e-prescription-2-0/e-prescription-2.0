@@ -30,7 +30,7 @@ const FieldBuilder = ({ handleChange, formData, fieldData }) => {
         <Form.Control
           type={fieldTypeChoice}
           id={name}
-          className={classes}
+          className={classes.map((className)=>style[className]).join(" ")}
           name={name}
           placeholder={placeholder}
           required
@@ -68,7 +68,7 @@ const FieldBuilder = ({ handleChange, formData, fieldData }) => {
             type="invalid"
             className={style["register-form-error"]}
           >
-            validationRegex[name].errorMessage
+            {validationRegex[name].errorMessage}
           </Form.Control.Feedback>
         ) : (
           ""

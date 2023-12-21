@@ -1,10 +1,9 @@
-import style from "../../../../AuthenticationPage.module.css";
 
 export const nameFields = [
   {
     name: "firstName",
     placeholder: "First Name",
-    classes: [style["fadeIn"], style["first"]].join(" "),
+    classes: ["fadeIn", "first"],
     
     autoComplete: "given-name",
 
@@ -14,7 +13,7 @@ export const nameFields = [
   {
     name: "lastName",
     placeholder: "Last Name",
-    classes: [style["fadeIn"], style["first"]].join(" "),
+    classes: ["fadeIn", "first"],
     
     autoComplete: "family-name",
 

@@ -1,10 +1,9 @@
-import style from '../../AuthenticationPage.module.css'
 
 export const LoginFields = [
     {
       name: "loginEmail",
       placeholder: "Email Address",
-      classes: [style["fadeIn"], style["first"], style["col"]].join(" "),
+      classes: ["fadeIn", "first", "col"],
      
       autoComplete: "email",
      
@@ -14,7 +13,7 @@ export const LoginFields = [
     {
       name: "loginPassword",
       placeholder: "Password",
-      classes: [style["fadeIn"], style["second"], style["col"]].join(" "),
+      classes: ["fadeIn", "second", "col"],
   
       autoComplete: "password",
   

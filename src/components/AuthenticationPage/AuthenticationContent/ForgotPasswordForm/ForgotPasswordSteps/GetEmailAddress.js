@@ -6,7 +6,7 @@ const GetEmailAddress= ({handleEmailChange, setForgotPasswordFormData}) => {
     const emailField = {
       name: "email",
       placeholder: "Email Address",
-      classes: [style["fadeIn"], style["first"], style["col"]].join(" "),
+      classes: ["fadeIn", "first", "col"],
   
       autoComplete: "email",
   

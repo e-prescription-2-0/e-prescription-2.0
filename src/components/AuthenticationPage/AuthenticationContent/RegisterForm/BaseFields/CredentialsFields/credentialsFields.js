@@ -1,10 +1,9 @@
-import style from "../../../../AuthenticationPage.module.css";
 
 export const credentialsFields = [
   {
     name: "email",
     placeholder: "Email Address",
-    classes: [style["fadeIn"], style["first"], style["col"]].join(" "),
+    classes: ["fadeIn", "first", "col"],
    
     autoComplete: "email",
    
@@ -14,7 +13,7 @@ export const credentialsFields = [
   {
     name: "password",
     placeholder: "Password",
-    classes: [style["fadeIn"], style["second"], style["col"]].join(" "),
+    classes: ["fadeIn", "second", "col"],
 
     autoComplete: "new-password",
 
@@ -24,7 +23,7 @@ export const credentialsFields = [
   {
     name: "repeatPassword",
     placeholder: "Confirm Password",
-    classes: [style["fadeIn"], style["third"], style["col"]].join(" "),
+    classes: ["fadeIn", "third", "col"],
     
     autoComplete: "new-password",
     
@@ -34,7 +33,7 @@ export const credentialsFields = [
   {
     name: "profileType",
     placeholder: "profileType",
-    classes: [style["fadeIn"], style["fourth"], style["form-select"]].join(" "),
+    classes: ["fadeIn", "fourth", "form-select"],
    
     autoComplete: "off",
    
