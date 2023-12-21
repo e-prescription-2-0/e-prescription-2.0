@@ -34,6 +34,7 @@ export default {
     headers: {
       "Content-Type": HEADER_FORMATS.JSON,
       Accept: HEADER_FORMATS.JSON,
+      "Access-Control-Allow-Origin": "*",
     },
   }),
   getDoctorById: serviceBind({

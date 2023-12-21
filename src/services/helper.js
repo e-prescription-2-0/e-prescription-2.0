@@ -1,6 +1,8 @@
 import axios from "axios"
 import { isEmpty, omit, type } from "ramda"
 
+const baseUrl = "http://localhost:3030"
+
 const formatParams = (params) => {
   if (!isEmpty(params)) {
     if (typeof params === "object") {
@@ -13,7 +15,7 @@ const formatParams = (params) => {
 
 const serviceBind = (service) => {
   return (params = {}, options = {}) => {
-    let { method, url, headers, baseUrl } = service
+    let { method, url, headers } = service
     let pathParams = []
 
     headers = {
