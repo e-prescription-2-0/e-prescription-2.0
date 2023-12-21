@@ -1,6 +1,6 @@
-import style from "../../../AuthenticationPage.module.css";
+import style from "../../../../AuthenticationPage.module.css";
 
-export const CredentialsFields = [
+export const credentialsFields = [
   {
     name: "email",
     placeholder: "Email Address",

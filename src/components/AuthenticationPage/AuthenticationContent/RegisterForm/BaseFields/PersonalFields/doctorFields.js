@@ -1,7 +1,6 @@
-import { Form } from "react-bootstrap";
 import style from "../../../../AuthenticationPage.module.css";
 
-export const DoctorFields = [
+export const doctorFields = [
   {
     name: "doctorId",
     placeholder: "Doctor ID",

@@ -1,6 +1,6 @@
 import style from "../../../../AuthenticationPage.module.css";
 
-export const PatientFields = [
+export const patientFields = [
   {
     name: "patientId",
     placeholder: "Patient ID",

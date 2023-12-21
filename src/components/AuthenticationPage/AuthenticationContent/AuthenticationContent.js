@@ -37,8 +37,10 @@ const AuthenticationContent = ({ formName, setForm }) => {
            */}
           {/* <!-- Login Form --> */}
 
-          {formName === "login" && <LoginForm />}
+          {formName === "login" && <LoginForm setForm = {setForm}/>}
           {formName === "register" && <RegisterForm />}
+          {formName === 'forgotPassword'}
+          
         </div>
       </div>
     </>

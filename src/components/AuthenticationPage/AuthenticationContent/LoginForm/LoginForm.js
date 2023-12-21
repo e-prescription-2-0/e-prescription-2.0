@@ -1,71 +1,54 @@
 import { useState } from "react";
 import Form from "react-bootstrap/Form";
 import style from "../../AuthenticationPage.module.css";
-import { InputGroup } from "react-bootstrap";
-import { validateInputBaseOnRegex} from "../helperAuthenticationFunctions";
-import { validationRegex } from "../validationRegex";
+import { validateInputBaseOnRegex } from "../helpers/helperAuthenticationFunctions";
+import { validationRegex } from "../helpers/validationRegex";
+import FieldBuilder from "../helpers/FieldBuilder";
+import { LoginFields } from "./LoginFields";
 
-const LoginForm = () => {
+const LoginForm = ({ setForm }) => {
   const [validated, setValidated] = useState(false);
-  const [invalidLoginForm, setInvalidLoginForm] = useState(false)
-  const [loginFormData, setLoginFormData] = useState({email: '', password: ''})
+  const [invalidLoginForm, setInvalidLoginForm] = useState(false);
+  const [loginFormData, setLoginFormData] = useState({
+    email: "",
+    password: "",
+  });
 
   const handleSubmit = (event) => {
     const form = event.currentTarget;
     event.preventDefault();
     // console.log(form.checkValidity());
     if (form.checkValidity() === false) {
-      setInvalidLoginForm(true)
+      setInvalidLoginForm(true);
       // event.stopPropagation();
       setValidated(true);
     } else {
-      setInvalidLoginForm(false)
+      setInvalidLoginForm(false);
       setValidated(false);
     }
   };
 
-  const handleChange = (event)=>{
-    const {name, value} = event.target
+  const handleChange = (event) => {
+    const { name, value } = event.target;
     setLoginFormData({
       ...loginFormData,
-      [name]: value
-    })
+      [name]: value,
+    });
 
     const regex = validationRegex[name].validation;
-    const errorMessage = validationRegex[name].errorMessage
-    validateInputBaseOnRegex(event, regex, value, errorMessage)
-
-  }
+    const errorMessage = validationRegex[name].errorMessage;
+    validateInputBaseOnRegex(event, regex, value, errorMessage);
+  };
 
   return (
     <>
       <h3>Login</h3>
 
       <Form noValidate validated={validated} onSubmit={handleSubmit}>
-        {invalidLoginForm && <div className={style['error']}>Invalid Email or password</div>}
-          <Form.Control
-            type="text"
-            id="login"
-            className={[style["fadeIn"], style["second"]].join(" ")}
-            name="login"
-            placeholder="Email"
-
-            autoComplete="email"
-            required
-          />
-
-
-          <Form.Control
-            type="password"
-            id="password"
-            className={[style["fadeIn"], style["third"]].join(" ")}
-            name="login"
-
-            autoComplete="password"
-
-            placeholder="Password"
-            required
-          />
+        {invalidLoginForm && (
+          <div className={style["error"]}>Invalid Email or password</div>
+        )}
+        {LoginFields.map((fieldData)=><FieldBuilder handleChange={handleChange} formData={loginFormData} fieldData={fieldData}/>)}
         
 
         <button
@@ -81,9 +64,12 @@ const LoginForm = () => {
       </Form>
       {/* <!-- Remind Password --> */}
       <div id={style["formFooter"]}>
-        <a className={style["underlineHover"]} href="#">
+        <p
+          className={style["underlineHover"]}
+          onClick={() => setForm("forgotPassword")}
+        >
           Forgot Password?
-        </a>
+        </p>
       </div>
     </>
   );

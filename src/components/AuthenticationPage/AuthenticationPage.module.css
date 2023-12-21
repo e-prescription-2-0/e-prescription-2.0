@@ -22,7 +22,7 @@ html, body {
   
 }
 
-.page-pop-up a {
+.page-pop-up .underlineHover {
   color: #12486B;
   display: inline-block;
   text-decoration: none !important;
@@ -166,9 +166,7 @@ input[type="text"]::placeholder, input[type="password"]::placeholder, input[type
 
 
 
-.page-pop-up input[type="text"]:placeholder {
-  color: #cccccc;
-}
+
 
 /* ANIMATIONS */
 
@@ -312,7 +310,7 @@ input[type="text"]::placeholder, input[type="password"]::placeholder, input[type
   width: 100%;
 
 }
-.page-pop-up a:hover{
+.page-pop-up .underlineHover:hover{
   color: #6DA9E4;
 }
 
@@ -513,4 +511,15 @@ select:hover::after {
 .page-pop-up .input-group .register-form-error{
   position: absolute;
   top: -20px;
+}
+
+
+.password-field-eye-icon{
+  position: absolute;
+  height: 1.3rem;
+  right: -8px;
+  top: 44%;
+  transform: translate(-50%, -50%);
+  color: #12476bab;
+
 }

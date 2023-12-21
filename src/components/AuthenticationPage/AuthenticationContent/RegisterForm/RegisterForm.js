@@ -2,10 +2,10 @@
 import React, { useCallback, useState } from "react";
 import { Button, Form } from "react-bootstrap";
 import style from "../../AuthenticationPage.module.css";
-import CredentialsFieldsComponent from "./BaseFields/CredentialsFieldsComponent";
-import PersonalFieldsComponent from "./BaseFields/PersonalFieldsComponent";
-import { validationRegex } from "../validationRegex";
-import { validateInputBaseOnRegex, validatePasswordMatch } from "../helperAuthenticationFunctions";
+import CredentialsFieldsComponent from "./BaseFields/CredentialsFields/CredentialsFieldsComponent";
+import PersonalFieldsComponent from "./BaseFields/PersonalFields/PersonalFieldsComponent";
+import { validationRegex } from "../helpers/validationRegex";
+import { validateInputBaseOnRegex, validatePasswordMatch } from "../helpers/helperAuthenticationFunctions";
 
 // Define the RegisterForm component
 const RegisterForm = () => {
@@ -33,6 +33,7 @@ const RegisterForm = () => {
   // Handle form input changes
   const handleChange = (e) => {
     const { name, value } = e.target;
+    console.log(value)
 
     // Update form data with the new input value
     const newData = {
@@ -64,8 +65,6 @@ const RegisterForm = () => {
         return (
           <>
             <CredentialsFieldsComponent
-              profileType={profileType}
-              setProfileType={setProfileType}
               registrationFormData={registrationFormData}
               handleChange={handleChange}
             />
@@ -86,7 +85,6 @@ const RegisterForm = () => {
         return (
           <>
             <PersonalFieldsComponent
-              profileType={profileType}
               registrationFormData={registrationFormData}
               handleChange={handleChange}
             />
@@ -127,7 +125,6 @@ const RegisterForm = () => {
     setRegistrationStep,
     registrationFormData,
     profileType,
-    setProfileType,
     handleChange,
   ]);
 
