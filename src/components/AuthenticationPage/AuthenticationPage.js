@@ -6,11 +6,11 @@ const AuthenticationPage = () => {
   const [formName, setForm] = useState("register") // the formName should be one of the three login register or null
   return (
     <>
-      <div className={style["page-pop-up"]}>
-        {formName && (
+      {formName && (<div className={style["page-pop-up"]}>
+        
           <AuthenticationContent formName={formName} setForm={setForm} />
-        )}
-      </div>
+        
+      </div>)}
     </>
   )
 }
