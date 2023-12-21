@@ -531,3 +531,15 @@ select:hover::after {
 input{
   background-image: none !important;
 }
+
+.form-forgot-password h4{
+  color: #6DA9E4;
+  margin-top: 40px;
+
+
+}
+
+.form-forgot-password p{
+  padding-inline: 30px;
+
+}
