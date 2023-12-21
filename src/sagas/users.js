@@ -1,13 +1,14 @@
-import { all, put, takeLatest } from "@redux-saga/core/effects"
+import { all, call, put, takeLatest } from "@redux-saga/core/effects"
 import { doctorsData } from "../mockData"
 import { usersSlice } from "../reducers/users"
+import usersService from "../services/users-service"
 
 function* onFetchDoctors() {
   try {
-    // const result = yield callExpression()
+    const result = yield call(usersService.getDoctors)
 
-    // console.log(doctorsData)
-    yield put(usersSlice.actions.setDoctors(doctorsData))
+    console.log(result)
+    yield put(usersSlice.actions.setDoctors(result))
   } catch (error) {
     console.log("====================================")
     console.log(error)

@@ -4,6 +4,12 @@ import Prescription from "./Prescription/Prescription"
 import PrescriptionsList from "./PrescriptionsList/PrescriptionsList"
 
 const MainDashboard = () => {
+  // TODO: Remove commented code
+  // const getDoctors = useReduxAction(usersSlice.actions.fetchDoctors)
+
+  // useEffect(() => {
+  //   getDoctors()
+  // }, [])
   return (
     <section className={style["main-dashboard-section"]}>
       <DashboardNavigation />
