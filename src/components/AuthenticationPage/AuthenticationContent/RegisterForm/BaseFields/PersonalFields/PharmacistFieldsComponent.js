@@ -7,6 +7,9 @@ export const PharmacistFields = [
     placeholder: "Pharmacist ID",
     classes: [style["fadeIn"], style["second"]].join(" "),
     fieldType: "text",
+
+    autoComplete: "off",
+
     option: undefined,
   },
   {
@@ -14,6 +17,9 @@ export const PharmacistFields = [
     placeholder: "Pharmacy Name",
     classes: [style["fadeIn"], style["second"]].join(" "),
     fieldType: "text",
+
+    autoComplete: "off",
+
     option: undefined,
   },
 ];

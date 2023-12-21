@@ -5,6 +5,9 @@ export const CredentialsFields = [
     name: "email",
     placeholder: "Email Address",
     classes: [style["fadeIn"], style["first"], style["col"]].join(" "),
+   
+    autoComplete: "email",
+   
     fieldType: "text",
     option: undefined,
   },
@@ -12,6 +15,9 @@ export const CredentialsFields = [
     name: "password",
     placeholder: "Password",
     classes: [style["fadeIn"], style["second"], style["col"]].join(" "),
+
+    autoComplete: "new-password",
+
     fieldType: "password",
     option: undefined,
   },
@@ -19,6 +25,9 @@ export const CredentialsFields = [
     name: "repeatPassword",
     placeholder: "Confirm Password",
     classes: [style["fadeIn"], style["third"], style["col"]].join(" "),
+    
+    autoComplete: "new-password",
+    
     fieldType: "password",
     option: undefined,
   },
@@ -26,6 +35,9 @@ export const CredentialsFields = [
     name: "profileType",
     placeholder: "profileType",
     classes: [style["fadeIn"], style["fourth"], style["form-select"]].join(" "),
+   
+    autoComplete: "off",
+   
     fieldType: "select",
     options: [
       { text: "Patient", value: "patient" },

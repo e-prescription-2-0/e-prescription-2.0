@@ -14,6 +14,9 @@ const RegisterField = ({ handleChange, registrationFormData, fieldData }) => {
           name={fieldData.name}
           placeholder={fieldData.placeholder}
           required
+
+          autoComplete={fieldData.autoComplete}
+          
           value={registrationFormData[fieldData.name] || ""}
           onChange={handleChange}
         />

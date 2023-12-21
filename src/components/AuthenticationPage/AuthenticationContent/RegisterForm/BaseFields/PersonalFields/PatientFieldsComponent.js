@@ -6,6 +6,9 @@ export const PatientFields = [
     placeholder: "Patient ID",
     classes: [style["fadeIn"], style["second"]].join(" "),
     fieldType: "text",
+    
+    autoComplete: "off",
+
     option: undefined,
   },
   {
@@ -13,6 +16,8 @@ export const PatientFields = [
     placeholder: "Gender",
     classes: [style["form-select"], style["fadeIn"], style["second"]].join(" "),
     fieldType: "select",
+    autoComplete: "off",
+
     options: [
       { text: "Male", value: "male" },
       { text: "Female", value: "female" },
@@ -22,6 +27,9 @@ export const PatientFields = [
     name: "dateOfBirth",
     placeholder: "Date Of Birth",
     classes: [style["fadeIn"], style["second"]].join(" "),
+
+    autoComplete: "off",
+
     fieldType: "date",
     option: undefined,
   },

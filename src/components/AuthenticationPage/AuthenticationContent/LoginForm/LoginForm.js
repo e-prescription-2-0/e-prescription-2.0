@@ -49,6 +49,8 @@ const LoginForm = () => {
             className={[style["fadeIn"], style["second"]].join(" ")}
             name="login"
             placeholder="Email"
+
+            autoComplete="email"
             required
           />
 
@@ -58,6 +60,9 @@ const LoginForm = () => {
             id="password"
             className={[style["fadeIn"], style["third"]].join(" ")}
             name="login"
+
+            autoComplete="password"
+
             placeholder="Password"
             required
           />
