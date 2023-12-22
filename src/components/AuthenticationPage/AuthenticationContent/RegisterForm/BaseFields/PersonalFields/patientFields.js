@@ -1,10 +1,9 @@
-import style from "../../../../AuthenticationPage.module.css";
 
 export const patientFields = [
   {
     name: "patientId",
     placeholder: "Patient ID",
-    classes: [style["fadeIn"], style["second"]].join(" "),
+    classes: ["fadeIn", "second"],
     fieldType: "text",
     
     autoComplete: "off",
@@ -14,7 +13,7 @@ export const patientFields = [
   {
     name: "gender",
     placeholder: "Gender",
-    classes: [style["form-select"], style["fadeIn"], style["second"]].join(" "),
+    classes: ["form-select", "fadeIn", "second"],
     fieldType: "select",
     autoComplete: "off",
 
@@ -26,7 +25,7 @@ export const patientFields = [
   {
     name: "dateOfBirth",
     placeholder: "Date Of Birth",
-    classes: [style["fadeIn"], style["second"]].join(" "),
+    classes: ["fadeIn", "second"],
 
     autoComplete: "off",
 

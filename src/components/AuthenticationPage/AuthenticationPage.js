@@ -4,7 +4,7 @@ import style from "./AuthenticationPage.module.css"
 
 const AuthenticationPage = () => {
    // the formName should be one of the four login register forgotPassword or null
-  const [formName, setForm] = useState("login")
+  const [formName, setForm] = useState("register")
 
  
   return (

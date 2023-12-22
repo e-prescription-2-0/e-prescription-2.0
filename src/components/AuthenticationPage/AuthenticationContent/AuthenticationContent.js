@@ -31,12 +31,6 @@ const AuthenticationContent = ({ formName, setForm }) => {
             onClick={() => setForm(null)}
             icon={faXmark}
           />
-          {/* <!-- Tabs Titles --> */}
-          {/* <h2 onClick={()=>{setForm('login')}} className={formName === 'login'? 'active':'inactive underlineHover'}>Sign In</h2>
-          <h2 onClick={()=>{setForm('register')}} className={formName === 'register'? 'active':'inactive underlineHover'}>Sign Up</h2>
-
-           */}
-          {/* <!-- Login Form --> */}
 
           {formName === "login" && <LoginForm setForm = {setForm}/>}
           {formName === "register" && <RegisterForm />}

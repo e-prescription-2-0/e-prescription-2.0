@@ -1,7 +1,6 @@
 // Import necessary modules and components from React and Bootstrap
 import React, { useCallback, useState } from "react";
-import { Button, Form } from "react-bootstrap";
-import style from "../../AuthenticationPage.module.css";
+import { Form } from "react-bootstrap";
 import CredentialsFieldsComponent from "./BaseFields/CredentialsFields/CredentialsFieldsComponent";
 import PersonalFieldsComponent from "./BaseFields/PersonalFields/PersonalFieldsComponent";
 import { validationRegex } from "../helpers/validationRegex";
@@ -37,7 +36,6 @@ const RegisterForm = () => {
     // Handle form input changes
     const handleChange = (e) => {
       const { name, value } = e.target;
-      console.log(value);
 
       // Update form data with the new input value
       const newData = {
@@ -59,6 +57,11 @@ const RegisterForm = () => {
       }
     };
 
+    const backOnClick = () => {
+      setValidated(false);
+      setRegistrationStep(registrationStep - 1);
+    };
+
     switch (registrationStep) {
       case 1:
         return (
@@ -67,17 +70,6 @@ const RegisterForm = () => {
               registrationFormData={registrationFormData}
               handleChange={handleChange}
             />
-            <Button
-              type="submit"
-              className={[
-                style["fadeIn"],
-                style["fourth"],
-                style["popup-form-button-next"],
-                style["popup-form-button"],
-              ].join(" ")}
-            >
-              Next
-            </Button>
           </>
         );
       case 2:
@@ -86,34 +78,8 @@ const RegisterForm = () => {
             <PersonalFieldsComponent
               registrationFormData={registrationFormData}
               handleChange={handleChange}
+              backOnClick={backOnClick}
             />
-            <div className={style["popup-form-button-holder"]}>
-              <Button
-                type="button"
-                className={[
-                  style["fadeIn"],
-                  style["third"],
-                  style["popup-form-button-back"],
-                  style["popup-form-button"],
-                ].join(" ")}
-                onClick={() => {
-                  setValidated(false);
-                  setRegistrationStep(1);
-                }}
-              >
-                Back
-              </Button>
-              <Button
-                type="submit"
-                className={[
-                  style["fadeIn"],
-                  style["third"],
-                  style["popup-form-button"],
-                ].join(" ")}
-              >
-                Register
-              </Button>
-            </div>
           </>
         );
       default:

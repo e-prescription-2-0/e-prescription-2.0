@@ -42,8 +42,8 @@ const FieldBuilder = ({ handleChange, formData, fieldData }) => {
     } else if (fieldType === "select") {
       return (
         <select
-          className={classes}
-          aria-label="Default select example"
+        className={classes.map((className)=>style[className]).join(" ")}
+        aria-label="Default select example"
           name={name}
           value={formData[name] || ""}
           onChange={handleChange}
