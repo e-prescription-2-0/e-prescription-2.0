@@ -8,6 +8,7 @@ import {
   validateInputBaseOnRegex,
   validatePasswordMatch,
 } from "../helpers/helperAuthenticationFunctions";
+import style from "../../AuthenticationPage.module.css"
 
 // Define the RegisterForm component
 const RegisterForm = () => {
@@ -91,7 +92,7 @@ const RegisterForm = () => {
   return (
     <>
       <Form noValidate validated={validated} onSubmit={handleSubmit}>
-        <h3>Register</h3>
+        <h3 className={[style["fadeIn"], style["first"]].join(" ")}>Register</h3>
         {renderRegistrationStep()}
       </Form>
     </>

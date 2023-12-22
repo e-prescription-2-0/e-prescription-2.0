@@ -3,7 +3,7 @@ export const LoginFields = [
     {
       name: "loginEmail",
       placeholder: "Email Address",
-      classes: ["fadeIn", "first", "col"],
+      classes: ["fadeIn", "second", "col"],
      
       autoComplete: "email",
      
@@ -13,7 +13,7 @@ export const LoginFields = [
     {
       name: "loginPassword",
       placeholder: "Password",
-      classes: ["fadeIn", "second", "col"],
+      classes: ["fadeIn", "third", "col"],
   
       autoComplete: "password",
   

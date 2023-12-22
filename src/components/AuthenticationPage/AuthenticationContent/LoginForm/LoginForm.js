@@ -1,8 +1,6 @@
 import { useState } from "react";
 import Form from "react-bootstrap/Form";
 import style from "../../AuthenticationPage.module.css";
-import { validateInputBaseOnRegex } from "../helpers/helperAuthenticationFunctions";
-import { validationRegex } from "../helpers/validationRegex";
 import FieldBuilder from "../helpers/FieldBuilder";
 import { LoginFields } from "./LoginFields";
 
@@ -17,8 +15,7 @@ const LoginForm = ({ setForm }) => {
   const handleSubmit = (event) => {
     const form = event.currentTarget;
     event.preventDefault();
-    setInvalidLoginForm(!invalidLoginForm)
-    
+    setInvalidLoginForm(!invalidLoginForm);
   };
 
   const handleChange = (event) => {
@@ -27,19 +24,23 @@ const LoginForm = ({ setForm }) => {
       ...loginFormData,
       [name]: value,
     });
-
   };
 
   return (
     <>
-      <h3>Login</h3>
+      <h3 className={[style["fadeIn"], style["first"]].join(" ")}>Login</h3>
 
       <Form noValidate validated={validated} onSubmit={handleSubmit}>
         {invalidLoginForm && (
           <div className={style["error"]}>Invalid Email or password</div>
         )}
-        {LoginFields.map((fieldData)=><FieldBuilder handleChange={handleChange} formData={loginFormData} fieldData={fieldData}/>)}
-        
+        {LoginFields.map((fieldData) => (
+          <FieldBuilder
+            handleChange={handleChange}
+            formData={loginFormData}
+            fieldData={fieldData}
+          />
+        ))}
 
         <button
           type="submit"
