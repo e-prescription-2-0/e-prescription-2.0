@@ -550,3 +550,12 @@ input{
   padding-inline: 30px;
 
 }
+
+.send-email-again-span{
+  color: #6DA9E4;
+  margin-bottom: 10px;
+
+}
+.send-email-again-span:hover{
+  color: rgba(0,123,255,.25);
+}

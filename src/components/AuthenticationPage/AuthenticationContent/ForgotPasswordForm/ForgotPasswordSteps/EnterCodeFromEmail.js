@@ -12,7 +12,7 @@ const EnterCodeFromEmail = ({
   const codeField = {
     name: "text",
     placeholder: "Code From Email",
-    classes: ["fadeIn", "first", "col"],
+    classes: ["fadeIn", "third", "col"],
 
     autoComplete: "email",
 
@@ -21,14 +21,18 @@ const EnterCodeFromEmail = ({
   };
   return (
     <>
-      <h4>Forgot Password</h4>
-      <p>We have send a text massage to ${} with authentication code</p>
+      <h4 className={[style["fadeIn"], style["first"]].join(" ")}>
+        Forgot Password
+      </h4>
+      <p className={[style["fadeIn"], style["second"]].join(" ")}>
+        We have send a text massage to ${} with authentication code
+      </p>
       <FieldBuilder
         handleChange={handleCodeChange}
         formData={forgotPasswordFormData}
         fieldData={codeField}
       />
-      <span>
+      <span className={[style["fadeIn"], style["fourth"], style["send-email-again-span"]].join(" ")}>
         <FontAwesomeIcon icon={faRotateLeft} />
         send again
       </span>
@@ -37,7 +41,7 @@ const EnterCodeFromEmail = ({
           type="button"
           className={[
             style["fadeIn"],
-            style["third"],
+            style["fourth"],
             style["popup-form-button-back"],
             style["popup-form-button"],
           ].join(" ")}
@@ -49,7 +53,7 @@ const EnterCodeFromEmail = ({
           type="submit"
           className={[
             style["fadeIn"],
-            style["third"],
+            style["fourth"],
             style["popup-form-button"],
           ].join(" ")}
         >

@@ -6,7 +6,7 @@ const GetEmailAddress = ({ handleEmailChange, forgotPasswordFormData }) => {
   const emailField = {
     name: "email",
     placeholder: "Email Address",
-    classes: ["fadeIn", "first", "col"],
+    classes: ["fadeIn", "third", "col"],
 
     autoComplete: "email",
 
@@ -15,8 +15,8 @@ const GetEmailAddress = ({ handleEmailChange, forgotPasswordFormData }) => {
   };
   return (
     <>
-      <h4>Forgot Password</h4>
-      <p>Please enter your email address. You will reive email with code.</p>
+      <h4 className={[style["fadeIn"], style["first"]].join(" ")} >Forgot Password</h4>
+      <p className={[style["fadeIn"], style["second"]].join(" ")}>Please enter your email address. You will reive email with code.</p>
       <FieldBuilder
         handleChange={handleEmailChange}
         formData={forgotPasswordFormData}

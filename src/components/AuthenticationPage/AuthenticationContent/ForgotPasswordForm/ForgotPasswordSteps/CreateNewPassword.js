@@ -32,7 +32,7 @@ const CreateNewPassword = ({
   ];
   return (
     <>
-      <h4>New Password</h4>
+      <h4 className={[style["fadeIn"], style["first"]].join(" ")}>New Password</h4>
 
       {passwordFields.map((fieldData) => (
         <FieldBuilder
