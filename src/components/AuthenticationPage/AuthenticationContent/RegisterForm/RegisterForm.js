@@ -5,13 +5,15 @@ import style from "../../AuthenticationPage.module.css";
 import CredentialsFieldsComponent from "./BaseFields/CredentialsFields/CredentialsFieldsComponent";
 import PersonalFieldsComponent from "./BaseFields/PersonalFields/PersonalFieldsComponent";
 import { validationRegex } from "../helpers/validationRegex";
-import { validateInputBaseOnRegex, validatePasswordMatch } from "../helpers/helperAuthenticationFunctions";
+import {
+  validateInputBaseOnRegex,
+  validatePasswordMatch,
+} from "../helpers/helperAuthenticationFunctions";
 
 // Define the RegisterForm component
 const RegisterForm = () => {
   // State variables to manage registration steps, profile type, validation, and form data
   const [registrationStep, setRegistrationStep] = useState(1);
-  const [profileType, setProfileType] = useState("patient");
   const [validated, setValidated] = useState(false);
   const [registrationFormData, setRegistrationFormData] = useState({});
 
@@ -30,36 +32,33 @@ const RegisterForm = () => {
     }
   };
 
-  // Handle form input changes
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    console.log(value)
-
-    // Update form data with the new input value
-    const newData = {
-      ...registrationFormData,
-      [name]: value,
-    };
-    setRegistrationFormData(newData);
-
-
-    // Validate input based on predefined regex patterns
-    if (name in validationRegex) {
-      const regex = validationRegex[name].validation;
-      const errorMessage = validationRegex[name].errorMessage
-      validateInputBaseOnRegex(e,regex, value, errorMessage)
-    }
-
-    // Validate password match
-    if (name === "password" || name === "repeatPassword") {
-      validatePasswordMatch(name, value,  registrationFormData)
-    }
-
-    
-  };
-
   // Render the appropriate registration step based on the current step
   const renderRegistrationStep = useCallback(() => {
+    // Handle form input changes
+    const handleChange = (e) => {
+      const { name, value } = e.target;
+      console.log(value);
+
+      // Update form data with the new input value
+      const newData = {
+        ...registrationFormData,
+        [name]: value,
+      };
+      setRegistrationFormData(newData);
+
+      // Validate input based on predefined regex patterns
+      if (name in validationRegex) {
+        const regex = validationRegex[name].validation;
+        const errorMessage = validationRegex[name].errorMessage;
+        validateInputBaseOnRegex(e, regex, value, errorMessage);
+      }
+
+      // Validate password match
+      if (name === "password" || name === "repeatPassword") {
+        validatePasswordMatch(name, value, registrationFormData);
+      }
+    };
+
     switch (registrationStep) {
       case 1:
         return (
@@ -120,13 +119,7 @@ const RegisterForm = () => {
       default:
         return <>Wrong Step!</>;
     }
-  }, [
-    registrationStep,
-    setRegistrationStep,
-    registrationFormData,
-    profileType,
-    handleChange,
-  ]);
+  }, [registrationStep, setRegistrationStep, registrationFormData]);
 
   // Render the main registration form
   return (
