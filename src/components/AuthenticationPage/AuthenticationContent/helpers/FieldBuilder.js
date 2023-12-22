@@ -17,6 +17,7 @@ const FieldBuilder = ({ handleChange, formData, fieldData }) => {
     options,
   } = fieldData;
 
+  // Determine the actual field type, considering password visibility
   const fieldTypeChoice =
     fieldData.fieldType === "password"
       ? visiblePassword
@@ -24,13 +25,14 @@ const FieldBuilder = ({ handleChange, formData, fieldData }) => {
         : "password"
       : fieldData.fieldType;
 
-  const field = () => {
+  // Build the appropriate form field based on the field type
+  const buildField = () => {
     if (["text", "date", "password"].includes(fieldType)) {
       return (
         <Form.Control
           type={fieldTypeChoice}
           id={name}
-          className={classes.map((className)=>style[className]).join(" ")}
+          className={classes.map((className) => style[className]).join(" ")}
           name={name}
           placeholder={placeholder}
           required
@@ -42,8 +44,8 @@ const FieldBuilder = ({ handleChange, formData, fieldData }) => {
     } else if (fieldType === "select") {
       return (
         <select
-        className={classes.map((className)=>style[className]).join(" ")}
-        aria-label="Default select example"
+          className={classes.map((className) => style[className]).join(" ")}
+          aria-label="Default select example"
           name={name}
           value={formData[name] || ""}
           onChange={handleChange}
@@ -59,37 +61,34 @@ const FieldBuilder = ({ handleChange, formData, fieldData }) => {
     return null; // Return null if fieldType is not recognized
   };
 
+  // Render the form field along with feedback and password visibility icon
   return (
-    <>
-      <Form.Group key={name} className={style["input-group"]}>
-        {field()}
-        {name in validationRegex ? (
-          <Form.Control.Feedback
-            type="invalid"
-            className={style["register-form-error"]}
-          >
-            {validationRegex[name].errorMessage}
-          </Form.Control.Feedback>
-        ) : (
-          ""
-        )}
+    <Form.Group key={name} className={style["input-group"]}>
+      {buildField()}
+      {name in validationRegex && (
+        <Form.Control.Feedback
+          type="invalid"
+          className={style["register-form-error"]}
+        >
+          {validationRegex[name].errorMessage}
+        </Form.Control.Feedback>
+      )}
 
-        {fieldData.fieldType === "password" && (
-          <FontAwesomeIcon
-            className={[
-              style["password-field-eye-icon"],
-              style["fadeIn"],
-              style["fourth"],
-              visiblePassword ? style["password-field-eye-icon-slash"] : "",
-            ].join(" ")}
-            onClick={() => {
-              setVisiblePassword(!visiblePassword);
-            }}
-            icon={visiblePassword ? faEyeSlash : faEye}
-          />
-        )}
-      </Form.Group>
-    </>
+      {fieldData.fieldType === "password" && (
+        <FontAwesomeIcon
+          className={[
+            style["password-field-eye-icon"],
+            style["fadeIn"],
+            style["fourth"],
+            visiblePassword ? style["password-field-eye-icon-slash"] : "",
+          ].join(" ")}
+          onClick={() => {
+            setVisiblePassword(!visiblePassword);
+          }}
+          icon={visiblePassword ? faEyeSlash : faEye}
+        />
+      )}
+    </Form.Group>
   );
 };
 
