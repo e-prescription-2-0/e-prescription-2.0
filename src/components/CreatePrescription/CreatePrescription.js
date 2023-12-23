@@ -2,7 +2,7 @@ import CreatePrescriptionTemplate from "./CreatePrescriptionTemplate/CreatePresc
 import style from "./CreatePresscription.module.css";
 import { useState,useEffect} from "react";
 import CreateMedicineForPrescriptionPopUp from "./NewMedicinePopUpForm/CreateMedicineForPrescriptionPopUp";
-import PatientTable from "./PatientsTablePopUp/PatientsTable";
+import PatientTable from "./PatientsTable/PatientsTable";
 import mockedPatients from '../../constants/mockedPatients';
 
 const CreatePrescription = () => {
@@ -106,8 +106,10 @@ const CreatePrescription = () => {
 
   return (
    
-  
+    isPatientChooseMode ? <PatientTable hidePatientList={hidePatientList} patientsList={patientsList}/>
+    :(
       <div className={style["create-prescription-container"]}>
+      
       <CreatePrescriptionTemplate
         showPopUpModal={showPopUpModal}
         medicineItems={medicineItems}
@@ -119,7 +121,6 @@ const CreatePrescription = () => {
 
       />
   
-      {isPatientChooseMode && <PatientTable hidePatientList={hidePatientList} patientsList={patientsList} />}
   
       {showPopUpForm && (
         <CreateMedicineForPrescriptionPopUp
@@ -130,7 +131,7 @@ const CreatePrescription = () => {
         />
       )}
     </div>
-    )
+    ))
    
   
 

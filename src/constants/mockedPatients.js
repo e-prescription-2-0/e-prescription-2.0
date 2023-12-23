@@ -13,7 +13,7 @@ const mockedPatients = [
         firstName: "Иван",
         lastName: "Иванов",
         age:33,
-        patientId: "2234567899",
+        patientId: "2234567005",
         gender: "Male",
         specifics: ['тест1','тест2','тест3']
     },
@@ -44,6 +44,7 @@ const mockedPatients = [
         specifics: ['бременна','алергия']
 
     }
+    
 ]
 
 export default mockedPatients
