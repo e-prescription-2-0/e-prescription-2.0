@@ -1,8 +1,9 @@
-import { createSlice } from "@reduxjs/toolkit"
+import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   allMyPrescriptions: [],
-}
+  openPrescription: {},
+};
 
 export const prescriptionsSlice = createSlice({
   name: "prescriptions",
@@ -10,8 +11,10 @@ export const prescriptionsSlice = createSlice({
   reducers: {
     fetchMyPrescriptions: () => {},
     setMyPrescriptions: (state, action) => {
-      console.log("action", action)
-      state.allMyPrescriptions = [...action.payload]
+      state.allMyPrescriptions = [...action.payload];
+    },
+    setOpenPrescription: (state, action) => {
+      state.openPrescription = action.payload;
     },
   },
-})
+});
