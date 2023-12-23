@@ -6,16 +6,22 @@
   max-width: 300px;
   font-size: 24px;
   border-radius: 0.8em;
-
+  padding: 1rem;
+}
+/* .boostrap-container-div-container{
+  padding: 1rem;
+} */
+.aside-navigation-container svg {
+  color: white;
 }
 .aside-nav-list {
   height: 100%;
   display: flex;
-  flex-direction: column;
+  flex-direction: column !important;
   justify-content: flex-start;
   gap: 1em;
   margin: 0;
-  padding: 1em 1.5em 0 1.5em;
+  padding: 1em 1.5em;
 }
 
 .aside-nav-list-item {
@@ -24,22 +30,46 @@
   gap: 1em;
   align-items: center;
   padding: 0.5em;
-  
 }
 
 .aside-nav-list-item svg {
-    width: 26px; 
-    height: 32px; 
-    margin-right: 8px;
+  width: 26px;
+  height: 32px;
+  margin-right: 8px;
 }
-
 
 .aside-nav-list-item a {
   text-decoration: none;
   color: #fff;
 }
-
+/* 
 .aside-nav-list-item:last-child {
   position: absolute;
   bottom: -100px;
+} */
+
+#aside-navbar-brand {
+  color: white;
+  display: none;
+  font-size: calc(1.3rem + 0.6vw);
+  font-family: "Kaushan Script", cursive;
+}
+#aside-navbar-toggle span{
+  color: white;
+}
+@media only screen and (max-width: 768px) {
+  .aside-navigation-container {
+    max-width: 100%;
+    width: 80%;
+  }
+  /* .navbar-expand .navbar-nav{
+    flex-direction: colu;
+  } */
+  .aside-nav-list {
+    padding: 0;
+  }
+
+  #aside-navbar-brand {
+    display: block;
+  }
 }

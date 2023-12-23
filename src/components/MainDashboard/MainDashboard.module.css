@@ -14,3 +14,23 @@
   display: flex;
   column-gap: 1em;
 }
+
+@media (max-width: 768px){
+  .main-dashboard-section{
+    
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    left: 0;
+    right: 0;
+    
+  }
+  .main-dashboard-section-content{
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+  }
+
+}
