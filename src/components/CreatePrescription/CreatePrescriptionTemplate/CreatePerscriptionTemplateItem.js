@@ -20,7 +20,7 @@ const CreatePerscriptionTemplateItem =(
                                 {instructions !== '' && <span>Начин на употреба? {instructions}.</span> }
                               
                               <br/>
-                               <Button variant="outline-warning" onClick={() => onEditItemHandler(index)}>Редактирай</Button>
+                               <Button variant="outline-success" onClick={() => onEditItemHandler(index)}>Редактирай</Button>
                                <Button variant="outline-danger" onClick={() => onDeleteMedicineItemHandler(index)}>Изтрий</Button>
                             </Accordion.Body>
         </Accordion.Item>

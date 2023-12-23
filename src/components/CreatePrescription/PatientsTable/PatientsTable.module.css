@@ -26,6 +26,12 @@
     margin: 0 auto;
 }
 
+.table-row button:hover {
+    background-color: rgb(246, 252, 207, 0.8);
+    color: #000;
+
+}
+
 
 
 
