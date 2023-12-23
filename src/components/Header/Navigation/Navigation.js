@@ -32,7 +32,7 @@ export const Navigation = () => {
       >
         {navLinkConfig.map((link) =>
           !link.hideFor.includes(currentUser) ? (
-            <li className={style["navigation-list-item"]}>
+            <li key={link.id} className={style["navigation-list-item"]}>
               <Link
                 to={link.linkTo}
                 className={style["a"]}

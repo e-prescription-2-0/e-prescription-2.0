@@ -10,56 +10,64 @@ const prescriptionsListHardCodeData = [
     number: '1234',
     doctor: 'д-р Радева',
     patient: 'Пешо Пешев',
-    date: '12.12.2023'
+    date: '12.12.2023',
+    id: "1"
 
   },
   {
     number: '1234',
     doctor: 'д-р Радева',
     patient: 'Пешо Пешев',
-    date: '12.12.2023'
+    date: '12.12.2023',
+    id: "2"
 
   },
   {
     number: '1234',
     doctor: 'д-р Радева',
     patient: 'Пешо Пешев',
-    date: '12.12.2023'
+    date: '12.12.2023',
+    id: "3"
 
   },
   {
     number: '1234',
     doctor: 'д-р Радева',
     patient: 'Пешо Пешев',
-    date: '12.12.2023'
+    date: '12.12.2023',
+    id: "4"
 
   },
   {
     number: '1234',
     doctor: 'д-р Радева',
     patient: 'Пешо Пешев',
-    date: '12.12.2023'
+    date: '12.12.2023',
+    id: "5"
 
   },
   {
     number: '1234',
     doctor: 'д-р Радева',
     patient: 'Пешо Пешев',
-    date: '12.12.2023'
+    date: '12.12.2023',
+    id: "6"
 
   },
   {
     number: '1234',
     doctor: 'д-р Радева',
     patient: 'Пешо Пешев',
-    date: '12.12.2023'
+    date: '12.12.2023',
+    id: "7"
 
   },
   {
     number: '1234',
     doctor: 'д-р Радева',
     patient: 'Пешо Пешев',
-    date: '12.12.2023'
+    date: '12.12.2023',
+    id: "8"
 
   }
   
@@ -69,7 +77,7 @@ const PrescriptionsList = () => {
   return (
     <ul className={style["prescriptions-list-div"]}>
       {prescriptionsListHardCodeData.map((data)=>{
-        return <PrescriptionCard number={data.number} doctor={data.doctor} patient={data.patient} date={data.date}/>
+        return <PrescriptionCard key={data.id} number={data.number} doctor={data.doctor} patient={data.patient} date={data.date}/>
       })}
     </ul>
   );
