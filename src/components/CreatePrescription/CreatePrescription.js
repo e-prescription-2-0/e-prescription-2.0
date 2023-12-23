@@ -98,6 +98,8 @@ const CreatePrescription = () => {
   }
 
   const showPatientList = () => {
+    // should we clear all previous added medecines ???
+    //setMedicineItems([]);
     setisPatientChooseMode(true);
     setCurrentPatient(null)
   }
