@@ -63,18 +63,33 @@
   cursor: pointer;
 }
 
+.prescriptions-list-mobile-container{
+  display: flex;
+  justify-content: center;
+  margin-block: 2rem;
+  gap: 1rem;
+  align-items: center;
+}
+
+.prescriptions-list-mobile-svg{
+  height: 2rem;
+  color: #cccc;
+}
+
+.prescriptions-list-mobile-svg:hover{
+  color: #78D6C6;
+
+}
+
 
 @media only screen and (max-width: 768px) {
-  .prescriptions-list-div {
-    max-height: 100%;
-    display: block;
-  }
-  .prescriptions-list-div {
-    width: auto;
-  }
+
   .prescriptions-list-item {
     height: auto;
     width: auto;
+    border: solid 5px #cccc;
+    gap: 3rem;
+    margin-bottom: 0;
 
   }
 

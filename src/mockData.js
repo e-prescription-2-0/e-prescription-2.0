@@ -48,7 +48,7 @@ export const doctorsData = [
 
 export const prescriptionsData = [
   {
-    prescriptionId: '12',
+    _id: '12',
     medicines: ['1234', '5678'],
     issuedOn: 'string',
     isCompleted: true,
@@ -58,7 +58,7 @@ export const prescriptionsData = [
 },
 
 {
-  prescriptionId: '23',
+  _id: '23',
   medicines: ['1234', '5678'],
   issuedOn: 'string',
   isCompleted: true,
@@ -67,7 +67,7 @@ export const prescriptionsData = [
   prescribedTo: 'Pesho2'
 },
 {
-  prescriptionId: '34',
+  _id: '34',
   medicines: ['1234', '5678'],
   issuedOn: 'string',
   isCompleted: true,
@@ -76,7 +76,7 @@ export const prescriptionsData = [
   prescribedTo: 'RandomName'
 },
 {
-  prescriptionId: '43',
+  _id: '43',
   medicines: ['1234', '5678'],
   issuedOn: 'string',
   isCompleted: true,

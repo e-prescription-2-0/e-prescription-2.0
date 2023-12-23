@@ -8,9 +8,9 @@
   border-radius: 0.8em;
   padding: 1rem;
 }
-/* .boostrap-container-div-container{
-  padding: 1rem;
-} */
+.boostrap-container-div-container{
+  padding: 0 !important;
+}
 .aside-navigation-container svg {
   color: white;
 }
@@ -62,9 +62,7 @@
     max-width: 100%;
     width: 80%;
   }
-  /* .navbar-expand .navbar-nav{
-    flex-direction: colu;
-  } */
+
   .aside-nav-list {
     padding: 0;
   }

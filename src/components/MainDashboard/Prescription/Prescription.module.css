@@ -37,6 +37,9 @@
     max-height: 500px;
     overflow: scroll;
 }
+.div-articles::-webkit-scrollbar {
+    display: none;
+  }
 
 #div-articles-accordion {
     width: 100%;
@@ -60,8 +63,11 @@
 
 @media (max-width: 768px){
     .section-open-prescription{
+        border: solid 5px #12486B;
         padding: 0;
+        
         width: auto;
+        border-radius: 0;
     }
     
   
