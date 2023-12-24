@@ -49,39 +49,244 @@ export const doctorsData = [
 export const prescriptionsData = [
   {
     _id: '12',
-    medicines: ['1234', '5678'],
+    medicines: [
+      {
+        article: "Нурофен 500",
+        quantity: "2",
+        methodOfUse: "след храна"
+      },
+
+      {
+        article: "Аналгин 100",
+        quantity: "1",
+        methodOfUse: "сутрин"
+      },
+
+      {
+        article: "Спазмалгон",
+        quantity: "1",
+        methodOfUse: "преди лягане"
+      },
+      {
+        article: "Нурофен 500",
+        quantity: "2",
+        methodOfUse: "след храна"
+      },
+
+      {
+        article: "Аналгин 100",
+        quantity: "1",
+        methodOfUse: "сутрин"
+      },
+
+      {
+        article: "Спазмалгон",
+        quantity: "1",
+        methodOfUse: "преди лягане"
+      },
+    ],
     issuedOn: 'string',
     isCompleted: true,
     validPeriod: '10.10.2010',
-    prescribedBy: 'Pensho10',
-    prescribedTo: 'Ivan10'
+    prescribedBy: {
+      name: "Стефан",
+      lastName: "Георгиев",
+      doctorId: "7816000009",
+      hospitalId: "7777773099",
+      doctorPhone: "0893377777"
+    },
+    prescribedTo: {
+      firstName: "Петър",
+      secondName: "Иванов",
+      lastName: "Митев",
+      age: "28",
+      specifics: "няма"
+    }
 },
 
 {
   _id: '23',
-  medicines: ['1234', '5678'],
+  medicines: [
+    {
+      article: "Нурофен 500",
+      quantity: "2",
+      methodOfUse: "след храна"
+    },
+
+    {
+      article: "Аналгин 100",
+      quantity: "1",
+      methodOfUse: "сутрин"
+    },
+
+    {
+      article: "Спазмалгон",
+      quantity: "1",
+      methodOfUse: "преди лягане"
+    },
+    {
+      article: "Нурофен 500",
+      quantity: "2",
+      methodOfUse: "след храна"
+    },
+
+    {
+      article: "Аналгин 100",
+      quantity: "1",
+      methodOfUse: "сутрин"
+    },
+
+    {
+      article: "Спазмалгон",
+      quantity: "1",
+      methodOfUse: "преди лягане"
+    },
+  ],
   issuedOn: 'string',
   isCompleted: true,
   validPeriod: '10.10.2010',
-  prescribedBy: 'Ivan2',
-  prescribedTo: 'Pesho2'
+  prescribedBy: {
+    name: "Иван",
+    lastName: "Милев",
+    doctorId: "8816840911",
+    hospitalId: "7777773099",
+    doctorPhone: "0893336491"
+  },
+  prescribedTo: {
+    firstName: "Иван",
+    secondName: "Иванов",
+    lastName: "Попов",
+    age: "38",
+    specifics: "диабетик"
+  }
 },
 {
   _id: '34',
-  medicines: ['1234', '5678'],
+  medicines: [
+    {
+      article: "Нурофен 500",
+      quantity: "2",
+      methodOfUse: "след храна"
+    },
+
+    {
+      article: "Аналгин 100",
+      quantity: "1",
+      methodOfUse: "сутрин"
+    },
+
+    {
+      article: "Спазмалгон",
+      quantity: "1",
+      methodOfUse: "преди лягане"
+    },
+    {
+      article: "Нурофен 500",
+      quantity: "2",
+      methodOfUse: "след храна"
+    },
+
+    {
+      article: "Аналгин 100",
+      quantity: "1",
+      methodOfUse: "сутрин"
+    },
+
+    {
+      article: "Спазмалгон",
+      quantity: "1",
+      methodOfUse: "преди лягане"
+    },
+    {
+      article: "Нурофен 500",
+      quantity: "2",
+      methodOfUse: "след храна"
+    },
+
+    {
+      article: "Аналгин 100",
+      quantity: "1",
+      methodOfUse: "сутрин"
+    },
+
+    {
+      article: "Спазмалгон",
+      quantity: "1",
+      methodOfUse: "преди лягане"
+    },
+  ],
   issuedOn: 'string',
   isCompleted: true,
   validPeriod: '10.10.2010',
-  prescribedBy: 'Ivan',
-  prescribedTo: 'RandomName'
+  prescribedBy: {
+    name: "Сара",
+    lastName: "Иванова",
+    doctorId: "9916847735",
+    hospitalId: "7777773099",
+    doctorPhone: "0893388674"
+  },
+  prescribedTo: {
+    firstName: "Елена",
+    secondName: "Кирова",
+    lastName: "Самандова",
+    age: "18",
+    specifics: "няма"
+  }
 },
 {
   _id: '43',
-  medicines: ['1234', '5678'],
+  medicines: [
+    {
+      article: "Нурофен 500",
+      quantity: "2",
+      methodOfUse: "след храна"
+    },
+
+    {
+      article: "Аналгин 100",
+      quantity: "1",
+      methodOfUse: "сутрин"
+    },
+
+    {
+      article: "Спазмалгон",
+      quantity: "1",
+      methodOfUse: "преди лягане"
+    },
+    {
+      article: "Нурофен 500",
+      quantity: "2",
+      methodOfUse: "след храна"
+    },
+
+    {
+      article: "Аналгин 100",
+      quantity: "1",
+      methodOfUse: "сутрин"
+    },
+
+    {
+      article: "Спазмалгон",
+      quantity: "1",
+      methodOfUse: "преди лягане"
+    },
+  ],
   issuedOn: 'string',
   isCompleted: true,
   validPeriod: '10.10.2010',
-  prescribedBy: 'Pesho',
-  prescribedTo: 'Gosho'
+  prescribedBy: {
+    name: "Мария",
+    lastName: "Стефанова",
+    doctorId: "4416840555",
+    hospitalId: "7777773099",
+    doctorPhone: "0893444449"
+  },
+  prescribedTo: {
+    firstName: "Виктор",
+    secondName: "Александров",
+    lastName: "Петров",
+    age: "26",
+    specifics: "няма"
+  }
 },
 ]

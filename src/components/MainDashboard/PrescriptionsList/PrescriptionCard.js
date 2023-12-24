@@ -25,10 +25,10 @@ const PrescriptionCard = ({ prescription }) => {
           <span>Rp №:</span> {_id}
         </p>
         <p className={style["prescriptions-list-item-content-item"]}>
-          <span>От:</span> {[prescribedBy]}
+          <span>От:</span> {`${prescribedBy["name"]} ${prescribedBy["lastName"]}`}
         </p>
         <p className={style["prescriptions-list-item-content-item"]}>
-          <span>За:</span> {prescribedTo}
+          <span>За:</span> {`${prescribedTo.firstName} ${prescribedTo.lastName}`}
         </p>
         <p className={style["prescriptions-list-item-content-item"]}>
           <span>Дата:</span> {validPeriod}
