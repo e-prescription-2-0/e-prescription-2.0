@@ -8,7 +8,11 @@ const PrescriptionsList = ({prescriptions}) => {
       {prescriptions.map((data)=>{
         return <PrescriptionCard prescription={data}/>
       })}
+
+      
     </ul>
+
+   
   );
 };
 export default PrescriptionsList;

@@ -11,7 +11,7 @@
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    min-height: 700px;
+    height: 100%;
     max-height: 900px;
     background-color: #ffffff;
 }
@@ -74,7 +74,6 @@
 
 @media (max-width: 768px){
     .section-open-prescription{
-        background-color: #78d6c6;
         border-block: solid 5px #12486B;
         padding: 0;
         

@@ -10,7 +10,7 @@ const DashboardNavigation = () => {
   const role = "doctor"; // coming and depend of redux/context state
 
   return (
-    <Navbar expand="lg" className={style["aside-navigation-container"]}>
+    <Navbar expand="xl" className={style["aside-navigation-container"]}>
       <Container className={style["boostrap-container-div-container"]}>
         <Navbar.Brand id={style["aside-navbar-brand"]} href="#home">
           Services

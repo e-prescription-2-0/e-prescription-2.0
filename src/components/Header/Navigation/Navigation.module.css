@@ -56,7 +56,7 @@
   color: #78d6c6;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   .navigation {
     height: 60px;
     justify-content: space-between;

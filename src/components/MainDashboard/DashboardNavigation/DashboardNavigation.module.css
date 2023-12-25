@@ -57,7 +57,7 @@
 #aside-navbar-toggle span{
   color: white;
 }
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 1199px) {
   .aside-navigation-container {
     max-width: 100%;
     width: 80%;

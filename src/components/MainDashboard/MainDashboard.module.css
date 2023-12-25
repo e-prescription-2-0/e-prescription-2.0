@@ -13,9 +13,10 @@
 .main-dashboard-section-content {
   display: flex;
   column-gap: 1em;
+  min-height: 85vh;
 }
 
-@media (max-width: 768px){
+@media (max-width: 1199px){
   .main-dashboard-section{
     
     flex-direction: column;
@@ -26,6 +27,17 @@
     right: 0;
     
   }
+  /* .main-dashboard-section-content{
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+
+  } */
+
+}
+@media (max-width: 1500px){
+
   .main-dashboard-section-content{
     flex-direction: column;
     align-items: center;
