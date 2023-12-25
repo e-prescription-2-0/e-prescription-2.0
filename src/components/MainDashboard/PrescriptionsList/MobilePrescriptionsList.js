@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import style from "./PrescriptionsList.module.css";
-import { faAngleLeft, faAngleRight } from "@fortawesome/free-solid-svg-icons";
+import { faCaretLeft, faCaretRight } from "@fortawesome/free-solid-svg-icons";
 import PrescriptionCard from "./PrescriptionCard";
 import { useState } from "react";
 
@@ -25,7 +25,7 @@ const MobilePrescriptionsList = ({prescriptions}) => {
     <div className={style["prescriptions-list-mobile-container"]}>
       <FontAwesomeIcon
         className={style["prescriptions-list-mobile-svg"]}
-        icon={faAngleLeft}
+        icon={faCaretLeft}
         onClick={onClickBackwards}
       />
       <PrescriptionCard
@@ -33,7 +33,7 @@ const MobilePrescriptionsList = ({prescriptions}) => {
       />
       <FontAwesomeIcon
         className={style["prescriptions-list-mobile-svg"]}
-        icon={faAngleRight}
+        icon={faCaretRight}
         onClick={onClickForward}
       />
     </div>

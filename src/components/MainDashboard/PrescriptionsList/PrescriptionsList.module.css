@@ -32,7 +32,6 @@
   align-items: center;
   margin-bottom: 15px;
   border: solid 5px #d9d9d9;
-
 }
 
 .prescriptions-list-item:hover {
@@ -59,12 +58,12 @@
 
 .prescriptions-list-item svg {
   color: #284b63;
-  width: 15px;
-  height: 24px;
+  width: 1.5rem;
+  height: 1.5rem;
   cursor: pointer;
 }
 
-.prescriptions-list-mobile-container{
+.prescriptions-list-mobile-container {
   display: flex;
   justify-content: center;
   margin-block: 2rem;
@@ -72,41 +71,46 @@
   align-items: center;
 }
 
-.prescriptions-list-mobile-svg{
-  height: 2rem;
-  color: #d9d9d9;
+.prescriptions-list-mobile-svg {
+  height: 3rem;
+  color: #12486B;
 }
 
-.prescriptions-list-mobile-svg:hover{
-  color: #78D6C6;
+.prescriptions-list-mobile-svg:hover {
+  color: #78d6c6;
+  cursor: pointer;
 
-}
-
-.prescriptions-list-item-open{
-  background-color: #F5FCCD;
-  border: solid 5px #78D6C6;
-
-}
-
-.prescriptions-list-item-open svg{
-  color: #78D6C6;
-
-}
-
-.prescriptions-list-item-open:hover{
-  background-color: #F5FCCD;
   
 }
 
+.prescriptions-list-item-open {
+  background-color: #cfe2ff;
+  border: solid 5px #78d6c6;
+}
+
+.prescriptions-list-item:hover {
+  background-color: #cfe2ff7a;
+  cursor: pointer;
+}
+
+.prescriptions-list-item-open svg {
+  color: #78d6c6;
+}
+
+.prescriptions-list-mobile-container .prescriptions-list-item svg{
+  width: 2rem;
+  height: 2rem;
+}
+
+.prescriptions-list-item-open:hover {
+  background-color: #cfe2ff;
+  cursor: default;
+}
 
 @media only screen and (max-width: 768px) {
-
   .prescriptions-list-item {
     height: auto;
-    width: auto;
-    gap: 10rem;
+    width: 25rem;
     margin-bottom: 0;
-
   }
-
 }
