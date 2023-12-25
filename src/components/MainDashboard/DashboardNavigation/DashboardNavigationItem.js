@@ -1,11 +1,16 @@
 import { Nav } from "react-bootstrap";
 import style from "./DashboardNavigation.module.css";
 
-const DashboardNavigationItem = ({ icon, link }) => {
+const DashboardNavigationItem = ({ icon, title, changeView }) => {
+
+  const changeActiveItem = (e) => {
+    changeView(e)
+  }
+   
   return (
-    <Nav.Link className={style['aside-nav-list-item']}>
+    <Nav.Link onClick={changeActiveItem} className={style['aside-nav-list-item']}>
       {icon}
-      {link}
+      <a id={style["btn"]}>{title}</a>
     </Nav.Link>
   );
 };

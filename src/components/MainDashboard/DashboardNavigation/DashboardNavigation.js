@@ -6,8 +6,9 @@ import { Container, Nav, Navbar } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTableColumns } from "@fortawesome/free-solid-svg-icons";
 
-const DashboardNavigation = () => {
-  const role = "doctor"; // coming and depend of redux/context state
+const DashboardNavigation = ({changeView}) => {
+  const role = "doctor"; // coming and depend of redux/context state;
+  console.log(changeView);
 
   return (
     <Navbar expand="lg" className={style["aside-navigation-container"]}>
@@ -19,7 +20,7 @@ const DashboardNavigation = () => {
         <Navbar.Collapse>
           <Nav className={style["aside-nav-list"]}>
             {dashBoardNavData[role].map((x, index) => (
-              <DashboardNavigationItem key={index} {...x} />
+              <DashboardNavigationItem key={index} changeView={changeView} {...x} />
             ))}
           </Nav>
         </Navbar.Collapse>

@@ -5,63 +5,59 @@ import {
     faRightFromBracket,
   } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Link } from "react-router-dom";
-
-
-
 
 export  const dashBoardNavData = {
     doctor: [
       {
-        link: <Link to={'/profile'}>Профил</Link>,
+        title: "Профил",
         icon: <FontAwesomeIcon icon={faUser} />,
       },
       {
-        link: <Link to={'/profil'}>Изписани рецепти</Link>,
+        title: "Изписани рецепти",
         icon: <FontAwesomeIcon icon={faFilePrescription} />,
       },
       {
-        link: <Link to={'/profil'}>Изписване на рецепта</Link>,
+        title: "Изписване на рецепта",
         icon: <FontAwesomeIcon icon={faFilePen} />,
       },
       {
-        link: <Link to={'/profil'}>Изход</Link>,
+        title: "Изход",
         icon: <FontAwesomeIcon icon={faRightFromBracket} />,
       },
     ],
     pharmacist: [
         {
-            link: <Link to={'/profil'}>Профил</Link>,
+            title: "Профил",
             icon: <FontAwesomeIcon icon={faUser} />,
           },
           {
-            link: <Link to={'/profil'}>Изпълняване на рецепта</Link>,
+            title: "Изпълняване на рецепта",
             icon: <FontAwesomeIcon icon={faFilePrescription} />,
           },
           {
-            link: <Link to={'/profil'}>Частично изпълнени рецепти</Link>,
+            title: "Частично изпълнени рецепти",
             icon: <FontAwesomeIcon icon={faFilePen} />,
           },
           {
-            link: <Link to={'/profil'}>Изход</Link>,
+            title: "Изход",
             icon: <FontAwesomeIcon icon={faRightFromBracket} />,
           },
     ],
     patient: [
         {
-            link: <Link to={'/profil'}>Профил</Link>,
+            title: "Профил",
             icon: <FontAwesomeIcon icon={faUser} />,
           },
           {
-            link: <Link to={'/profil'}>Моите текущи рецепети</Link>,
+            title: "Моите текущи рецепети",
             icon: <FontAwesomeIcon icon={faFilePrescription} />,
           },
           {
-            link: <Link to={'/profil'}>Моите Изпълнени рецепти</Link>,
+            title: "Моите Изпълнени рецепти",
             icon: <FontAwesomeIcon icon={faFilePen} />,
           },
           {
-            link: <Link to={'/profil'}>Изход</Link>,
+            title: "Изход",
             icon: <FontAwesomeIcon icon={faRightFromBracket} />,
           },
     ],
