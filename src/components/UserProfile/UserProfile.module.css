@@ -1,0 +1,82 @@
+.user-profile {
+    width: 800px;
+    min-height: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 7px solid #3c6e71;
+    border-radius: 15px;
+    margin: 0 auto;
+    margin-top: 10px;
+}
+
+#close {
+    position: absolute;
+    right: 370px;
+    font-size: 20px;
+    color: black;
+    padding: 0;
+    background-color: #ffffff;
+}
+
+.user-profile i {
+    margin-top: 20px;
+    font-size: 100px;
+    background-color: #3c6e71;
+    color: #ffffff;
+    padding: 20px;
+    border-radius: 30px;
+}
+
+.content {
+    width: 600px;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.content-item {
+    border-bottom: 1px solid #78D6C6;
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+}
+
+.content-item-update {
+    display: flex;
+    justify-content: space-between;
+}
+
+.content-item-update button {
+    background-color: #78D6C6;
+    padding: 5px;
+    font-size: 13px;
+    border-radius: 5px;
+    align-self: center;
+}
+
+.content-item-update button:hover {
+    color: #ffffff;
+}
+
+.content-item span {
+    color: rgba(128, 128, 128, 0.706);
+    font-size: 15px;
+}
+
+.content-item p {
+    font-size: 27px;
+    font-weight: 400;
+}
+
+.user-profile-cls-btn {
+    width: 200px;
+    height: 50px;
+    border-radius: 10px;
+    font-size: 20px;
+    background-color: #3c6e71;
+    color: #ffffff;
+    margin-block: 15px;
+    
+}

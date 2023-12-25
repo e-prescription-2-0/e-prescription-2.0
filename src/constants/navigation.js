@@ -46,7 +46,8 @@ export const navLinkConfig = [
     linkName: "Profile",
     id: "8",
     hideFor: ["guest"],
-    onClick: () => { }
+    onClick: () => { },
+    linkTo: "/profile"
   },
   {
     linkName: "Dashboard",

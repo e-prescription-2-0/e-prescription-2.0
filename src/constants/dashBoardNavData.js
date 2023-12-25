@@ -13,7 +13,7 @@ import { Link } from "react-router-dom";
 export  const dashBoardNavData = {
     doctor: [
       {
-        link: <Link to={'/profil'}>Профил</Link>,
+        link: <Link to={'/profile'}>Профил</Link>,
         icon: <FontAwesomeIcon icon={faUser} />,
       },
       {
