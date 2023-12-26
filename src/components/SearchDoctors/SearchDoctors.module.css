@@ -11,16 +11,11 @@
   
     
   }
-/*   
-.main-search-doctors-container{
-    font-size: 1.5rem;
-} */
 
-.main-search-doctors-container li{
-    border-bottom:  solid 2px #dee2e6;
 
+.doctor-card-list-item{
+    border-top-width: thin !important;
 }
-
 .main-search-doctors-container ul{
     border-radius: 2px;
     
@@ -45,6 +40,13 @@
     color: #78D6C6;
 
 
+}
+
+.search-doctors-pagination{
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .main-search-doctors-container button:hover, .main-search-doctors-container button:active, .main-search-doctors-container button:focus {
     background-color: #3c6e71;
