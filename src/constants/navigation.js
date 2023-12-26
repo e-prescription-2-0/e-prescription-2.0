@@ -6,24 +6,24 @@ export const navLinkConfig = [
     onClick: () => { },
     linkTo: "/"
   },
-  {
-    linkName: "My Prescriptions",
-    id: "2",
-    hideFor: ["guest", "pharmacist"],
-    onClick: () => { },
-  },
-  {
-    linkName: "My Patients",
-    id: "3",
-    hideFor: ["pharmacist", "patient", "guest"],
-    onClick: () => { },
-  },
-  {
-    linkName: "Search",
-    id: "4",
-    hideFor: ["guest"],
-    onClick: () => { }
-  },
+  // {
+  //   linkName: "My Prescriptions",
+  //   id: "2",
+  //   hideFor: ["guest", "pharmacist"],
+  //   onClick: () => { },
+  // },
+  // {
+  //   linkName: "My Patients",
+  //   id: "3",
+  //   hideFor: ["pharmacist", "patient", "guest"],
+  //   onClick: () => { },
+  // },
+  // {
+  //   linkName: "Search",
+  //   id: "4",
+  //   hideFor: ["guest"],
+  //   onClick: () => { }
+  // },
   {
     linkName: "Help",
     id: "5",
@@ -48,13 +48,13 @@ export const navLinkConfig = [
     hideFor: ["guest"],
     onClick: () => { }
   },
-  {
-    linkName: "Dashboard",
-    id: "9",
-    hideFor: ["guest"],
-    onClick: () => { },
-    linkTo: "/dashboard"
-  },
+  // {
+  //   linkName: "Dashboard",
+  //   id: "9",
+  //   hideFor: ["guest"],
+  //   onClick: () => { },
+  //   linkTo: "/dashboard"
+  // },
   {
     linkName: "Logout",
     id: "10",

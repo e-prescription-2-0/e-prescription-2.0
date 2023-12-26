@@ -4,9 +4,11 @@
   color: #fff;
   flex: 1 1 auto;
   max-width: 300px;
-  font-size: 24px;
+  font-size: 1.5rem;
   border-radius: 0.8em;
   padding: 1rem;
+  justify-content: center;
+  align-items: self-start;
 }
 .boostrap-container-div-container{
   padding: 0 !important;
@@ -21,7 +23,6 @@
   justify-content: flex-start;
   gap: 1em;
   margin: 0;
-  padding: 1em 1.5em;
 }
 
 .aside-nav-list-item {
@@ -30,6 +31,12 @@
   gap: 1em;
   align-items: center;
   padding: 0.5em;
+  border-radius: 10px;
+}
+
+.aside-nav-list-item:hover{
+  background: rgb(246, 252, 207, 0.8);
+  transform: translate(1%, 0);
 }
 
 .aside-nav-list-item svg {
@@ -62,6 +69,10 @@
     max-width: 100%;
     width: 80%;
   }
+  .aside-nav-list-item:hover{
+    transform: none;
+  }
+
 
   .aside-nav-list {
     padding: 0;

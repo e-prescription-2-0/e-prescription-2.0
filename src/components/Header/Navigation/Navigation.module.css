@@ -32,8 +32,12 @@
 
 .navigation-list-item {
   padding: 1rem;
-  color: #ffffff;
+  color: #ffffff ;
   font-size: 18px;
+}
+.navigation-list-item a{
+  color: #ffffff ;
+
 }
 
 .navigation-list-item:hover {
@@ -79,6 +83,9 @@
   .navigation-list li:hover {
     background: rgb(246, 252, 207, 0.8);
     color: #78d6c6;
+    border-radius: 0;
+
+   
   }
 
   .navigation-list.open {

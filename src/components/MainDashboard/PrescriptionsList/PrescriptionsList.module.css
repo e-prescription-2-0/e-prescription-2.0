@@ -23,8 +23,7 @@
 
 .prescriptions-list-item {
   background-color: white;
-  height: 6em;
-  padding: 10px;
+  padding: 0.5rem 0.25rem ;
   border-radius: 10px;
   color: #284b63;
   display: flex;
@@ -32,6 +31,7 @@
   align-items: center;
   margin-bottom: 15px;
   border: solid 5px #d9d9d9;
+  
 }
 
 .prescriptions-list-item:hover {
@@ -86,6 +86,7 @@
 .prescriptions-list-item-open {
   background-color: #cfe2ff;
   border: solid 5px #78d6c6;
+  box-shadow: #cfe2ff 0px 0px 0px 3px;
 }
 
 .prescriptions-list-item:hover {
