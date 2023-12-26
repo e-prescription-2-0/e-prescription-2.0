@@ -6,9 +6,9 @@ a:active {
   outline: none;
 }
 
-a,
-a:active,
-a:focus {
+.item a,
+.item a:active,
+.item a:focus {
   color: #333;
   text-decoration: none;
   transition-timing-function: ease-in-out;
@@ -28,7 +28,7 @@ ul {
   padding: 0;
   list-style: none;
 }
-img {
+.item img {
   max-width: 100%;
   height: auto;
 }
