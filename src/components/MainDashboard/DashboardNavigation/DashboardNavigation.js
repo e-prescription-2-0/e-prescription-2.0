@@ -3,11 +3,9 @@ import { dashBoardNavData } from "../../../constants/dashBoardNavData";
 
 import DashboardNavigationItem from "./DashboardNavigationItem";
 import { Container, Nav, Navbar } from "react-bootstrap";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTableColumns } from "@fortawesome/free-solid-svg-icons";
 
 const DashboardNavigation = () => {
-  const role = "doctor"; // coming and depend of redux/context state
+  const role = "patient"; // coming and depend of redux/context state
 
   return (
     <Navbar expand="xl" className={style["aside-navigation-container"]}>
@@ -15,7 +13,10 @@ const DashboardNavigation = () => {
         <Navbar.Brand id={style["aside-navbar-brand"]} href="#home">
           Services
         </Navbar.Brand>
-        <Navbar.Toggle id={style["aside-navbar-toggle"]} aria-controls="basic-navbar-nav" />
+        <Navbar.Toggle
+          id={style["aside-navbar-toggle"]}
+          aria-controls="basic-navbar-nav"
+        />
         <Navbar.Collapse>
           <Nav className={style["aside-nav-list"]}>
             {dashBoardNavData[role].map((x, index) => (

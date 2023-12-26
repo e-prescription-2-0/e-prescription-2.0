@@ -4,16 +4,11 @@ import MedicineList from "./MedicineList";
 import PrescriptionFooter from "./PrescriptionFooter";
 
 const PrescriptionContent = () => {
-
-
   return (
     <div className={style["div-main-content"]}>
-      <PrescriptionHeader/>
-
-      <MedicineList/>
-      <PrescriptionFooter/>
-
-      
+      <PrescriptionHeader />
+      <MedicineList />
+      <PrescriptionFooter />
     </div>
   );
 };
