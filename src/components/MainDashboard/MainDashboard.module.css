@@ -7,13 +7,17 @@
   justify-content: center;
   align-items: stretch;
   column-gap: 4.5em;
+
   
 }
 
 .main-dashboard-section-content {
   display: flex;
   column-gap: 1em;
-  min-height: 85vh;
+
+}
+body{
+  height: 100%;
 }
 
 @media (max-width: 1199px){
@@ -41,8 +45,9 @@
   .main-dashboard-section-content{
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     width: 100%;
+
 
   }
 

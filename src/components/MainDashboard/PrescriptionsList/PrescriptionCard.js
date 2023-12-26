@@ -11,7 +11,7 @@ const PrescriptionCard = ({ prescription }) => {
   const openPrescription = useReduxState((state)=>state.prescriptions.openPrescription)
 
 
-  const isDesktop = useMediaQuery({ minWidth: 1500 });
+  const isDesktop = useMediaQuery({ minWidth: 1501 });
 
   const isOpen = openPrescription._id === prescription._id
 
