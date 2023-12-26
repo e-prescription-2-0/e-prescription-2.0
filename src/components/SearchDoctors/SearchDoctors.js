@@ -1,8 +1,13 @@
 import React from "react";
-import { Container, InputGroup, FormControl, ListGroup } from "react-bootstrap";
+import {
+  Container,
+  InputGroup,
+  FormControl,
+  ListGroup,
+  Button,
+} from "react-bootstrap";
 import DashboardNavigation from "../MainDashboard/DashboardNavigation/DashboardNavigation";
-import style from "./SearchDoctors.module.css"
-
+import style from "./SearchDoctors.module.css";
 
 const SearchDoctors = () => {
   return (
@@ -17,6 +22,7 @@ const SearchDoctors = () => {
             aria-label="Search names"
             aria-describedby="basic-addon2"
           />
+          <Button>Search</Button>
         </InputGroup>
         <ListGroup as="ul" className="collection with-header">
           <ListGroup.Item as="li" className="collection-header">

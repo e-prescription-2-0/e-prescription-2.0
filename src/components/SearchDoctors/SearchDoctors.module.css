@@ -25,6 +25,24 @@
     border-radius: 2px;
     
 }
+.main-search-doctors-container input{
+    border: none;
+    border-bottom: 2px solid #3c6e7184;
+    border-radius: 0;
+
+}
+.main-search-doctors-container input:focus{
+    box-shadow: none;
+    border-bottom-color: #3c6e71;
+}
+.main-search-doctors-container button{
+    background-color: #78D6C6;
+    border: none;
+
+}
+.main-search-doctors-container button:hover, .main-search-doctors-container button:active, .main-search-doctors-container button:focus {
+    background-color: #3c6e71;
+}
 
 @media (max-width: 1199px){
 
