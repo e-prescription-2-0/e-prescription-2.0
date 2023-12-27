@@ -34,9 +34,16 @@
   border-radius: 10px;
 }
 
-.aside-nav-list-item:hover{
+.aside-nav-list-item:hover, .nav-active{
   background: rgb(246, 252, 207, 0.8);
   transform: translate(1%, 0);
+}
+.nav-active{
+  background-color: #78D6C6;
+}
+
+.text-color-navigation{
+  color: #fff;
 }
 
 .aside-nav-list-item svg {

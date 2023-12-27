@@ -1,12 +1,19 @@
-import { Nav } from "react-bootstrap";
+import { NavLink } from "react-router-dom";
 import style from "./DashboardNavigation.module.css";
 
-const DashboardNavigationItem = ({ icon, link }) => {
+const DashboardNavigationItem = ({ icon, linkTo, text }) => {
   return (
-    <Nav.Link className={style['aside-nav-list-item']}>
+    <NavLink
+      className={({ isActive }) =>
+        isActive
+          ? [style["nav-active"], style["aside-nav-list-item"]].join(" ")
+          : [style["aside-nav-list-item"]].join(" ")
+      }
+      to={linkTo}
+    >
       {icon}
-      {link}
-    </Nav.Link>
+      <p className={style['text-color-navigation']}>{text}</p>
+    </NavLink>
   );
 };
 

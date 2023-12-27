@@ -17,7 +17,7 @@ const MobilePrescriptionsList = ({prescriptions}) => {
 
   const onClickBackwards = () => {
     const lastNumber =
-      indexNumber - 1 > 0 ? indexNumber - 1 : prescriptions.length - 1;
+      indexNumber - 1 >= 0 ? indexNumber - 1 : prescriptions.length - 1;
     setIndexNumber(lastNumber);
   };
 

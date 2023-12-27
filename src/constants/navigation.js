@@ -29,31 +29,45 @@ export const navLinkConfig = [
     id: "9",
     hideFor: ["guest"],
     onClick: () => {},
-    linkTo: "/dashboard",
+    linkTo: "/prescriptions/active",
+    
   },
   {
     linkName: "Help",
     id: "5",
     hideFor: [],
     onClick: () => {},
+    linkTo: "/help",
+
+
   },
   {
     linkName: "Login",
     id: "6",
     hideFor: ["pharmacist", "doctor", "patient"],
     onClick: () => {},
+    linkTo: "/login",
+
+
   },
   {
     linkName: "Register",
     id: "7",
     hideFor: ["pharmacist", "doctor", "patient"],
     onClick: () => {},
+    linkTo: "/register",
+
+
   },
   {
     linkName: "Profile",
     id: "8",
     hideFor: ["guest"],
     onClick: () => {},
+    linkTo: "/profile",
+
+
+    
   },
 
   {
@@ -61,6 +75,9 @@ export const navLinkConfig = [
     id: "10",
     hideFor: ["guest"],
     onClick: () => {},
+    linkTo: "/logout",
+
+
   },
 ];
 

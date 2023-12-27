@@ -1,17 +1,18 @@
-import { faBars } from "@fortawesome/free-solid-svg-icons"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { useState } from "react"
-import { Link } from "react-router-dom"
-import { navLinkConfig } from "../../../constants/navigation"
-import style from "./Navigation.module.css"
+import { faBars } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useState } from "react";
+import {  NavLink, useNavigate } from "react-router-dom";
+import { navLinkConfig } from "../../../constants/navigation";
+import style from "./Navigation.module.css";
 
 export const Navigation = () => {
-  const [currentUser, setCurrentUser] = useState("patient")
-  const [isMobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [currentUser, setCurrentUser] = useState("patient");
+  const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const navigate = useNavigate()
 
   const toggleMobileMenu = () => {
-    setMobileMenuOpen(!isMobileMenuOpen)
-  }
+    setMobileMenuOpen(!isMobileMenuOpen);
+  };
 
   return (
     <nav
@@ -19,7 +20,7 @@ export const Navigation = () => {
         isMobileMenuOpen ? style["open"] : ""
       }`}
     >
-      <h3 className={style["navigation-logo-name"]}>e-Prescription</h3>
+      <h3 className={style["navigation-logo-name"]} onClick={()=>navigate("/dashboard")}>e-Prescription</h3>
       <FontAwesomeIcon
         icon={faBars}
         className={style["mobile-menu-icon"]}
@@ -33,17 +34,19 @@ export const Navigation = () => {
         {navLinkConfig.map((link) =>
           !link.hideFor.includes(currentUser) ? (
             <li key={link.id} className={style["navigation-list-item"]}>
-              <Link
-                to={link.linkTo}
-                className={style["a"]}
+              <NavLink
+                className={({ isActive }) =>
+                  isActive ? style["nav-active"] : "a"
+                }
+                to={link?.linkTo || '#'}
                 onClick={link.onClick}
               >
                 {link.linkName}
-              </Link>
+              </NavLink>
             </li>
           ) : null
         )}
       </ul>
     </nav>
-  )
-}
+  );
+};
