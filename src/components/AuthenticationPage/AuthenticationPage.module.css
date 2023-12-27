@@ -312,6 +312,7 @@ input[type="text"]::placeholder, input[type="password"]::placeholder, input[type
 }
 .page-pop-up .underlineHover:hover{
   color: #6DA9E4;
+  cursor: pointer;
 }
 
 /* OTHERS */
