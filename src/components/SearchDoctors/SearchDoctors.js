@@ -15,26 +15,26 @@ import DoctorCard from "./DoctorCard";
 const SearchDoctors = () => {
   const [active, setActive] = useState(1);
   const itemsPerPage = 10;
-  const [showDoctorList, setShowDoctorList] = useState(
-    // doctorsData.slice((active - 1) * itemsPerPage, active * itemsPerPage)
-    []
-  );
+  const totalItems = doctorsData.length;
+
+  const getPaginatedData = () => {
+    const startIndex = (active - 1) * itemsPerPage;
+    const endIndex = startIndex + itemsPerPage;
+    return doctorsData.slice(startIndex, endIndex);
+  };
+
+  const [paginatedData, setPaginatedData] = useState(getPaginatedData());
 
   const handlePageClick = (pageNumber) => {
     setActive(pageNumber);
-    setShowDoctorList((prevList) => {
-      const newList = doctorsData.slice(
-        (pageNumber - 1) * itemsPerPage,
-        pageNumber * itemsPerPage
-      );
-      return newList;
-    });
+    setPaginatedData(getPaginatedData());
   };
+
   const itemsPagination = () => {
     const items = [];
     for (
       let number = 1;
-      number <= Math.ceil(doctorsData.length / itemsPerPage);
+      number <= Math.ceil(totalItems / itemsPerPage);
       number++
     ) {
       items.push(
@@ -65,7 +65,7 @@ const SearchDoctors = () => {
           <Button>Search</Button>
         </InputGroup>
         <ListGroup as="ul" className="collection with-header">
-          {showDoctorList.map((data) => (
+          {paginatedData.map((data) => (
             <DoctorCard key={data._id} name={data.firstName} id={data._id} />
           ))}
         </ListGroup>
