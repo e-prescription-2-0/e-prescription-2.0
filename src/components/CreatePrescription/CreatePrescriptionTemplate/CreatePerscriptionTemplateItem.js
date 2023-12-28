@@ -17,7 +17,7 @@ const CreatePerscriptionTemplateItem =(
                         Колко пъти дневно?  {admission}{admissionType}.
                             </Accordion.Body>
                             <Accordion.Body className={style["div-articels-accordion-item-content"]}>
-                                {instructions !== '' && <span>Начин на употреба? {instructions}.</span> }
+                                <span>Начин на употреба? {instructions}.</span>
                               
                               <br/>
                                <Button variant="outline-success" onClick={() => onEditItemHandler(index)}>Редактирай</Button>

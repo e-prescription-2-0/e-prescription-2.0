@@ -3,7 +3,7 @@
     flex-direction: column;
     
     flex-basis: 25%;
-    max-width: 30em;
+    width: 27em;
     min-height: 30em;
     padding: 2em;
     background-color: #284b63 ;
@@ -23,6 +23,10 @@
     margin-right: 20px;
 }
 
+.confirm:hover {
+    background-color: rgb(246, 252, 207, 0.8);
+    color: #284b63;
+}
 .reject {
     margin-top: 10px;
     margin-right: 20px; 
@@ -36,5 +40,23 @@
 
 .button-container {
     margin-top: 75px;
+}
+
+
+::placeholder {
+    font-size: 0.8em;
+  }
+  
+
+.error-input {
+    border: none;
+    background-color:#ffcaca;  
+    box-shadow:0px 0px 0px 3px #ff4d4d inset;
+   
+   
+}
+
+.form-container select {
+    font-size: 0.8em;
 }
 

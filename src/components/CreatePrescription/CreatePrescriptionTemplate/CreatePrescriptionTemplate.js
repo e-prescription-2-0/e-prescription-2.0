@@ -26,7 +26,7 @@ const CreatePrescriptionTemplate = ({
                     <p>&#8470; Лек. Практика: 0000000000</p>
                     <p>Телефон: 089xxxxxxx</p>
                 </div>
-                <Button onClick={() => showPopUpModal() }>Добави лекарство</Button>
+                <Button className={style['prescription-btn']} onClick={() => showPopUpModal() }>Добави лекарство</Button>
 
                 <div className={style["div-articels"]}>
                     <Accordion  id={style["div-articels-accordion"]} >
@@ -38,9 +38,9 @@ const CreatePrescriptionTemplate = ({
                        />)}
                     </Accordion>
                 </div>
-                        <Button>Запази рецепта</Button>
+                        <Button className={style['prescription-btn']}>Запази рецепта</Button>
                 <div className={style["div-userInfo"]}>
-                <Button onClick={showPatientList}>Обратно към списъка с пациенти</Button>
+                <Button className={style['prescription-btn']} onClick={showPatientList}>Обратно към списъка с пациенти</Button>
                     <p>Пациент: {`${currentPatient?.firstName || ''} ${currentPatient?.lastName || ''} `}</p>
                     <p>Възраст: {currentPatient?.age}</p>
                     <p>Специфики: {currentPatient?.specifics && currentPatient?.specifics.length > 0 ? currentPatient.specifics.join(',') : 'няма'}</p>

@@ -76,5 +76,16 @@
     display: none;
   }
 
+  .prescription-btn {
+    background-color: #3c6e71;
+    border: none;
+  }
+
+  .prescription-btn:hover {
+    background-color: rgb(246, 252, 207, 0.8);
+    color: #284b63;
+   
+  }
+
 
 
