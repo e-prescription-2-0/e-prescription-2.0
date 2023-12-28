@@ -4,6 +4,7 @@ import Button from "react-bootstrap/Button";
 import style from "./CreateMedicineForPrescriptionPopUp.module.css";
 import InputGroup from "react-bootstrap/InputGroup";
 import { useState } from "react";
+import { formFieldCheckFn } from "../../../utils/formFieldsCheck";
 
 const CreateMedicineForPrescriptionPopUp = ({
   addMedicineHandler,
@@ -80,7 +81,9 @@ const CreateMedicineForPrescriptionPopUp = ({
         <InputGroup className="mb-3">
           <Form.Control
             type="text"
-            placeholder={!error.admission ? "Еднократен прием" : "Полето е задължително"}
+            placeholder={
+              !error.admission ? "Еднократен прием" : "Полето е задължително"
+            }
             className={error.admission ? style["error-input"] : ""}
             name="admission"
             value={formValues.admission}
@@ -96,7 +99,11 @@ const CreateMedicineForPrescriptionPopUp = ({
             onChange={(e) => onChangeHandler(e)}
             onBlur={(e) => errCheck(e, formValues.admissionType)}
           >
-            <option value="">{!error.admissionType? "Изберете форма" : "Полето е задължително"}</option>
+            <option value="">
+              {!error.admissionType
+                ? "Изберете форма"
+                : "Полето е задължително"}
+            </option>
             <option value="tablet">таблетка</option>
             <option value="capsule">капсула</option>
             <option value="sashe">саше</option>
@@ -104,21 +111,31 @@ const CreateMedicineForPrescriptionPopUp = ({
             <option value="injection">инжекция</option>
           </Form.Select>
         </InputGroup>
-        <FloatingLabel controlId="floatingPassword" 
-        label={!error.instructions ? "Начин на употреба" : "Въведете инструкции за употреба"}>
+        <FloatingLabel
+          controlId="floatingPassword"
+          label={
+            !error.instructions
+              ? "Начин на употреба"
+              : "Въведете инструкции за употреба"
+          }
+        >
           <Form.Control
             as="textarea"
+            placeholder={
+              !error.instructions
+                ? "Начин на употреба"
+                : "Въведете инструкции за употреба"
+            }
             rows={3}
-            className={error.instructions ? style["error-input"] : ""} 
+            className={error.instructions ? style["error-input"] : ""}
             name="instructions"
             value={formValues.instructions}
             onChange={(e) => onChangeHandler(e)}
             onBlur={(e) => errCheck(e, formValues.instructions)}
-
           />
         </FloatingLabel>
         <div className={style["button-container"]}>
-          <Button type="submit" className={style["confirm"]} >
+          <Button type="submit" className={style["confirm"]} disabled={formFieldCheckFn(formValues)}>
             Добави
           </Button>
           <Button

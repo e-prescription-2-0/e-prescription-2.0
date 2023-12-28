@@ -4,6 +4,7 @@ import CreatePrescriptionTemplate from "./CreatePrescriptionTemplate/CreatePresc
 import style from "./CreatePresscription.module.css"
 import CreateMedicineForPrescriptionPopUp from "./NewMedicinePopUpForm/CreateMedicineForPrescriptionPopUp"
 import PatientTable from "./PatientsTable/PatientsTable"
+import { formFieldCheckFn } from "../../utils/formFieldsCheck"
 
 const CreatePrescription = () => {
   const [isPatientChooseMode, setisPatientChooseMode] = useState(true)
@@ -45,7 +46,8 @@ const CreatePrescription = () => {
   }
 
   const addMedicineHandler = (e) => {
-    e.preventDefault()
+    e.preventDefault();
+    if(formFieldCheckFn(formValues)) return
 
     if (isEditMode) {
       setMedicineItems((prevState) =>
