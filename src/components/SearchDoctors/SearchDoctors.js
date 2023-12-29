@@ -58,15 +58,15 @@ const SearchDoctors = () => {
         <InputGroup className="mb-3">
           <FormControl
             id="filterInput"
-            placeholder="Search names..."
-            aria-label="Search names"
+            placeholder="Search doctor by email..."
+            aria-label="Search email"
             aria-describedby="basic-addon2"
           />
           <Button>Search</Button>
         </InputGroup>
         <ListGroup as="ul" className="collection with-header">
           {paginatedData.map((data) => (
-            <DoctorCard key={data._id} name={data.firstName} id={data._id} />
+            <DoctorCard  {...data} />
           ))}
         </ListGroup>
 

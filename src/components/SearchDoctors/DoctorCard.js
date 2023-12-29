@@ -1,10 +1,11 @@
 import { ListGroup } from "react-bootstrap";
 import style from "./SearchDoctors.module.css";
+import { Link } from "react-router-dom";
 
-const DoctorCard = ({name, id}) => {
+const DoctorCard = ({ _id ,firstName, lastName='Slaveikov', email='example@gmail.com', specialty, hospitalName}) => {
   return (
-    <ListGroup.Item as="li" key={id} className={style['doctor-card-list-item']}>
-      <a href={`profile/${id}`}>{name}</a>
+    <ListGroup.Item as="li" className={style['doctor-card-list-item']}>
+      <Link className={style['doctor-card-information-link']} href={`profile/${_id}`}><span>{email}</span><span>{firstName} {lastName}</span><span>{specialty}</span><span>{hospitalName}</span></Link>
     </ListGroup.Item>
   );
 };

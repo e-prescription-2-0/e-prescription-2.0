@@ -3,6 +3,9 @@ import { createSlice } from "@reduxjs/toolkit"
 const initialState = {
   doctors: [],
   doctorsById: {},
+  doctorsPageNumber: 1,
+  doctorsPageSearch: ''
+
 }
 
 export const usersSlice = createSlice({

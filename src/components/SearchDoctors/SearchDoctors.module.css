@@ -15,6 +15,7 @@
 
 .doctor-card-list-item{
     border-top-width: thin !important;
+    padding: 0;
 }
 .main-search-doctors-container ul{
     border-radius: 2px;
@@ -42,6 +43,19 @@
 
 }
 
+.doctor-card-information-link{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    justify-content: space-between;
+
+    padding: 1rem;
+}
+.doctor-card-information-link:hover{
+    background-color: #78D6C6;
+    transition: all 1.0s ease;
+}
+
+
 .search-doctors-pagination{
     margin-top: 1rem;
     display: flex;
@@ -53,6 +67,11 @@
 }
 
 @media (max-width: 1199px){
+    .doctor-card-information-link{
+        gap: 0.4rem;
+        grid-template-columns: 1fr 1fr;
+    }
+
 
     .main-search-doctors-section{
       flex-direction: column;
