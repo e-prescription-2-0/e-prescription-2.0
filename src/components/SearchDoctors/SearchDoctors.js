@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   Container,
   InputGroup,
@@ -11,19 +11,18 @@ import DashboardNavigation from "../MainDashboard/DashboardNavigation/DashboardN
 import style from "./SearchDoctors.module.css";
 import { doctorsData } from "../../mockData";
 import DoctorCard from "./DoctorCard";
+import { useReduxAction } from "../../hooks/useReduxAction";
+import {useReduxState} from "../../hooks/useReduxState" 
+import { doctorsSlice } from "../../reducers/doctors";
 
 const SearchDoctors = () => {
   const [active, setActive] = useState(1);
   const itemsPerPage = 10;
-  const totalItems = doctorsData.length;
 
-  const getPaginatedData = () => {
-    const startIndex = (active - 1) * itemsPerPage;
-    const endIndex = startIndex + itemsPerPage;
-    return doctorsData.slice(startIndex, endIndex);
-  };
+  const numberOfAllPages = useReduxState((state)=> state.doctors.numberOfAllPages)
+  const getDoctors = useReduxAction(doctorsSlice.actions.fetchDoctors)
 
-  const [paginatedData, setPaginatedData] = useState(getPaginatedData());
+
 
   const handlePageClick = (pageNumber) => {
     setActive(pageNumber);
@@ -34,7 +33,7 @@ const SearchDoctors = () => {
     const items = [];
     for (
       let number = 1;
-      number <= Math.ceil(totalItems / itemsPerPage);
+      number <= numberOfAllPages;
       number++
     ) {
       items.push(
@@ -49,6 +48,12 @@ const SearchDoctors = () => {
     }
     return items;
   };
+
+
+  useEffect(() => {
+    getDoctors()
+  }, [])
+
 
   return (
     <section className={style["main-search-doctors-section"]}>
@@ -66,7 +71,7 @@ const SearchDoctors = () => {
         </InputGroup>
         <ListGroup as="ul" className="collection with-header">
           {paginatedData.map((data) => (
-            <DoctorCard  {...data} />
+            <DoctorCard {...data} />
           ))}
         </ListGroup>
 

@@ -29,7 +29,7 @@ export default {
   }),
   // Doctors endpoints
   getDoctors: serviceBind({
-    url: "/api/doctors",
+    url: "/api/doctors?page={pageNumber}$search={searchEmail}",
     method: METHODS.GET,
     headers: {
       "Content-Type": HEADER_FORMATS.JSON,
