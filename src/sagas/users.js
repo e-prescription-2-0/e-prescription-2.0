@@ -21,7 +21,11 @@ function* onFetchDoctors(action) {
     console.log("====================================");
     console.log(error);
     console.log("====================================");
+  }finally {
+    // Dispatch setLoading(false) after the API call is complete (success or error)
+    yield put(doctorsSlice.actions.setLoading(false));
   }
+
 }
 
 function* onFetchDoctorById(action) {

@@ -3,7 +3,7 @@ import serviceBind from "./helper";
 
 export default {
   getDoctors: serviceBind({
-    url: "/api/doctors?page={pageNumber}$search={searchEmail}",
+    url: "/api/doctors?search={searchEmail}&page={pageNumber}",
     method: METHODS.GET,
     headers: {
       "Content-Type": HEADER_FORMATS.JSON,

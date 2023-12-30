@@ -66,6 +66,14 @@
     background-color: #3c6e71;
 }
 
+.search-doctors-loading-container{
+    height: 90vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 @media (max-width: 1199px){
     .doctor-card-information-link{
         gap: 0.4rem;

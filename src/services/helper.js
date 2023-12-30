@@ -48,6 +48,7 @@ const serviceBind = (service) => {
 
     // Build the absolute URL
     url = `${baseUrl}${url}`
+    console.log(url)
 
     return axios(url, {
       method,
