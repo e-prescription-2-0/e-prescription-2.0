@@ -29,7 +29,7 @@ export const navLinkConfig = [
     id: "9",
     hideFor: ["guest"],
     onClick: () => {},
-    linkTo: "/prescriptions/active",
+    linkTo: "/prescriptions",
     
   },
   {

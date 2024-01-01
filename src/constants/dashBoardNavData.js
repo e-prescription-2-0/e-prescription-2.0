@@ -11,62 +11,68 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 export const dashBoardNavData = {
   doctor: [
     {
-      linkTo: '/profile',
-      text: 'Профил',
+      linkTo: "/profile",
+      text: "Профил",
       icon: <FontAwesomeIcon icon={faUser} />,
     },
     {
-      linkTo: '/prescriptions/prescribed',
-      text: 'Изписани рецепти',
+      linkTo: "/prescriptions",
+      text: "Рецепти",
       icon: <FontAwesomeIcon icon={faFilePrescription} />,
     },
     {
-      linkTo: '/prescription/create',
-      text: 'Изписване на рецепта',
+      linkTo: "/prescription/create",
+      text: "Изписване на рецепта",
       icon: <FontAwesomeIcon icon={faFilePen} />,
     },
     {
-      linkTo: '/patients',
-      text: 'Пациенти',
+      linkTo: "/patients",
+      text: "Пациенти",
       icon: <FontAwesomeIcon icon={faBedPulse} />,
+    },
+    {
+      linkTo: "/doctors",
+      text: "Доктори",
+      icon: <FontAwesomeIcon icon={faUserDoctor} />,
     },
   ],
   pharmacist: [
     {
-      linkTo: '/profile',
-      text: 'Профил',
+      linkTo: "/profile",
+      text: "Профил",
       icon: <FontAwesomeIcon icon={faUser} />,
     },
     {
-      linkTo: '/prescription/complete',
-      text: 'Изпълни рецепта',
-      icon: <FontAwesomeIcon icon={faFilePen} />,
+      linkTo: "/prescription",
+      text: "Рецепти",
+      icon: <FontAwesomeIcon icon={faFilePrescription} />,
     },
     {
-      linkTo: '/prescription/prescribed',
-      text: 'Изпълнени рецепети',
-      icon: <FontAwesomeIcon icon={faFilePrescription} />,
+      linkTo: "/prescription/complete",
+      text: "Изпълни рецепта",
+      icon: <FontAwesomeIcon icon={faFilePen} />,
+    },
+
+    {
+      linkTo: "/doctors",
+      text: "Доктори",
+      icon: <FontAwesomeIcon icon={faUserDoctor} />,
     },
   ],
   patient: [
     {
-      linkTo: '/profile',
-      text: 'Профил',
+      linkTo: "/profile",
+      text: "Профил",
       icon: <FontAwesomeIcon icon={faUser} />,
     },
     {
-      linkTo: '/prescriptions/active',
-      text: 'Неизпълнени рецепети',
+      linkTo: "/prescriptions",
+      text: "Рецепти",
       icon: <FontAwesomeIcon icon={faFilePrescription} />,
     },
     {
-      linkTo: '/prescriptions/completed',
-      text: 'Изпълнени рецепети',
-      icon: <FontAwesomeIcon icon={faFileCircleXmark} />,
-    },
-    {
-      linkTo: '/doctors',
-      text: 'Доктори',
+      linkTo: "/doctors",
+      text: "Доктори",
       icon: <FontAwesomeIcon icon={faUserDoctor} />,
     },
   ],
