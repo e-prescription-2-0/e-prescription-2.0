@@ -8,13 +8,13 @@
   background-color: #d9d9d9;
   display: inline-block;
   gap: 10px;
-  padding: 30px 20px;
+  padding: 20px 20px;
   border-radius: 10px;
   overflow: scroll;
   /* overflow-x: visible;
   overflow-y: auto; */
   width: 350px;
-  height: 100%;
+  height: 40rem;
 }
 
 .prescriptions-list-div::-webkit-scrollbar {
@@ -23,17 +23,15 @@
 
 .prescriptions-list-item {
   background-color: white;
-  padding: 0.5rem 0.25rem ;
+  padding: 0.5rem 0.25rem;
   border-radius: 10px;
-  color: #12486B;
+  color: #12486b;
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 15px;
   border: solid 5px #12476b9b;
   transition: all 0.6s ease;
-
-  
 }
 
 .prescriptions-list-item:hover {
@@ -47,7 +45,7 @@
 
 .prescriptions-list-item span {
   overflow: hidden;
-  color: #12486B;
+  color: #12486b;
   text-align: justify;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -59,7 +57,7 @@
 }
 
 .prescriptions-list-item svg {
-  color: #12486B;
+  color: #12486b;
   width: 1.5rem;
   height: 1.5rem;
   cursor: pointer;
@@ -76,14 +74,12 @@
 
 .prescriptions-list-mobile-svg {
   height: 3rem;
-  color: #12486B;
+  color: #12486b;
 }
 
 .prescriptions-list-mobile-svg:hover {
   color: #78d6c6;
   cursor: pointer;
-
-  
 }
 
 .prescriptions-list-item-open {
@@ -101,7 +97,7 @@
   color: #78d6c6;
 }
 
-.prescriptions-list-mobile-container .prescriptions-list-item svg{
+.prescriptions-list-mobile-container .prescriptions-list-item svg {
   width: 2rem;
   height: 2rem;
 }
@@ -111,7 +107,7 @@
   cursor: default;
 }
 
-.div-prescription-list-no-content{
+.div-prescription-list-no-content {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -119,12 +115,51 @@
   width: 350px;
   background-color: #d9d9d9;
   border-radius: 10px;
+}
+
+.div-prescription-list-no-content img {
+  height: 15rem;
+}
+
+.prescriptions-list-header-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 1rem 0.5rem;
+  /* background-color: #78d6c6;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px; */
+}
+.prescriptions-list-header-container button {
+  border: transparent 3px solid;
+  padding: 0.5rem 1rem ;
+  border-radius: 8px;
+  color: #12476b9b;
+  font-weight: bold;
+}
+
+
+.prescriptions-list-header-container .completed{
+  border-color: #ee9322;
+}
+.prescriptions-list-header-container .completed:hover{
+  color: white;
+  background-color: #ee9322;
 
 }
 
-.div-prescription-list-no-content img{
-  height: 15rem;
+.prescriptions-list-header-container .active{
+  border-color: #D83F31;
+}
+.prescriptions-list-header-container .active:hover{
+  color: white;
+  background-color: #D83F31;
 
+}
+
+.prescriptions-list-header-container h5 {
+  /* font-family: "Kaushan Script", cursive; */
+  color: #12486b;
 }
 
 @media only screen and (max-width: 1500px) {
@@ -133,7 +168,7 @@
     width: 15rem;
     margin-bottom: 0;
   }
-  .div-prescription-list-no-content{
+  .div-prescription-list-no-content {
     width: 100%;
     border-radius: 0;
     margin-block: 2rem;

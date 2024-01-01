@@ -7,6 +7,7 @@ import { useMediaQuery } from "react-responsive";
 import { useCallback, useEffect, useState } from "react";
 import { useReduxState } from "../../../hooks/useReduxState";
 import LoadingCircle from "../../Loadings/LoadingCircle/LoadingCircle";
+import PrescriptionListHeader from "./PrescriptionListHeader";
 
 const PrescriptionsList = ({}) => {
   const [loading, setLoading] = useState(true);
@@ -16,8 +17,10 @@ const PrescriptionsList = ({}) => {
   const getPrescriptions = useReduxAction(
     prescriptionsSlice.actions.fetchMyPrescriptions
   );
-  
-  const prescriptions = useReduxState(state=> state.prescriptions.allMyPrescriptions);
+
+  const prescriptions = useReduxState(
+    (state) => state.prescriptions.allMyPrescriptions
+  );
 
   const prescriptionList = useCallback(() => {
     if (prescriptions.length === 0) {
@@ -38,6 +41,6 @@ const PrescriptionsList = ({}) => {
     }
   }, [getPrescriptions, loading, prescriptions]);
 
-  return loading? <LoadingCircle/> : <>{prescriptionList()}</>;
+  return loading ? <LoadingCircle /> : <div>{prescriptionList()}</div>;
 };
 export default PrescriptionsList;
