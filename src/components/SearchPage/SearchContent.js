@@ -14,8 +14,12 @@ const SearchContent = ({ setSearchParams, searchParams }) => {
 
   const searchType = useReduxState((state) => state.search.searchType);
 
-  const placeholderText = (searchType === 'patients' && 'Search from yours patient by id...') || (searchType === 'doctors' && 'Search doctor by email...')
-  const titleText = (searchType === 'patients' && 'Търси Пациенти') || (searchType === 'doctors' && 'Търси Доктори')
+  const placeholderText =
+    (searchType === "patients" && "Search from yours patient by id...") ||
+    (searchType === "doctors" && "Search doctor by email...");
+  const titleText =
+    (searchType === "patients" && "Търси Пациенти") ||
+    (searchType === "doctors" && "Търси Доктори");
 
   const [searchQuery, setSearchQuery] = useState(
     searchParams.get("search") || ""
@@ -35,6 +39,19 @@ const SearchContent = ({ setSearchParams, searchParams }) => {
   return (
     <Container className={style["main-search-doctors-container"]}>
       <h1 className="text-center">{titleText}</h1>
+      {searchType === "patients" && (
+        <InputGroup className="mb-3">
+          <FormControl
+            id="filterInput"
+            placeholder="Search for patient in the server by id..."
+            aria-label="Search text"
+            aria-describedby="basic-addon2"
+            value={searchQuery}
+            className={style['main-search-input-for-single-patient']}
+          />
+          <Button>Search</Button>
+        </InputGroup>
+      )}
       <InputGroup className="mb-3">
         <FormControl
           id="filterInput"
@@ -43,6 +60,7 @@ const SearchContent = ({ setSearchParams, searchParams }) => {
           aria-describedby="basic-addon2"
           value={searchQuery}
           onChange={onChangeSearch}
+          className={style['main-search-input-from-user-patients']}
         />
         <Button onClick={onClickSearchButton}>Search</Button>
       </InputGroup>

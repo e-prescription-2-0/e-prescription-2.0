@@ -1,111 +1,116 @@
 .main-search-doctors-section {
-    padding: 1em 0;
-    margin: 0 0;
-    margin-left: 5rem;
-    max-width: 1700px;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: stretch;
-    column-gap: 4.5em;
-  
-    
+  padding: 1em 0;
+  margin: 0 0;
+  margin-left: 5rem;
+  max-width: 1700px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: stretch;
+  column-gap: 4.5em;
+}
+
+.doctor-card-list-item {
+  border-top-width: thin !important;
+  padding: 0;
+}
+.main-search-doctors-container ul {
+  border-radius: 2px;
+}
+.main-search-doctors-container input {
+  border: none;
+  border-bottom: 2px solid #3c6e7184;
+  border-radius: 0;
+  transition: all 0.5s ease;
+
+}
+.main-search-input-for-single-patient {
+  background-color: #ffebeb;
+}
+.main-search-input-from-user-patients {
+  background-color: #cfe2ff;
+}
+
+.main-search-doctors-container input:focus {
+  box-shadow: none;
+  border-bottom-color: #3c6e71;
+}
+
+.main-search-input-for-single-patient:focus {
+  background-color: rgba(255, 235, 235, 0.5)
+}
+.main-search-input-from-user-patients:focus {
+  background-color: rgba(207, 226, 255, 0.5);
+}
+
+.main-search-doctors-container button {
+  background-color: #78d6c6;
+  border: none;
+}
+
+.main-search-doctors-container h1 {
+  color: #78d6c6;
+  margin-block: 1rem;
+}
+
+.doctor-card-information-link {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  justify-content: space-between;
+
+  padding: 1rem;
+}
+.doctor-card-information-link:hover,
+.doctor-card-information-link:focus {
+  background-color: #cfe2ff;
+  transition: all 1s ease;
+}
+
+.search-doctors-pagination {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.main-search-doctors-container button:hover,
+.main-search-doctors-container button:active,
+.main-search-doctors-container button:focus {
+  background-color: #3c6e71;
+}
+
+.search-doctors-loading-container {
+  height: 90vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.search-no-doctors-found {
+  height: 70vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #474bff;
+}
+
+.search-no-doctors-found svg {
+  height: 4rem;
+}
+
+@media (max-width: 1199px) {
+  .doctor-card-information-link {
+    gap: 0.4rem;
+    grid-template-columns: 1fr 1fr;
   }
 
-
-.doctor-card-list-item{
-    border-top-width: thin !important;
-    padding: 0;
-}
-.main-search-doctors-container ul{
-    border-radius: 2px;
-    
-}
-.main-search-doctors-container input{
-    border: none;
-    border-bottom: 2px solid #3c6e7184;
-    border-radius: 0;
-
-}
-.main-search-doctors-container input:focus{
-    box-shadow: none;
-    border-bottom-color: #3c6e71;
-}
-.main-search-doctors-container button{
-    background-color: #78D6C6;
-    border: none;
-
-}
-
-.main-search-doctors-container h1{
-    color: #78D6C6;
-
-
-}
-
-.doctor-card-information-link{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    justify-content: space-between;
-
-    padding: 1rem;
-}
-.doctor-card-information-link:hover{
-    background-color: #78D6C6;
-    transition: all 1.0s ease;
-    color: white;
-}
-
-
-.search-doctors-pagination{
-    margin-top: 1rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.main-search-doctors-container button:hover, .main-search-doctors-container button:active, .main-search-doctors-container button:focus {
-    background-color: #3c6e71;
-}
-
-.search-doctors-loading-container{
-    height: 90vh;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.search-no-doctors-found{
-    height: 70vh;
-    width: 100%;
-    display: flex;
+  .main-search-doctors-section {
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    color: #474bff;
-}
-
-.search-no-doctors-found svg{
-    height: 4rem;
-}
-
-
-
-@media (max-width: 1199px){
-    .doctor-card-information-link{
-        gap: 0.4rem;
-        grid-template-columns: 1fr 1fr;
-    }
-
-
-    .main-search-doctors-section{
-      flex-direction: column;
-      align-items: center;
-      justify-content: flex-start;
-      width: 100%;
-      margin: 0;
-  
-  
-    }
-  
+    justify-content: flex-start;
+    width: 100%;
+    margin: 0;
   }
+}
