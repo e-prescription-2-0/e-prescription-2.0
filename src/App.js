@@ -7,7 +7,7 @@ import Header from "./components/Header/Header"
 import MainDashboard from "./components/MainDashboard/MainDashboard"
 import { Welcome } from "./components/Welcome/Welcome"
 import store from "./redux"
-import SearchDoctors from "./components/SearchDoctors/SearchDoctors"
+import SearchPage from "./components/SearchPage/SearchPage"
 
 const App = () => {
   return (
@@ -17,7 +17,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Welcome />} />
           <Route path="/dashboard" element={<MainDashboard />} />
-          <Route path="/search-doctors" element={<SearchDoctors/>} />
+          <Route path="/search/doctors" element={<SearchPage searchType={'doctors'}/>} />
           
         </Routes>
       </Provider>

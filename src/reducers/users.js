@@ -1,10 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit"
 
 const initialState = {
-  // doctors: [],
-  // doctorsById: {},
-  // doctorsPageNumber: 1,
-  // doctorsPageSearch: ''
+  role: ''
 
 }
 
@@ -12,6 +9,9 @@ export const usersSlice = createSlice({
   name: "users",
   initialState,
   reducers: {
+    setUserRole: (state, action)=>{
+      state.role = action.payload
+    }
     // fetchDoctors: (state, action) => {},
     // setDoctors: (state, action) => {
     //   const doctors = action.payload

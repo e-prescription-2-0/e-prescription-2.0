@@ -1,25 +1,26 @@
 import { Pagination } from "react-bootstrap";
-import style from "./SearchDoctors.module.css";
+import style from "./SearchPage.module.css";
 import { useReduxState } from "../../hooks/useReduxState";
+import { searchSlice } from "../../reducers/search";
 import { useReduxAction } from "../../hooks/useReduxAction";
-import { doctorsSlice } from "../../reducers/doctors";
 
-const SearchDoctorsPagination = ({ setSearchParams, searchParams }) => {
+const SearchPagination = ({ setSearchParams, searchParams }) => {
   const numberOfAllPages = useReduxState(
-    (state) => state.doctors.numberOfAllPages
+    (state) => state.search.numberOfAllPages
   );
 
-  const currentPage = useReduxState((state) => state.doctors.currentPage);
-  const setCurrentPage = useReduxAction(doctorsSlice.actions.setCurrentPage);
-
+  const currentPage = useReduxState((state) => state.search.currentPage);
+  const setCurrentPage = useReduxAction(searchSlice.actions.setCurrentPage);
+  
   const handlePageClick = (pageNumber) => {
+    console.log(pageNumber)
     if (pageNumber > 0 && pageNumber <= numberOfAllPages) {
       console.log(Object(searchParams.entries()));
       setSearchParams({
         search: searchParams.get("search") || "",
         page: pageNumber,
       });
-      setCurrentPage(pageNumber);
+      setCurrentPage(String(pageNumber));
     }
   };
 
@@ -38,7 +39,7 @@ const SearchDoctorsPagination = ({ setSearchParams, searchParams }) => {
       number <= endPaginationNumber;
       number++
     ) {
-      console.log('Numbers:', number, currentPage);
+      console.log("Numbers:", number, currentPage);
 
       items.push(
         <Pagination.Item
@@ -55,16 +56,16 @@ const SearchDoctorsPagination = ({ setSearchParams, searchParams }) => {
 
   return (
     <Pagination className={style["search-doctors-pagination"]}>
-      <Pagination.Prev onClick={() => handlePageClick(currentPage - 1)}>
+      <Pagination.Prev onClick={() => handlePageClick(parseInt(currentPage) - 1)}>
         {" "}
         Previous{" "}
       </Pagination.Prev>
       {itemsPagination()}
-      <Pagination.Next onClick={() => handlePageClick(currentPage + 1)}>
+      <Pagination.Next onClick={() => handlePageClick(parseInt(currentPage) + 1)}>
         Next
       </Pagination.Next>
     </Pagination>
   );
 };
 
-export default SearchDoctorsPagination;
+export default SearchPagination;
