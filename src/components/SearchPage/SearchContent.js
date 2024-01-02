@@ -1,69 +1,31 @@
-import { Button, Container, FormControl, InputGroup } from "react-bootstrap";
+import { Container } from "react-bootstrap";
 import style from "./SearchPage.module.css";
 import { useReduxState } from "../../hooks/useReduxState";
-import { useReduxAction } from "../../hooks/useReduxAction";
 import { isEmpty } from "ramda";
-import { useState } from "react";
 import NothingFound from "./NothingFound";
 import ListSearchResult from "./ListSearchResult";
-import { searchSlice } from "../../reducers/search";
 import SearchPagination from "./SearchPagination";
+import BaseSearchFields from "./Fields/BaseSearchField";
+import SearchPatientFromServerField from "./Fields/SearchPatientFromServerField";
 
 const SearchContent = ({ setSearchParams, searchParams }) => {
   const listCardData = useReduxState((state) => state.search.list);
 
   const searchType = useReduxState((state) => state.search.searchType);
-
-  const placeholderText =
-    (searchType === "patients" && "Search from yours patient by id...") ||
-    (searchType === "doctors" && "Search doctor by email...");
+  
   const titleText =
     (searchType === "patients" && "Търси Пациенти") ||
     (searchType === "doctors" && "Търси Доктори");
 
-  const [searchQuery, setSearchQuery] = useState(
-    searchParams.get("search") || ""
-  );
-
-  const setLoading = useReduxAction(searchSlice.actions.setLoading);
-
-  const onChangeSearch = (e) => {
-    setSearchQuery(e.target.value);
-  };
-  const onClickSearchButton = () => {
-    setSearchParams({ search: searchQuery, page: "1" });
-
-    setLoading(true);
-  };
-
   return (
     <Container className={style["main-search-doctors-container"]}>
       <h1 className="text-center">{titleText}</h1>
-      {searchType === "patients" && (
-        <InputGroup className="mb-3">
-          <FormControl
-            id="filterInput"
-            placeholder="Search for patient in the server by id..."
-            aria-label="Search text"
-            aria-describedby="basic-addon2"
-            value={searchQuery}
-            className={style['main-search-input-for-single-patient']}
-          />
-          <Button>Search</Button>
-        </InputGroup>
-      )}
-      <InputGroup className="mb-3">
-        <FormControl
-          id="filterInput"
-          placeholder={placeholderText}
-          aria-label="Search text"
-          aria-describedby="basic-addon2"
-          value={searchQuery}
-          onChange={onChangeSearch}
-          className={style['main-search-input-from-user-patients']}
-        />
-        <Button onClick={onClickSearchButton}>Search</Button>
-      </InputGroup>
+      {searchType === "patients" && <SearchPatientFromServerField />}
+      <BaseSearchFields
+        setSearchParams={setSearchParams}
+        searchParams={searchParams}
+      />
+
       {!isEmpty(listCardData) ? <ListSearchResult /> : <NothingFound />}
 
       <SearchPagination
