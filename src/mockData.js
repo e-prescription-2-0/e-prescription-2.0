@@ -1,3 +1,7 @@
+
+import { faker } from '@faker-js/faker';
+
+
 export const medicinesData = [
   {
     _id: "123456",
@@ -16,251 +20,7 @@ export const medicinesData = [
   },
 ];
 
-export const doctorsData = [
-  {
-    _id: "1",
-    userId: "1",
-    firstName: "Петров", //УИН номер
-    hospitalName: "Първа Градска",
-    specialty: "Педиатър",
-    patients: ["Пешо", "Гошо", "Тошо"],
-    prescriptions: ["12", "23", "34"],
-  },
-  {
-    _id: "2",
-    userId: "2",
-    firstName: "Георгиев", //УИН номер
-    hospitalName: "Първа Градска",
-    specialty: "Педиатър",
-    patients: ["Пешо", "Гошо", "Тошо"],
-    prescriptions: ["12", "23", "34"],
-  },
-  {
-    _id: "3",
-    userId: "3",
-    firstName: "Иванов", //УИН номер
-    hospitalName: "Първа Градска",
-    specialty: "Педиатър",
-    patients: ["Пешо", "Гошо", "Тошо"],
-    prescriptions: ["12", "23", "34"],
-  },
-  {
-    _id: "1",
-    userId: "1",
-    firstName: "Петров", //УИН номер
-    hospitalName: "Първа Градска",
-    specialty: "Педиатър",
-    patients: ["Пешо", "Гошо", "Тошо"],
-    prescriptions: ["12", "23", "34"],
-  },
-  {
-    _id: "2",
-    userId: "2",
-    firstName: "Георгиев", //УИН номер
-    hospitalName: "Първа Градска",
-    specialty: "Педиатър",
-    patients: ["Пешо", "Гошо", "Тошо"],
-    prescriptions: ["12", "23", "34"],
-  },
-  {
-    _id: "3",
-    userId: "3",
-    firstName: "Иванов", //УИН номер
-    hospitalName: "Първа Градска",
-    specialty: "Педиатър",
-    patients: ["Пешо", "Гошо", "Тошо"],
-    prescriptions: ["12", "23", "34"],
-  },
-  {
-    _id: "1",
-    userId: "1",
-    firstName: "Петров", //УИН номер
-    hospitalName: "Първа Градска",
-    specialty: "Педиатър",
-    patients: ["Пешо", "Гошо", "Тошо"],
-    prescriptions: ["12", "23", "34"],
-  },
-  {
-    _id: "2",
-    userId: "2",
-    firstName: "Георгиев", //УИН номер
-    hospitalName: "Първа Градска",
-    specialty: "Педиатър",
-    patients: ["Пешо", "Гошо", "Тошо"],
-    prescriptions: ["12", "23", "34"],
-  },
-  {
-    _id: "3",
-    userId: "3",
-    firstName: "Иванов", //УИН номер
-    hospitalName: "Първа Градска",
-    specialty: "Педиатър",
-    patients: ["Пешо", "Гошо", "Тошо"],
-    prescriptions: ["12", "23", "34"],
-  },
-  {
-    _id: "1",
-    userId: "1",
-    firstName: "Петров", //УИН номер
-    hospitalName: "Първа Градска",
-    specialty: "Педиатър",
-    patients: ["Пешо", "Гошо", "Тошо"],
-    prescriptions: ["12", "23", "34"],
-  },
-  {
-    _id: "2",
-    userId: "2",
-    firstName: "Георгиев", //УИН номер
-    hospitalName: "Първа Градска",
-    specialty: "Педиатър",
-    patients: ["Пешо", "Гошо", "Тошо"],
-    prescriptions: ["12", "23", "34"],
-  },
-  {
-    _id: "3",
-    userId: "3",
-    firstName: "Иванов", //УИН номер
-    hospitalName: "Първа Градска",
-    specialty: "Педиатър",
-    patients: ["Пешо", "Гошо", "Тошо"],
-    prescriptions: ["12", "23", "34"],
-  },
-  {
-    _id: "1",
-    userId: "1",
-    firstName: "Петров", //УИН номер
-    hospitalName: "Първа Градска",
-    specialty: "Педиатър",
-    patients: ["Пешо", "Гошо", "Тошо"],
-    prescriptions: ["12", "23", "34"],
-  },
-  {
-    _id: "2",
-    userId: "2",
-    firstName: "Георгиев", //УИН номер
-    hospitalName: "Първа Градска",
-    specialty: "Педиатър",
-    patients: ["Пешо", "Гошо", "Тошо"],
-    prescriptions: ["12", "23", "34"],
-  },
-  {
-    _id: "3",
-    userId: "3",
-    firstName: "Иванов", //УИН номер
-    hospitalName: "Първа Градска",
-    specialty: "Педиатър",
-    patients: ["Пешо", "Гошо", "Тошо"],
-    prescriptions: ["12", "23", "34"],
-  },
-  {
-    _id: "1",
-    userId: "1",
-    firstName: "Петров", //УИН номер
-    hospitalName: "Първа Градска",
-    specialty: "Педиатър",
-    patients: ["Пешо", "Гошо", "Тошо"],
-    prescriptions: ["12", "23", "34"],
-  },
-  {
-    _id: "2",
-    userId: "2",
-    firstName: "Георгиев", //УИН номер
-    hospitalName: "Първа Градска",
-    specialty: "Педиатър",
-    patients: ["Пешо", "Гошо", "Тошо"],
-    prescriptions: ["12", "23", "34"],
-  },
-  {
-    _id: "3",
-    userId: "3",
-    firstName: "Иванов", //УИН номер
-    hospitalName: "Първа Градска",
-    specialty: "Педиатър",
-    patients: ["Пешо", "Гошо", "Тошо"],
-    prescriptions: ["12", "23", "34"],
-  },
-  {
-    _id: "1",
-    userId: "1",
-    firstName: "Петров", //УИН номер
-    hospitalName: "Първа Градска",
-    specialty: "Педиатър",
-    patients: ["Пешо", "Гошо", "Тошо"],
-    prescriptions: ["12", "23", "34"],
-  },
-  {
-    _id: "2",
-    userId: "2",
-    firstName: "Георгиев", //УИН номер
-    hospitalName: "Първа Градска",
-    specialty: "Педиатър",
-    patients: ["Пешо", "Гошо", "Тошо"],
-    prescriptions: ["12", "23", "34"],
-  },
-  {
-    _id: "3",
-    userId: "3",
-    firstName: "Иванов", //УИН номер
-    hospitalName: "Първа Градска",
-    specialty: "Педиатър",
-    patients: ["Пешо", "Гошо", "Тошо"],
-    prescriptions: ["12", "23", "34"],
-  },
-  {
-    _id: "1",
-    userId: "1",
-    firstName: "Петров", //УИН номер
-    hospitalName: "Първа Градска",
-    specialty: "Педиатър",
-    patients: ["Пешо", "Гошо", "Тошо"],
-    prescriptions: ["12", "23", "34"],
-  },
-  {
-    _id: "2",
-    userId: "2",
-    firstName: "Георгиев", //УИН номер
-    hospitalName: "Първа Градска",
-    specialty: "Педиатър",
-    patients: ["Пешо", "Гошо", "Тошо"],
-    prescriptions: ["12", "23", "34"],
-  },
-  {
-    _id: "3",
-    userId: "3",
-    firstName: "Иванов", //УИН номер
-    hospitalName: "Първа Градска",
-    specialty: "Педиатър",
-    patients: ["Пешо", "Гошо", "Тошо"],
-    prescriptions: ["12", "23", "34"],
-  },
-  {
-    _id: "1",
-    userId: "1",
-    firstName: "Петров", //УИН номер
-    hospitalName: "Първа Градска",
-    specialty: "Педиатър",
-    patients: ["Пешо", "Гошо", "Тошо"],
-    prescriptions: ["12", "23", "34"],
-  },
-  {
-    _id: "2",
-    userId: "2",
-    firstName: "Георгиев", //УИН номер
-    hospitalName: "Първа Градска",
-    specialty: "Педиатър",
-    patients: ["Пешо", "Гошо", "Тошо"],
-    prescriptions: ["12", "23", "34"],
-  },
-  {
-    _id: "3",
-    userId: "3",
-    firstName: "Иванов", //УИН номер
-    hospitalName: "Първа Градска",
-    specialty: "Педиатър",
-    patients: ["Пешо", "Гошо", "Тошо"],
-    prescriptions: ["12", "23", "34"],
-  }
-];
+
 
 export const prescriptionsData = [
   {
@@ -506,3 +266,20 @@ export const prescriptionsData = [
     },
   },
 ];
+
+
+
+
+export const patientsData = Array.from({ length: 10 }, () => ({
+  _id: faker.string.uuid(),
+
+  patientId: faker.string.uuid(),
+
+  firstName: faker.name.firstName(),
+  lastName: faker.name.lastName(),
+  email: faker.internet.email(),
+  gender: faker.helpers.arrayElement(['Male', 'Female']),
+  role: 'patient'
+}));
+
+

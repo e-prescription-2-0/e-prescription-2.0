@@ -11,9 +11,9 @@ const SearchPagination = ({ setSearchParams, searchParams }) => {
 
   const currentPage = useReduxState((state) => state.search.currentPage);
   const setCurrentPage = useReduxAction(searchSlice.actions.setCurrentPage);
-  
+
   const handlePageClick = (pageNumber) => {
-    console.log(pageNumber)
+    console.log(pageNumber);
     if (pageNumber > 0 && pageNumber <= numberOfAllPages) {
       console.log(Object(searchParams.entries()));
       setSearchParams({
@@ -56,14 +56,23 @@ const SearchPagination = ({ setSearchParams, searchParams }) => {
 
   return (
     <Pagination className={style["search-doctors-pagination"]}>
-      <Pagination.Prev onClick={() => handlePageClick(parseInt(currentPage) - 1)}>
-        {" "}
-        Previous{" "}
-      </Pagination.Prev>
+      {currentPage !== "1" && (
+        <Pagination.Prev
+          onClick={() => handlePageClick(parseInt(currentPage) - 1)}
+        >
+          {" "}
+          Previous{" "}
+        </Pagination.Prev>
+      )}
       {itemsPagination()}
-      <Pagination.Next onClick={() => handlePageClick(parseInt(currentPage) + 1)}>
-        Next
-      </Pagination.Next>
+
+      {currentPage !== String(numberOfAllPages) && (
+        <Pagination.Next
+          onClick={() => handlePageClick(parseInt(currentPage) + 1)}
+        >
+          Next
+        </Pagination.Next>
+      )}
     </Pagination>
   );
 };

@@ -4,7 +4,7 @@ const initialState = {
   list: [],
   currentPage: 1,
   pageSearch: "",
-  numberOfAllPages: 0,
+  numberOfAllPages: 1,
   loading: true,
   searchType: "",
 };

@@ -18,7 +18,8 @@ const App = () => {
           <Route path="/" element={<Welcome />} />
           <Route path="/dashboard" element={<MainDashboard />} />
           <Route path="/search/doctors" element={<SearchPage searchType={'doctors'}/>} />
-          
+          <Route path="/search/patients" element={<SearchPage searchType={'patients'}/>} />
+
         </Routes>
       </Provider>
 

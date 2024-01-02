@@ -11,12 +11,13 @@ export default {
       "Access-Control-Allow-Origin": "*",
     },
   }),
-  getDoctorById: serviceBind({
-    url: "/api/doctors/{doctorId}",
+  getPatients: serviceBind({
+    url: "/api/user/patients?search={searchEmail}&page={pageNumber}",
     method: METHODS.GET,
     headers: {
       "Content-Type": HEADER_FORMATS.JSON,
       Accept: HEADER_FORMATS.JSON,
+      "Access-Control-Allow-Origin": "*",
     },
   }),
 };

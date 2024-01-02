@@ -1,13 +1,13 @@
 import { all, call, put, takeLatest, select } from "@redux-saga/core/effects";
-import doctorsService from "../services/doctors-service";
+import searchService from "../services/search-service";
 import { searchSlice } from "../reducers/search";
-
+import {patientsData} from "../mockData"
 function* onFetchDoctors(action) {
   try {
     // Access the current state using select
     const state = yield select();
     console.log('State', state)
-    const result = yield call(doctorsService.getDoctors, {
+    const result = yield call(searchService.getDoctors, {
       pageNumber: state.search.currentPage,
       searchEmail: state.search.pageSearch,
     });
@@ -27,27 +27,36 @@ function* onFetchDoctors(action) {
 
 }
 
-// function* onFetchDoctorById(action) {
-//   try {
-//     console.log(action);
-//     // const result = yield callExpression()
 
-//     // console.log(doctorsData)
-//     yield put(
-//       doctorsSlice.actions.setDoctors(
-//         doctorsData.filter((doctor) => doctor.id === action.payload)
-//       )
-//     );
-//   } catch (error) {
-//     console.log("====================================");
-//     console.log(error);
-//     console.log("====================================");
-//   }
-// }
+function* onFetchPatients(action) {
+  try {
+    // // Access the current state using select
+    // const state = yield select();
+    // console.log('State', state)
+    // const result = yield call(searchService.getPatients, {
+    //   pageNumber: state.search.currentPage,
+    //   searchEmail: state.search.pageSearch,
+    // });
+
+    // console.log(result);
+    yield put(searchSlice.actions.setList(patientsData));
+    // yield put(searchSlice.actions.setNumberOfAllPages(result.numberPages));
+    
+  } catch (error) {
+    console.log("====================================");
+    console.log(error);
+    console.log("====================================");
+  }finally {
+    // Dispatch setLoading(false) after the API call is complete (success or error)
+    yield put(searchSlice.actions.setLoading(false));
+  }
+
+}
 
 export default function* searchSaga() {
   yield all([
     takeLatest(searchSlice.actions.fetchDoctors, onFetchDoctors),
-    // takeLatest(searchSlice.actions.fetchDoctorById, onFetchDoctorById),
+    takeLatest(searchSlice.actions.fetchPatients, onFetchPatients),
+
   ]);
 }
