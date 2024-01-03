@@ -1,7 +1,7 @@
-import { all, call, put, takeLatest, select } from "@redux-saga/core/effects";
+import { all, call, put, takeLatest } from "@redux-saga/core/effects";
 import { usersSlice } from "../reducers/users";
 import usersService from "../services/users-service";
-import { useNavigate } from "react-router-dom";
+import { searchSlice } from "../reducers/search";
 
 function* onFetchProfile(action) {
     try {
@@ -40,6 +40,9 @@ function* onFetchProfile(action) {
     }finally {
       // Dispatch setLoading(false) after the API call is complete (success or error)
       yield put(usersSlice.actions.setLoading(false));
+      yield put(searchSlice.actions.setLoadingPatient(false));
+
+
     }
   
   }

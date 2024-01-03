@@ -24,17 +24,19 @@ const SearchPage = ({ searchType }) => {
   const fetchPatients = useReduxAction(searchSlice.actions.fetchPatients);
 
   //Profile
-  const patientLoading = useReduxState((state) => state.users.loading);
+  const loadingPatient = useReduxState((state) => state.search.loadingPatient);
+  const setLoadingPatient = useReduxAction(searchSlice.actions.setLoadingPatient)
   const profile = useReduxState((state) => state.users.profile);
 
   const [searchParams, setSearchParams] = useSearchParams({});
 
   useEffect(() => {
+    if (!loadingPatient) {
+      navigate(`profile/${profile._id}`);
+      setLoadingPatient(true)
+      
+    }
     if (loading) {
-      if (!patientLoading) {
-        navigate(`profile/${profile._id}`);
-      }
-
       //Set what type of page is this doctors or patients
       setSearchType(searchType);
 
@@ -55,6 +57,9 @@ const SearchPage = ({ searchType }) => {
     setCurrentPage,
     searchParams,
     searchType,
+    loadingPatient,
+    navigate,
+    profile
   ]);
 
   return (

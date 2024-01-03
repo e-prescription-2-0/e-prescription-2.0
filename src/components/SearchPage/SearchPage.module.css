@@ -46,6 +46,7 @@
 .main-search-doctors-container button {
   background-color: #78d6c6;
   border: none;
+  width: 5rem;
 }
 
 .main-search-doctors-container h1 {
@@ -113,4 +114,5 @@
     width: 100%;
     margin: 0;
   }
-}
+} 
+

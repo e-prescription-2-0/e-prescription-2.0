@@ -6,7 +6,9 @@ const initialState = {
   pageSearch: "",
   numberOfAllPages: 1,
   loading: true,
+  loadingPatient: true,
   searchType: "",
+
 };
 
 export const searchSlice = createSlice({
@@ -31,6 +33,9 @@ export const searchSlice = createSlice({
     },
     setLoading: (state, action) => {
       state.loading = action.payload;
+    },
+    setLoadingPatient: (state, action) => {
+      state.loadingPatient = action.payload;
     },
     setPageSearch: (state, action) => {
       state.pageSearch = action.payload;

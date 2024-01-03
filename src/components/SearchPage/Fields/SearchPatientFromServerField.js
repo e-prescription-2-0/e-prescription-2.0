@@ -1,28 +1,23 @@
-import { Button, FormControl, InputGroup } from "react-bootstrap";
+import { Button, FormControl, InputGroup, Spinner } from "react-bootstrap";
 import style from "../SearchPage.module.css";
 import { usersSlice } from "../../../reducers/users";
-import { searchSlice } from "../../../reducers/search";
-import { useNavigate } from "react-router-dom";
 import { useReduxAction } from "../../../hooks/useReduxAction";
 import { useState } from "react";
-import { isEmpty } from "ramda";
 import { useReduxState } from "../../../hooks/useReduxState";
-
+import { searchSlice } from "../../../reducers/search";
+import LoadingCircle from "../../Loadings/LoadingCircle/LoadingCircle";
 const SearchPatientFromServerField = () => {
-  const navigate = useNavigate();
-
+  const loadingPatient = useReduxState((state) => state.users.loadingPatient);
+  const setLoading = useReduxAction(searchSlice.actions.setLoadingPatient);
+  const [startLoadingPatient, setStartLoadingPatient] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
-  const setLoading = useReduxAction(searchSlice.actions.setLoading);
   const fetchPatientProfile = useReduxAction(
     usersSlice.actions.fetchPatientProfile
   );
-  const profile = useReduxState((state) => state.users.profile);
 
   const onClickSearchButton = () => {
-    console.log("It workkssssssssss");
-    setLoading(true);
     fetchPatientProfile(searchQuery);
-
+    setStartLoadingPatient(true);
   };
   return (
     <InputGroup className="mb-3">
@@ -32,10 +27,20 @@ const SearchPatientFromServerField = () => {
         aria-label="Search text"
         aria-describedby="basic-addon2"
         value={searchQuery}
+        isDisable={startLoadingPatient}
         onChange={(e) => setSearchQuery(e.target.value)}
         className={style["main-search-input-for-single-patient"]}
       />
-      <Button onClick={onClickSearchButton}>Search</Button>
+      <Button
+        className={style["main-search-button-for-single-patient"]}
+        onClick={onClickSearchButton}
+      >
+        {startLoadingPatient ? (
+          <Spinner size="sm" animation="border" variant="light" />
+        ) : (
+          "Search"
+        )}
+      </Button>
     </InputGroup>
   );
 };
