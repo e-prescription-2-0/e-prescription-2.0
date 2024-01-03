@@ -31,19 +31,13 @@
 
 .content {
     width: 600px;
-    height: 550px;
     margin-top: 10px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    border: 3px solid #3c6e71;
-    border-radius: 5px;
-    padding: 1em;
-    overflow: scroll;
 }
 
 .content-item {
-    /* border-bottom: 1px solid #78D6C6; */
     display: flex;
     flex-direction: column;
     align-items: center;
