@@ -8,6 +8,7 @@ const initialState = {
   loading: true,
   loadingPatient: true,
   searchType: "",
+  errorFetchingPatient: false
 
 };
 
@@ -36,6 +37,9 @@ export const searchSlice = createSlice({
     },
     setLoadingPatient: (state, action) => {
       state.loadingPatient = action.payload;
+    },
+    setErrorFetchingPatient: (state, action) => {
+      state.errorFetchingPatient = action.payload;
     },
     setPageSearch: (state, action) => {
       state.pageSearch = action.payload;

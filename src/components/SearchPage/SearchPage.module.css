@@ -32,7 +32,6 @@
 }
 
 .main-search-doctors-container input:focus {
-  box-shadow: none;
   border-bottom-color: #3c6e71;
 }
 
