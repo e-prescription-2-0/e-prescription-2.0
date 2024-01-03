@@ -7,85 +7,31 @@ const ProfileEdit = ({
     onEditSubmit
 }) => {
     const { values, changeHandler, onSubmit } = useForm(userInfo, onEditSubmit);
+    let editInfo = Object.entries(userInfo);
+    console.log(editInfo);
     return (
         <form className={style["form"]} onSubmit={onSubmit}>
-            <i onClick={changeMode} id={style["close"]} className="fa-solid fa-xmark"></i>
-            <label className={style["form-item"]}>
-                Име:
-                <input
-                    type="text"
-                    name="име"
-                    value={values.име}
-                    onChange={changeHandler}
-                />
-            </label>
-            <label className={style["form-item"]}>
-                Презиме:
-                <input
-                    type="text"
-                    name="презиме"
-                    value={values.презиме}
-                    onChange={changeHandler}
-                />
-            </label>
-            <label className={style["form-item"]}>
-                Фамилия:
-                <input
-                    type="text"
-                    name="фамилия"
-                    value={values.фамилия}
-                    onChange={changeHandler}
-                />
-            </label>
-            <label className={style["form-item"]}>
-                Години:
-                <input
-                    type="text"
-                    name="години"
-                    value={values.години}
-                    onChange={changeHandler}
-                />
-            </label>
-            <label className={style["form-item"]}>
-                Имейл:
-                <input
-                    value={values.имейл}
-                    type="text"
-                    name="имейл"
-                    onChange={changeHandler}
-                />
-            </label>
-            <label className={style["form-item"]}>
-                Контакт:
-                <input
-                    type="text"
-                    name="контакт"
-                    value={values.контакт}
-                    onChange={changeHandler}
-                />
-            </label>
-            <label className={style["form-item"]}>
-                Роля:
-                <input
-                    type="text"
-                    name="роля"
-                    value={values.роля}
-                    onChange={changeHandler}
-                />
-            </label>
             {
-                values.уин !== undefined &&
-                <label className={style["form-item"]}>
-                    Уин:
-                    <input
-                        type="text"
-                        name="уин"
-                        value={values.уин}
-                        onChange={changeHandler}
-                    />
-                </label>
+                editInfo.map((info => {
+                    return (
+                        <label className={style["form-item"]}>
+                            {info[0]}:
+                            <input
+                                type="text"
+                                name={info[0]}
+                                value={values[info[0]]}
+                                onChange={changeHandler}
+                            />
+                        </label>
+                    )
+                }))
             }
-            <button className={style["submit-btn"]}>Запази</button>
+           
+            <div className={style['form-btns']}>
+                <button className={style["submit-btn"]}>Запази</button>
+                <button type="button" onClick={changeMode} className={style["close-btn"]}>Затвори</button>
+            </div>
+
         </form>
     )
 }

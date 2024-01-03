@@ -4,6 +4,8 @@
     align-items: stretch;
     justify-content: center;
     row-gap: 10px;
+    overflow: scroll;
+    padding-top: 5em;
 }
 
 #close {
@@ -33,6 +35,10 @@
     border-right: 3px solid #3c6e71;
 }
 
+.form-btns {
+    margin: 0 auto;
+}
+
 .submit-btn {
     width: 200px;
     height: 50px;
@@ -41,5 +47,15 @@
     background-color: #3c6e71;
     color: #ffffff;
     margin-block: 10px;
-    align-self: center;
+    margin-right: 7px;
+}
+
+.close-btn {
+    width: 200px;
+    height: 50px;
+    border-radius: 10px;
+    font-size: 20px;
+    background-color: rgba(149, 10, 10, 0.802);
+    color: #ffffff;
+    margin-block: 10px;
 }
