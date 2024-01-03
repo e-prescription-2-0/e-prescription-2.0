@@ -3,15 +3,16 @@ import serviceBind from "./helper"
 
 export default {
   // Patient endpoints
-  getPatients: serviceBind({
-    url: "/api/patients",
+  getProfile: serviceBind({
+    url: "/api/profile/{id}",
     method: METHODS.GET,
     headers: {
       "Content-Type": HEADER_FORMATS.JSON,
       Accept: HEADER_FORMATS.JSON,
     },
   }),
-  getPatient: serviceBind({
+
+  getPatientProfile: serviceBind({
     url: "/api/patients/{patientId}",
     method: METHODS.GET,
     headers: {
@@ -19,6 +20,7 @@ export default {
       Accept: HEADER_FORMATS.JSON,
     },
   }),
+ 
   getPatientPrescriptions: serviceBind({
     url: "/api/patients/{patientId}/persriptions",
     method: METHODS.GET,
@@ -27,24 +29,7 @@ export default {
       Accept: HEADER_FORMATS.JSON,
     },
   }),
-  // Doctors endpoints
-  getDoctors: serviceBind({
-    url: "/api/doctors?page={pageNumber}$search={searchEmail}",
-    method: METHODS.GET,
-    headers: {
-      "Content-Type": HEADER_FORMATS.JSON,
-      Accept: HEADER_FORMATS.JSON,
-      "Access-Control-Allow-Origin": "*",
-    },
-  }),
-  getDoctorById: serviceBind({
-    url: "/api/doctors/{doctorId}",
-    method: METHODS.GET,
-    headers: {
-      "Content-Type": HEADER_FORMATS.JSON,
-      Accept: HEADER_FORMATS.JSON,
-    },
-  }),
+ 
   // Pharmacist endpoint
   getPharmacists: serviceBind({
     url: "/api/pharmacists",
