@@ -1,0 +1,37 @@
+.patient-table-container {
+    max-width: 60em;
+    margin: 20px auto;
+    padding: 2em;
+    background-color: #3c6e71;
+    text-align: center;
+    color: #fff;
+    
+   
+ 
+}
+
+.patient-table-container h2 {
+    padding: 0.2em;
+}
+
+.table-row button {
+    background-color: #3c6e71;
+    color: #fff;
+    border: none;
+}
+
+.search-container{
+    display: flex;
+    max-width: 30em;
+    margin: 0 auto;
+}
+
+.table-row button:hover {
+    background-color: rgb(246, 252, 207, 0.8);
+    color: #000;
+
+}
+
+
+
+
