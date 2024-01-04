@@ -45,6 +45,15 @@
     transition: 2s;
 }
 
+.content-item-bold {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 6px;
+    transition: 2s;
+    background-color: rgba(128, 128, 128, 0.515);
+}
+
 .content-item-edit {
     border-bottom: 1px solid #78D6C6;
     display: flex;
