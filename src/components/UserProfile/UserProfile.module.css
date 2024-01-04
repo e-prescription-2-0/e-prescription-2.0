@@ -40,6 +40,12 @@
     border-radius: 5px;
     padding: 1em;
     overflow: scroll;
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    scrollbar-width: none;
+}
+
+.content::-webkit-scrollbar {
+    display: none;
 }
 
 .content-item {
