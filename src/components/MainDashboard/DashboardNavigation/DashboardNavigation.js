@@ -5,10 +5,12 @@ import DashboardNavigationItem from "./DashboardNavigationItem";
 import { Container, Nav, Navbar } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTableColumns } from "@fortawesome/free-solid-svg-icons";
+import { useReduxState } from "../../../hooks/useReduxState";
 
-const DashboardNavigation = ({changeView}) => {
+const DashboardNavigation = () => {
   const role = "doctor"; // coming and depend of redux/context state;
-  console.log(changeView);
+  const currentActiveLink = useReduxState((state) => state.dashboard.activeLink)
+  console.log(currentActiveLink);
 
   return (
     <Navbar expand="lg" className={style["aside-navigation-container"]}>
@@ -20,7 +22,7 @@ const DashboardNavigation = ({changeView}) => {
         <Navbar.Collapse>
           <Nav className={style["aside-nav-list"]}>
             {dashBoardNavData[role].map((x, index) => (
-              <DashboardNavigationItem key={index} changeView={changeView} {...x} />
+              <DashboardNavigationItem key={index} {...x} />
             ))}
           </Nav>
         </Navbar.Collapse>

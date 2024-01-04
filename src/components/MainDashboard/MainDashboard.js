@@ -17,17 +17,13 @@ const MainDashboard = () => {
   const getPrescriptions = useReduxAction(prescriptionsSlice.actions.fetchMyPrescriptions)
   const prescriptions = useReduxState((state) => state.prescriptions.allMyPrescriptions)
   const [loading, setLoading] = useState(true);
+  const currentVieww = useReduxState((state) => state.dashboard.activeLink)
 
-  const [currentView, setCurrentView] = useState("")
-
-  const changeView = (e) => {
-    setCurrentView(e.target.innerHTML)
-  }
+  console.log(currentVieww);
 
   useEffect(() => {
     if (loading) {
       getPrescriptions()
-      console.log(prescriptions)
       setLoading(false)
     }
 
@@ -43,10 +39,10 @@ const MainDashboard = () => {
   // }, [])
   return loading ? <LoadingPill /> : (
     <section className={style["main-dashboard-section"]}>
-      <DashboardNavigation changeView={changeView} />
+      <DashboardNavigation />
       <div className={style["main-dashboard-section-content"]}>
         {
-          currentView === "Профил" ? <UserProfile /> : <>
+          currentVieww === "Профил" ? <UserProfile /> : <>
             {isDesktop && <PrescriptionsList prescriptions={prescriptions} />}
             {isMobile && <MobilePrescriptionsList prescriptions={prescriptions} />}
             <Prescription />

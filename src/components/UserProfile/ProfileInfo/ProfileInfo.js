@@ -3,8 +3,8 @@ import style from "./ProfileInfo.module.css"
 const ProfileInfo = ({
     userInfo
 }) => {
-    let info = Object.entries(userInfo)
-    console.log(info);
+    let info = Object.entries(userInfo);
+    
     return (
         <>
             {

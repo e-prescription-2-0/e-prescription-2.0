@@ -32,6 +32,16 @@
   padding: 0.5em;
 }
 
+.aside-nav-list-item-active {
+  display: flex;
+  list-style: none;
+  gap: 1em;
+  align-items: center;
+  padding: 0.5em;
+  background-color: #3c6e71;
+  border-radius: 10px;
+}
+
 .aside-nav-list-item svg {
   width: 26px;
   height: 32px;
