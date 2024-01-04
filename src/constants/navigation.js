@@ -1,40 +1,84 @@
 export const navLinkConfig = [
+  // {
+  //   linkName: "Home",
+  //   id: "1",
+  //   hideFor: [],
+  //   onClick: () => {},
+  //   linkTo: "/",
+  // },
+  // {
+  //   linkName: "My Prescriptions",
+  //   id: "2",
+  //   hideFor: ["guest", "pharmacist"],
+  //   onClick: () => { },
+  // },
+  // {
+  //   linkName: "My Patients",
+  //   id: "3",
+  //   hideFor: ["pharmacist", "patient", "guest"],
+  //   onClick: () => { },
+  // },
+  // {
+  //   linkName: "Search",
+  //   id: "4",
+  //   hideFor: ["guest"],
+  //   onClick: () => { }
+  // },
   {
-    linkName: "Home",
+    linkName: "Dashboard",
+    id: "9",
+    hideFor: ["guest"],
+    onClick: () => {},
+    linkTo: "/prescriptions",
+    
+  },
+  {
+    linkName: "Help",
+    id: "5",
     hideFor: [],
-    onClick: () => { },
-    linkTo: "/"
+    onClick: () => {},
+    linkTo: "/help",
+
+
   },
-  {
-    linkName: "My Prescriptions",
-    hideFor: ["guest", "pharmacist"],
-    onClick: () => { },
-  },
-  {
-    linkName: "My Patients",
-    hideFor: ["pharmacist", "patient", "guest"],
-    onClick: () => { },
-  },
-  { linkName: "Search", hideFor: ["guest"], onClick: () => { } },
-  { linkName: "Help", hideFor: [], onClick: () => { } },
   {
     linkName: "Login",
+    id: "6",
     hideFor: ["pharmacist", "doctor", "patient"],
-    onClick: () => { },
+    onClick: () => {},
+    linkTo: "/login",
+
+
   },
   {
     linkName: "Register",
+    id: "7",
     hideFor: ["pharmacist", "doctor", "patient"],
-    onClick: () => { },
-  },
-  { linkName: "Profile", hideFor: ["guest"], onClick: () => { } },
-  {
-    linkName: "Dashboard",
-    hideFor: ["guest"],
-    onClick: () => { },
-    linkTo: "/dashboard"
-  },
-  { linkName: "Logout", hideFor: ["guest"], onClick: () => { } },
-]
+    onClick: () => {},
+    linkTo: "/register",
 
-const userRolesConfig = ["doctor", "pharmacist", "patient", "guest"]
+
+  },
+  {
+    linkName: "Profile",
+    id: "8",
+    hideFor: ["guest"],
+    onClick: () => {},
+    linkTo: "/profile",
+
+
+    
+  },
+
+  {
+    linkName: "Logout",
+    id: "10",
+    hideFor: ["guest"],
+    onClick: () => {},
+    linkTo: "/logout",
+
+
+  },
+];
+
+const userRolesConfig = ["doctor", "pharmacist", "patient", "guest"];

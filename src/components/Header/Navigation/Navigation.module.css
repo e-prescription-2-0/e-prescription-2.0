@@ -1,4 +1,5 @@
 .navigation {
+  padding: 1rem;
   position: sticky;
   top: 0;
   left: 0;
@@ -9,11 +10,12 @@
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  width: 100%;
 }
 .navigation-logo-name {
   padding-inline: 1rem;
   font-family: "Kaushan Script", cursive;
-  color: white;
+  color: #ffffff;
 }
 
 .navigation-logo-name:hover {
@@ -29,16 +31,22 @@
   height: 100%;
 }
 
-.navigation-list-item {
-  padding: 1rem;
-  color: #ffffff;
+.navigation-list-item{
+  color: #ffffff ;
   font-size: 18px;
 }
+.navigation-list-item a{
+  display: block;
+  padding: 1rem;
+  color: #ffffff ;
 
-.navigation-list-item:hover {
+}
+
+.navigation-list-item a:hover , .nav-active{
   cursor: pointer;
   background: rgb(246, 252, 207, 0.8);
   color: #78d6c6;
+  border-radius: 15px;
 }
 
 /* Add this to your existing CSS */
@@ -54,7 +62,7 @@
   color: #78d6c6;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   .navigation {
     height: 60px;
     justify-content: space-between;
@@ -77,6 +85,9 @@
   .navigation-list li:hover {
     background: rgb(246, 252, 207, 0.8);
     color: #78d6c6;
+    border-radius: 0;
+
+   
   }
 
   .navigation-list.open {
