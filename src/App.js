@@ -8,6 +8,7 @@ import Header from "./components/Header/Header"
 import MainDashboard from "./components/MainDashboard/MainDashboard"
 import { Welcome } from "./components/Welcome/Welcome"
 import store from "./redux"
+import AuthenticationPage from "./components/AuthenticationPage/AuthenticationPage"
 
 const App = () => {
   return (
@@ -18,6 +19,8 @@ const App = () => {
           <Route path="/" element={<Welcome />} />
           <Route path="/prescriptions" element={<MainDashboard />} />
           <Route path="/create-prescription" element={<CreatePrescription />} />
+          <Route path="/login" element={<AuthenticationPage link={'login'} />} />
+          <Route path="/register" element={<AuthenticationPage link={'register'} />} />
         </Routes>
       </Provider>
 

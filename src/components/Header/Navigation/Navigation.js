@@ -20,7 +20,7 @@ export const Navigation = () => {
         isMobileMenuOpen ? style["open"] : ""
       }`}
     >
-      <h3 className={style["navigation-logo-name"]} onClick={()=>navigate("/dashboard")}>e-Prescription</h3>
+      <h3 className={style["navigation-logo-name"]} onClick={()=>navigate("/")}>e-Prescription</h3>
       <FontAwesomeIcon
         icon={faBars}
         className={style["mobile-menu-icon"]}

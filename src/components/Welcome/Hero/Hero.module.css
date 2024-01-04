@@ -71,6 +71,7 @@
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+  border: none;
 }
 
 .hero-content-description-pill-button-register {
@@ -86,6 +87,7 @@
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+  border: none;
 }
 
 .hero-content-description-pill-button-login:hover,

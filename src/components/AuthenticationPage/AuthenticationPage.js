@@ -2,10 +2,10 @@ import { useState } from "react"
 import AuthenticationContent from "./AuthenticationContent/AuthenticationContent"
 import style from "./AuthenticationPage.module.css"
 
-const AuthenticationPage = () => {
+const AuthenticationPage = ({link}) => {
    // the formName should be one of the four login register forgotPassword or null
-  const [formName, setForm] = useState("register")
-
+  const [formName, setForm] = useState(link)
+console.log(formName);
  
   return (
     <>

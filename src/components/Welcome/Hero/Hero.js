@@ -1,4 +1,7 @@
+import { Link } from "react-router-dom"
 import style from "./Hero.module.css"
+import { Button } from "react-bootstrap"
+
 
 const Hero = () => {
   return (
@@ -12,20 +15,24 @@ const Hero = () => {
             Здравеопазване от бъдещето
           </p>
           <div className={style["hero-content-description-pill-button"]}>
-            <button
+            <Link to={'/login'}>
+            <button 
               className={style["hero-content-description-pill-button-login"]}
             >
               Login
             </button>
+            </Link>
+            <Link to={'/register'}>
             <button
               className={style["hero-content-description-pill-button-register"]}
             >
               Register
             </button>
+            </Link>
           </div>
         </div>
         <div className={style["hero-content-pills"]}>
-          <img src="pills.png"></img>
+          <img src="pills.png" alt="pills"></img>
         </div>
       </div>
     </section>
