@@ -1,0 +1,60 @@
+/* Reset some default browser styles */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+margin,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove default list styles */
+ul,
+ol {
+  padding: 0;
+  list-style: none;
+}
+
+/* Set base font size and remove font size inheritance */
+body {
+  font-size: 16px;
+  line-height: 1.5;
+  position: relative;
+
+}
+
+/* Remove the default button styling */
+button {
+  border: 0;
+  padding: 0;
+  background: none;
+}
+
+/* Remove default form styles */
+form {
+  margin: 0;
+}
+
+/* Standardize box sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.main-content {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+html{
+  height: 100%;
+}

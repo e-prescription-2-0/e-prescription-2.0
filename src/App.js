@@ -1,16 +1,27 @@
+import { Provider } from "react-redux"
+import { Route, Routes } from "react-router-dom"
+import "./App.module.css"
+import style from "./App.module.css"
+import { Footer } from "./components/Footer/Footer"
+import Header from "./components/Header/Header"
+import MainDashboard from "./components/MainDashboard/MainDashboard"
+import { Welcome } from "./components/Welcome/Welcome"
+import store from "./redux"
 
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import AuthenticationPage from "./components/AuthenticationPage/AuthenticationPage";
-function App() {
+const App = () => {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<AuthenticationPage/>}>
-        </Route>
-      </Routes>
-    </BrowserRouter>
+    <main className={style["main-content"]}>
+      <Header />
+      <Provider store={store}>
+        <Routes>
+          <Route path="/" element={<Welcome />} />
+          <Route path="/prescriptions" element={<MainDashboard />} />
+        </Routes>
+      </Provider>
 
-  );
+      <Footer />
+    </main>
+  )
 }
 
-export default App;
+export default App
