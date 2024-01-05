@@ -9,6 +9,12 @@
     margin: 0 auto;
     margin-top: 10px;
     overflow: scroll;
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    scrollbar-width: none;
+}
+
+.user-profile::-webkit-scrollbar {
+    display: none;
 }
 
 #close {
