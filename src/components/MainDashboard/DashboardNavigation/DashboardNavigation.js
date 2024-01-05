@@ -5,7 +5,7 @@ import DashboardNavigationItem from "./DashboardNavigationItem";
 import { Container, Nav, Navbar } from "react-bootstrap";
 
 const DashboardNavigation = () => {
-  const role = "patient"; // coming and depend of redux/context state
+  const role = "doctor"; // coming and depend of redux/context state
 
   return (
     <Navbar expand="xl" className={style["aside-navigation-container"]}>

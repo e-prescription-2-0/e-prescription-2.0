@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom"
 import style from "./Hero.module.css"
-import { Button } from "react-bootstrap"
+
 
 
 const Hero = () => {
