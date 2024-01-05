@@ -1,16 +1,28 @@
-import { Route, BrowserRouter as Router, Routes } from "react-router-dom"
-import "./App.css"
-import Popup from "./components/Popup/Popup"
-import WelcomeView from "./components/WelcomeView/WelcomeView"
+import { Provider } from "react-redux"
+import { Route, Routes } from "react-router-dom"
+import "./App.module.css"
+import style from "./App.module.css"
+import { Footer } from "./components/Footer/Footer"
+import Header from "./components/Header/Header"
+import MainDashboard from "./components/MainDashboard/MainDashboard"
+import UserProfile from "./components/UserProfile/UserProfile"
+import { Welcome } from "./components/Welcome/Welcome"
+import store from "./redux"
 
 const App = () => {
   return (
-    <Router>
-      <Routes>
-        <Route path="/" exact element={<WelcomeView />} />
-        <Route path="/popup" element={<Popup />} />
-      </Routes>
-    </Router>
+    <main className={style["main-content"]}>
+      <Header />
+      <Provider store={store}>
+        <Routes>
+          <Route path="/" element={<Welcome />} />
+          <Route path="/dashboard" element={<MainDashboard />} />
+          <Route path="/profile"  element={<UserProfile />} />
+        </Routes>
+      </Provider>
+
+      <Footer />
+    </main>
   )
 }
 

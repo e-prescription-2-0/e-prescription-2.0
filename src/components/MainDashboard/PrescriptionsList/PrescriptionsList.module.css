@@ -1,0 +1,112 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
+
+.prescriptions-list-div p {
+  margin: 0;
+}
+
+.prescriptions-list-div {
+  background-color: #d9d9d9;
+  display: inline-block;
+  gap: 10px;
+  padding: 30px 20px;
+  border-radius: 10px;
+  overflow: scroll;
+  /* overflow-x: visible;
+  overflow-y: auto; */
+  width: 350px;
+  height: 827px;
+}
+
+.prescriptions-list-div::-webkit-scrollbar {
+  display: none;
+}
+
+.prescriptions-list-item {
+  background-color: white;
+  height: 6em;
+  padding: 10px;
+  border-radius: 10px;
+  color: #284b63;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  border: solid 5px #d9d9d9;
+
+}
+
+.prescriptions-list-item:hover {
+  cursor: pointer;
+  background-color: #ffffffc9;
+}
+
+.prescriptions-list-item-content-item {
+  font-size: 15px;
+}
+
+.prescriptions-list-item span {
+  overflow: hidden;
+  color: #284b63;
+  text-align: justify;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  text-transform: capitalize;
+}
+
+.prescriptions-list-item svg {
+  color: #284b63;
+  width: 15px;
+  height: 24px;
+  cursor: pointer;
+}
+
+.prescriptions-list-mobile-container{
+  display: flex;
+  justify-content: center;
+  margin-block: 2rem;
+  gap: 1rem;
+  align-items: center;
+}
+
+.prescriptions-list-mobile-svg{
+  height: 2rem;
+  color: #d9d9d9;
+}
+
+.prescriptions-list-mobile-svg:hover{
+  color: #78D6C6;
+
+}
+
+.prescriptions-list-item-open{
+  background-color: #F5FCCD;
+  border: solid 5px #78D6C6;
+
+}
+
+.prescriptions-list-item-open svg{
+  color: #78D6C6;
+
+}
+
+.prescriptions-list-item-open:hover{
+  background-color: #F5FCCD;
+  
+}
+
+
+@media only screen and (max-width: 768px) {
+
+  .prescriptions-list-item {
+    height: auto;
+    width: auto;
+    gap: 10rem;
+    margin-bottom: 0;
+
+  }
+
+}
