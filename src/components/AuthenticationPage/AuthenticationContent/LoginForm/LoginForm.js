@@ -16,6 +16,7 @@ const LoginForm = ({ setForm }) => {
     const form = event.currentTarget;
     event.preventDefault();
     setInvalidLoginForm(!invalidLoginForm);
+    
   };
 
   const handleChange = (event) => {
