@@ -30,6 +30,12 @@ const SearchPagination = ({ setSearchParams, searchParams, searchType }) => {
       if (!collection?.[search]?.[page]) {
         setLoading(true);
       }
+
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth', // Optional: adds smooth scrolling
+      });
+  
     }
   };
 

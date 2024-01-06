@@ -1,12 +1,10 @@
 import { Container } from "react-bootstrap";
 import style from "./SearchPage.module.css";
-import { useReduxState } from "../../hooks/useReduxState";
 import { isEmpty } from "ramda";
 import NothingFound from "./NothingFound";
 import ListSearchResult from "./ListSearchResult";
 import SearchPagination from "./SearchPagination";
 import BaseSearchFields from "./Fields/BaseSearchField";
-import SearchPatientFromServerField from "./Fields/SearchPatientFromServerField";
 
 const SearchContent = ({
   setSearchParams,

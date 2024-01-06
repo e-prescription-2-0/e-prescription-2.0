@@ -21,7 +21,6 @@ function* onFetchDoctors(action) {
         search
       })
     );
-    yield put(searchSlice.actions.setNumberOfAllPages(result.numberPages));
 
     yield put(searchSlice.actions.setLoading(false));
   } catch (error) {
@@ -49,7 +48,6 @@ function* onFetchAllPatients(action) {
         search
       })
     );
-    yield put(searchSlice.actions.setNumberOfAllPages(result.numberPages));
 
     yield put(searchSlice.actions.setLoading(false));
   } catch (error) {
