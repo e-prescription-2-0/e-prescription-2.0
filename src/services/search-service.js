@@ -3,7 +3,7 @@ import serviceBind from "./helper";
 
 export default {
   getDoctors: serviceBind({
-    url: "/api/doctors?search={searchEmail}&page={pageNumber}",
+    url: "/api/doctors?search={search}&page={page}",
     method: METHODS.GET,
     headers: {
       "Content-Type": HEADER_FORMATS.JSON,
@@ -11,8 +11,17 @@ export default {
       "Access-Control-Allow-Origin": "*",
     },
   }),
-  getPatients: serviceBind({
-    url: "/api/user/{doctorId}/patients?search={searchEmail}&page={pageNumber}",
+  getMyPatients: serviceBind({
+    url: "/api/user/{doctorId}/patients?search={search}&page={page}",
+    method: METHODS.GET,
+    headers: {
+      "Content-Type": HEADER_FORMATS.JSON,
+      Accept: HEADER_FORMATS.JSON,
+      "Access-Control-Allow-Origin": "*",
+    },
+  }),
+  getAllPatients: serviceBind({
+    url: "/api/patients?search={search}&page={page}",
     method: METHODS.GET,
     headers: {
       "Content-Type": HEADER_FORMATS.JSON,

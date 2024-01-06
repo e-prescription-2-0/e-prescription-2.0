@@ -4,36 +4,48 @@ import { useReduxState } from "../../hooks/useReduxState";
 import { searchSlice } from "../../reducers/search";
 import { useReduxAction } from "../../hooks/useReduxAction";
 
-const SearchPagination = ({ setSearchParams, searchParams }) => {
-  const numberOfAllPages = useReduxState(
-    (state) => state.search.numberOfAllPages
+const SearchPagination = ({ setSearchParams, searchParams, searchType }) => {
+  const search = searchParams.get("search") || "";
+
+  const collection = useReduxState(
+    (state) =>
+      state.search?.[
+        searchType === "doctors" ? "collectionDoctors" : "collectionPatients"
+      ]
   );
 
-  const currentPage = useReduxState((state) => state.search.currentPage);
-  const setCurrentPage = useReduxAction(searchSlice.actions.setCurrentPage);
+  const numberPages = collection?.[search]?.numberPages;
 
-  const handlePageClick = (pageNumber) => {
-    console.log(pageNumber);
-    if (pageNumber > 0 && pageNumber <= numberOfAllPages) {
-      console.log(Object(searchParams.entries()));
+  const setLoading = useReduxAction(searchSlice.actions.setLoading);
+
+  const currentPage = searchParams.get("page") || "1";
+
+  const handlePageClick = (page) => {
+    if (page > 0 && page <= numberPages) {
       setSearchParams({
-        search: searchParams.get("search") || "",
-        page: pageNumber,
+        search,
+        page,
       });
-      setCurrentPage(String(pageNumber));
+      console.log(collection?.[search]?.[page]);
+      if (!collection?.[search]?.[page]) {
+        setLoading(true);
+      }
     }
   };
 
   const itemsPagination = () => {
     const paginationLimit = 2;
+
     const startPaginationNumber =
       currentPage - paginationLimit > 0 ? currentPage - paginationLimit : 1;
+
     const endPaginationNumber =
-      currentPage + paginationLimit <= numberOfAllPages
+      currentPage + paginationLimit <= numberPages
         ? currentPage + paginationLimit
-        : numberOfAllPages;
+        : numberPages;
 
     const items = [];
+
     for (
       let number = startPaginationNumber;
       number <= endPaginationNumber;
@@ -44,7 +56,7 @@ const SearchPagination = ({ setSearchParams, searchParams }) => {
       items.push(
         <Pagination.Item
           key={number}
-          active={number.toString() === currentPage}
+          active={String(number) === currentPage}
           onClick={() => handlePageClick(number)}
         >
           {number}
@@ -66,7 +78,7 @@ const SearchPagination = ({ setSearchParams, searchParams }) => {
       )}
       {itemsPagination()}
 
-      {currentPage !== String(numberOfAllPages) && (
+      {currentPage !== String(numberPages) && (
         <Pagination.Next
           onClick={() => handlePageClick(parseInt(currentPage) + 1)}
         >

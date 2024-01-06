@@ -2,14 +2,15 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   list: [],
+  collectionPatients: {},
+  collectionDoctors: {},
   currentPage: 1,
   pageSearch: "",
   numberOfAllPages: 1,
   loading: true,
   loadingPatient: true,
   searchType: "",
-  errorFetchingPatient: false
-
+  errorFetchingPatient: false,
 };
 
 export const searchSlice = createSlice({
@@ -27,6 +28,40 @@ export const searchSlice = createSlice({
     setList: (state, action) => {
       const list = action.payload;
       state.list = [...list];
+    },
+
+    setCollectionPatients: (state, action) => {
+      const {search , collection, page, numberPages} =action.payload
+
+      if (state.collectionPatients?.[search]) {
+        state.collectionPatients[search] = {
+          ...state.collectionPatients[search],
+          [page]: collection,
+          numberPages
+        };
+      } else {
+        state.collectionPatients = {
+          ...state.collectionPatients,
+          [search]: { [page]: collection, numberPages },
+        };
+      }
+    },
+
+    setCollectionDoctors: (state, action) => {
+      const {search , collection, page, numberPages} =action.payload
+
+      if (state.collectionDoctors?.[search]) {
+        state.collectionDoctors[search] = {
+          ...state.collectionDoctors[search],
+          [page]: collection,
+          numberPages
+        };
+      } else {
+        state.collectionDoctors = {
+          ...state.collectionDoctors,
+          [search]: { [page]: collection, numberPages },
+        };
+      }
     },
 
     setNumberOfAllPages: (state, action) => {

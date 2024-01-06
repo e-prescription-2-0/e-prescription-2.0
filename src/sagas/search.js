@@ -5,51 +5,63 @@ import { patientsData } from "../mockData";
 function* onFetchDoctors(action) {
   try {
     // Access the current state using select
-    const state = yield select();
-    console.log("State", state);
+    const {page, search} = action.payload;
+
+    
     const result = yield call(searchService.getDoctors, {
-      pageNumber: state.search.currentPage,
-      searchEmail: state.search.pageSearch,
+      page,
+      search
     });
 
-    console.log(result);
-    yield put(searchSlice.actions.setList(result.doctors));
+    yield put(
+      searchSlice.actions.setCollectionDoctors({
+        collection: result.doctors,
+        numberPages: result.numberPages,
+        page,
+        search
+      })
+    );
     yield put(searchSlice.actions.setNumberOfAllPages(result.numberPages));
+
+    yield put(searchSlice.actions.setLoading(false));
   } catch (error) {
     console.log("====================================");
     console.log(error);
     console.log("====================================");
-  } finally {
-    // Dispatch setLoading(false) after the API call is complete (success or error)
-    yield put(searchSlice.actions.setLoading(false));
   }
 }
 
-function* onFetchPatients(action) {
-  try {
-    const state = yield select();
 
-    const result = yield call(searchService.getPatients, {
-      doctorId: "658f0b9d1a1925a19548cc8e",
-      pageNumber: state.search.currentPage,
-      searchEmail: state.search.pageSearch,
+function* onFetchAllPatients(action) {
+  try {
+    const {page, search} = action.payload;
+
+    const result = yield call(searchService.getAllPatients, {
+      page,
+      search,
     });
 
-    yield put(searchSlice.actions.setList(result.patients));
-    yield put(searchSlice.actions.setNumberOfAllPages(result.numberOfAllPages));
+    yield put(
+      searchSlice.actions.setCollectionPatients({
+        collection: result.patients,
+        numberPages: result.numberPages,
+        page,
+        search
+      })
+    );
+    yield put(searchSlice.actions.setNumberOfAllPages(result.numberPages));
+
+    yield put(searchSlice.actions.setLoading(false));
   } catch (error) {
     console.log("====================================");
     console.log(error);
     console.log("====================================");
-  } finally {
-    // Dispatch setLoading(false) after the API call is complete (success or error)
-    yield put(searchSlice.actions.setLoading(false));
   }
 }
 
 export default function* searchSaga() {
   yield all([
     takeLatest(searchSlice.actions.fetchDoctors, onFetchDoctors),
-    takeLatest(searchSlice.actions.fetchPatients, onFetchPatients),
+    takeLatest(searchSlice.actions.fetchPatients, onFetchAllPatients),
   ]);
 }

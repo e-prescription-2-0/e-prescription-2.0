@@ -1,7 +1,3 @@
-
-import { faker } from '@faker-js/faker';
-
-
 export const medicinesData = [
   {
     _id: "123456",
@@ -267,19 +263,5 @@ export const prescriptionsData = [
   },
 ];
 
-
-
-
-export const patientsData = Array.from({ length: 10 }, () => ({
-  _id: faker.string.uuid(),
-
-  patientId: faker.string.uuid(),
-
-  firstName: faker.name.firstName(),
-  lastName: faker.name.lastName(),
-  email: faker.internet.email(),
-  gender: faker.helpers.arrayElement(['Male', 'Female']),
-  role: 'patient'
-}));
 
 

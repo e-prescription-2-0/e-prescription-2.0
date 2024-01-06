@@ -3,6 +3,7 @@
   margin: 0 0;
   margin-left: 5rem;
   max-width: 1700px;
+  min-height: 60rem;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -100,7 +101,17 @@
   height: 4rem;
 }
 
+.main-search-select-from-user-patients{
+  width: 15% !important;
+  flex: none !important;
+}
+
 @media (max-width: 1199px) {
+  .main-search-select-from-user-patients{
+    width: 25% !important;
+    flex: none !important;
+  }
+
   .doctor-card-information-link {
     gap: 0.4rem;
     grid-template-columns: 1fr 1fr;

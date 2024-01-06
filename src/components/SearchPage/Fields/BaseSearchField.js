@@ -1,43 +1,48 @@
-import { Button, FormControl, InputGroup } from "react-bootstrap";
+import { Button, Form, InputGroup } from "react-bootstrap";
 import { useReduxAction } from "../../../hooks/useReduxAction";
 import { searchSlice } from "../../../reducers/search";
-import { useState } from "react";
+import style from "../SearchPage.module.css";
 import { useReduxState } from "../../../hooks/useReduxState";
-import style from '../SearchPage.module.css'
 
-const BaseSearchFields = ({ setSearchParams, searchParams }) => {
+const BaseSearchFields = ({ setSearchParams, searchParams, searchType }) => {
   const setLoading = useReduxAction(searchSlice.actions.setLoading);
-  const searchType = useReduxState((state) => state.search.searchType);
 
-  const placeholderText =
-    (searchType === "patients" && "Search from yours patient by id...") ||
-    (searchType === "doctors" && "Search doctor by email...");
-
-  const [searchQuery, setSearchQuery] = useState(
-    searchParams.get("search") || ""
+  const collection = useReduxState(
+    (state) =>
+      state.search?.[
+        searchType === "doctors" ? "collectionDoctors" : "collectionPatients"
+      ]
   );
 
-  const onChangeSearch = (e) => {
-    setSearchQuery(e.target.value);
-  };
-  const onClickSearchButton = () => {
-    setSearchParams({ search: searchQuery, page: "1" });
+  const placeholderText =
+    (searchType === "patients" && "Search by patient ID") ||
+    (searchType === "doctors" && "Search doctor by email...");
 
-    setLoading(true);
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const search = event.target.search.value;
+    setSearchParams({ search, page: "1" });
+    if (!collection?.[search]?.["1"]) {
+      console.log(collection)
+      setLoading(true);
+    }
   };
+
   return (
-    <InputGroup className="mb-3">
-      <FormControl
-        id="filterInput"
-        placeholder={placeholderText}
-        aria-label="Search text"
-        aria-describedby="basic-addon2"
-        value={searchQuery}
-        onChange={onChangeSearch}
-        className={style["main-search-input-from-user-patients"]}
-      />
-      <Button onClick={onClickSearchButton}>Search</Button>
-    </InputGroup>
+    <Form onSubmit={handleSubmit}>
+      <InputGroup className="mb-3">
+        <Form.Control
+          name="search"
+          id="searchInput"
+          placeholder={placeholderText}
+          aria-label="Search text"
+          aria-describedby="basic-addon2"
+          className={style["main-search-input-from-user-patients"]}
+          defaultValue={searchParams.get("search") || ""}
+        />
+        <Button type="submit">Search</Button>
+      </InputGroup>
+    </Form>
   );
 };
 

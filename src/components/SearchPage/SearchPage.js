@@ -4,62 +4,54 @@ import style from "./SearchPage.module.css";
 import { useReduxAction } from "../../hooks/useReduxAction";
 import { useReduxState } from "../../hooks/useReduxState";
 import LoadingCircle from "../Loadings/LoadingCircle/LoadingCircle";
-import { useNavigate, useSearchParams } from "react-router-dom";
+import { useSearchParams } from "react-router-dom";
 import SearchContent from "./SearchContent";
 import { searchSlice } from "../../reducers/search";
 
 const SearchPage = ({ searchType }) => {
-  const navigate = useNavigate();
-
   //PageLoading
   const loading = useReduxState((state) => state.search.loading);
 
   //Page params
   const setSearchType = useReduxAction(searchSlice.actions.setSearchType);
-  const setPageSearch = useReduxAction(searchSlice.actions.setPageSearch);
-  const setCurrentPage = useReduxAction(searchSlice.actions.setCurrentPage);
 
   //List with doctors or patients
   const fetchDoctors = useReduxAction(searchSlice.actions.fetchDoctors);
   const fetchPatients = useReduxAction(searchSlice.actions.fetchPatients);
 
-  //Profile
-  const loadingPatient = useReduxState((state) => state.search.loadingPatient);
-  const setLoadingPatient = useReduxAction(searchSlice.actions.setLoadingPatient)
-  const profile = useReduxState((state) => state.users.profile);
-
   const [searchParams, setSearchParams] = useSearchParams({});
 
-  useEffect(() => {
-    if (!loadingPatient) {
-      navigate(`profile/${profile._id}`);
-      setLoadingPatient(true)
-      
-    }
-    if (loading) {
-      //Set what type of page is this doctors or patients
-      setSearchType(searchType);
+  const search = searchParams.get("search") || "";
+  const page = searchParams.get("page") || "1";
 
-      //Set page params
-      setPageSearch(searchParams.get("search") || "");
-      setCurrentPage(searchParams.get("page") || "1");
+  const collectionPatients = useReduxState(
+    (state) => state.search.collectionPatients
+  );
+  const collectionDoctors = useReduxState(
+    (state) => state.search.collectionDoctors
+  );
+
+  const collection =
+    searchType === "doctors" ? collectionDoctors : collectionPatients;
+
+  useEffect(() => {
+    if (loading && !collection?.[search]?.[page]) {
+      
+      const pageParams = { search, page };
 
       //Fetch list with doctors or patients
-      searchType === "doctors" && fetchDoctors();
-      searchType === "patients" && fetchPatients();
+      searchType === "doctors" && fetchDoctors(pageParams);
+      searchType === "patients" && fetchPatients(pageParams);
     }
   }, [
     loading,
     fetchDoctors,
     fetchPatients,
     setSearchType,
-    setPageSearch,
-    setCurrentPage,
-    searchParams,
     searchType,
-    loadingPatient,
-    navigate,
-    profile
+    collection,
+    page,
+    search,
   ]);
 
   return (
@@ -73,6 +65,8 @@ const SearchPage = ({ searchType }) => {
         <SearchContent
           searchParams={searchParams}
           setSearchParams={setSearchParams}
+          collection={collection[search][page]}
+          searchType={searchType}
         />
       )}
     </section>

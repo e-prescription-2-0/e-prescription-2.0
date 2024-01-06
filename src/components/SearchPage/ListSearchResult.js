@@ -1,17 +1,15 @@
 import { ListGroup } from "react-bootstrap";
 import { useReduxState } from "../../hooks/useReduxState";
 import ResultCard from "./ResultCard";
+import { useSearchParams } from "react-router-dom";
 
-const ListSearchResult = () => {
-  const listCardData = useReduxState((state) => state.search.list);
+const ListSearchResult = ({collection}) => {
 
-
-  	console.log(listCardData)
   return (
     <ListGroup as="ul" className="collection with-header">
-      {listCardData.map(
-        (data) =>  <ResultCard key={data._id} data = {data} />
-      )}
+      {collection.map((data) => (
+        <ResultCard key={data._id} data={data} />
+      ))}
     </ListGroup>
   );
 };
