@@ -1,12 +1,12 @@
-import { all, put, takeLatest } from "@redux-saga/core/effects"
+import { all, put, call, takeLatest } from "@redux-saga/core/effects"
 import { prescriptionsData } from "../mockData"
 import { prescriptionsSlice } from "../reducers/prescriptions"
+import prescriptionsService from "../services/prescriptions-service"
 
 function* onFetchMyPrescriptions() {
   try {
-    //Preform api call here
-    // const response = yield call("api/")
-
+    const result = yield call(prescriptionsService.getPrescriptions)
+    // yield put(prescriptionsSlice.actions.setMyPrescriptions(result))
 
     yield put(prescriptionsSlice.actions.setMyPrescriptions(prescriptionsData))
   } catch (error) {
