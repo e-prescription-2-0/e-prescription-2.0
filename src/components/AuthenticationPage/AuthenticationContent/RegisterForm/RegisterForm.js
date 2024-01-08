@@ -17,8 +17,11 @@ const RegisterForm = () => {
   // State variables to manage registration steps, profile type, validation, and form data
   const [registrationStep, setRegistrationStep] = useState(1);
   const [validated, setValidated] = useState(false);
-  const [registrationFormData, setRegistrationFormData] = useState({});
-  const dispatchSetAuthUser = useReduxAction(setAuthUser) 
+  const [registrationFormData, setRegistrationFormData] = useState({
+    role: "patient",
+    gender: "male",
+  });
+  const dispatchSetAuthUser = useReduxAction(setAuthUser);
 
   // Handle form submission
   const handleSubmit = (event) => {
@@ -33,10 +36,10 @@ const RegisterForm = () => {
       setRegistrationStep(2);
       setValidated(false);
     }
-   if(registrationStep ===2 ) {
-     dispatchSetAuthUser(registrationFormData)
-   }
-    
+    if (registrationStep === 2) {
+      console.log(registrationFormData);
+      dispatchSetAuthUser(registrationFormData);
+    }
   };
 
   // Render the appropriate registration step based on the current step
@@ -99,7 +102,9 @@ const RegisterForm = () => {
   return (
     <>
       <Form noValidate validated={validated} onSubmit={handleSubmit}>
-        <h3 className={[style["fadeIn"], style["first"]].join(" ")}>Register</h3>
+        <h3 className={[style["fadeIn"], style["first"]].join(" ")}>
+          Register
+        </h3>
         {renderRegistrationStep()}
       </Form>
     </>
