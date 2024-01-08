@@ -1,65 +1,70 @@
-import { all, call, put, takeLatest, select } from "@redux-saga/core/effects";
-import searchService from "../services/search-service";
-import { searchSlice } from "../reducers/search";
-import { patientsData } from "../mockData";
-function* onFetchDoctors(action) {
+import { all, call, put, takeLatest } from "@redux-saga/core/effects"
+import { searchSlice } from "../reducers/search"
+import searchService from "../services/search-service"
+
+function* onFetchDoctors() {
   try {
-    // Access the current state using select
-    const {page, search} = action.payload;
+    const { doctors, numberPages } = yield call(searchService.getAllDoctors)
 
-    
-    const result = yield call(searchService.getDoctors, {
-      page,
-      search
-    });
+    yield put(searchSlice.actions.setDoctors(doctors))
 
-    yield put(
-      searchSlice.actions.setCollectionDoctors({
-        collection: result.doctors,
-        numberPages: result.numberPages,
-        page,
-        search
-      })
-    );
-
-    yield put(searchSlice.actions.setLoading(false));
+    yield put(searchSlice.actions.setLoading(false))
   } catch (error) {
-    console.log("====================================");
-    console.log(error);
-    console.log("====================================");
+    console.log(error)
   }
 }
 
-
-function* onFetchAllPatients(action) {
+function* onFetchDoctorById(action) {
   try {
-    const {page, search} = action.payload;
+    const doctorId = action.payload
 
-    const result = yield call(searchService.getAllPatients, {
-      page,
-      search,
-    });
+    const { doctors, numberPages } = yield call(
+      searchService.getDoctorById,
+      doctorId
+    )
 
-    yield put(
-      searchSlice.actions.setCollectionPatients({
-        collection: result.patients,
-        numberPages: result.numberPages,
-        page,
-        search
-      })
-    );
+    yield put(searchSlice.actions.setDoctors(doctors))
 
-    yield put(searchSlice.actions.setLoading(false));
+    yield put(searchSlice.actions.setLoading(false))
   } catch (error) {
-    console.log("====================================");
-    console.log(error);
-    console.log("====================================");
+    console.log(error)
+  }
+}
+
+function* onFetchPatients() {
+  try {
+    const { patients, numberPages } = yield call(searchService.getAllPatients)
+
+    yield put(searchSlice.actions.setPatients(patients))
+
+    yield put(searchSlice.actions.setLoading(false))
+  } catch (error) {
+    console.log(error)
+  }
+}
+
+function* onFetchPatientById(action) {
+  try {
+    const patientId = action.payload
+
+    const { patients, numberPages } = yield call(
+      searchService.getPatientById,
+      patientId
+    )
+
+    yield put(searchSlice.actions.setPatients(patients))
+
+    yield put(searchSlice.actions.setLoading(false))
+  } catch (error) {
+    console.log(error)
   }
 }
 
 export default function* searchSaga() {
   yield all([
     takeLatest(searchSlice.actions.fetchDoctors, onFetchDoctors),
-    takeLatest(searchSlice.actions.fetchPatients, onFetchAllPatients),
-  ]);
+    takeLatest(searchSlice.actions.fetchDoctorById, onFetchDoctorById),
+    takeLatest(searchSlice.actions.fetchPatients, onFetchPatients),
+    takeLatest(searchSlice.actions.fetchPatientById, onFetchPatientById),
+  ])
 }
