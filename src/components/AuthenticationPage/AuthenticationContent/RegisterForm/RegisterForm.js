@@ -18,7 +18,7 @@ const RegisterForm = () => {
   const [registrationStep, setRegistrationStep] = useState(1);
   const [validated, setValidated] = useState(false);
   const [registrationFormData, setRegistrationFormData] = useState({});
-  const dispatchSetAuthUser = useReduxAction(setAuthUser) 
+  const dispatchSetAuthUser = useReduxAction(fetchRegisteredUser) 
 
   // Handle form submission
   const handleSubmit = (event) => {
