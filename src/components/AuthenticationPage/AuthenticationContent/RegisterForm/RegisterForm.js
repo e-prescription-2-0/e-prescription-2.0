@@ -18,7 +18,7 @@ const RegisterForm = () => {
   const [registrationStep, setRegistrationStep] = useState(1);
   const [validated, setValidated] = useState(false);
   const [registrationFormData, setRegistrationFormData] = useState({});
-  const dispatchSetAuthUser = useReduxAction(fetchRegisteredUser) 
+  const dispatchSetAuthUser = useReduxAction(setAuthUser) 
 
   // Handle form submission
   const handleSubmit = (event) => {
@@ -34,7 +34,6 @@ const RegisterForm = () => {
       setValidated(false);
     }
    if(registrationStep ===2 ) {
-    console.log(registrationFormData);
      dispatchSetAuthUser(registrationFormData)
    }
     
@@ -100,7 +99,9 @@ const RegisterForm = () => {
   return (
     <>
       <Form noValidate validated={validated} onSubmit={handleSubmit}>
-        <h3 className={[style["fadeIn"], style["first"]].join(" ")}>Register</h3>
+        <h3 className={[style["fadeIn"], style["first"]].join(" ")}>
+          Register
+        </h3>
         {renderRegistrationStep()}
       </Form>
     </>
