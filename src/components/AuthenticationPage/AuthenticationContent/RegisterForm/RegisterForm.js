@@ -9,7 +9,7 @@ import {
   validatePasswordMatch,
 } from "../helpers/helperAuthenticationFunctions";
 import style from "../../AuthenticationPage.module.css";
-import { setAuthUser } from "../../../../reducers/auth";
+import { fetchRegisteredUser } from "../../../../reducers/auth";
 import { useReduxAction } from "../../../../hooks/useReduxAction";
 
 // Define the RegisterForm component
@@ -18,7 +18,7 @@ const RegisterForm = () => {
   const [registrationStep, setRegistrationStep] = useState(1);
   const [validated, setValidated] = useState(false);
   const [registrationFormData, setRegistrationFormData] = useState({});
-  const dispatchSetAuthUser = useReduxAction(setAuthUser) 
+  const dispatchSetAuthUser = useReduxAction(fetchRegisteredUser) 
 
   // Handle form submission
   const handleSubmit = (event) => {
@@ -34,6 +34,7 @@ const RegisterForm = () => {
       setValidated(false);
     }
    if(registrationStep ===2 ) {
+    console.log(registrationFormData);
      dispatchSetAuthUser(registrationFormData)
    }
     

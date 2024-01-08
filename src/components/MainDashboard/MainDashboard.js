@@ -18,6 +18,7 @@ const MainDashboard = () => {
     <section className={style["main-dashboard-section"]}>
       <DashboardNavigation />
       <div className={style["main-dashboard-section-content"]}>
+        
         <PrescriptionsList/>
         <Prescription />
       </div>

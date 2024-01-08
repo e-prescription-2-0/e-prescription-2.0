@@ -11,11 +11,19 @@ export const authSlice = createSlice({
     name: 'auth',
     initialState,
     reducers: {
-        setAuthUser: (state, action) => {
+        fetchRegisteredUser : () => {},
+        setAuthUserByRegister: (state, action) => {
             localStorage.setItem('authUser', JSON.stringify(action.payload))
             state.authUser = action.payload
        
         },
+        fetchLoginUser : () => {},
+        setAuthUserByLogin: (state, action) => {
+            localStorage.setItem('authUser', JSON.stringify(action.payload))
+            state.authUser = action.payload
+       
+        },
+        fetchLogoutUser : () => {},
         clearAuthUser(state) {
             localStorage.removeItem('authUser');
             state.authUser = null; 
@@ -23,4 +31,11 @@ export const authSlice = createSlice({
     }
 });
 
-export const { setAuthUser,clearAuthUser } = authSlice.actions
+export const { 
+    setAuthUserByRegister,
+    setAuthUserByLogin,
+    clearAuthUser,
+    fetchRegisteredUser,
+    fetchLoginUser,
+    fetchLogoutUser
+ } = authSlice.actions

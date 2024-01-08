@@ -3,6 +3,11 @@ import Form from "react-bootstrap/Form";
 import style from "../../AuthenticationPage.module.css";
 import FieldBuilder from "../helpers/FieldBuilder";
 import { LoginFields } from "./LoginFields";
+import { fetchLoginUser } from "../../../../reducers/auth";
+import { useReduxAction } from "../../../../hooks/useReduxAction";
+import { useNavigate } from "react-router-dom";
+
+
 
 const LoginForm = ({ setForm }) => {
   const [validated, setValidated] = useState(false);
@@ -12,10 +17,19 @@ const LoginForm = ({ setForm }) => {
     password: "",
   });
 
+  const dispatchSetAuthUser = useReduxAction(fetchLoginUser);
+  const navigate = useNavigate();
+
+
   const handleSubmit = (event) => {
     const form = event.currentTarget;
     event.preventDefault();
+
+    const {loginEmail, loginPassword} = loginFormData
+  
     setInvalidLoginForm(!invalidLoginForm);
+    dispatchSetAuthUser({loginEmail, loginPassword})
+    navigate('/')
     
   };
 

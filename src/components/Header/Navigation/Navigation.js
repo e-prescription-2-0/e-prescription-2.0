@@ -5,14 +5,22 @@ import {  NavLink, useNavigate } from "react-router-dom";
 import { navLinkConfig } from "../../../constants/navigation";
 import style from "./Navigation.module.css";
 
+import { useSelector } from "react-redux";
+
 export const Navigation = () => {
-  const [currentUser, setCurrentUser] = useState("patient");
+  const {role} = useSelector(state => state.auth.authUser) ?? {role:'guest'};
+  console.log(role);
+
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const navigate = useNavigate()
+  const navigate = useNavigate();
+
+  
 
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!isMobileMenuOpen);
   };
+
+
 
   return (
     <nav
@@ -32,7 +40,7 @@ export const Navigation = () => {
         }`}
       >
         {navLinkConfig.map((link) =>
-          !link.hideFor.includes(currentUser) ? (
+          !link.hideFor.includes(role) ? (
             <li key={link.id} className={style["navigation-list-item"]}>
               <NavLink
                 className={({ isActive }) =>

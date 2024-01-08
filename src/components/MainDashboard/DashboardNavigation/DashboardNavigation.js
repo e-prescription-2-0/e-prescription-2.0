@@ -3,11 +3,15 @@ import { dashBoardNavData } from "../../../constants/dashBoardNavData";
 
 import DashboardNavigationItem from "./DashboardNavigationItem";
 import { Container, Nav, Navbar } from "react-bootstrap";
+import { useSelector } from "react-redux";
 
 const DashboardNavigation = () => {
-  const role = "doctor"; // coming and depend of redux/context state
+  const {role} = useSelector(state => state.auth.authUser) ?? {}
+
 
   return (
+    
+    
     <Navbar expand="xl" className={style["aside-navigation-container"]}>
       <Container className={style["boostrap-container-div-container"]}>
         <Navbar.Brand id={style["aside-navbar-brand"]} href="#home">
@@ -19,13 +23,15 @@ const DashboardNavigation = () => {
         />
         <Navbar.Collapse>
           <Nav className={style["aside-nav-list"]}>
-            {dashBoardNavData[role].map((x, index) => (
+            {dashBoardNavData[role]?.map((x, index) => (
               <DashboardNavigationItem key={index} {...x} />
             ))}
           </Nav>
         </Navbar.Collapse>
       </Container>
     </Navbar>
+  
+  
   );
 };
 
