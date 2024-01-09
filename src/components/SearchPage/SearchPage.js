@@ -1,62 +1,86 @@
-import React, { useEffect } from "react";
-import DashboardNavigation from "../MainDashboard/DashboardNavigation/DashboardNavigation";
-import style from "./SearchPage.module.css";
-import { useReduxAction } from "../../hooks/useReduxAction";
-import { useReduxState } from "../../hooks/useReduxState";
-import LoadingCircle from "../Loadings/LoadingCircle/LoadingCircle";
-import { useSearchParams } from "react-router-dom";
-import SearchContent from "./SearchContent";
-import { searchSlice } from "../../reducers/search";
+import { map } from "ramda"
+import React, { useCallback, useEffect, useState } from "react"
+import { Button, ListGroup } from "react-bootstrap"
+import { useReduxAction } from "../../hooks/useReduxAction"
+import { useReduxState } from "../../hooks/useReduxState"
+import { searchSlice } from "../../reducers/search"
+import ResultCard from "./ResultCard"
+import style from "./SearchPage.module.css"
 
-const SearchPage = ({ searchType }) => {
+const searchCategories = {
+  doctors: "doctors",
+  patients: "patients",
+}
+
+const SearchPage = () => {
+  const [searchCategory, setSearchCategory] = useState(
+    searchCategories.patients
+  )
+  const [results, setResults] = useState([])
+  const [isLoading, setIsLoading] = useState(false)
   //PageLoading
-  const loading = useReduxState((state) => state.search.loading);
-
-  //Page params
-  const setSearchType = useReduxAction(searchSlice.actions.setSearchType);
+  const loading = useReduxState((state) => state.search.loading)
 
   //List with doctors or patients
-  const fetchDoctors = useReduxAction(searchSlice.actions.fetchDoctors);
-  const fetchPatients = useReduxAction(searchSlice.actions.fetchPatients);
+  const fetchDoctors = useReduxAction(searchSlice.actions.fetchDoctors)
+  const fetchPatients = useReduxAction(searchSlice.actions.fetchPatients)
 
-  const [searchParams, setSearchParams] = useSearchParams({});
+  const doctors = useReduxState((state) =>
+    Object.values(state.search.doctorsById)
+  )
+  const doctorIds = useReduxState((state) => state.search.doctorIds)
+  const patients = useReduxState((state) => state.search.patientsById)
 
-  const search = searchParams.get("search") || "";
-  const page = searchParams.get("page") || "1";
+  const loadMoreResults = () => {
+    // Simulate loading more items (replace with your API call or data fetching logic)
+    setIsLoading(true)
 
-  const collectionPatients = useReduxState(
-    (state) => state.search.collectionPatients
-  );
-  const collectionDoctors = useReduxState(
-    (state) => state.search.collectionDoctors
-  );
+    setTimeout(() => {
+      const newResults = [...results, ...doctors(5).fill(null)] // Load 10 more items
+      setResults(newResults)
+      setIsLoading(false)
+    }, 1000) // Simulating a delay, replace with your actual data fetching logic
+  }
 
-  const collection =
-    searchType === "doctors" ? collectionDoctors : collectionPatients;
+  const renderListItem = useCallback((item) => {
+    return <ResultCard key={item._id} data={item} />
+  }, [])
 
   useEffect(() => {
-    if (loading && !collection?.[search]?.[page]) {
-      
-      const pageParams = { search, page };
+    fetchDoctors()
+    fetchPatients()
+  }, [fetchDoctors, fetchPatients])
 
-      //Fetch list with doctors or patients
-      searchType === "doctors" && fetchDoctors(pageParams);
-      searchType === "patients" && fetchPatients(pageParams);
+  useEffect(() => {
+    const handleScroll = () => {
+      if (
+        window.innerHeight + document.documentElement.scrollTop ===
+        document.documentElement.offsetHeight
+      ) {
+        // User has scrolled to the bottom, load more items
+        loadMoreResults()
+      }
     }
-  }, [
-    loading,
-    fetchDoctors,
-    fetchPatients,
-    setSearchType,
-    searchType,
-    collection,
-    page,
-    search,
-  ]);
+
+    window.addEventListener("scroll", handleScroll)
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll)
+    }
+  }, [])
 
   return (
-    <section className={style["main-search-doctors-section"]}>
-      <DashboardNavigation />
+    <div className={style["main-search-doctors-section"]}>
+      <ListGroup as="ul">{map(renderListItem, doctors)}</ListGroup>
+
+      {isLoading && <p>Loading...</p>}
+
+      {!isLoading && (
+        <Button variant="primary" onClick={loadMoreResults}>
+          Load More
+        </Button>
+      )}
+      {/* <DashboardNavigation />
       {loading ? (
         <div className={style["search-doctors-loading-container"]}>
           <LoadingCircle />
@@ -68,9 +92,9 @@ const SearchPage = ({ searchType }) => {
           collection={collection[search][page]}
           searchType={searchType}
         />
-      )}
-    </section>
-  );
-};
+      )} */}
+    </div>
+  )
+}
 
-export default SearchPage;
+export default SearchPage
