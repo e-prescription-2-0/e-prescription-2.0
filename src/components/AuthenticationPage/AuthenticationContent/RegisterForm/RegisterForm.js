@@ -11,6 +11,8 @@ import {
 import style from "../../AuthenticationPage.module.css";
 import { fetchRegisteredUser } from "../../../../reducers/auth";
 import { useReduxAction } from "../../../../hooks/useReduxAction";
+import { useNavigate } from "react-router-dom";
+import { arrayFieldFactory } from "./BaseFields/PersonalFields/requestFields";
 
 // Define the RegisterForm component
 const RegisterForm = () => {
@@ -18,7 +20,8 @@ const RegisterForm = () => {
   const [registrationStep, setRegistrationStep] = useState(1);
   const [validated, setValidated] = useState(false);
   const [registrationFormData, setRegistrationFormData] = useState({});
-  const dispatchSetAuthUser = useReduxAction(fetchRegisteredUser) 
+  const dispatchSetAuthUser = useReduxAction(fetchRegisteredUser);
+  const navigate = useNavigate()
 
   // Handle form submission
   const handleSubmit = (event) => {
@@ -34,7 +37,22 @@ const RegisterForm = () => {
       setValidated(false);
     }
    if(registrationStep ===2 ) {
-     dispatchSetAuthUser(registrationFormData)
+
+     if(validated) return;
+     
+     const userRegistrationData = {
+      email: registrationFormData.email,
+      password: registrationFormData.password, 
+      repeatPassword: registrationFormData.repeatPassword,
+      role: registrationFormData.role,
+      firstName: registrationFormData.firstName,
+      lastName: registrationFormData.lastName,
+      profileInfo: arrayFieldFactory(registrationFormData.role, registrationFormData)
+     }
+
+     
+     dispatchSetAuthUser(userRegistrationData);
+     navigate('/')
    }
     
   };
