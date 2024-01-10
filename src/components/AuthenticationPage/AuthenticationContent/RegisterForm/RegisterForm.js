@@ -19,9 +19,12 @@ const RegisterForm = () => {
   // State variables to manage registration steps, profile type, validation, and form data
   const [registrationStep, setRegistrationStep] = useState(1);
   const [validated, setValidated] = useState(false);
-  const [registrationFormData, setRegistrationFormData] = useState({});
+  const [registrationFormData, setRegistrationFormData] = useState({
+    role: "patient",
+    gender: "male",
+  });
   const dispatchSetAuthUser = useReduxAction(fetchRegisteredUser);
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   // Handle form submission
   const handleSubmit = (event) => {
@@ -36,25 +39,25 @@ const RegisterForm = () => {
       setRegistrationStep(2);
       setValidated(false);
     }
-   if(registrationStep ===2 ) {
+    if (registrationStep === 2) {
+      if (validated) return;
 
-     if(validated) return;
-     
-     const userRegistrationData = {
-      email: registrationFormData.email,
-      password: registrationFormData.password, 
-      repeatPassword: registrationFormData.repeatPassword,
-      role: registrationFormData.role,
-      firstName: registrationFormData.firstName,
-      lastName: registrationFormData.lastName,
-      profileInfo: arrayFieldFactory(registrationFormData.role, registrationFormData)
-     }
+      const userRegistrationData = {
+        email: registrationFormData.email,
+        password: registrationFormData.password,
+        repeatPassword: registrationFormData.repeatPassword,
+        role: registrationFormData.role,
+        firstName: registrationFormData.firstName,
+        lastName: registrationFormData.lastName,
+        profileInfo: arrayFieldFactory(
+          registrationFormData.role,
+          registrationFormData
+        ),
+      };
 
-     
-     dispatchSetAuthUser(userRegistrationData);
-     navigate('/')
-   }
-    
+      dispatchSetAuthUser(userRegistrationData);
+      navigate("/");
+    }
   };
 
   // Render the appropriate registration step based on the current step
