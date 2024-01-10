@@ -33,16 +33,16 @@ export default {
 }
 
 
-export const requestLogin = async (loginData) => {
+// export const requestLogin = async (loginData) => {
 
   
-  const result = await request.post('http://localhost:3030/api/auth/login', loginData);
+//   const result = await request.post('http://localhost:3030/api/auth/login', loginData);
 
-  return result;
-};
+//   return result;
+// };
 
 
-export const requestLogout = async () => await request.post('http://localhost:3030/api/auth/logout')
+// export const requestLogout = async () => await request.post('http://localhost:3030/api/auth/logout')
 
 
 

@@ -23,7 +23,7 @@ function* onRegister(action) {
 function* onLogin(action) {
     try {
 
-        const user = yield call(requestLogin,action.payload);
+        const user = yield call(authService.login,action.payload);
         
         yield put(setAuthUserByLogin(user))
     } catch (error) {
@@ -35,7 +35,8 @@ function* onLogin(action) {
 function* onLogout() {
     try {
 
-        yield call(requestLogout);
+       // yield call(requestLogout);
+        yield call(authService.logout);
 
         yield put(clearAuthUser())
     } catch (error) {

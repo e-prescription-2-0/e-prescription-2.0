@@ -9,7 +9,7 @@ import { useSelector } from "react-redux";
 
 export const Navigation = () => {
   const {role} = useSelector(state => state.auth.authUser) ?? {role:'guest'};
-  console.log(role);
+  
 
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
   const navigate = useNavigate();
