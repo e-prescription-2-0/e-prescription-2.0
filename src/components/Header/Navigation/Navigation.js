@@ -8,7 +8,7 @@ import style from "./Navigation.module.css";
 import { useSelector } from "react-redux";
 
 export const Navigation = () => {
-  const {role} = useSelector(state => state.auth.authUser) ?? {role:'guest'};
+  const {role,email} = useSelector(state => state.auth.authUser) ?? {role:'guest'};
   
 
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -55,6 +55,7 @@ export const Navigation = () => {
           ) : null
         )}
       </ul>
+      <p style={{color:'white'}}>{email}</p>
     </nav>
   );
 };
