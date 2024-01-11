@@ -31,44 +31,49 @@ const SearchPage = ({ searchType }) => {
     (state) => state.search.collectionDoctors
   );
 
-  const collection =
+  const collectionType =
     searchType === "doctors" ? collectionDoctors : collectionPatients;
 
-  useEffect(() => {
-    if (loading && !collection?.[search]?.[page]) {
-      
-      const pageParams = { search, page };
+  const fetchCollection =
+    searchType === "doctors" ? fetchDoctors : fetchPatients;
 
-      //Fetch list with doctors or patients
-      searchType === "doctors" && fetchDoctors(pageParams);
-      searchType === "patients" && fetchPatients(pageParams);
-    }
-  }, [
-    loading,
-    fetchDoctors,
-    fetchPatients,
-    setSearchType,
-    searchType,
-    collection,
-    page,
-    search,
-  ]);
+
+  // useEffect(() => {
+  //   if (loading && !collection?.[search]?.[page]) {
+
+  //     const pageParams = { search, page };
+
+  //     //Fetch list with doctors or patients
+  //     searchType === "doctors" && fetchDoctors(pageParams);
+  //     searchType === "patients" && fetchPatients(pageParams);
+  //   }
+  // }, [
+  //   loading,
+  //   fetchDoctors,
+  //   fetchPatients,
+  //   setSearchType,
+  //   searchType,
+  //   collection,
+  //   page,
+  //   search,
+  // ]);
 
   return (
     <section className={style["main-search-doctors-section"]}>
       <DashboardNavigation />
-      {loading ? (
+      {/* {loading ? (
         <div className={style["search-doctors-loading-container"]}>
           <LoadingCircle />
         </div>
-      ) : (
-        <SearchContent
-          searchParams={searchParams}
-          setSearchParams={setSearchParams}
-          collection={collection[search][page]}
-          searchType={searchType}
-        />
-      )}
+      ) : ( */}
+      <SearchContent
+        searchParams={searchParams}
+        setSearchParams={setSearchParams}
+        collection={collectionType}
+        searchType={searchType}
+        fetchCollection={fetchCollection}
+      />
+      {/* )} */}
     </section>
   );
 };

@@ -106,6 +106,13 @@
   flex: none !important;
 }
 
+.search-collection-loader{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 @media (max-width: 1199px) {
   .main-search-select-from-user-patients{
     width: 25% !important;
