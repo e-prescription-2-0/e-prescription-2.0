@@ -16,5 +16,9 @@ export const prescriptionsSlice = createSlice({
     setOpenPrescription: (state, action) => {
       state.openPrescription = action.payload;
     },
+    fetchCreatePrescription: () => {},
+    setCreatedPrescription: (state, action) => {
+      state.allMyPrescriptions = [...state.allMyPrescriptions, action.payload]
+    }
   },
 });
