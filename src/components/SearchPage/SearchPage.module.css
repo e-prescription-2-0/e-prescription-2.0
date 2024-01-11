@@ -113,6 +113,26 @@
   justify-content: center;
 }
 
+.delete-search-query-button{
+  position: absolute;
+  top: 50%;
+  right: 5rem;
+  width: auto !important;
+  transform: translate(-50%, -50%);
+  background-color: transparent !important;
+}
+.delete-search-query-button svg{
+  color: #497174;
+  height: 1.6rem;
+  width: 2rem;
+  height: 2rem;
+
+}
+.delete-search-query-button svg:hover{
+  background-color: #EFF5F5;
+  color: #497174;
+  border-radius: 10rem;
+}
 @media (max-width: 1199px) {
   .main-search-select-from-user-patients{
     width: 25% !important;

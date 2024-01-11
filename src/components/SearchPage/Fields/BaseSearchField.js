@@ -3,29 +3,22 @@ import { useReduxAction } from "../../../hooks/useReduxAction";
 import { searchSlice } from "../../../reducers/search";
 import style from "../SearchPage.module.css";
 import { useReduxState } from "../../../hooks/useReduxState";
+import { useState } from "react";
+import { faXmark } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const BaseSearchFields = ({ setSearchParams, searchParams, searchType }) => {
-  const setLoading = useReduxAction(searchSlice.actions.setLoading);
-
-  const collection = useReduxState(
-    (state) =>
-      state.search?.[
-        searchType === "doctors" ? "collectionDoctors" : "collectionPatients"
-      ]
-  );
-
   const placeholderText =
     (searchType === "patients" && "Search by patient ID") ||
     (searchType === "doctors" && "Search doctor by email...");
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    const search = event.target.search.value;
-    setSearchParams({ search, page: "1" });
-    if (!collection?.[search]?.["1"]) {
-      console.log(collection)
-      setLoading(true);
-    }
+  const [searchQuery, setSearchQuery] = useState(
+    searchParams.get("search") || ""
+  );
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setSearchParams({ search: searchQuery });
   };
 
   return (
@@ -38,9 +31,19 @@ const BaseSearchFields = ({ setSearchParams, searchParams, searchType }) => {
           aria-label="Search text"
           aria-describedby="basic-addon2"
           className={style["main-search-input-from-user-patients"]}
-          defaultValue={searchParams.get("search") || ""}
+          // defaultValue={searchParams.get("search") || ""}
+          onChange={(e) => setSearchQuery(e.target.value)}
+          value={searchQuery}
         />
         <Button type="submit">Search</Button>
+
+        <button
+          type="submit"
+          className={style["delete-search-query-button"]}
+          onClick={() => setSearchQuery("")}
+        >
+          <FontAwesomeIcon icon={faXmark} />
+        </button>
       </InputGroup>
     </Form>
   );

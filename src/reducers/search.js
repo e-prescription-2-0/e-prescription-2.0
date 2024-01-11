@@ -3,8 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
   collectionPatients: {},
   collectionDoctors: {},
-  loading: true,
-}
+};
 export const searchSlice = createSlice({
   name: "search",
   initialState,
@@ -18,13 +17,13 @@ export const searchSlice = createSlice({
     },
 
     setCollectionPatients: (state, action) => {
-      const {search , collection, page, numberPages} =action.payload
+      const { search, collection, page, numberPages } = action.payload;
 
       if (state.collectionPatients?.[search]) {
         state.collectionPatients[search] = {
           ...state.collectionPatients[search],
           [page]: collection,
-          numberPages
+          numberPages,
         };
       } else {
         state.collectionPatients = {
@@ -35,13 +34,13 @@ export const searchSlice = createSlice({
     },
 
     setCollectionDoctors: (state, action) => {
-      const {search , collection, page, numberPages} =action.payload
+      const { search, collection, page, numberPages } = action.payload;
 
       if (state.collectionDoctors?.[search]) {
         state.collectionDoctors[search] = {
           ...state.collectionDoctors[search],
           [page]: collection,
-          numberPages
+          numberPages,
         };
       } else {
         state.collectionDoctors = {
@@ -53,6 +52,5 @@ export const searchSlice = createSlice({
     setLoading: (state, action) => {
       state.loading = action.payload;
     },
-
   },
 });
