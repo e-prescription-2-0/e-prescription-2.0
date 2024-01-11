@@ -22,7 +22,6 @@ function* onFetchDoctors(action) {
       })
     );
 
-    yield put(searchSlice.actions.setLoading(false));
   } catch (error) {
     console.log("====================================");
     console.log(error);
@@ -49,7 +48,6 @@ function* onFetchAllPatients(action) {
       })
     );
 
-    yield put(searchSlice.actions.setLoading(false));
   } catch (error) {
     console.log("====================================");
     console.log(error);

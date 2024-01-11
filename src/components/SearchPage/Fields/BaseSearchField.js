@@ -12,17 +12,22 @@ const BaseSearchFields = ({ setSearchParams, searchParams, searchType }) => {
     (searchType === "patients" && "Search by patient ID") ||
     (searchType === "doctors" && "Search doctor by email...");
 
-  const [searchQuery, setSearchQuery] = useState(
-    searchParams.get("search") || ""
-  );
+  // const [searchQuery, setSearchQuery] = useState(
+  //   searchParams.get("search") || ""
+  // );
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setSearchParams({ search: searchQuery });
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   setSearchParams({ search: searchQuery });
+  // };
+
+  const onChangeSearch = (e) => {
+    const value = e.target.value;
+    value ? setSearchParams({ search: value }) : setSearchParams({});
   };
 
   return (
-    <Form onSubmit={handleSubmit}>
+    <>
       <InputGroup className="mb-3">
         <Form.Control
           name="search"
@@ -32,20 +37,20 @@ const BaseSearchFields = ({ setSearchParams, searchParams, searchType }) => {
           aria-describedby="basic-addon2"
           className={style["main-search-input-from-user-patients"]}
           // defaultValue={searchParams.get("search") || ""}
-          onChange={(e) => setSearchQuery(e.target.value)}
-          value={searchQuery}
+          onChange={onChangeSearch}
+          value={searchParams.get("search") || ""}
         />
-        <Button type="submit">Search</Button>
+        {/* <Button type="submit">Search</Button> */}
 
         <button
-          type="submit"
+          // type="submit"
           className={style["delete-search-query-button"]}
-          onClick={() => setSearchQuery("")}
+          onClick={() => setSearchParams({})}
         >
           <FontAwesomeIcon icon={faXmark} />
         </button>
       </InputGroup>
-    </Form>
+    </>
   );
 };
 

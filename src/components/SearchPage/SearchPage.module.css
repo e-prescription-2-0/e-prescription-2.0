@@ -115,8 +115,8 @@
 
 .delete-search-query-button{
   position: absolute;
-  top: 50%;
-  right: 5rem;
+  top: 55%;
+  right: 0rem;
   width: auto !important;
   transform: translate(-50%, -50%);
   background-color: transparent !important;

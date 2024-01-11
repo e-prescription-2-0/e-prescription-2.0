@@ -44,7 +44,7 @@ const ListSearchResult = ({ collection, fetchCollection, searchParams }) => {
       next={fetchMoreData}
       hasMore={initialLoad ? false : hasMore}
       loader={loader}
-      as="ul"
+      as='ul'
       className={style["search-collection-list"]}
     >
       {collectionData.map((data) => (

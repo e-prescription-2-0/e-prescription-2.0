@@ -49,8 +49,6 @@ export const searchSlice = createSlice({
         };
       }
     },
-    setLoading: (state, action) => {
-      state.loading = action.payload;
-    },
+
   },
 });
