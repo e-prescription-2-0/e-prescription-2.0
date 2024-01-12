@@ -47,6 +47,7 @@ const SearchContent = ({ searchType }) => {
         searchType={searchType}
         collection={collection}
       />
+      
 
 
       <ListSearchResult

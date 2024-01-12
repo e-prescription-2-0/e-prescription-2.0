@@ -50,6 +50,19 @@ const BaseSearchFields = ({ setSearchParams, searchParams, searchType }) => {
           <FontAwesomeIcon icon={faXmark} />
         </button>
       </InputGroup>
+      <div className={style['switch-and-title-box']}>
+        <div className={style["toggle"]}>
+          <input type="checkbox" />
+          <label className={[style["label-switch"], style["off"]].join(" ")}>
+            ALL
+          </label>
+          <label className={[style["label-switch"], style["on"]].join(" ")}>
+            MY
+          </label>
+        </div>
+
+        <h4>PATIENTS</h4>
+      </div>
     </>
   );
 };

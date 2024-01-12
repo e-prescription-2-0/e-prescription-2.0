@@ -23,7 +23,6 @@
   border-bottom: 2px solid #3c6e7184;
   border-radius: 0;
   transition: all 0.5s ease;
-
 }
 .main-search-input-for-single-patient {
   background-color: #ffebeb;
@@ -37,7 +36,7 @@
 }
 
 .main-search-input-for-single-patient:focus {
-  background-color: rgba(255, 235, 235, 0.5)
+  background-color: rgba(255, 235, 235, 0.5);
 }
 .main-search-input-from-user-patients:focus {
   background-color: rgba(207, 226, 255, 0.5);
@@ -101,19 +100,19 @@
   height: 4rem;
 }
 
-.main-search-select-from-user-patients{
+.main-search-select-from-user-patients {
   width: 15% !important;
   flex: none !important;
 }
 
-.search-collection-loader{
+.search-collection-loader {
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.delete-search-query-button{
+.delete-search-query-button {
   position: absolute;
   top: 55%;
   right: 0rem;
@@ -121,20 +120,27 @@
   transform: translate(-50%, -50%);
   background-color: transparent !important;
 }
-.delete-search-query-button svg{
+.delete-search-query-button svg {
   color: #497174;
   height: 1.6rem;
   width: 2rem;
   height: 2rem;
-
 }
-.delete-search-query-button svg:hover{
-  background-color: #EFF5F5;
+.delete-search-query-button svg:hover {
+  background-color: #eff5f5;
   color: #497174;
   border-radius: 10rem;
 }
+
+.search-switch-for-patients-div {
+  display: flex;
+  justify-content: space-between;
+}
+.search-switch-for-patients-div input {
+  position: relative !important;
+}
 @media (max-width: 1199px) {
-  .main-search-select-from-user-patients{
+  .main-search-select-from-user-patients {
     width: 25% !important;
     flex: none !important;
   }
@@ -151,5 +157,64 @@
     width: 100%;
     margin: 0;
   }
-} 
+}
 
+.toggle {
+  position: relative;
+  overflow: hidden;
+  display: block;
+}
+input[type="checkbox"] {
+  position: relative;
+  appearance: none;
+  width: 120px;
+  height: 50px;
+  background-color: #bdc3c7;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.4s;
+}
+input:checked[type="checkbox"] {
+  background-color: #3498db;
+}
+input[type="checkbox"]::after {
+  position: absolute;
+  content: "";
+  left: 5px;
+  top: 50%;
+  width: 40px;
+  height: 40px;
+  background-color: #fff;
+  border-radius: 50%;
+  transform: translateY(-50%);
+  transition: all 0.4s;
+}
+input:checked[type="checkbox"]::after {
+  left: 75px;
+}
+.label-switch {
+  position: absolute;
+  pointer-events: none;
+  color: #fff;
+  transition: all 0.4s;
+}
+input:checked[type="checkbox"] ~ .label-switch.on {
+  top: 50%;
+  transform: translateY(-50%);
+  left: 10px;
+}
+input[type="checkbox"]:not(:checked) ~ .label-switch.off {
+  top: 50%;
+  transform: translateY(-50%);
+  right: 10px;
+}
+
+.switch-and-title-box{
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.switch-and-title-box{
+  font-size: 1.5rem;
+}
