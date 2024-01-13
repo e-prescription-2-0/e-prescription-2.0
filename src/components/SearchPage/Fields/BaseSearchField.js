@@ -1,29 +1,26 @@
-import { Button, Form, InputGroup } from "react-bootstrap";
-import { useReduxAction } from "../../../hooks/useReduxAction";
-import { searchSlice } from "../../../reducers/search";
+import { Form, InputGroup } from "react-bootstrap";
 import style from "../SearchPage.module.css";
-import { useReduxState } from "../../../hooks/useReduxState";
-import { useState } from "react";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-const BaseSearchFields = ({ setSearchParams, searchParams, searchType }) => {
+const BaseSearchFields = ({
+  setSearchParams,
+  searchParams,
+  searchType,
+  isMyPatientsChecked,
+  setIsMyPatientsChecked,
+}) => {
   const placeholderText =
     (searchType === "patients" && "Search by patient ID") ||
     (searchType === "doctors" && "Search doctor by email...");
 
-  // const [searchQuery, setSearchQuery] = useState(
-  //   searchParams.get("search") || ""
-  // );
-
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
-  //   setSearchParams({ search: searchQuery });
-  // };
-
   const onChangeSearch = (e) => {
     const value = e.target.value;
     value ? setSearchParams({ search: value }) : setSearchParams({});
+  };
+
+  const onChangeSwitch = (e) => {
+    setIsMyPatientsChecked(!isMyPatientsChecked);
   };
 
   return (
@@ -39,20 +36,23 @@ const BaseSearchFields = ({ setSearchParams, searchParams, searchType }) => {
           // defaultValue={searchParams.get("search") || ""}
           onChange={onChangeSearch}
           value={searchParams.get("search") || ""}
+          autoComplete="off"
         />
-        {/* <Button type="submit">Search</Button> */}
 
         <button
-          // type="submit"
           className={style["delete-search-query-button"]}
           onClick={() => setSearchParams({})}
         >
           <FontAwesomeIcon icon={faXmark} />
         </button>
       </InputGroup>
-      <div className={style['switch-and-title-box']}>
+      <div className={style["switch-and-title-box"]}>
         <div className={style["toggle"]}>
-          <input type="checkbox" />
+          <input
+            type="checkbox"
+            value={isMyPatientsChecked}
+            onChange={onChangeSwitch}
+          />
           <label className={[style["label-switch"], style["off"]].join(" ")}>
             ALL
           </label>

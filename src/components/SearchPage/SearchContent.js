@@ -9,20 +9,32 @@ import { useSearchParams } from "react-router-dom";
 import { useReduxState } from "../../hooks/useReduxState";
 import { useReduxAction } from "../../hooks/useReduxAction";
 import { searchSlice } from "../../reducers/search";
+import { useState } from "react";
 
 const SearchContent = ({ searchType }) => {
   const [searchParams, setSearchParams] = useSearchParams({});
 
+  // Redux for all doctors
   const fetchDoctors = useReduxAction(searchSlice.actions.fetchDoctors);
-  const fetchPatients = useReduxAction(searchSlice.actions.fetchPatients);
-
-  const collectionPatients = useReduxState(
-    (state) => state.search.collectionPatients
-  );
   const collectionDoctors = useReduxState(
     (state) => state.search.collectionDoctors
   );
 
+  // Redux for all patients
+  const fetchAllPatients = useReduxAction(searchSlice.actions.fetchAllPatients);
+  const collectionAllPatients = useReduxState(
+    (state) => state.search.collectionAllPatients
+  );
+
+  // Redux for User Patients
+  const fetchMyPatients = useReduxAction(searchSlice.actions.fetchMyPatients);
+  const collectionMyPatients = useReduxState(
+    (state) => state.search.collectionMyPatients
+  );
+
+  const [isMyPatientsChecked, setIsMyPatientsChecked] = useState(false);
+
+  console.log(isMyPatientsChecked);
   let collection, fetchCollection, titlePage;
 
   switch (searchType) {
@@ -32,9 +44,15 @@ const SearchContent = ({ searchType }) => {
       titlePage = "Търси Доктори";
       break;
     case "patients":
-      collection = collectionPatients;
-      fetchCollection = fetchPatients;
+      if (isMyPatientsChecked) {
+        collection = collectionMyPatients;
+        fetchCollection = fetchMyPatients;
+      } else {
+        collection = collectionAllPatients;
+        fetchCollection = fetchAllPatients;
+      }
       titlePage = "Търси Пациенти";
+
       break;
   }
   return (
@@ -46,9 +64,9 @@ const SearchContent = ({ searchType }) => {
         searchParams={searchParams}
         searchType={searchType}
         collection={collection}
+        isMyPatientsChecked={isMyPatientsChecked}
+        setIsMyPatientsChecked={setIsMyPatientsChecked}
       />
-      
-
 
       <ListSearchResult
         collection={collection}

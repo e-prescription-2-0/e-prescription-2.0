@@ -5,12 +5,11 @@ import { searchSlice } from "../reducers/search";
 function* onFetchDoctors(action) {
   try {
     // Access the current state using select
-    const {page, search} = action.payload;
+    const { page, search } = action.payload;
 
-    
     const result = yield call(searchService.getDoctors, {
       page,
-      search
+      search,
     });
 
     yield put(
@@ -18,10 +17,9 @@ function* onFetchDoctors(action) {
         collection: result.doctors,
         numberPages: result.numberPages,
         page,
-        search
+        search,
       })
     );
-
   } catch (error) {
     console.log("====================================");
     console.log(error);
@@ -29,10 +27,9 @@ function* onFetchDoctors(action) {
   }
 }
 
-
 function* onFetchAllPatients(action) {
   try {
-    const {page, search} = action.payload;
+    const { page, search } = action.payload;
 
     const result = yield call(searchService.getAllPatients, {
       page,
@@ -40,14 +37,13 @@ function* onFetchAllPatients(action) {
     });
 
     yield put(
-      searchSlice.actions.setCollectionPatients({
+      searchSlice.actions.setCollectionAllPatients({
         collection: result.patients,
         numberPages: result.numberPages,
         page,
-        search
+        search,
       })
     );
-
   } catch (error) {
     console.log("====================================");
     console.log(error);
@@ -55,13 +51,12 @@ function* onFetchAllPatients(action) {
   }
 }
 
-
 function* onFetchMyPatients(action) {
   try {
-    const {page, search} = action.payload;
+    const { page, search } = action.payload;
 
     const result = yield call(searchService.getMyPatients, {
-      doctorId: '658f0b9d1a1925a19548cc8e',
+      doctorId: "658f0b9d1a1925a19548cc8e",
       page,
       search,
     });
@@ -71,10 +66,9 @@ function* onFetchMyPatients(action) {
         collection: result.patients,
         numberPages: result.numberPages,
         page,
-        search
+        search,
       })
     );
-
   } catch (error) {
     console.log("====================================");
     console.log(error);
@@ -85,7 +79,7 @@ function* onFetchMyPatients(action) {
 export default function* searchSaga() {
   yield all([
     takeLatest(searchSlice.actions.fetchDoctors, onFetchDoctors),
-    takeLatest(searchSlice.actions.fetchPatients, onFetchAllPatients),
-    takeLatest(searchSlice.actions.fetchMyPatients, onFetchMyPatients)
+    takeLatest(searchSlice.actions.fetchAllPatients, onFetchAllPatients),
+    takeLatest(searchSlice.actions.fetchMyPatients, onFetchMyPatients),
   ]);
 }

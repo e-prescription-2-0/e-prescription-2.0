@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  collectionPatients: {},
+  collectionAllPatients: {},
   collectionDoctors: {},
   collectionMyPatients: {},
 };
@@ -10,7 +10,7 @@ export const searchSlice = createSlice({
   initialState,
   reducers: {
     fetchDoctors: (state, action) => {},
-    fetchPatients: (state, action) => {},
+    fetchAllPatients: (state, action) => {},
     fetchMyPatients: (state, action) => {},
 
     setCollectionMyPatients: (state, action) => {
@@ -30,18 +30,18 @@ export const searchSlice = createSlice({
       }
     },
 
-    setCollectionPatients: (state, action) => {
+    setCollectionAllPatients: (state, action) => {
       const { search, collection, page, numberPages } = action.payload;
 
-      if (state.collectionPatients?.[search]) {
-        state.collectionPatients[search] = {
-          ...state.collectionPatients[search],
+      if (state.collectionAllPatients?.[search]) {
+        state.collectionAllPatients[search] = {
+          ...state.collectionAllPatients[search],
           [page]: collection,
           numberPages,
         };
       } else {
-        state.collectionPatients = {
-          ...state.collectionPatients,
+        state.collectionAllPatients = {
+          ...state.collectionAllPatients,
           [search]: { [page]: collection, numberPages },
         };
       }
