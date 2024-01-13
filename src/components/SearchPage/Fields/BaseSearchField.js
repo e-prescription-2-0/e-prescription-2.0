@@ -6,14 +6,11 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 const BaseSearchFields = ({
   setSearchParams,
   searchParams,
-  searchType,
+  placeholderText,
   isMyPatientsChecked,
   setIsMyPatientsChecked,
+  searchType,
 }) => {
-  const placeholderText =
-    (searchType === "patients" && "Search by patient ID") ||
-    (searchType === "doctors" && "Search doctor by email...");
-
   const onChangeSearch = (e) => {
     const value = e.target.value;
     value ? setSearchParams({ search: value }) : setSearchParams({});
@@ -46,23 +43,25 @@ const BaseSearchFields = ({
           <FontAwesomeIcon icon={faXmark} />
         </button>
       </InputGroup>
-      <div className={style["switch-and-title-box"]}>
-        <div className={style["toggle"]}>
-          <input
-            type="checkbox"
-            value={isMyPatientsChecked}
-            onChange={onChangeSwitch}
-          />
-          <label className={[style["label-switch"], style["off"]].join(" ")}>
-            ALL
-          </label>
-          <label className={[style["label-switch"], style["on"]].join(" ")}>
-            MY
-          </label>
-        </div>
+      {searchType === "patients" && (
+        <div className={style["switch-and-title-box"]}>
+          <div className={style["toggle"]}>
+            <input
+              type="checkbox"
+              value={isMyPatientsChecked}
+              onChange={onChangeSwitch}
+            />
+            <label className={[style["label-switch"], style["off"]].join(" ")}>
+              ALL
+            </label>
+            <label className={[style["label-switch"], style["on"]].join(" ")}>
+              MY
+            </label>
+          </div>
 
-        <h4>PATIENTS</h4>
-      </div>
+          <h4>PATIENTS</h4>
+        </div>
+      )}
     </>
   );
 };

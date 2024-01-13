@@ -29,4 +29,13 @@ export default {
       "Access-Control-Allow-Origin": "*",
     },
   }),
+  getAllPrescriptions: serviceBind({
+    url: "/api/prescriptions?search={search}&page={page}",
+    method: METHODS.GET,
+    headers: {
+      "Content-Type": HEADER_FORMATS.JSON,
+      Accept: HEADER_FORMATS.JSON,
+      "Access-Control-Allow-Origin": "*",
+    },
+  }),
 };

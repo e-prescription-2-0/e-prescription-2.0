@@ -1,9 +1,6 @@
-import { Container, Form } from "react-bootstrap";
+import { Container } from "react-bootstrap";
 import style from "./SearchPage.module.css";
-import { isEmpty } from "ramda";
-import NothingFound from "./NothingFound";
 import ListSearchResult from "./ListSearchResult";
-// import SearchPagination from "./SearchPagination";
 import BaseSearchFields from "./Fields/BaseSearchField";
 import { useSearchParams } from "react-router-dom";
 import { useReduxState } from "../../hooks/useReduxState";
@@ -18,6 +15,13 @@ const SearchContent = ({ searchType }) => {
   const fetchDoctors = useReduxAction(searchSlice.actions.fetchDoctors);
   const collectionDoctors = useReduxState(
     (state) => state.search.collectionDoctors
+  );
+  // Redux for prescriptions
+  const fetchAllPrescriptions = useReduxAction(
+    searchSlice.actions.fetchAllPrescriptions
+  );
+  const collectionAllPrescriptions = useReduxState(
+    (state) => state.search.collectionAllPrescriptions
   );
 
   // Redux for all patients
@@ -35,13 +39,21 @@ const SearchContent = ({ searchType }) => {
   const [isMyPatientsChecked, setIsMyPatientsChecked] = useState(false);
 
   console.log(isMyPatientsChecked);
-  let collection, fetchCollection, titlePage;
+  let collection, fetchCollection, titlePage, placeholderText;
 
   switch (searchType) {
     case "doctors":
       collection = collectionDoctors;
       fetchCollection = fetchDoctors;
+      placeholderText = "Търси по имейла на доктора";
       titlePage = "Търси Доктори";
+      break;
+    case "prescriptions":
+      collection = collectionAllPrescriptions;
+      fetchCollection = fetchAllPrescriptions;
+
+      placeholderText = "Търси по номера на рецептата";
+      titlePage = "Търси Рецепта";
       break;
     case "patients":
       if (isMyPatientsChecked) {
@@ -51,6 +63,7 @@ const SearchContent = ({ searchType }) => {
         collection = collectionAllPatients;
         fetchCollection = fetchAllPatients;
       }
+      placeholderText = "Търси по ЕГН на пациента";
       titlePage = "Търси Пациенти";
 
       break;
@@ -62,10 +75,11 @@ const SearchContent = ({ searchType }) => {
       <BaseSearchFields
         setSearchParams={setSearchParams}
         searchParams={searchParams}
-        searchType={searchType}
+        placeholderText={placeholderText}
         collection={collection}
         isMyPatientsChecked={isMyPatientsChecked}
         setIsMyPatientsChecked={setIsMyPatientsChecked}
+        searchType={searchType}
       />
 
       <ListSearchResult

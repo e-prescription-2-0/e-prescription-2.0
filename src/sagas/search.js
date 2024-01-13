@@ -76,10 +76,36 @@ function* onFetchMyPatients(action) {
   }
 }
 
+
+function* onFetchAllPrescriptions(action) {
+  try {
+    const { page, search } = action.payload;
+
+    const result = yield call(searchService.getAllPrescriptions, {
+      page,
+      search,
+    });
+
+    yield put(
+      searchSlice.actions.setCollectionAllPrescriptions({
+        collection: result.patients,
+        numberPages: result.numberPages,
+        page,
+        search,
+      })
+    );
+  } catch (error) {
+    console.log("====================================");
+    console.log(error);
+    console.log("====================================");
+  }
+}
+
 export default function* searchSaga() {
   yield all([
     takeLatest(searchSlice.actions.fetchDoctors, onFetchDoctors),
     takeLatest(searchSlice.actions.fetchAllPatients, onFetchAllPatients),
     takeLatest(searchSlice.actions.fetchMyPatients, onFetchMyPatients),
+    takeLatest(searchSlice.actions.fetchAllPrescriptions, onFetchAllPrescriptions),
   ]);
 }
