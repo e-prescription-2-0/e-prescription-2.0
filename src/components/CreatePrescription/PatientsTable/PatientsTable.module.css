@@ -1,5 +1,5 @@
 .patient-table-container {
-    max-width: 60em;
+min-width: 60em;
     margin: 20px auto;
     padding: 2em;
     background-color: #3c6e71;
