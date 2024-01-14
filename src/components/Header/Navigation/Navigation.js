@@ -6,9 +6,16 @@ import { navLinkConfig } from "../../../constants/navigation";
 import style from "./Navigation.module.css";
 
 import { useSelector } from "react-redux";
+import Messages from "../../Messages/Messages";
+
 
 export const Navigation = () => {
   const {role,email} = useSelector(state => state.auth.authUser) ?? {role:'guest'};
+  const messageState = useSelector(state => state.messages);
+  const {isMessage,messages} = messageState;
+  console.log(isMessage);
+  console.log(messages);
+  
   
 
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -34,6 +41,9 @@ export const Navigation = () => {
         className={style["mobile-menu-icon"]}
         onClick={toggleMobileMenu}
       />
+      {isMessage && 
+         <Messages messages={messages}/>
+        }
       <ul
         className={`${style["navigation-list"]} ${
           isMobileMenuOpen ? style["open"] : ""
@@ -54,8 +64,11 @@ export const Navigation = () => {
             </li>
           ) : null
         )}
+   
       </ul>
       <p style={{color:'white'}}>{email}</p>
+      
+      
     </nav>
   );
 };

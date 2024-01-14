@@ -1,4 +1,4 @@
-import { Provider } from "react-redux"
+import { Provider, useSelector } from "react-redux"
 import { Route, Routes } from "react-router-dom"
 import "./App.module.css"
 import style from "./App.module.css"
@@ -12,11 +12,15 @@ import AuthenticationPage from "./components/AuthenticationPage/AuthenticationPa
 import Logout from "./components/Logout/Logout"
 
 const App = () => {
+
+  
+  
   return (
     <Provider store={store}>
       <main className={style["main-content"]}>
         <Header />
         <Routes>
+      
           <Route path="/" element={<Welcome />} />
           <Route path="/prescriptions" element={<MainDashboard />} />
           <Route path="/create-prescription" element={<CreatePrescription />} />

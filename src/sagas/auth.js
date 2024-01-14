@@ -1,9 +1,8 @@
 import { all, call, put, takeLatest } from "@redux-saga/core/effects";
 import authService from '../services/authentication-service';
 import { setAuthUserByRegister, setAuthUserByLogin, clearAuthUser, fetchRegisteredUser, fetchLoginUser, fetchLogoutUser } from "../reducers/auth";
-import { requestLogin,requestLogout } from "../services/authentication-service";
 
-
+import {setMessages} from '../reducers/messageDispatcher'
 
 
 
@@ -14,7 +13,7 @@ function* onRegister(action) {
 
         yield put(setAuthUserByRegister(user))
     } catch (error) {
-
+        yield put(setMessages({type:'error', text: error}))
         console.log(error);
     }
 }
@@ -27,8 +26,9 @@ function* onLogin(action) {
         
         yield put(setAuthUserByLogin(user))
     } catch (error) {
+        yield put(setMessages({type:'error', text: error.message}))
 
-        console.log(error);
+        console.log(error.message);
     }
 }
 
