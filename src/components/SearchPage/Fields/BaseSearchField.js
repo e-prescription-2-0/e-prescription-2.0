@@ -38,15 +38,16 @@ const BaseSearchFields = ({
           value={searchParams.get("search") || ""}
           autoComplete="off"
         />
-
-        <button
-          className={style["delete-search-query-button"]}
-          onClick={() => setSearchParams({})}
-        >
-          <FontAwesomeIcon icon={faXmark} />
-        </button>
+        {searchParams.get("search") && (
+          <button
+            className={style["delete-search-query-button"]}
+            onClick={() => setSearchParams({})}
+          >
+            <FontAwesomeIcon icon={faXmark} />
+          </button>
+        )}
       </InputGroup>
-      {false && (
+      {searchType === "patients" && (
         <div className={style["switch-and-title-box"]}>
           <div className={style["toggle"]}>
             <input
