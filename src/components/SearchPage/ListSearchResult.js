@@ -15,20 +15,20 @@ const ListSearchResult = ({ collection, fetchCollection, searchParams }) => {
   const dataLength = collectionData.length;
   const currentPage = Object.keys(collectionByPages).length;
 
-const hasMore = currentPage < collection?.[search]?.numberPages || 0;
+  const hasMore = currentPage < collection?.[search]?.numberPages || 0;
 
   const loader = (
     <div className={style["search-collection-loader"]}>
       <Spinner animation="border" variant="primary" />
     </div>
   );
+  const initialLoad = isEmpty(collectionByPages);
 
   const fetchMoreData = async () => {
-    const nextPage = currentPage + 1; 
-    const pageParams = { search, page: nextPage };
+    const nextPage = currentPage + 1;
+    const pageParams = { search, page: nextPage, initialLoad };
     await fetchCollection(pageParams);
   };
-  const initialLoad = isEmpty(collectionByPages);
   useEffect(() => {
     if (initialLoad) {
       fetchMoreData();

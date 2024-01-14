@@ -4,10 +4,11 @@ import { searchSlice } from "../reducers/search";
 
 function* onFetchDoctors(action) {
   try {
-    // Access the current state using select
-    const { page, search } = action.payload;
+    const { page, search, initialLoad } = action.payload;
 
-    yield delay(500); // Adjust the delay time according to your requirements
+    if (initialLoad) {
+      yield delay(1500); // Adjust the delay time according
+    }
 
     const result = yield call(searchService.getDoctors, {
       page,
@@ -31,10 +32,11 @@ function* onFetchDoctors(action) {
 
 function* onFetchAllPatients(action) {
   try {
-    const { page, search } = action.payload;
+    const { page, search, initialLoad } = action.payload;
 
-    yield delay(500); // Adjust the delay time according to your requirements
-
+    if (initialLoad) {
+      yield delay(1500); // Adjust the delay time according
+    }
     const result = yield call(searchService.getAllPatients, {
       page,
       search,
@@ -57,9 +59,11 @@ function* onFetchAllPatients(action) {
 
 function* onFetchMyPatients(action) {
   try {
-    const { page, search } = action.payload;
+    const { page, search, initialLoad } = action.payload;
 
-    yield delay(500); // Adjust the delay time according to your requirements
+    if (initialLoad) {
+      yield delay(1500); // Adjust the delay time according
+    }
 
     const result = yield call(searchService.getMyPatients, {
       doctorId: "658f0b9d1a1925a19548cc8e",
@@ -84,9 +88,11 @@ function* onFetchMyPatients(action) {
 
 function* onFetchAllPrescriptions(action) {
   try {
-    const { page, search } = action.payload;
+    const { page, search, initialLoad } = action.payload;
 
-    yield delay(500); // Adjust the delay time according to your requirements
+    if (initialLoad) {
+      yield delay(1500); // Adjust the delay time according
+    }
 
     const result = yield call(searchService.getAllPrescriptions, {
       page,
