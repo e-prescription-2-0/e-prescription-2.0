@@ -19,7 +19,10 @@ const BaseSearchFields = ({
   const onChangeSwitch = (e) => {
     setIsMyPatientsChecked(!isMyPatientsChecked);
   };
-
+  console.log(
+    "params",
+    searchType === "patients" && searchParams.get("search")
+  );
   return (
     <>
       <InputGroup className="mb-3">
@@ -43,7 +46,7 @@ const BaseSearchFields = ({
           <FontAwesomeIcon icon={faXmark} />
         </button>
       </InputGroup>
-      {searchType === "patients" && (
+      {false && (
         <div className={style["switch-and-title-box"]}>
           <div className={style["toggle"]}>
             <input

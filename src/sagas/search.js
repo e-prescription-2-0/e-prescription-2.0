@@ -1,4 +1,4 @@
-import { all, call, put, takeLatest, select } from "@redux-saga/core/effects";
+import { all, call, put, takeLatest, delay } from "@redux-saga/core/effects";
 import searchService from "../services/search-service";
 import { searchSlice } from "../reducers/search";
 
@@ -6,6 +6,8 @@ function* onFetchDoctors(action) {
   try {
     // Access the current state using select
     const { page, search } = action.payload;
+
+    yield delay(500); // Adjust the delay time according to your requirements
 
     const result = yield call(searchService.getDoctors, {
       page,
@@ -31,6 +33,8 @@ function* onFetchAllPatients(action) {
   try {
     const { page, search } = action.payload;
 
+    yield delay(500); // Adjust the delay time according to your requirements
+
     const result = yield call(searchService.getAllPatients, {
       page,
       search,
@@ -55,6 +59,8 @@ function* onFetchMyPatients(action) {
   try {
     const { page, search } = action.payload;
 
+    yield delay(500); // Adjust the delay time according to your requirements
+
     const result = yield call(searchService.getMyPatients, {
       doctorId: "658f0b9d1a1925a19548cc8e",
       page,
@@ -76,10 +82,11 @@ function* onFetchMyPatients(action) {
   }
 }
 
-
 function* onFetchAllPrescriptions(action) {
   try {
     const { page, search } = action.payload;
+
+    yield delay(500); // Adjust the delay time according to your requirements
 
     const result = yield call(searchService.getAllPrescriptions, {
       page,
@@ -88,7 +95,7 @@ function* onFetchAllPrescriptions(action) {
 
     yield put(
       searchSlice.actions.setCollectionAllPrescriptions({
-        collection: result.patients,
+        collection: result.prescriptions,
         numberPages: result.numberPages,
         page,
         search,
@@ -106,6 +113,9 @@ export default function* searchSaga() {
     takeLatest(searchSlice.actions.fetchDoctors, onFetchDoctors),
     takeLatest(searchSlice.actions.fetchAllPatients, onFetchAllPatients),
     takeLatest(searchSlice.actions.fetchMyPatients, onFetchMyPatients),
-    takeLatest(searchSlice.actions.fetchAllPrescriptions, onFetchAllPrescriptions),
+    takeLatest(
+      searchSlice.actions.fetchAllPrescriptions,
+      onFetchAllPrescriptions
+    ),
   ]);
 }

@@ -8,14 +8,14 @@ import style from "./SearchPage.module.css";
 const ListSearchResult = ({ collection, fetchCollection, searchParams }) => {
   const search = searchParams.get("search") || "";
 
-  const collectionData = [].concat(
-    ...Object.values(collection?.[search] || {})
-  );
+  const collectionByPages = collection?.[search]?.collection || {};
+
+  const collectionData = [].concat(...Object.values(collectionByPages));
 
   const dataLength = collectionData.length;
-  const page = Object.keys(collection?.[search] || { 1: "" }).length;
-  console.log("page numbers", collection?.[search]);
-  const hasMore = page < (collection?.[search]?.numberPages || 2) + 1;
+  const currentPage = Object.keys(collectionByPages).length;
+
+const hasMore = currentPage < collection?.[search]?.numberPages || 0;
 
   const loader = (
     <div className={style["search-collection-loader"]}>
@@ -23,13 +23,12 @@ const ListSearchResult = ({ collection, fetchCollection, searchParams }) => {
     </div>
   );
 
-  console.log(hasMore);
   const fetchMoreData = async () => {
-    console.log("I come hereee");
-    const pageParams = { search, page };
+    const nextPage = currentPage + 1; 
+    const pageParams = { search, page: nextPage };
     await fetchCollection(pageParams);
   };
-  const initialLoad = isEmpty(collection?.[search] || []);
+  const initialLoad = isEmpty(collectionByPages);
   useEffect(() => {
     if (initialLoad) {
       fetchMoreData();

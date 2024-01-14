@@ -20,14 +20,16 @@ export const searchSlice = createSlice({
 
       if (state.collectionAllPrescriptions?.[search]) {
         state.collectionAllPrescriptions[search] = {
-          ...state.collectionAllPrescriptions[search],
-          [page]: collection,
+          collection: {
+            ...state.collectionAllPrescriptions[search].collection,
+            [page]: collection,
+          },
           numberPages,
         };
       } else {
         state.collectionAllPrescriptions = {
           ...state.collectionAllPrescriptions,
-          [search]: { [page]: collection, numberPages },
+          [search]: { collection: { [page]: collection }, numberPages },
         };
       }
     },
@@ -37,31 +39,34 @@ export const searchSlice = createSlice({
 
       if (state.collectionMyPatients?.[search]) {
         state.collectionMyPatients[search] = {
-          ...state.collectionMyPatients[search],
-          [page]: collection,
+          collection: {
+            ...state.collectionMyPatients[search].collection,
+            [page]: collection,
+          },
           numberPages,
         };
       } else {
         state.collectionMyPatients = {
           ...state.collectionMyPatients,
-          [search]: { [page]: collection, numberPages },
+          [search]: { collection: { [page]: collection }, numberPages },
         };
       }
     },
-
     setCollectionAllPatients: (state, action) => {
       const { search, collection, page, numberPages } = action.payload;
 
       if (state.collectionAllPatients?.[search]) {
         state.collectionAllPatients[search] = {
-          ...state.collectionAllPatients[search],
-          [page]: collection,
+          collection: {
+            ...state.collectionAllPatients[search].collection,
+            [page]: collection,
+          },
           numberPages,
         };
       } else {
         state.collectionAllPatients = {
           ...state.collectionAllPatients,
-          [search]: { [page]: collection, numberPages },
+          [search]: { collection: { [page]: collection }, numberPages },
         };
       }
     },
@@ -71,14 +76,16 @@ export const searchSlice = createSlice({
 
       if (state.collectionDoctors?.[search]) {
         state.collectionDoctors[search] = {
-          ...state.collectionDoctors[search],
-          [page]: collection,
+          collection: {
+            ...state.collectionDoctors[search].collection,
+            [page]: collection,
+          },
           numberPages,
         };
       } else {
         state.collectionDoctors = {
           ...state.collectionDoctors,
-          [search]: { [page]: collection, numberPages },
+          [search]: { collection: { [page]: collection }, numberPages },
         };
       }
     },

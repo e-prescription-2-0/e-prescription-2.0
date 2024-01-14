@@ -29,7 +29,11 @@ const ResultCard = ({ data }) => {
           </>
         );
       default:
-        break;
+        return (
+          <>
+            <span>Prescriptions - {data.prescriptionId}</span>
+          </>
+        );
     }
   }, [data]);
   return (
