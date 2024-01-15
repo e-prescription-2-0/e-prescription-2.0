@@ -16,7 +16,7 @@ const MedicineList = () => {
         id={style["div-articles-accordion"]}
       >
         {currentPrescription.medicines.map((medicine, index) => (
-          <MedicineAccordion medicine={medicine} index={index} />
+          <MedicineAccordion key={medicine._id} medicine={medicine} index={index} />
         ))}
       </Accordion>
     </div>

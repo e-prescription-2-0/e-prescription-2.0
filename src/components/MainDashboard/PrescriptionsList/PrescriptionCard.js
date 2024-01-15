@@ -25,15 +25,16 @@ const PrescriptionCard = ({ prescription }) => {
     console.log(openPrescription)
   };
 
-  const { _id, prescribedBy, prescribedTo, validPeriod } = prescription
+  const { prescriptionId, prescribedBy, prescribedTo, validPeriod } = prescription
+
   return (
     <li className={[style["prescriptions-list-item"], isOpen && style['prescriptions-list-item-open']].join(" ")} onClick={onCLickSetThisPrescriptionToOpenPrescription}>
       <div className={style["prescriptions-list-item-content"]}>
         <p className={style["prescriptions-list-item-content-item"]}>
-          <span>Rp №:</span> {_id}
+          <span>Rp №:</span> {prescriptionId}
         </p>
         <p className={style["prescriptions-list-item-content-item"]}>
-          <span>От:</span> {`${prescribedBy["name"]} ${prescribedBy["lastName"]}`}
+          <span>От:</span> {`${prescribedBy["firstName"]} ${prescribedBy["lastName"]}`}
         </p>
         <p className={style["prescriptions-list-item-content-item"]}>
           <span>За:</span> {`${prescribedTo.firstName} ${prescribedTo.lastName}`}

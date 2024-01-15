@@ -12,16 +12,20 @@ function* onFetchMyPrescriptions() {
   try {
     let typeOfRole = '';
     let result = yield call(prescriptionsService.getPrescriptions);
+    console.log(result.prescriptions);
 
-    if (user.role === "doctor") {
-      typeOfRole = "prescribedBy";
-    } else if (user.role === "patient") {
-      typeOfRole = "prescribedTo";
-    }
-    result = result.filter(prescription => prescription.typeOfRole === user.userId)
-    // yield put(prescriptionsSlice.actions.setMyPrescriptions(result))
+    // TO GET THE PRESCRIPTION OF THE CURRENT USER
+    
+    // if (user.role !== "pharmacist") {
+    //   if (user.role === "doctor") {
+    //     typeOfRole = "prescribedBy";
+    //   } else if (user.role === "patient") {
+    //     typeOfRole = "prescribedTo";
+    //   }
+    //   result = result.filter(prescription => prescription.typeOfRole === user.userId);
+    // }
 
-    yield put(prescriptionsSlice.actions.setMyPrescriptions(prescriptionsData))
+    yield put(prescriptionsSlice.actions.setMyPrescriptions(result.prescriptions))
   } catch (error) {
     console.log(error)
   }

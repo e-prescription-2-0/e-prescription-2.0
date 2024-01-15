@@ -17,9 +17,9 @@ const PrescriptionHeader = () => {
       </p>
       <p>УИН: {currentPrescription.prescribedBy.doctorId}</p>
       <p>
-        &#8470; Лек. Практика: {currentPrescription.prescribedBy.hospitalId}
+        &#8470; Лек. Практика: {currentPrescription.prescribedBy.hospitalName}
       </p>
-      <p>Телефон: {currentPrescription.prescribedBy.doctorPhone}</p>
+      <p>Имейл: {currentPrescription.prescribedBy.email}</p>
     </div>
   );
 };

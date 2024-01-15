@@ -11,6 +11,15 @@ export default {
         }
     }),
 
+    getPrescription: serviceBind({
+        url: `/api/prescriptions`,
+        method: METHODS.GET,
+        headers: {
+            "Content-Type": HEADER_FORMATS.JSON,
+            Accept: HEADER_FORMATS.JSON,
+        }
+    }),
+
     createPrescription: serviceBind({
         url: "/api/prescriptions/create",
         method: METHODS.POST,

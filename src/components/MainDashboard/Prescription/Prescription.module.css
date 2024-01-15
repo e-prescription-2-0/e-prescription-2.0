@@ -58,8 +58,35 @@
 }
 
 .div-userInfo{
+    display: flex;
+    justify-content: space-between;
     width: 100%;
     padding: 10px 15px 10px 15px;
+}
+
+.prescription-status {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#prescription-completed {
+    font-size: 30px;
+    background-color: green;
+    width: 50px;
+    text-align: center;
+    align-self: center;
+    
+}
+
+.isCompleted-btn-yes {
+    width: 100px;
+    height: 40px;
+    border-radius: 10px;
+    color: #ffffff;
+    background-color: green;
+    align-self: center;
+    margin-top: 5px;
 }
 
 .div-no-prescription-content{
