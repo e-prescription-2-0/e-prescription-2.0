@@ -9,6 +9,7 @@
   justify-content: center;
   align-items: stretch;
   column-gap: 4.5em;
+  flex-grow:1
 }
 
 .doctor-card-list-item {
@@ -28,7 +29,7 @@
   background-color: #ffebeb;
 }
 .main-search-input-from-user-patients {
-  background-color: #cfe2ff;
+  background-color: rgb(246, 252, 207, 0.8);
 }
 
 .main-search-doctors-container input:focus {
@@ -39,17 +40,17 @@
   background-color: rgba(255, 235, 235, 0.5);
 }
 .main-search-input-from-user-patients:focus {
-  background-color: rgba(207, 226, 255, 0.5);
+  background-color: #f2f2f2;
 }
 
 .main-search-doctors-container button {
-  background-color: #78d6c6;
+  background-color: #3c6e71;
   border: none;
   width: 5rem;
 }
 
 .main-search-doctors-container h1 {
-  color: #78d6c6;
+  color: #3c6e71;
   margin-block: 1rem;
 }
 
@@ -75,7 +76,8 @@
 .main-search-doctors-container button:hover,
 .main-search-doctors-container button:active,
 .main-search-doctors-container button:focus {
-  background-color: #3c6e71;
+  background-color: rgb(246, 252, 207, 0.8);
+  border: 1px solid  #3c6e71;
 }
 
 .search-doctors-loading-container {
@@ -169,7 +171,7 @@ input[type="checkbox"] {
   appearance: none;
   width: 120px;
   height: 50px;
-  background-color: #78d6c6;
+  background-color: #3c6e71;
   border-radius: 20px;
   cursor: pointer;
   transition: all 0.4s;
@@ -219,5 +221,5 @@ input[type="checkbox"]:not(:checked) ~ .label-switch.off {
 }
 
 .switch-and-title-box h4 {
-  color: #78d6c6;
+  color: #3c6e71;
 }

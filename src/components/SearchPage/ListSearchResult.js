@@ -4,8 +4,14 @@ import { useEffect, useState } from "react";
 import { Spinner } from "react-bootstrap";
 import { isEmpty } from "ramda";
 import style from "./SearchPage.module.css";
+import styles from '../CreatePrescription/PatientsTable/PatientsTable.module.css';
 
-const ListSearchResult = ({ collection, fetchCollection, searchParams }) => {
+import Table from 'react-bootstrap/Table';
+import PatientData from "../CreatePrescription/PatientsTable/PatientData";
+import PatientTable from "../CreatePrescription/PatientsTable/PatientsTable";
+
+
+const ListSearchResult = ({ collection, fetchCollection, searchParams,hidePatientList }) => {
   const search = searchParams.get("search") || "";
 
   const collectionByPages = collection?.[search]?.collection || {};
@@ -46,9 +52,10 @@ const ListSearchResult = ({ collection, fetchCollection, searchParams }) => {
       as="ul"
       className={style["search-collection-list"]}
     >
-      {collectionData.map((data) => (
+    <PatientTable hidePatientList={hidePatientList} patientsList ={collectionData}/>
+      {/* {collectionData.map((data) => (
         <ResultCard key={data._id} data={data} />
-      ))}
+      ))} */}
       {initialLoad && loader}
     </InfiniteScroll>
   );

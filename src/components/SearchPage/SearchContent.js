@@ -8,7 +8,7 @@ import { useReduxAction } from "../../hooks/useReduxAction";
 import { searchSlice } from "../../reducers/search";
 import { useState } from "react";
 
-const SearchContent = ({ searchType }) => {
+const SearchContent = ({ searchType, hidePatientList }) => {
   const [searchParams, setSearchParams] = useSearchParams({});
 
   // Redux for all doctors
@@ -86,6 +86,7 @@ const SearchContent = ({ searchType }) => {
         collection={collection}
         fetchCollection={fetchCollection}
         searchParams={searchParams}
+        hidePatientList={hidePatientList}
       />
     </Container>
   );

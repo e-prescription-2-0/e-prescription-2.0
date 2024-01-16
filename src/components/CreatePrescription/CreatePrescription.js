@@ -5,6 +5,7 @@ import style from "./CreatePresscription.module.css"
 import CreateMedicineForPrescriptionPopUp from "./NewMedicinePopUpForm/CreateMedicineForPrescriptionPopUp"
 import PatientTable from "./PatientsTable/PatientsTable"
 import { formFieldCheckFn } from "../../utils/formFieldsCheck"
+import SearchContent from "../SearchPage/SearchContent"
 
 const CreatePrescription = () => {
   const [isPatientChooseMode, setisPatientChooseMode] = useState(true)
@@ -13,7 +14,7 @@ const CreatePrescription = () => {
   const [editIndex, setEditIndex] = useState(-1)
   const [showPopUpForm, setShowPopUpForm] = useState(false)
   const [patientsList, setPatientsList] = useState([])
-  const [currentPatient, setCurrentPatient] = useState(null)
+  const [currentPatient, setCurrentPatient] = useState({})
 
   const [formValues, setFormaValues] = useState({
     _id: "",
@@ -25,9 +26,7 @@ const CreatePrescription = () => {
     instructions: "",
   })
 
-  useEffect(() => {
-    setPatientsList(mockedPatients)
-  }, [])
+
 
   const showPopUpModal = () => {
     setFormaValues({
@@ -85,10 +84,12 @@ const CreatePrescription = () => {
     setFormaValues(medicineItems[index])
   }
 
-  const hidePatientList = (id) => {
-    if (id) {
-      setCurrentPatient(patientsList.find((p) => p.id === id))
+  const hidePatientList = (data) => {
+  console.log(data);
+    if (data._id) {
+      setCurrentPatient(data)
     }
+    //console.log(currentPatient);
     setisPatientChooseMode(false)
   }
 
@@ -99,10 +100,12 @@ const CreatePrescription = () => {
   }
 
   return isPatientChooseMode ? (
-    <PatientTable
-      hidePatientList={hidePatientList}
-      patientsList={patientsList}
-    />
+   
+
+    <SearchContent
+        searchType={'patients'}
+        hidePatientList={hidePatientList}
+      />
   ) : (
     <div className={style["create-prescription-container"]}>
       <CreatePrescriptionTemplate
