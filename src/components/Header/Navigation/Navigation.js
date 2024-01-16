@@ -1,10 +1,11 @@
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {  NavLink, useNavigate } from "react-router-dom";
 import { navLinkConfig } from "../../../constants/navigation";
 import style from "./Navigation.module.css";
-
+import { useReduxAction } from "../../../hooks/useReduxAction";
+import { clearMessages } from "../../../reducers/messageDispatcher";
 import { useSelector } from "react-redux";
 import Messages from "../../Messages/Messages";
 
@@ -13,13 +14,23 @@ export const Navigation = () => {
   const {role,email} = useSelector(state => state.auth.authUser) ?? {role:'guest'};
   const messageState = useSelector(state => state.messages);
   const {isMessage,messages} = messageState;
-  console.log(isMessage);
-  console.log(messages);
-  
-  
 
+  const dispatchClearMessageAction = useReduxAction(clearMessages)
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
   const navigate = useNavigate();
+
+  useEffect(() => {
+
+    if(isMessage) {
+      
+      const timeoutId = setTimeout(() => {
+    
+        dispatchClearMessageAction();
+      }, 2000); 
+
+      return () => clearTimeout(timeoutId);
+    }
+  },[isMessage,dispatchClearMessageAction])
 
   
 

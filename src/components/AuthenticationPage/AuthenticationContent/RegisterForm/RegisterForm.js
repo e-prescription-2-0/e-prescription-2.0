@@ -1,5 +1,5 @@
 // Import necessary modules and components from React and Bootstrap
-import React, { useCallback, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { Form } from "react-bootstrap";
 import CredentialsFieldsComponent from "./BaseFields/CredentialsFields/CredentialsFieldsComponent";
 import PersonalFieldsComponent from "./BaseFields/PersonalFields/PersonalFieldsComponent";
@@ -13,6 +13,7 @@ import { fetchRegisteredUser } from "../../../../reducers/auth";
 import { useReduxAction } from "../../../../hooks/useReduxAction";
 import { useNavigate } from "react-router-dom";
 import { arrayFieldFactory } from "./BaseFields/PersonalFields/requestFields";
+import { useSelector } from "react-redux";
 
 // Define the RegisterForm component
 const RegisterForm = () => {
@@ -25,6 +26,15 @@ const RegisterForm = () => {
   });
   const dispatchSetAuthUser = useReduxAction(fetchRegisteredUser);
   const navigate = useNavigate();
+
+  const messageState = useSelector(state => state.messages);
+  const {isMessage, messages} = messageState;
+  useEffect(() => {
+    if (isMessage && messages.type === "") {
+      navigate("/")
+    }
+  },[isMessage,messages.type,navigate])
+
 
   // Handle form submission
   const handleSubmit = (event) => {
@@ -56,7 +66,7 @@ const RegisterForm = () => {
       };
 
       dispatchSetAuthUser(userRegistrationData);
-      navigate("/");
+     
     }
   };
 

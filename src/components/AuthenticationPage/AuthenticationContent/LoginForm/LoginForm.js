@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Form from "react-bootstrap/Form";
 import style from "../../AuthenticationPage.module.css";
 import FieldBuilder from "../helpers/FieldBuilder";
@@ -6,6 +6,7 @@ import { LoginFields } from "./LoginFields";
 import { fetchLoginUser } from "../../../../reducers/auth";
 import { useReduxAction } from "../../../../hooks/useReduxAction";
 import { useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 
 
@@ -19,6 +20,13 @@ const LoginForm = ({ setForm }) => {
 
   const dispatchSetAuthUser = useReduxAction(fetchLoginUser);
   const navigate = useNavigate();
+  const messageState = useSelector(state => state.messages);
+  const {isMessage, messages} = messageState;
+  useEffect(() => {
+    if (isMessage && messages.type === "") {
+      navigate("/")
+    }
+  },[isMessage,messages.type,navigate])
 
 
   const handleSubmit = (event) => {
@@ -28,9 +36,11 @@ const LoginForm = ({ setForm }) => {
     const {loginEmail, loginPassword} = loginFormData
   
     setInvalidLoginForm(!invalidLoginForm);
+
+    if(!loginEmail || !loginPassword) return 
     dispatchSetAuthUser({loginEmail, loginPassword})
-    navigate('/')
-    
+
+   
   };
 
   const handleChange = (event) => {

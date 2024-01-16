@@ -23,7 +23,7 @@ const serviceBind = (service) => {
       ...options.additionalHeaders,
     }
 
-    
+   
 
     url = url.replace(/\{([^\s\:\}]+)?\}/g, function (match, key, format) {
       let value = params[key]
