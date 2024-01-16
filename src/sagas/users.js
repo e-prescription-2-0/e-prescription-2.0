@@ -1,42 +1,46 @@
-import { all, call, put, takeLatest } from "@redux-saga/core/effects"
-import { doctorsData } from "../mockData"
-import { usersSlice } from "../reducers/users"
-import usersService from "../services/users-service"
+import { all, call, put, takeLatest } from "@redux-saga/core/effects";
+import { usersSlice } from "../reducers/users";
+import usersService from "../services/users-service";
+import { searchSlice } from "../reducers/search";
 
-function* onFetchDoctors() {
+function* onFetchProfile(action) {
   try {
-    const result = yield call(usersService.getDoctors)
+    const result = yield call(usersService.getProfile, {
+      id: action.payload,
+    });
+    console.log(result);
 
-    console.log(result)
-    yield put(usersSlice.actions.setDoctors(result))
+    yield put(usersSlice.actions.setProfile(result));
   } catch (error) {
-    console.log("====================================")
-    console.log(error)
-    console.log("====================================")
+    console.log("====================================");
+    console.log(error);
+    console.log("====================================");
+  } finally {
+    // Dispatch setLoading(false) after the API call is complete (success or error)
+    yield put(usersSlice.actions.setLoading(false));
   }
 }
 
-function* onFetchDoctorById(action) {
+function* onFetchPatientProfile(action) {
   try {
-    console.log(action)
-    // const result = yield callExpression()
+    const result = yield call(usersService.getPatientProfile, {
+      patientId: action.payload,
+    });
 
-    // console.log(doctorsData)
-    yield put(
-      usersSlice.actions.setDoctors(
-        doctorsData.filter((doctor) => doctor.id === action.payload)
-      )
-    )
+    yield put(usersSlice.actions.setProfile(result));
+    yield put(usersSlice.actions.setLoading(false));
+    yield put(searchSlice.actions.setLoadingPatient(false));
   } catch (error) {
-    console.log("====================================")
-    console.log(error)
-    console.log("====================================")
+    console.log("====================================");
+    console.log(error);
+    console.log("====================================");
+    yield put(searchSlice.actions.setErrorFetchingPatient(true));
   }
 }
 
 export default function* usersSaga() {
   yield all([
-    takeLatest(usersSlice.actions.fetchDoctors, onFetchDoctors),
-    takeLatest(usersSlice.actions.fetchDoctorById, onFetchDoctorById),
-  ])
+    takeLatest(usersSlice.actions.fetchProfile, onFetchProfile),
+    takeLatest(usersSlice.actions.fetchPatientProfile, onFetchPatientProfile),
+  ]);
 }

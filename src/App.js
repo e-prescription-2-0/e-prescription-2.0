@@ -6,6 +6,7 @@ import CreatePrescription from "./components/CreatePrescription/CreatePrescripti
 import { Footer } from "./components/Footer/Footer"
 import Header from "./components/Header/Header"
 import MainDashboard from "./components/MainDashboard/MainDashboard"
+import SearchPage from "./components/SearchPage/SearchPage"
 import { Welcome } from "./components/Welcome/Welcome"
 import store from "./redux"
 
@@ -18,6 +19,18 @@ const App = () => {
           <Route path="/" element={<Welcome />} />
           <Route path="/prescriptions" element={<MainDashboard />} />
           <Route path="/create-prescription" element={<CreatePrescription />} />
+          <Route
+            path="/search/doctors"
+            element={<SearchPage searchType={"doctors"} />}
+          />
+          <Route
+            path="/search/patients"
+            element={<SearchPage searchType={"patients"} />}
+          />
+          <Route
+            path="/search/prescriptions"
+            element={<SearchPage searchType={"prescriptions"} />}
+          />
         </Routes>
       </Provider>
 

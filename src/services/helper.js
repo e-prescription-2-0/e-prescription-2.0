@@ -1,7 +1,10 @@
 import axios from "axios"
 import { isEmpty, omit, type } from "ramda"
 
-const baseUrl = "http://localhost:3030"
+const baseUrl = "https://e-prescriptions-server.onrender.com"
+
+
+
 
 const formatParams = (params) => {
   if (!isEmpty(params)) {
@@ -45,6 +48,7 @@ const serviceBind = (service) => {
 
     // Build the absolute URL
     url = `${baseUrl}${url}`
+    console.log(url)
 
     return axios(url, {
       method,
