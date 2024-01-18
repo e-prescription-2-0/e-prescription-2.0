@@ -3,9 +3,6 @@ import { isEmpty, omit, type } from "ramda"
 
 const baseUrl = "https://e-prescriptions-server.onrender.com"
 
-
-
-
 const formatParams = (params) => {
   if (!isEmpty(params)) {
     if (typeof params === "object") {
@@ -25,8 +22,6 @@ const serviceBind = (service) => {
       ...headers,
       ...options.additionalHeaders,
     }
-
-   
 
     url = url.replace(/\{([^\s\:\}]+)?\}/g, function (match, key, format) {
       let value = params[key]
