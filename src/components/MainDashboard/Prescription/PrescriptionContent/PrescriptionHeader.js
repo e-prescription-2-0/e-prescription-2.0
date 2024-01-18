@@ -3,7 +3,7 @@ import style from "../Prescription.module.css";
 
 const PrescriptionHeader = () => {
   const currentPrescription = useReduxState(
-    (state) => state.prescriptions.openPrescription
+    (state) => state.prescriptions.prescription
   );
   return (
     <div className={style["div-header"]}>

@@ -31,6 +31,20 @@ function* onFetchMyPrescriptions() {
   }
 }
 
+function* onFetchPrescription(action) {
+  const prescriptionId = action.payload
+  try {
+    const result = yield call(prescriptionsService.getPrescription, {
+      prescriptionId
+    })
+
+    yield put(prescriptionsSlice.actions.setPrescription(result))
+    console.log(result);
+  } catch (error) {
+    console.log(error);
+  }
+}
+
 function* onCreatePrescription(action) {
   try {
     const prescription = yield call(prescriptionsService.createPrescription, action.payload);
@@ -41,9 +55,25 @@ function* onCreatePrescription(action) {
   }
 }
 
+function* onCompletePrescription(action) {
+  const prescriptionId = action.payload
+  try {
+    const result = yield call(prescriptionsService.completePrescription, {
+      prescriptionId
+    });
+
+    yield put(prescriptionsSlice.actions.setPrescription(result))
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+
 export default function* prescriptionsSaga() {
   yield all([
     takeLatest(prescriptionsSlice.actions.fetchMyPrescriptions, onFetchMyPrescriptions),
-    takeLatest(prescriptionsSlice.actions.fetchCreatePrescription, onCreatePrescription)
+    takeLatest(prescriptionsSlice.actions.fetchCreatePrescription, onCreatePrescription),
+    takeLatest(prescriptionsSlice.actions.fetchPrescription, onFetchPrescription),
+    takeLatest(prescriptionsSlice.actions.completePrescription, onCompletePrescription)
   ])
 }

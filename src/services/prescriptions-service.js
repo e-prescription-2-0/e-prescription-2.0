@@ -12,8 +12,17 @@ export default {
     }),
 
     getPrescription: serviceBind({
-        url: `/api/prescriptions`,
+        url: `/api/prescriptions/{prescriptionId}`,
         method: METHODS.GET,
+        headers: {
+            "Content-Type": HEADER_FORMATS.JSON,
+            Accept: HEADER_FORMATS.JSON,
+        }
+    }),
+
+    completePrescription: serviceBind({
+        url: "/api/prescriptions/{prescriptionId}/complete",
+        method: METHODS.PATCH,
         headers: {
             "Content-Type": HEADER_FORMATS.JSON,
             Accept: HEADER_FORMATS.JSON,

@@ -7,9 +7,10 @@ import { useReduxState } from "../../../hooks/useReduxState";
 import { useMediaQuery } from "react-responsive";
 
 const PrescriptionCard = ({ prescription }) => {
-  const setOpenPrescription = useReduxAction(prescriptionsSlice.actions.setOpenPrescription)
-  const openPrescription = useReduxState((state)=>state.prescriptions.openPrescription)
+  const setOpenPrescription = useReduxAction(prescriptionsSlice.actions.setPrescription)
+  const openPrescription = useReduxState((state)=>state.prescriptions.prescription)
 
+  const getPrescription = useReduxAction(prescriptionsSlice.actions.fetchPrescription)
 
   const isDesktop = useMediaQuery({ minWidth: 1501 });
 
@@ -21,6 +22,7 @@ const PrescriptionCard = ({ prescription }) => {
 
 
   const onCLickSetThisPrescriptionToOpenPrescription = () => {
+    getPrescription(prescription._id)
     setOpenPrescription(prescription)
     console.log(openPrescription)
   };
