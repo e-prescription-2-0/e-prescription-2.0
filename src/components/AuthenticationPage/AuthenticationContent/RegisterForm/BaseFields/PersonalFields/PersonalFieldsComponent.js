@@ -21,9 +21,9 @@ const PersonalFieldsComponent = ({
 
   // Combining name fields with profile-specific fields based on the selected profile type
   const fields = nameFields.concat(
-    ProfileFields[registrationFormData?.profileType || "patient"]
+    ProfileFields[registrationFormData?.role]
   )
-  console.log(fields)
+
 
   // Rendering the combined fields along with associated handlers and styles
   return (

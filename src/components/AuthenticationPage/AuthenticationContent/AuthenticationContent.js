@@ -5,9 +5,11 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import style from "../AuthenticationPage.module.css"
 import ForgotPasswordForm from "./ForgotPasswordForm/ForgotPasswordForm";
+import { useNavigate } from "react-router-dom";
 
 const AuthenticationContent = ({ formName, setForm }) => {
   const newRef = useRef(null);
+  const navigate = useNavigate();
 
   const handleOutsideClick = (e) => {
     if (newRef.current && !newRef.current.contains(e.target)) {
@@ -28,7 +30,9 @@ const AuthenticationContent = ({ formName, setForm }) => {
         <div id={style["formContent"]} ref={newRef}>
           <FontAwesomeIcon
             className={style["closeIcon"]}
-            onClick={() => setForm(null)}
+            onClick={() => {
+              setForm(null)
+              navigate('/')}}
             icon={faXmark}
           />
 
