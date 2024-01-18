@@ -21,7 +21,7 @@ export const dashBoardNavData = {
       icon: <FontAwesomeIcon icon={faFilePrescription} />,
     },
     {
-      linkTo: "/prescription/create",
+      linkTo: "/create-prescription",
       text: "Изписване на рецепта",
       icon: <FontAwesomeIcon icon={faFilePen} />,
     },
