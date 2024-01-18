@@ -23,7 +23,6 @@ const PersonalFieldsComponent = ({
   const fields = nameFields.concat(
     ProfileFields[registrationFormData?.profileType || "patient"]
   )
-  console.log(fields)
 
   // Rendering the combined fields along with associated handlers and styles
   return (

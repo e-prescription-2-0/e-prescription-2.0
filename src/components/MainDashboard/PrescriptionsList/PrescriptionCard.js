@@ -24,7 +24,6 @@ const PrescriptionCard = ({ prescription }) => {
   const onCLickSetThisPrescriptionToOpenPrescription = () => {
     getPrescription(prescription._id)
     setOpenPrescription(prescription)
-    console.log(openPrescription)
   };
 
   const { prescriptionId, prescribedBy, prescribedTo, validPeriod } = prescription

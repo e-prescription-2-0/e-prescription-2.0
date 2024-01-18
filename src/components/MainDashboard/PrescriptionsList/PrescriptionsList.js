@@ -36,7 +36,6 @@ const PrescriptionsList = ({}) => {
   useEffect(() => {
     if (loading) {
       getPrescriptions();
-      console.log(prescriptions);
       setLoading(false);
     }
   }, [getPrescriptions, loading, prescriptions]);

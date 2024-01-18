@@ -12,7 +12,6 @@ function* onFetchMyPrescriptions() {
   try {
     let typeOfRole = '';
     let result = yield call(prescriptionsService.getPrescriptions);
-    console.log(result.prescriptions);
 
     // TO GET THE PRESCRIPTION OF THE CURRENT USER
     
@@ -39,7 +38,6 @@ function* onFetchPrescription(action) {
     })
 
     yield put(prescriptionsSlice.actions.setPrescription(result))
-    console.log(result);
   } catch (error) {
     console.log(error);
   }

@@ -7,7 +7,6 @@ function* onFetchDoctors() {
   try {
     const result = yield call(usersService.getDoctors)
 
-    console.log(result)
     yield put(usersSlice.actions.setDoctors(result))
   } catch (error) {
     console.log("====================================")
@@ -18,7 +17,6 @@ function* onFetchDoctors() {
 
 function* onFetchDoctorById(action) {
   try {
-    console.log(action)
     // const result = yield callExpression()
 
     // console.log(doctorsData)
