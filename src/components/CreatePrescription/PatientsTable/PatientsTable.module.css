@@ -1,7 +1,7 @@
 .patient-table-container {
-    max-width: 60em;
+min-width: 60em;
     margin: 20px auto;
-    padding: 2em;
+    padding: 3em;
     background-color: #3c6e71;
     text-align: center;
     color: #fff;
@@ -30,6 +30,18 @@
     background-color: rgb(246, 252, 207, 0.8);
     color: #000;
 
+}
+
+.table-row:hover {
+    cursor: pointer;
+}
+
+.no-found-results {
+    margin: 0 auto;
+    color: white;
+    font-size: 2em;
+    text-align: center;
+    width: 100%;
 }
 
 
