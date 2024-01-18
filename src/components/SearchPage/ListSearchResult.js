@@ -11,7 +11,7 @@ import PatientData from "../CreatePrescription/PatientsTable/PatientData";
 import PatientTable from "../CreatePrescription/PatientsTable/PatientsTable";
 
 
-const ListSearchResult = ({ collection, fetchCollection, searchParams,hidePatientList }) => {
+const ListSearchResult = ({ collection, fetchCollection, searchParams,hidePatientList,searchType,isPrescriptionCreateMode }) => {
   const search = searchParams.get("search") || "";
 
   const collectionByPages = collection?.[search]?.collection || {};
@@ -41,7 +41,7 @@ const ListSearchResult = ({ collection, fetchCollection, searchParams,hidePatien
     }
   }, [fetchMoreData, initialLoad]);
 
-  console.log(initialLoad);
+  
 
   return (
     <InfiniteScroll
@@ -52,7 +52,7 @@ const ListSearchResult = ({ collection, fetchCollection, searchParams,hidePatien
       as="ul"
       className={style["search-collection-list"]}
     >
-    <PatientTable hidePatientList={hidePatientList} patientsList ={collectionData}/>
+    <PatientTable hidePatientList={hidePatientList} patientsList ={collectionData} searchType={searchType} isPrescriptionCreateMode={isPrescriptionCreateMode}/>
       {/* {collectionData.map((data) => (
         <ResultCard key={data._id} data={data} />
       ))} */}

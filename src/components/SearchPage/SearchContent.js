@@ -8,7 +8,7 @@ import { useReduxAction } from "../../hooks/useReduxAction";
 import { searchSlice } from "../../reducers/search";
 import { useState } from "react";
 
-const SearchContent = ({ searchType, hidePatientList }) => {
+const SearchContent = ({ searchType, hidePatientList,isPrescriptionCreateMode }) => {
   const [searchParams, setSearchParams] = useSearchParams({});
 
   // Redux for all doctors
@@ -38,7 +38,7 @@ const SearchContent = ({ searchType, hidePatientList }) => {
 
   const [isMyPatientsChecked, setIsMyPatientsChecked] = useState(false);
 
-  console.log(isMyPatientsChecked);
+  
   let collection, fetchCollection, titlePage, placeholderText;
 
   switch (searchType) {
@@ -87,6 +87,11 @@ const SearchContent = ({ searchType, hidePatientList }) => {
         fetchCollection={fetchCollection}
         searchParams={searchParams}
         hidePatientList={hidePatientList}
+        searchType={searchType}
+        isPrescriptionCreateMode={isPrescriptionCreateMode}
+
+     
+
       />
     </Container>
   );

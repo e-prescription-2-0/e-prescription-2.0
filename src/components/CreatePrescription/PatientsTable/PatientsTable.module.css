@@ -32,6 +32,18 @@ min-width: 60em;
 
 }
 
+.table-row:hover {
+    cursor: pointer;
+}
+
+.no-found-results {
+    margin: 0 auto;
+    color: white;
+    font-size: 2em;
+    text-align: center;
+    width: 100%;
+}
+
 
 
 

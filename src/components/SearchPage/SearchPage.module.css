@@ -34,10 +34,14 @@
 
 .main-search-doctors-container input:focus {
   border-bottom-color: #3c6e71;
+  border-top-color: #3c6e71;
+  border-left-color: #fff;
 }
 
 .main-search-input-for-single-patient:focus {
-  background-color: rgba(255, 235, 235, 0.5);
+  background-color: #d9d9d9;
+  
+  
 }
 .main-search-input-from-user-patients:focus {
   background-color: #f2f2f2;
@@ -223,3 +227,5 @@ input[type="checkbox"]:not(:checked) ~ .label-switch.off {
 .switch-and-title-box h4 {
   color: #3c6e71;
 }
+
+

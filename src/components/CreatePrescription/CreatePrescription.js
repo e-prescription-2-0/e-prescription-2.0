@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react"
-import mockedPatients from "../../constants/mockedPatients"
 import CreatePrescriptionTemplate from "./CreatePrescriptionTemplate/CreatePrescriptionTemplate"
 import style from "./CreatePresscription.module.css"
 import CreateMedicineForPrescriptionPopUp from "./NewMedicinePopUpForm/CreateMedicineForPrescriptionPopUp"
@@ -14,7 +13,8 @@ const CreatePrescription = () => {
   const [editIndex, setEditIndex] = useState(-1)
   const [showPopUpForm, setShowPopUpForm] = useState(false)
   const [patientsList, setPatientsList] = useState([])
-  const [currentPatient, setCurrentPatient] = useState({})
+  const [currentPatient, setCurrentPatient] = useState({});
+  const isPrescriptionCreateMode = true;
 
   const [formValues, setFormaValues] = useState({
     _id: "",
@@ -105,6 +105,7 @@ const CreatePrescription = () => {
     <SearchContent
         searchType={'patients'}
         hidePatientList={hidePatientList}
+        isPrescriptionCreateMode={isPrescriptionCreateMode}
       />
   ) : (
     <div className={style["create-prescription-container"]}>
