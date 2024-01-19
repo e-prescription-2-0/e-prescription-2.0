@@ -9,6 +9,10 @@ const Hero = () => {
   const authUser = useSelector(state => state.auth.authUser) ;
   const {email} = authUser || '';
 
+
+
+
+
   return (
     <section className={style["hero-section"]}>
       <div className={style["hero-content"]}>

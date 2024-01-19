@@ -18,7 +18,7 @@ const App = () => {
       <main className={style["main-content"]}>
         <Header />
         <Routes>
-          <Route path="/" element={<Welcome />} />
+          <Route path="/*" element={<Welcome />} />
           <Route path="/prescriptions" element={<MainDashboard />} />
           <Route path="/create-prescription" element={<CreatePrescription />} />
           <Route
@@ -33,14 +33,14 @@ const App = () => {
             path="/search/prescriptions"
             element={<SearchPage searchType={"prescriptions"} />}
           />
-          <Route
+          {/* <Route
             path="/login"
             element={<AuthenticationPage link={"login"} />}
           />
           <Route
             path="/register"
             element={<AuthenticationPage link={"register"} />}
-          />
+          /> */}
           <Route path="/logout" element={<Logout />} />
         </Routes>
 

@@ -2,7 +2,7 @@ import { Button } from "react-bootstrap"
 import style from "../../../../AuthenticationPage.module.css"
 import FieldBuilder from "../../../helpers/FieldBuilder"
 import { doctorFields } from "./doctorFields"
-import { nameFields } from "./nameFields"
+import { nameFields } from "./namesFields"
 import { patientFields } from "./patientFields"
 import { pharmacistFields } from "./pharmacistFields"
 
