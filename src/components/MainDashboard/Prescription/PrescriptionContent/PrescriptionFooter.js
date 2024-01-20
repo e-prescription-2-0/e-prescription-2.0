@@ -7,13 +7,14 @@ import style from "../Prescription.module.css";
 const PrescriptionFooter = () => {
   const completePrescription = useReduxAction(prescriptionsSlice.actions.completePrescription)
   const deletePrescription = useReduxAction(prescriptionsSlice.actions.deletePrescription)
-  const getAllPrescription = useReduxAction(prescriptionsSlice.actions.fetchMyPrescriptions)
+
   const currentPrescription = useReduxState(
     (state) => state.prescriptions.prescription
   );
 
   let user = {
-    role: "doctor"
+    role: "doctor",
+    id: "658f0b9d1a1925a19548cc8e"
   }
 
   const onCompleteBtnClick = () => {
@@ -27,6 +28,14 @@ const PrescriptionFooter = () => {
       deletePrescription(currentPrescription._id)
     }
   }
+
+  const isOwner = () => {
+    //when we have saved user in redux, take the user from there
+    
+    return user.id === currentPrescription.prescribedBy._id
+  }
+
+  console.log(isOwner());
 
   return (
     <div className={style["div-userInfo"]}>
@@ -52,7 +61,7 @@ const PrescriptionFooter = () => {
             </div>
           }
           {
-            user.role === "doctor" &&
+            user.role === "doctor" && isOwner() &&
             <div className={style["center-div"]}>
               <button onClick={onDeleteBtnClick} className={style["delete-btn"]}>Delete</button>
             </div>
