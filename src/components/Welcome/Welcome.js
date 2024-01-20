@@ -10,18 +10,19 @@ export const Welcome = () => {
   const { action } = useParams();
 
   if (action && !["login", "register"].includes(action)) {
+    console.log("i come heree");
     return <h1>404 - Page not Found</h1>;
   }
   return (
     <div className={style["main"]}>
+      <AuthenticationPage link={action} />
+
       <Hero action={action} />
       <Passion />
 
       <DemoSteps />
 
       <Benefits />
-
-      {action && <AuthenticationPage link={action} />}
     </div>
   );
 };
