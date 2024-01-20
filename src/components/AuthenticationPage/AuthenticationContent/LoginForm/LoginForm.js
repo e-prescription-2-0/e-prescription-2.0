@@ -8,7 +8,7 @@ import style from "../../AuthenticationPage.module.css"
 import FieldBuilder from "../helpers/FieldBuilder"
 import { LoginFields } from "./LoginFields"
 
-const LoginForm = ({ setForm }) => {
+const LoginForm = () => {
   const [invalidLoginForm, setInvalidLoginForm] = useState(false)
   const [loginFormData, setLoginFormData] = useState({
     email: "",
@@ -79,7 +79,7 @@ const LoginForm = ({ setForm }) => {
       <div id={style["formFooter"]}>
         <p
           className={style["underlineHover"]}
-          onClick={() => setForm("forgotPassword")}
+          onClick={() => navigate("/forgotPassword")}
         >
           Forgot Password?
         </p>

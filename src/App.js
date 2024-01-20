@@ -18,7 +18,7 @@ const App = () => {
       <main className={style["main-content"]}>
         <Header />
         <Routes>
-          <Route path="/:action" element={<Welcome />} />
+          <Route path="/:action?" element={<Welcome />} />
           <Route path="/prescriptions" element={<MainDashboard />} />
           <Route path="/create-prescription" element={<CreatePrescription />} />
           <Route

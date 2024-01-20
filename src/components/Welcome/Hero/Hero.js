@@ -1,17 +1,11 @@
-import { Link } from "react-router-dom"
-import style from "./Hero.module.css"
+import { Link } from "react-router-dom";
+import style from "./Hero.module.css";
 import { useSelector } from "react-redux";
 
-
-
 const Hero = () => {
-
-  const authUser = useSelector(state => state.auth.authUser) ;
+  const authUser = useSelector((state) => state.auth.authUser);
   const {email} = authUser || '';
-
-
-
-
+  // const email  = "";
 
   return (
     <section className={style["hero-section"]}>
@@ -24,20 +18,21 @@ const Hero = () => {
             Здравеопазване от бъдещето
           </p>
           <div className={style["hero-content-description-pill-button"]}>
-           
-            <Link to={ email ?  '/prescriptions' : '/login'}>
-            <button 
-              className={style["hero-content-description-pill-button-login"]}
-            >
-              {email ? 'Табло'  : 'Login'}
-            </button>
+            <Link to={email ? "/prescriptions" : "/login"}>
+              <button
+                className={style["hero-content-description-pill-button-login"]}
+              >
+                {email ? "Табло" : "Login"}
+              </button>
             </Link>
-            <Link to={email ?  '/logout' : '/register'}>
-            <button
-              className={style["hero-content-description-pill-button-register"]}
-            >
-               {email ? 'Излез'  : 'Register'}
-            </button>
+            <Link to={email ? "/logout" : "/register"}>
+              <button
+                className={
+                  style["hero-content-description-pill-button-register"]
+                }
+              >
+                {email ? "Излез" : "Register"}
+              </button>
             </Link>
           </div>
         </div>
@@ -46,7 +41,7 @@ const Hero = () => {
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default Hero
+export default Hero;
