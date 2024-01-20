@@ -25,6 +25,8 @@ export const prescriptionsSlice = createSlice({
     deletePrescription: () => {},
     removeDeletedPrescription: (state, action) => {
       state.allMyPrescriptions = state.allMyPrescriptions.filter(x => x._id !== action.payload._id)
-    }
+    },
+    fetchActivePrescription: () => {},
+    fetchCompletedPrescription: () => {},
   },
 });

@@ -13,7 +13,7 @@ const PrescriptionFooter = () => {
   );
 
   let user = {
-    role: "doctor",
+    role: "pharmacist",
     id: "658f0b9d1a1925a19548cc8e"
   }
 
@@ -35,8 +35,6 @@ const PrescriptionFooter = () => {
     return user.id === currentPrescription.prescribedBy._id
   }
 
-  console.log(isOwner());
-
   return (
     <div className={style["div-userInfo"]}>
       <div>
@@ -56,7 +54,7 @@ const PrescriptionFooter = () => {
             <div className={style["center-div"]}>
               <p>Изпълнена рецепта?</p>
               {
-                currentPrescription.isCompleted ? <i id={style["prescription-completed"]} class="fa-solid fa-check"></i> : <button onClick={onCompleteBtnClick} className={style["isCompleted-btn-yes"]}>Изпълни</button>
+                currentPrescription.isCompleted ? <i id={style["prescription-completed"]} className="fa-solid fa-check"></i> : <button onClick={onCompleteBtnClick} className={style["isCompleted-btn-yes"]}>Изпълни</button>
               }
             </div>
           }
