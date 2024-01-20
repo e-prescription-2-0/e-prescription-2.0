@@ -66,12 +66,27 @@ function* onCompletePrescription(action) {
   }
 }
 
+function* onDeletePrescription(action) {
+  try {
+    const prescriptionId = action.payload
+    const result = yield call(prescriptionsService.deletePrescription, {
+      prescriptionId
+    })
+
+    yield put(prescriptionsSlice.actions.removeDeletedPrescription(result))
+    console.log(result);
+  } catch (error) {
+    console.log(error);
+  }
+}
+
 
 export default function* prescriptionsSaga() {
   yield all([
     takeLatest(prescriptionsSlice.actions.fetchMyPrescriptions, onFetchMyPrescriptions),
     takeLatest(prescriptionsSlice.actions.fetchCreatePrescription, onCreatePrescription),
     takeLatest(prescriptionsSlice.actions.fetchPrescription, onFetchPrescription),
-    takeLatest(prescriptionsSlice.actions.completePrescription, onCompletePrescription)
+    takeLatest(prescriptionsSlice.actions.completePrescription, onCompletePrescription),
+    takeLatest(prescriptionsSlice.actions.deletePrescription, onDeletePrescription)
   ])
 }

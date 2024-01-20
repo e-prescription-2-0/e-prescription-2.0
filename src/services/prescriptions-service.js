@@ -36,5 +36,14 @@ export default {
             "Content-Type": HEADER_FORMATS.JSON,
             Accept: HEADER_FORMATS.JSON,
         }
+    }),
+
+    deletePrescription: serviceBind({
+        url: "/api/prescriptions/{prescriptionId}/delete",
+        method: METHODS.DELETE,
+        headers: {
+            "Content-Type": HEADER_FORMATS.JSON,
+            Accept: HEADER_FORMATS.JSON,
+        }
     })
 }

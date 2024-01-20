@@ -6,19 +6,27 @@ import style from "../Prescription.module.css";
 
 const PrescriptionFooter = () => {
   const completePrescription = useReduxAction(prescriptionsSlice.actions.completePrescription)
+  const deletePrescription = useReduxAction(prescriptionsSlice.actions.deletePrescription)
+  const getAllPrescription = useReduxAction(prescriptionsSlice.actions.fetchMyPrescriptions)
   const currentPrescription = useReduxState(
     (state) => state.prescriptions.prescription
   );
 
   let user = {
-    role: "pharmacist"
+    role: "doctor"
   }
 
-  const onCompleteBtnSubmit = () => {
+  const onCompleteBtnClick = () => {
     completePrescription(currentPrescription._id)
   }
 
-  let isCompleted = false
+  const onDeleteBtnClick = () => {
+    let res = window.confirm("Are you sure you want to delete this prescription?")
+
+    if(res){
+      deletePrescription(currentPrescription._id)
+    }
+  }
 
   return (
     <div className={style["div-userInfo"]}>
@@ -32,16 +40,25 @@ const PrescriptionFooter = () => {
         <p>Специфики: {currentPrescription.prescribedTo.specifics}</p>
         <p>Пол: {currentPrescription.prescribedTo.gender}</p>
       </div>
-      {
-        user.role === "pharmacist" &&
-        <div className={style["prescription-status"]}>
-          <p>Изпълнена рецепта?</p>
+
+        <div className={style["center-div"]}>
           {
-            currentPrescription.isCompleted ? <i id={style["prescription-completed"]} class="fa-solid fa-check"></i> : <button onClick={onCompleteBtnSubmit} className={style["isCompleted-btn-yes"]}>Изпълни</button>
+            user.role === "pharmacist" &&
+            <div className={style["center-div"]}>
+              <p>Изпълнена рецепта?</p>
+              {
+                currentPrescription.isCompleted ? <i id={style["prescription-completed"]} class="fa-solid fa-check"></i> : <button onClick={onCompleteBtnClick} className={style["isCompleted-btn-yes"]}>Изпълни</button>
+              }
+            </div>
           }
-          
+          {
+            user.role === "doctor" &&
+            <div className={style["center-div"]}>
+              <button onClick={onDeleteBtnClick} className={style["delete-btn"]}>Delete</button>
+            </div>
+          }
+
         </div>
-      }
 
     </div>
   );
