@@ -31,7 +31,7 @@ export const dashBoardNavData = {
       icon: <FontAwesomeIcon icon={faBedPulse} />,
     },
     {
-      linkTo: "search/doctors",
+      linkTo: "/search/doctors",
       text: "Доктори",
       icon: <FontAwesomeIcon icon={faUserDoctor} />,
     },

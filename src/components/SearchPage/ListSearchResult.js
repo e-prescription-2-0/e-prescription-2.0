@@ -36,6 +36,7 @@ const ListSearchResult = ({ collection, fetchCollection, searchParams,hidePatien
     await fetchCollection(pageParams);
   };
   useEffect(() => {
+    
     if (initialLoad) {
       fetchMoreData();
     }
