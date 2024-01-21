@@ -50,7 +50,8 @@ const RegisterForm = () => {
       setValidated(false);
     }
     if (registrationStep === 2) {
-      if (validated) return;
+      if (!form.checkValidity()) return;
+      
 
       const userRegistrationData = {
         email: registrationFormData.email,

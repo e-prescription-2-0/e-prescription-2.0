@@ -8,7 +8,7 @@ export const arrayFieldFactory = (role, data) => {
         return {patientId:data.patientId, dateOfBirth:data.dateOfBirth,gender: data.gender}
     }
     else {
-        return {licenseNumber:data.pharmacistId, pharmacyName:data.pharmacyName}
+        return {pharmacistId:data.pharmacistId, pharmacyName:data.pharmacyName}
     }
 
 }
