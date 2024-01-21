@@ -1,12 +1,18 @@
+import { isEmpty } from "ramda";
 import { useReduxAction } from "../../../../hooks/useReduxAction";
 import { useReduxState } from "../../../../hooks/useReduxState";
 import { prescriptionsSlice } from "../../../../reducers/prescriptions";
 import style from "../Prescription.module.css";
 
-const PrescriptionFooter = () => {
+const PrescriptionFooter = ({medicals}) => {
   const completePrescription = useReduxAction(
     prescriptionsSlice.actions.completePrescription
   );
+
+  const completePartialPrescription = useReduxAction(
+    prescriptionsSlice.actions.completePartialPrescription
+  );
+
   const deletePrescription = useReduxAction(
     prescriptionsSlice.actions.deletePrescription
   );
@@ -15,13 +21,30 @@ const PrescriptionFooter = () => {
     (state) => state.prescriptions.prescription
   );
 
+
+
   let user = {
     role: "pharmacist",
     id: "658f0b9d1a1925a19548cc8e",
   };
 
+
+
   const onCompleteBtnClick = () => {
     completePrescription(currentPrescription._id);
+  };
+
+  const onPartialBtnClick = () => {
+    const selectedMedicines = Object.keys(medicals).filter(
+      (medicine) => medicals[medicine]
+    );
+    console.log(selectedMedicines);
+    if (!isEmpty(selectedMedicines)) {
+      completePartialPrescription({
+        prescriptionId: currentPrescription._id,
+        medicalsIdArray: selectedMedicines,
+      });
+    }
   };
 
   const onDeleteBtnClick = () => {
@@ -56,17 +79,12 @@ const PrescriptionFooter = () => {
       <div className={style["center-div"]}>
         {user.role === "pharmacist" && (
           <div className={style["center-div"]}>
-            {currentPrescription.isCompleted ? (
-              <i
-                id={style["prescription-completed"]}
-                className="fa-solid fa-check"
-              ></i>
-            ) : (
+            {!currentPrescription.isCompleted && (
               <>
                 <p>Изпълни рецепта?</p>
                 <div>
                   <button
-                    onClick={onCompleteBtnClick}
+                    onClick={onPartialBtnClick}
                     className={style["isCompleted-btn-yes"]}
                   >
                     Частично

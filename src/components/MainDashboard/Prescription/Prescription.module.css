@@ -126,7 +126,7 @@
 .checkbox.style-f {
   display: inline-block;
   position: relative;
-  padding: 0;
+  margin: 0;
   padding-left: 30px;
   cursor: pointer;
   -webkit-user-select: none;
