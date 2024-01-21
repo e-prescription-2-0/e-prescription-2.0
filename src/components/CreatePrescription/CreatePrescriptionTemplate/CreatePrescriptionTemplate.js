@@ -1,4 +1,5 @@
 
+import { useSelector } from "react-redux";
 import CreatePerscriptionTemplateItem from "./CreatePerscriptionTemplateItem";
 import style from "./CreatePrescriptionTemplate.module.css";
 import Accordion from 'react-bootstrap/Accordion';
@@ -15,16 +16,21 @@ const CreatePrescriptionTemplate = ({
      hidePatientList
     }) => {
 
+const authUser = useSelector(state => state.auth.authUser);
+const{firstName,lastName,doctorId,hospitalName} = authUser;
+
+
+
     return (
         <section className={style["section-openPerscription"]} >
             <div className={style["div-main-content"]}>
                 <div className={style["div-header"]}>
                     <h2 className={style["div-header-mainTitile"]}>Рецептурна Бланка</h2>
                     <h3 className={style["div-header-title"]}>Министерство на здравеопазването</h3>
-                    <p>Д-р: Радева</p>
-                    <p>УИН: 0000000000</p>
+                    <p>Д-р {firstName} {lastName}</p>
+                    <p>УИН: {doctorId} ???</p>
                     <p>&#8470; Лек. Практика: 0000000000</p>
-                    <p>Телефон: 089xxxxxxx</p>
+                    <p>{hospitalName}</p>
                 </div>
                 <Button className={style['prescription-btn']} onClick={() => showPopUpModal() }>Добави лекарство</Button>
 
