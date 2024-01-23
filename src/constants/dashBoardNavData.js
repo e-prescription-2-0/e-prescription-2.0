@@ -1,64 +1,78 @@
 import {
-    faUser,
-    faFilePrescription,
-    faFilePen,
-    faRightFromBracket,
-  } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+  faBedPulse,
+  faFilePen,
+  faFilePrescription,
+  faUser,
+  faUserDoctor,
+} from "@fortawesome/free-solid-svg-icons"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
-export  const dashBoardNavData = {
-    doctor: [
-      {
-        title: "Профил",
-        icon: <FontAwesomeIcon icon={faUser} />,
-      },
-      {
-        title: "Изписани рецепти",
-        icon: <FontAwesomeIcon icon={faFilePrescription} />,
-      },
-      {
-        title: "Изписване на рецепта",
-        icon: <FontAwesomeIcon icon={faFilePen} />,
-      },
-      {
-        title: "Изход",
-        icon: <FontAwesomeIcon icon={faRightFromBracket} />,
-      },
-    ],
-    pharmacist: [
-        {
-            title: "Профил",
-            icon: <FontAwesomeIcon icon={faUser} />,
-          },
-          {
-            title: "Изпълняване на рецепта",
-            icon: <FontAwesomeIcon icon={faFilePrescription} />,
-          },
-          {
-            title: "Частично изпълнени рецепти",
-            icon: <FontAwesomeIcon icon={faFilePen} />,
-          },
-          {
-            title: "Изход",
-            icon: <FontAwesomeIcon icon={faRightFromBracket} />,
-          },
-    ],
-    patient: [
-        {
-            title: "Профил",
-            icon: <FontAwesomeIcon icon={faUser} />,
-          },
-          {
-            title: "Моите текущи рецепети",
-            icon: <FontAwesomeIcon icon={faFilePrescription} />,
-          },
-          {
-            title: "Моите Изпълнени рецепти",
-            icon: <FontAwesomeIcon icon={faFilePen} />,
-          },
-          {
-            title: "Изход",
-            icon: <FontAwesomeIcon icon={faRightFromBracket} />,
-          },
-    ],
-  };
+export const dashBoardNavData = {
+  doctor: [
+    {
+      linkTo: "/profile",
+      text: "Профил",
+      icon: <FontAwesomeIcon icon={faUser} />,
+    },
+    {
+      linkTo: "/prescriptions",
+      text: "Рецепти",
+      icon: <FontAwesomeIcon icon={faFilePrescription} />,
+    },
+    {
+      linkTo: "/create-prescription",
+      text: "Изписване на рецепта",
+      icon: <FontAwesomeIcon icon={faFilePen} />,
+    },
+    {
+      linkTo: "/patients",
+      text: "Пациенти",
+      icon: <FontAwesomeIcon icon={faBedPulse} />,
+    },
+    {
+      linkTo: "/doctors",
+      text: "Доктори",
+      icon: <FontAwesomeIcon icon={faUserDoctor} />,
+    },
+  ],
+  pharmacist: [
+    {
+      linkTo: "/profile",
+      text: "Профил",
+      icon: <FontAwesomeIcon icon={faUser} />,
+    },
+    {
+      linkTo: "/prescription",
+      text: "Рецепти",
+      icon: <FontAwesomeIcon icon={faFilePrescription} />,
+    },
+    {
+      linkTo: "/prescription/complete",
+      text: "Изпълни рецепта",
+      icon: <FontAwesomeIcon icon={faFilePen} />,
+    },
+
+    {
+      linkTo: "/doctors",
+      text: "Доктори",
+      icon: <FontAwesomeIcon icon={faUserDoctor} />,
+    },
+  ],
+  patient: [
+    {
+      linkTo: "/profile",
+      text: "Профил",
+      icon: <FontAwesomeIcon icon={faUser} />,
+    },
+    {
+      linkTo: "/prescriptions",
+      text: "Рецепти",
+      icon: <FontAwesomeIcon icon={faFilePrescription} />,
+    },
+    {
+      linkTo: "/doctors",
+      text: "Доктори",
+      icon: <FontAwesomeIcon icon={faUserDoctor} />,
+    },
+  ],
+}

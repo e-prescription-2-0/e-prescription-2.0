@@ -26,6 +26,8 @@ ol {
 body {
   font-size: 16px;
   line-height: 1.5;
+  position: relative;
+
 }
 
 /* Remove the default button styling */
@@ -47,9 +49,12 @@ form {
   box-sizing: border-box;
 }
 
-/* .main-content {
+.main-content {
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
-} */
-
+  justify-content: flex-start;
+}
+html{
+  height: 100%;
+}

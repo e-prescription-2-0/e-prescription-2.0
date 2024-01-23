@@ -1,15 +1,23 @@
-import { faAngleRight } from "@fortawesome/free-solid-svg-icons";
+import { faAngleDown, faAngleRight, faAngleUp } from "@fortawesome/free-solid-svg-icons";
 import style from "./PrescriptionsList.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { prescriptionsSlice } from "../../../reducers/prescriptions";
 import { useReduxAction } from "../../../hooks/useReduxAction";
 import { useReduxState } from "../../../hooks/useReduxState";
+import { useMediaQuery } from "react-responsive";
 
 const PrescriptionCard = ({ prescription }) => {
   const setOpenPrescription = useReduxAction(prescriptionsSlice.actions.setOpenPrescription)
   const openPrescription = useReduxState((state)=>state.prescriptions.openPrescription)
 
+
+  const isDesktop = useMediaQuery({ minWidth: 1501 });
+
   const isOpen = openPrescription._id === prescription._id
+
+  const iconDesktop = isOpen ? faAngleRight : faAngleDown
+  const iconMobile = isOpen ? faAngleDown : faAngleUp
+  const icon = isDesktop? iconDesktop : iconMobile
 
 
   const onCLickSetThisPrescriptionToOpenPrescription = () => {
@@ -35,7 +43,7 @@ const PrescriptionCard = ({ prescription }) => {
         </p>
       </div>
 
-      <FontAwesomeIcon icon={faAngleRight} />
+      <FontAwesomeIcon icon={icon} />
     </li>
   );
 };

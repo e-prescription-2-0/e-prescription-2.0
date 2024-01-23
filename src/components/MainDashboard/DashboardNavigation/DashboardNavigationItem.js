@@ -1,24 +1,20 @@
-import { Nav } from "react-bootstrap";
-import style from "./DashboardNavigation.module.css";
-import { useReduxAction } from "../../../hooks/useReduxAction";
-import { dashboardSlice } from "../../../reducers/dashboard";
-import { useReduxState } from "../../../hooks/useReduxState";
+import { NavLink } from "react-router-dom"
+import style from "./DashboardNavigation.module.css"
 
-const DashboardNavigationItem = ({ icon, title, }) => {
-  const setActiveLink = useReduxAction(dashboardSlice.actions.setActiveLink)
-  const currentActiveLink = useReduxState((state) => state.dashboard.activeLink);
-  const isActive = currentActiveLink === title;
-
-  const changeActiveItem = (e) => {
-    setActiveLink(e.target.innerHTML)
-  }
-   
+const DashboardNavigationItem = ({ icon, linkTo, text }) => {
   return (
-    <Nav.Link onClick={changeActiveItem} className={isActive? style['aside-nav-list-item-active'] : style['aside-nav-list-item']}>
+    <NavLink
+      className={({ isActive }) =>
+        isActive
+          ? [style["nav-active"], style["aside-nav-list-item"]].join(" ")
+          : [style["aside-nav-list-item"]].join(" ")
+      }
+      to={linkTo}
+    >
       {icon}
-      <a id={style["btn"]}>{title}</a>
-    </Nav.Link>
-  );
-};
+      <p className={style["text-color-navigation"]}>{text}</p>
+    </NavLink>
+  )
+}
 
-export default DashboardNavigationItem;
+export default DashboardNavigationItem

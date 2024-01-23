@@ -1,66 +1,71 @@
 export const navLinkConfig = [
+  // {
+  //   linkName: "Home",
+  //   id: "1",
+  //   hideFor: [],
+  //   onClick: () => {},
+  //   linkTo: "/",
+  // },
+  // {
+  //   linkName: "My Prescriptions",
+  //   id: "2",
+  //   hideFor: ["guest", "pharmacist"],
+  //   onClick: () => { },
+  // },
+  // {
+  //   linkName: "My Patients",
+  //   id: "3",
+  //   hideFor: ["pharmacist", "patient", "guest"],
+  //   onClick: () => { },
+  // },
+  // {
+  //   linkName: "Search",
+  //   id: "4",
+  //   hideFor: ["guest"],
+  //   onClick: () => { }
+  // },
   {
-    linkName: "Home",
-    id: "1",
-    hideFor: [],
-    onClick: () => { },
-    linkTo: "/"
-  },
-  {
-    linkName: "My Prescriptions",
-    id: "2",
-    hideFor: ["guest", "pharmacist"],
-    onClick: () => { },
-  },
-  {
-    linkName: "My Patients",
-    id: "3",
-    hideFor: ["pharmacist", "patient", "guest"],
-    onClick: () => { },
-  },
-  {
-    linkName: "Search",
-    id: "4",
+    linkName: "Dashboard",
+    id: "9",
     hideFor: ["guest"],
-    onClick: () => { }
+    onClick: () => {},
+    linkTo: "/prescriptions",
   },
   {
     linkName: "Help",
     id: "5",
     hideFor: [],
-    onClick: () => { }
+    onClick: () => {},
+    linkTo: "/help",
   },
   {
     linkName: "Login",
     id: "6",
     hideFor: ["pharmacist", "doctor", "patient"],
-    onClick: () => { },
+    onClick: () => {},
+    linkTo: "/login",
   },
   {
     linkName: "Register",
     id: "7",
     hideFor: ["pharmacist", "doctor", "patient"],
-    onClick: () => { },
+    onClick: () => {},
+    linkTo: "/register",
   },
   {
     linkName: "Profile",
     id: "8",
     hideFor: ["guest"],
-    onClick: () => { },
-    linkTo: "/profile"
+    onClick: () => {},
+    linkTo: "/profile",
   },
-  {
-    linkName: "Dashboard",
-    id: "9",
-    hideFor: ["guest"],
-    onClick: () => { },
-    linkTo: "/dashboard"
-  },
+
   {
     linkName: "Logout",
     id: "10",
     hideFor: ["guest"],
-    onClick: () => { }
+    onClick: () => {},
+    linkTo: "/logout",
   },
 ]
 

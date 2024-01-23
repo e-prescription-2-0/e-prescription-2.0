@@ -1,34 +1,38 @@
-import style from "./DashboardNavigation.module.css";
-import { dashBoardNavData } from "../../../constants/dashBoardNavData";
+import { dashBoardNavData } from "../../../constants/dashBoardNavData"
+import style from "./DashboardNavigation.module.css"
 
-import DashboardNavigationItem from "./DashboardNavigationItem";
-import { Container, Nav, Navbar } from "react-bootstrap";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTableColumns } from "@fortawesome/free-solid-svg-icons";
-import { useReduxState } from "../../../hooks/useReduxState";
+import { Container, Nav, Navbar } from "react-bootstrap"
+import DashboardNavigationItem from "./DashboardNavigationItem"
+
+// const DashboardNavigation = () => {
+//   const role = "doctor"; // coming and depend of redux/context state;
+//   const currentActiveLink = useReduxState((state) => state.dashboard.activeLink)
+//   console.log(currentActiveLink);
+// import { useSelector } from "react-redux";
 
 const DashboardNavigation = () => {
-  const role = "doctor"; // coming and depend of redux/context state;
-  const currentActiveLink = useReduxState((state) => state.dashboard.activeLink)
-  console.log(currentActiveLink);
+  const { role } = useSelector((state) => state.auth.authUser) ?? {}
 
   return (
-    <Navbar expand="lg" className={style["aside-navigation-container"]}>
+    <Navbar expand="xl" className={style["aside-navigation-container"]}>
       <Container className={style["boostrap-container-div-container"]}>
         <Navbar.Brand id={style["aside-navbar-brand"]} href="#home">
           Services
         </Navbar.Brand>
-        <Navbar.Toggle id={style["aside-navbar-toggle"]} aria-controls="basic-navbar-nav" />
+        <Navbar.Toggle
+          id={style["aside-navbar-toggle"]}
+          aria-controls="basic-navbar-nav"
+        />
         <Navbar.Collapse>
           <Nav className={style["aside-nav-list"]}>
-            {dashBoardNavData[role].map((x, index) => (
+            {dashBoardNavData[role]?.map((x, index) => (
               <DashboardNavigationItem key={index} {...x} />
             ))}
           </Nav>
         </Navbar.Collapse>
       </Container>
     </Navbar>
-  );
-};
+  )
+}
 
-export default DashboardNavigation;
+export default DashboardNavigation

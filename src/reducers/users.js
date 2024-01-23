@@ -1,23 +1,26 @@
-import { createSlice } from "@reduxjs/toolkit"
+import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  doctors: [],
-  doctorsById: {},
-}
+  role: "",
+  profile: {},
+  loading: true,
+};
 
 export const usersSlice = createSlice({
   name: "users",
   initialState,
   reducers: {
-    fetchDoctors: () => {},
-    setDoctors: (state, action) => {
-      const doctors = action.payload
-      state.doctors = [...doctors]
+    fetchProfile: (state, action) => {},
+    fetchPatientProfile: (state, action) => {},
+    setUserRole: (state, action) => {
+      state.role = action.payload;
     },
-    fetchDoctorById: (state, action) => {},
-    setDoctor: (state, action) => {
-      //   state.doctorsById[action.payload.id] = action.payload
-      state.doctors.push(action.payload)
+    setProfile: (state, action) => {
+      state.profile = action.payload;
     },
+    setLoading: (state, action) => {
+      state.loading = action.payload
+    }
+
   },
-})
+});
