@@ -32,7 +32,6 @@ const LoginForm = () => {
 
     dispatchSetAuthUser({ loginEmail, loginPassword })
     setInvalidLoginForm(false)
-    navigate("/")
   }
 
   const handleChange = (event) => {
