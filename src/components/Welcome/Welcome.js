@@ -11,7 +11,6 @@ export const Welcome = () => {
   const { action } = useParams();
   const authUser = useSelector((state) => state.auth.authUser);
   const { email } = authUser || "";
-  // const email = "";
 
   const correctParams = email ? [] : ["login", "register", "forgotPassword"];
 
@@ -23,7 +22,7 @@ export const Welcome = () => {
     <div className={style["main"]}>
       {!email && <AuthenticationPage link={action} />}
 
-      <Hero action={action} />
+      <Hero email={email} />
       <Passion />
 
       <DemoSteps />

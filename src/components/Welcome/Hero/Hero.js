@@ -2,9 +2,8 @@ import { Link } from "react-router-dom";
 import style from "./Hero.module.css";
 import { useSelector } from "react-redux";
 
-const Hero = () => {
-  const authUser = useSelector((state) => state.auth.authUser);
-  const {email} = authUser || '';
+const Hero = ({email}) => {
+
   // const email  = "";
 
   return (
