@@ -5,6 +5,7 @@ import CreateMedicineForPrescriptionPopUp from "./NewMedicinePopUpForm/CreateMed
 import PatientTable from "./PatientsTable/PatientsTable"
 import { formFieldCheckFn } from "../../utils/formFieldsCheck"
 import SearchContent from "../SearchPage/SearchContent"
+import DashboardNavigation from "../MainDashboard/DashboardNavigation/DashboardNavigation"
 
 const CreatePrescription = () => {
   const [isPatientChooseMode, setisPatientChooseMode] = useState(true)
@@ -85,11 +86,11 @@ const CreatePrescription = () => {
   }
 
   const hidePatientList = (data) => {
-  console.log(data);
+ 
     if (data._id) {
       setCurrentPatient(data)
     }
-    //console.log(currentPatient);
+   
     setisPatientChooseMode(false)
   }
 
@@ -99,7 +100,7 @@ const CreatePrescription = () => {
     setCurrentPatient(null)
   }
 
-  return isPatientChooseMode ? (
+  return  <DashboardNavigation/> && isPatientChooseMode ? (
    
 
     <SearchContent

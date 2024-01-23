@@ -24,7 +24,10 @@ const PatientTable = ({ hidePatientList, patientsList, searchType, isPrescriptio
                             <th>Собствено Име</th>
                             <th>Фамилия</th>
                             {searchType === 'patients' &&
+                                <>
                                 <th>ЕГН</th>
+                                <th></th>
+                                </>
                             }
                             {searchType === 'doctors' && <>
                                 <th>email</th>

@@ -9,6 +9,7 @@ import styles from '../CreatePrescription/PatientsTable/PatientsTable.module.css
 import Table from 'react-bootstrap/Table';
 import PatientData from "../CreatePrescription/PatientsTable/PatientData";
 import PatientTable from "../CreatePrescription/PatientsTable/PatientsTable";
+import { useSelector } from "react-redux";
 
 
 const ListSearchResult = ({ collection, fetchCollection, searchParams,hidePatientList,searchType,isPrescriptionCreateMode }) => {
@@ -42,7 +43,8 @@ const ListSearchResult = ({ collection, fetchCollection, searchParams,hidePatien
     }
   }, [fetchMoreData, initialLoad]);
 
-  
+
+
 
   return (
     <InfiniteScroll
