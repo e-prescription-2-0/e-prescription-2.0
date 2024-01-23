@@ -9,6 +9,7 @@ import Header from "./components/Header/Header"
 import Logout from "./components/Logout/Logout"
 import MainDashboard from "./components/MainDashboard/MainDashboard"
 import SearchPage from "./components/SearchPage/SearchPage"
+import UserProfile from "./components/UserProfile/UserProfile"
 import { Welcome } from "./components/Welcome/Welcome"
 import store from "./redux"
 
@@ -19,6 +20,7 @@ const App = () => {
         <Header />
         <Routes>
           <Route path="/" element={<Welcome />} />
+          <Route path="/profile" element={<UserProfile />} />
           <Route path="/prescriptions" element={<MainDashboard />} />
           <Route path="/create-prescription" element={<CreatePrescription />} />
           <Route

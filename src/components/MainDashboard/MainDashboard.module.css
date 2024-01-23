@@ -12,6 +12,7 @@
 }
 
 .main-dashboard-section-content {
+  width: 1000px;
   display: flex;
   column-gap: 1em;
 
