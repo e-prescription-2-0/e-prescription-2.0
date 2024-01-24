@@ -30,7 +30,7 @@ const {_id:doctorId,patients} = useSelector(state => state.auth.authUser);
 const navigate = useNavigate();
 const dispatchSetPatientToList = useReduxAction(usersSlice.actions.fetchSetToPatientList)
 
-const patientCheck = (id) => {return patients.include(id)}
+const patientCheck = (id) => {return patients.some( e=> e === id)}
 
 const addCurrentPatientToMyList = (e,patientId) => {
  e.stopPropagation()
@@ -38,6 +38,7 @@ const addCurrentPatientToMyList = (e,patientId) => {
   dispatchSetPatientToList({doctorId, patientId})
 
 }
+
 
 
 return (
@@ -51,7 +52,7 @@ return (
         <>
           <td>{patientId}</td>
           <td>
-            {patientCheck ? <FontAwesomeIcon icon={faCirclePlus} style={{color: "#3c6e71",}} size='lg' onClick={(e) => addCurrentPatientToMyList(e,_id)}/> :
+            {!patientCheck(_id) ? <FontAwesomeIcon icon={faCirclePlus} style={{color: "#3c6e71",}} size='lg' onClick={(e) => addCurrentPatientToMyList(e,_id)}/> :
              <FontAwesomeIcon icon={faUserCheck} style={{color: "#3c6e71",}} size="lg" />
              }
            

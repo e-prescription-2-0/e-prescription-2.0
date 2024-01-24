@@ -2,6 +2,8 @@ import { all, call, put, takeLatest } from "@redux-saga/core/effects";
 import { usersSlice } from "../reducers/users";
 import usersService from "../services/users-service";
 import { searchSlice } from "../reducers/search";
+import { setMessages } from "../reducers/messageDispatcher";
+import { setAuthUserByLogin } from "../reducers/auth";
 
 function* onFetchProfile(action) {
   try {
@@ -45,17 +47,17 @@ function* onFetchPatientListAdd(action) {
  
 
   try {
-    const result = yield call(usersService.setToMyPatients({doctorId,patientId}))
-    console.log(result);
-
-    yield put(usersSlice.actions.setProfile(result))
+    const updatedUser = yield call(usersService.setToMyPatients,{doctorId,patientId})
+    
+    console.log(updatedUser);
+    yield put(setAuthUserByLogin(updatedUser))
     //yield put(usersSlice.actions.setLoading(false));
     //yield put(searchSlice.actions.setLoadingPatient(false));
   } catch (error) {
-    console.log("====================================");
+   
     console.log(error);
-    console.log("====================================");
-    yield put(searchSlice.actions.setErrorFetchingPatient(true));
+   
+    yield put(setMessages({ type: "error", text: error.message }))
   }
 }
 

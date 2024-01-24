@@ -100,15 +100,18 @@ const CreatePrescription = () => {
     setCurrentPatient(null)
   }
 
-  return  <DashboardNavigation/> && isPatientChooseMode ? (
-   
+  return   isPatientChooseMode ? (
+    
+    
 
     <SearchContent
         searchType={'patients'}
         hidePatientList={hidePatientList}
         isPrescriptionCreateMode={isPrescriptionCreateMode}
       />
+     
   ) : (
+    
     <div className={style["create-prescription-container"]}>
       <CreatePrescriptionTemplate
         showPopUpModal={showPopUpModal}
