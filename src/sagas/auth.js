@@ -45,7 +45,7 @@ function* onLogout() {
 
     yield put(setMessages({ type: "", text: "Вие излязохте успешно" }))
   } catch (error) {
-    console.log(error)
+   
     yield put(setMessages({ type: "error", text: error.message }))
   }
 }

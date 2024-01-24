@@ -47,4 +47,13 @@ export default {
       Accept: HEADER_FORMATS.JSON,
     },
   }),
+  setToMyPatients: serviceBind({
+    url: "/api/auth/{doctorId}/patients/add/{patientId}",
+    method: METHODS.POST,
+    headers: {
+      "Content-Type": HEADER_FORMATS.JSON,
+      Accept: HEADER_FORMATS.JSON,
+      "Access-Control-Allow-Origin": "*",
+    },
+  }),
 }

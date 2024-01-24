@@ -38,9 +38,31 @@ function* onFetchPatientProfile(action) {
   }
 }
 
+function* onFetchPatientListAdd(action) {
+
+  const doctorId = action.payload.doctorId
+  const patientId = action.payload.patientId
+ 
+
+  try {
+    const result = yield call(usersService.setToMyPatients({doctorId,patientId}))
+    console.log(result);
+
+    yield put(usersSlice.actions.setProfile(result))
+    //yield put(usersSlice.actions.setLoading(false));
+    //yield put(searchSlice.actions.setLoadingPatient(false));
+  } catch (error) {
+    console.log("====================================");
+    console.log(error);
+    console.log("====================================");
+    yield put(searchSlice.actions.setErrorFetchingPatient(true));
+  }
+}
+
 export default function* usersSaga() {
   yield all([
     takeLatest(usersSlice.actions.fetchProfile, onFetchProfile),
     takeLatest(usersSlice.actions.fetchPatientProfile, onFetchPatientProfile),
+    takeLatest(usersSlice.actions.fetchSetToPatientList, onFetchPatientListAdd),
   ]);
 }

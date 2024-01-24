@@ -1,11 +1,11 @@
-import { useEffect, useState } from "react"
 import CreatePrescriptionTemplate from "./CreatePrescriptionTemplate/CreatePrescriptionTemplate"
 import style from "./CreatePresscription.module.css"
 import CreateMedicineForPrescriptionPopUp from "./NewMedicinePopUpForm/CreateMedicineForPrescriptionPopUp"
 import PatientTable from "./PatientsTable/PatientsTable"
 import { formFieldCheckFn } from "../../utils/formFieldsCheck"
 import SearchContent from "../SearchPage/SearchContent"
-import DashboardNavigation from "../MainDashboard/DashboardNavigation/DashboardNavigation"
+import DashboardNavigation from "../MainDashboard/DashboardNavigation/DashboardNavigation";
+import { useState } from "react"
 
 const CreatePrescription = () => {
   const [isPatientChooseMode, setisPatientChooseMode] = useState(true)
