@@ -59,13 +59,13 @@ const SearchContent = ({ searchType, hidePatientList,isPrescriptionCreateMode })
       titlePage = "Търси Рецепта";
       break;
     case "patients":
-      if (isMyPatientsChecked) {
-        collection = collectionMyPatients;
-        fetchCollection = fetchMyPatients;
-      } else {
+      // if (isMyPatientsChecked) {
+      //   collection = collectionMyPatients;
+      //   fetchCollection = fetchMyPatients;
+      // } else {
         collection = collectionAllPatients;
         fetchCollection = fetchAllPatients;
-      }
+      // }
       placeholderText = "Търси по ЕГН на пациента";
       titlePage = "Търси Пациенти";
 
@@ -92,6 +92,7 @@ const SearchContent = ({ searchType, hidePatientList,isPrescriptionCreateMode })
         hidePatientList={hidePatientList}
         searchType={searchType}
         isPrescriptionCreateMode={isPrescriptionCreateMode}
+        isMyPatientsChecked = {isMyPatientsChecked}
 
      
 

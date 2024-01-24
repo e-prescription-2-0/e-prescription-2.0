@@ -1,19 +1,20 @@
 import InfiniteScroll from "react-infinite-scroll-component";
-import ResultCard from "./ResultCard";
-import { useEffect, useState } from "react";
-import { Spinner } from "react-bootstrap";
+import { useEffect } from "react";
 import { isEmpty } from "ramda";
 import style from "./SearchPage.module.css";
-import styles from '../CreatePrescription/PatientsTable/PatientsTable.module.css';
 
-import Table from 'react-bootstrap/Table';
-import PatientData from "../CreatePrescription/PatientsTable/PatientData";
 import PatientTable from "../CreatePrescription/PatientsTable/PatientsTable";
 import { useSelector } from "react-redux";
 import SpinnerP from "../SpinnerP/SpinnerP";
 
 
-const ListSearchResult = ({ collection, fetchCollection, searchParams,hidePatientList,searchType,isPrescriptionCreateMode }) => {
+const ListSearchResult = ({ 
+  collection, fetchCollection,
+   searchParams,
+   hidePatientList,
+   searchType,
+   isPrescriptionCreateMode,
+   isMyPatientsChecked }) => {
   const search = searchParams.get("search") || "";
 
   const collectionByPages = collection?.[search]?.collection || {};
@@ -62,7 +63,8 @@ const ListSearchResult = ({ collection, fetchCollection, searchParams,hidePatien
     <PatientTable hidePatientList={hidePatientList}
      patientsList ={collectionData}
       searchType={searchType}
-       isPrescriptionCreateMode={isPrescriptionCreateMode}/>
+       isPrescriptionCreateMode={isPrescriptionCreateMode}
+       isMyPatientsChecked={isMyPatientsChecked}/>
       {/* {collectionData.map((data) => (
         <ResultCard key={data._id} data={data} />
       ))} */}

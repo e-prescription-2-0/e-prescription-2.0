@@ -1,14 +1,29 @@
 
 import Table from 'react-bootstrap/Table';
 import styles from './PatientsTable.module.css';
-
-
 import PatientData from './PatientData';
-import SpinnerP from '../../SpinnerP/SpinnerP';
+import { useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
 
 
-const PatientTable = ({ hidePatientList, patientsList, searchType, isPrescriptionCreateMode }) => {
+const PatientTable = ({ hidePatientList, patientsList, searchType, isPrescriptionCreateMode,isMyPatientsChecked }) => {
 
+const [myList, setMyList] = useState([]);
+const {patients:myPatients} = useSelector(state => state.auth.authUser)
+
+
+
+
+useEffect(() => {
+    if(isMyPatientsChecked) {
+        const filteredList = patientsList.filter(f => myPatients.includes(f._id));
+        setMyList(filteredList);
+    }else {
+        
+        setMyList(patientsList); 
+      }
+
+},[isMyPatientsChecked,patientsList,myPatients])
 
 
 
@@ -52,7 +67,7 @@ const PatientTable = ({ hidePatientList, patientsList, searchType, isPrescriptio
                 <tbody className={styles['tbody-list']}>
 
 
-                    {patientsList.map(p => <PatientData key={p.id} {...p} hidePatientList={hidePatientList} searchType={searchType} isPrescriptionCreateMode={isPrescriptionCreateMode} />)
+                    {myList.map(p => <PatientData key={p._id} {...p} hidePatientList={hidePatientList} searchType={searchType} isPrescriptionCreateMode={isPrescriptionCreateMode} />)
                     }
                 </tbody>
             </Table>
