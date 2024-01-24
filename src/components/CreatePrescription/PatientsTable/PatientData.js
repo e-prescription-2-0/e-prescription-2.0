@@ -39,7 +39,6 @@ const addCurrentPatientToMyList = (e,patientId) => {
 
 }
 
-console.log(isPrescriptionCreateMode && !patientCheck(_id));
 
 return (
   <tr className={styles['table-row']} onClick={() => navigate(`/${searchType}/${_id}`)}>

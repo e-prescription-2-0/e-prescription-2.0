@@ -4,6 +4,7 @@ import styles from './PatientsTable.module.css';
 
 
 import PatientData from './PatientData';
+import SpinnerP from '../../SpinnerP/SpinnerP';
 
 
 const PatientTable = ({ hidePatientList, patientsList, searchType, isPrescriptionCreateMode }) => {
@@ -14,7 +15,7 @@ const PatientTable = ({ hidePatientList, patientsList, searchType, isPrescriptio
     return (
 
         <div className={styles['patient-table-container']}>
-
+            
 
 
             <Table striped hover responsive="sm" size='sm' className={styles['stripped-table']}>

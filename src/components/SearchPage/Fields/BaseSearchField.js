@@ -18,6 +18,7 @@ const BaseSearchFields = ({
 
   const onChangeSwitch = (e) => {
     setIsMyPatientsChecked(!isMyPatientsChecked);
+   
   };
   
   return (

@@ -7,6 +7,9 @@ import { useReduxState } from "../../hooks/useReduxState";
 import { useReduxAction } from "../../hooks/useReduxAction";
 import { searchSlice } from "../../reducers/search";
 import { useState } from "react";
+import { useSelector } from "react-redux";
+
+
 
 const SearchContent = ({ searchType, hidePatientList,isPrescriptionCreateMode }) => {
   const [searchParams, setSearchParams] = useSearchParams({});
