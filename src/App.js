@@ -11,6 +11,7 @@ import MainDashboard from "./components/MainDashboard/MainDashboard"
 import SearchPage from "./components/SearchPage/SearchPage"
 import { Welcome } from "./components/Welcome/Welcome"
 import store from "./redux"
+import RouteDoctorGuard from "./components/RouteGuards/RouteDoctorGuard"
 
 const App = () => {
   return (
@@ -20,7 +21,9 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Welcome />} />
           <Route path="/prescriptions" element={<MainDashboard />} />
-          <Route path="/create-prescription" element={<CreatePrescription />} />
+            <Route element={<RouteDoctorGuard/>}>
+               <Route path="/create-prescription" element={<CreatePrescription />} />
+            </Route>
           <Route
             path="/search/doctors"
             element={<SearchPage searchType={"doctors"} />}
