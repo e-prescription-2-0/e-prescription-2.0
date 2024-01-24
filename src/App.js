@@ -21,10 +21,12 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Welcome />} />
           <Route path="/prescriptions" element={<MainDashboard />} />
+          {/* Route DOctor Guard */}
             <Route element={<RouteDoctorGuard/>}>
                <Route path="/create-prescription" element={<CreatePrescription />} />
             </Route>
           <Route
+          // ---------------------
             path="/search/doctors"
             element={<SearchPage searchType={"doctors"} />}
           />

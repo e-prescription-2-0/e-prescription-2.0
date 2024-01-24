@@ -36,7 +36,9 @@ function* onLogin(action) {
 
 function* onLogout() {
   try {
-    const accessToken = getToken()
+    const user = JSON.parse(localStorage.getItem("authUser"))
+    const accessToken = getToken();
+    console.log(user);
 
     if (!accessToken) {
       return

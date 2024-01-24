@@ -40,6 +40,7 @@ const addCurrentPatientToMyList = (e,patientId) => {
 }
 
 
+
 return (
   <tr className={styles['table-row']} onClick={() => navigate(`/${searchType}/${_id}`)}>
     

@@ -49,7 +49,7 @@ function* onFetchPatientListAdd(action) {
   try {
     const updatedUser = yield call(usersService.setToMyPatients,{doctorId,patientId})
     
-    console.log(updatedUser);
+    
 
     yield put(setAuthUserByLogin(updatedUser))
    
