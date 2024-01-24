@@ -27,6 +27,9 @@ const PatientTable = ({ hidePatientList, patientsList, searchType, isPrescriptio
                                 <>
                                 <th>ЕГН</th>
                                 <th></th>
+                                {!isPrescriptionCreateMode && <th></th>}
+                                
+                                
                                 </>
                             }
                             {searchType === 'doctors' && <>

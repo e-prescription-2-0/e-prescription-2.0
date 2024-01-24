@@ -39,7 +39,7 @@ const addCurrentPatientToMyList = (e,patientId) => {
 
 }
 
-
+console.log(isPrescriptionCreateMode && !patientCheck(_id));
 
 return (
   <tr className={styles['table-row']} onClick={() => navigate(`/${searchType}/${_id}`)}>
@@ -57,12 +57,14 @@ return (
              }
            
             </td>
-          {isPrescriptionCreateMode && 
-          <td>
-            <Button onClick={(e) => {e.stopPropagation(); hidePatientList({_id, firstName, lastName, patientId})}}>
-              Изпиши
-            </Button>
-          </td>
+          {(isPrescriptionCreateMode && patientCheck(_id)) ?  
+
+         <td>
+         <Button onClick={(e) => {e.stopPropagation(); hidePatientList({_id, firstName, lastName, patientId})}}>
+           Изпиши
+         </Button> </td>: <td></td>
+     
+        
           }
         </>
       )}

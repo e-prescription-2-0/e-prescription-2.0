@@ -51,8 +51,7 @@ function* onFetchPatientListAdd(action) {
     
     console.log(updatedUser);
     yield put(setAuthUserByLogin(updatedUser))
-    //yield put(usersSlice.actions.setLoading(false));
-    //yield put(searchSlice.actions.setLoadingPatient(false));
+  
   } catch (error) {
    
     console.log(error);
