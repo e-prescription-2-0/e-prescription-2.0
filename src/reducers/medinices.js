@@ -10,7 +10,6 @@ export const medicinesSlice = createSlice({
   reducers: {
     fetchMedicines: () => {},
     setMedicines: (state, action) => {
-      console.log("action", action)
       state.allMedicines = [...action.payload]
     },
   },
