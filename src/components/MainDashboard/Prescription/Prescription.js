@@ -1,12 +1,11 @@
 import style from "./Prescription.module.css";
 import { useReduxState } from "../../../hooks/useReduxState";
 import PrescriptionContent from "./PrescriptionContent/PrescriptionContent";
-import EmptyPrescriptionsList from "../PrescriptionsList/EmptyPrescriptionsList";
 import NoPrescriptionContent from "./NoPrescriptionContent";
 
 const Prescription = () => {
   const prescription = useReduxState(
-    (state) => state.prescriptions.openPrescription
+    (state) => state.prescriptions.prescription
   );
   const isOpenPrescription = Object.keys(prescription).length > 0;
 
