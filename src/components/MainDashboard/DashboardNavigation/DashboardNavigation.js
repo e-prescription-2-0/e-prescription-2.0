@@ -1,17 +1,16 @@
-import style from "./DashboardNavigation.module.css";
-import { dashBoardNavData } from "../../../constants/dashBoardNavData";
+import { dashBoardNavData } from "../../../constants/dashBoardNavData"
+import style from "./DashboardNavigation.module.css"
 
-import DashboardNavigationItem from "./DashboardNavigationItem";
-import { Container, Nav, Navbar } from "react-bootstrap";
-import { useSelector } from "react-redux";
+import { Container, Nav, Navbar } from "react-bootstrap"
+import { useReduxState } from "../../../hooks/useReduxState"
+import DashboardNavigationItem from "./DashboardNavigationItem"
 
 const DashboardNavigation = () => {
-  const {role} = useSelector(state => state.auth.authUser) ?? {}
-
+  const role = "doctor" // coming and depend of redux/context state;
+  const currentActiveLink = useReduxState((state) => state.dashboard.activeLink)
+  console.log(currentActiveLink)
 
   return (
-    
-    
     <Navbar expand="xl" className={style["aside-navigation-container"]}>
       <Container className={style["boostrap-container-div-container"]}>
         <Navbar.Brand id={style["aside-navbar-brand"]} href="#home">
@@ -30,9 +29,7 @@ const DashboardNavigation = () => {
         </Navbar.Collapse>
       </Container>
     </Navbar>
-  
-  
-  );
-};
+  )
+}
 
-export default DashboardNavigation;
+export default DashboardNavigation

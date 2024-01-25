@@ -9,17 +9,17 @@ function* onFetchProfile(action) {
   try {
     const result = yield call(usersService.getProfile, {
       id: action.payload,
-    });
-    console.log(result);
+    })
+    console.log(result)
 
-    yield put(usersSlice.actions.setProfile(result));
+    yield put(usersSlice.actions.setProfile(result))
   } catch (error) {
-    console.log("====================================");
-    console.log(error);
-    console.log("====================================");
+    console.log("====================================")
+    console.log(error)
+    console.log("====================================")
   } finally {
     // Dispatch setLoading(false) after the API call is complete (success or error)
-    yield put(usersSlice.actions.setLoading(false));
+    yield put(usersSlice.actions.setLoading(false))
   }
 }
 
@@ -27,7 +27,7 @@ function* onFetchPatientProfile(action) {
   try {
     const result = yield call(usersService.getPatientProfile, {
       patientId: action.payload,
-    });
+    })
 
     yield put(usersSlice.actions.setProfile(result));
     yield put(usersSlice.actions.setLoading(false));

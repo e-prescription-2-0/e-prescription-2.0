@@ -2,7 +2,7 @@ import { Button } from "react-bootstrap"
 import style from "../../../../AuthenticationPage.module.css"
 import FieldBuilder from "../../../helpers/FieldBuilder"
 import { doctorFields } from "./doctorFields"
-import { nameFields } from "./nameFields"
+import { nameFields } from "./namesFields"
 import { patientFields } from "./patientFields"
 import { pharmacistFields } from "./pharmacistFields"
 
@@ -20,10 +20,7 @@ const PersonalFieldsComponent = ({
   }
 
   // Combining name fields with profile-specific fields based on the selected profile type
-  const fields = nameFields.concat(
-    ProfileFields[registrationFormData?.role]
-  )
-
+  const fields = nameFields.concat(ProfileFields[registrationFormData?.role])
 
   // Rendering the combined fields along with associated handlers and styles
   return (

@@ -30,7 +30,6 @@ export const navLinkConfig = [
     hideFor: ["guest"],
     onClick: () => {},
     linkTo: "/prescriptions",
-    
   },
   {
     linkName: "Help",
@@ -38,8 +37,6 @@ export const navLinkConfig = [
     hideFor: [],
     onClick: () => {},
     linkTo: "/help",
-
-
   },
   {
     linkName: "Login",
@@ -47,8 +44,6 @@ export const navLinkConfig = [
     hideFor: ["pharmacist", "doctor", "patient"],
     onClick: () => {},
     linkTo: "/login",
-
-
   },
   {
     linkName: "Register",
@@ -56,8 +51,6 @@ export const navLinkConfig = [
     hideFor: ["pharmacist", "doctor", "patient"],
     onClick: () => {},
     linkTo: "/register",
-
-
   },
   {
     linkName: "Profile",
@@ -65,9 +58,6 @@ export const navLinkConfig = [
     hideFor: ["guest"],
     onClick: () => {},
     linkTo: "/profile",
-
-
-    
   },
 
   {
@@ -76,9 +66,7 @@ export const navLinkConfig = [
     hideFor: ["guest"],
     onClick: () => {},
     linkTo: "/logout",
-
-
   },
-];
+]
 
-const userRolesConfig = ["doctor", "pharmacist", "patient", "guest"];
+const userRolesConfig = ["doctor", "pharmacist", "patient", "guest"]
