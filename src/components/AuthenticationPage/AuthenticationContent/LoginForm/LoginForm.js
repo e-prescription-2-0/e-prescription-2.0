@@ -8,7 +8,7 @@ import style from "../../AuthenticationPage.module.css"
 import FieldBuilder from "../helpers/FieldBuilder"
 import { LoginFields } from "./LoginFields"
 
-const LoginForm = ({ setForm }) => {
+const LoginForm = () => {
   const [invalidLoginForm, setInvalidLoginForm] = useState(false)
   const [loginFormData, setLoginFormData] = useState({
     email: "",
@@ -19,11 +19,6 @@ const LoginForm = ({ setForm }) => {
   const navigate = useNavigate()
   const messageState = useSelector((state) => state.messages)
   const { isMessage, messages } = messageState
-  useEffect(() => {
-    if (isMessage && messages.type === "") {
-      navigate("/")
-    }
-  }, [isMessage, messages.type, navigate])
 
   const handleSubmit = (event) => {
     event.preventDefault()
@@ -36,7 +31,6 @@ const LoginForm = ({ setForm }) => {
     }
 
     dispatchSetAuthUser({ loginEmail, loginPassword })
-
     setInvalidLoginForm(false)
   }
 
@@ -47,6 +41,12 @@ const LoginForm = ({ setForm }) => {
       [name]: value,
     })
   }
+
+  useEffect(() => {
+    if (isMessage && messages.type === "") {
+      navigate("/")
+    }
+  }, [isMessage, messages.type, navigate])
 
   return (
     <>
@@ -79,7 +79,7 @@ const LoginForm = ({ setForm }) => {
       <div id={style["formFooter"]}>
         <p
           className={style["underlineHover"]}
-          onClick={() => setForm("forgotPassword")}
+          onClick={() => navigate("/forgotPassword")}
         >
           Forgot Password?
         </p>
