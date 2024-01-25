@@ -1,6 +1,7 @@
 import { useSelector } from "react-redux"
 import { useNavigate, useParams } from "react-router"
 import AuthenticationPage from "../AuthenticationPage/AuthenticationPage"
+import { Footer } from "../Footer/Footer"
 import Benefits from "./Benefits/Benefits"
 import DemoSteps from "./DemoSteps/DemoSteps"
 import Hero from "./Hero/Hero"
@@ -32,6 +33,7 @@ export const Welcome = () => {
       <DemoSteps />
 
       <Benefits />
+      <Footer />
     </div>
   )
 }
