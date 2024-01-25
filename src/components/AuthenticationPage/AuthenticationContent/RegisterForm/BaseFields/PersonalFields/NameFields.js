@@ -1,10 +1,9 @@
-
 export const nameFields = [
   {
     name: "firstName",
     placeholder: "First Name",
     classes: ["fadeIn", "first"],
-    
+
     autoComplete: "given-name",
 
     fieldType: "text",
@@ -14,10 +13,10 @@ export const nameFields = [
     name: "lastName",
     placeholder: "Last Name",
     classes: ["fadeIn", "first"],
-    
+
     autoComplete: "family-name",
 
     fieldType: "text",
     option: undefined,
   },
-];
+]

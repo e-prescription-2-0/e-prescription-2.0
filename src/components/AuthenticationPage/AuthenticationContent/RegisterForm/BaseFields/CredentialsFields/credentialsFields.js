@@ -31,7 +31,7 @@ export const credentialsFields = [
     option: undefined,
   },
   {
-    name: "profileType",
+    name: "role",
     placeholder: "profileType",
     classes: ["fadeIn", "fourth", "form-select"],
    

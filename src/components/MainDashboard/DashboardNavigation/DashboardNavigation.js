@@ -1,11 +1,14 @@
-import style from "./DashboardNavigation.module.css";
-import { dashBoardNavData } from "../../../constants/dashBoardNavData";
+import { dashBoardNavData } from "../../../constants/dashBoardNavData"
+import style from "./DashboardNavigation.module.css"
 
-import DashboardNavigationItem from "./DashboardNavigationItem";
-import { Container, Nav, Navbar } from "react-bootstrap";
+import { Container, Nav, Navbar } from "react-bootstrap"
+import { useReduxState } from "../../../hooks/useReduxState"
+import DashboardNavigationItem from "./DashboardNavigationItem"
 
 const DashboardNavigation = () => {
-  const role = "patient"; // coming and depend of redux/context state
+  const role = "doctor" // coming and depend of redux/context state;
+  const currentActiveLink = useReduxState((state) => state.dashboard.activeLink)
+  console.log(currentActiveLink)
 
   return (
     <Navbar expand="xl" className={style["aside-navigation-container"]}>
@@ -19,14 +22,14 @@ const DashboardNavigation = () => {
         />
         <Navbar.Collapse>
           <Nav className={style["aside-nav-list"]}>
-            {dashBoardNavData[role].map((x, index) => (
+            {dashBoardNavData[role]?.map((x, index) => (
               <DashboardNavigationItem key={index} {...x} />
             ))}
           </Nav>
         </Navbar.Collapse>
       </Container>
     </Navbar>
-  );
-};
+  )
+}
 
-export default DashboardNavigation;
+export default DashboardNavigation

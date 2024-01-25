@@ -1,5 +1,5 @@
-import { NavLink } from "react-router-dom";
-import style from "./DashboardNavigation.module.css";
+import { NavLink } from "react-router-dom"
+import style from "./DashboardNavigation.module.css"
 
 const DashboardNavigationItem = ({ icon, linkTo, text }) => {
   return (
@@ -12,9 +12,9 @@ const DashboardNavigationItem = ({ icon, linkTo, text }) => {
       to={linkTo}
     >
       {icon}
-      <p className={style['text-color-navigation']}>{text}</p>
+      <p className={style["text-color-navigation"]}>{text}</p>
     </NavLink>
-  );
-};
+  )
+}
 
-export default DashboardNavigationItem;
+export default DashboardNavigationItem

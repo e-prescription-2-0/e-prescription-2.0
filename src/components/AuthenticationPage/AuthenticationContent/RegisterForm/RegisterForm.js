@@ -1,5 +1,5 @@
 // Import necessary modules and components from React and Bootstrap
-import React, { useCallback, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { Form } from "react-bootstrap";
 import CredentialsFieldsComponent from "./BaseFields/CredentialsFields/CredentialsFieldsComponent";
 import PersonalFieldsComponent from "./BaseFields/PersonalFields/PersonalFieldsComponent";
@@ -8,14 +8,33 @@ import {
   validateInputBaseOnRegex,
   validatePasswordMatch,
 } from "../helpers/helperAuthenticationFunctions";
-import style from "../../AuthenticationPage.module.css"
+import style from "../../AuthenticationPage.module.css";
+import { fetchRegisteredUser } from "../../../../reducers/auth";
+import { useReduxAction } from "../../../../hooks/useReduxAction";
+import { useNavigate } from "react-router-dom";
+import { arrayFieldFactory } from "./BaseFields/PersonalFields/requestFields";
+import { useSelector } from "react-redux";
 
 // Define the RegisterForm component
 const RegisterForm = () => {
   // State variables to manage registration steps, profile type, validation, and form data
   const [registrationStep, setRegistrationStep] = useState(1);
   const [validated, setValidated] = useState(false);
-  const [registrationFormData, setRegistrationFormData] = useState({});
+  const [registrationFormData, setRegistrationFormData] = useState({
+    role: "patient",
+    gender: "male",
+  });
+  const dispatchSetAuthUser = useReduxAction(fetchRegisteredUser);
+  const navigate = useNavigate();
+
+  const messageState = useSelector(state => state.messages);
+  const {isMessage, messages} = messageState;
+  useEffect(() => {
+    if (isMessage && messages.type === "") {
+      navigate("/")
+    }
+  },[isMessage,messages.type,navigate])
+
 
   // Handle form submission
   const handleSubmit = (event) => {
@@ -29,6 +48,25 @@ const RegisterForm = () => {
       // Move to the next registration step if the form is valid
       setRegistrationStep(2);
       setValidated(false);
+    }
+    if (registrationStep === 2) {
+      if (validated) return;
+
+      const userRegistrationData = {
+        email: registrationFormData.email,
+        password: registrationFormData.password,
+        repeatPassword: registrationFormData.repeatPassword,
+        role: registrationFormData.role,
+        firstName: registrationFormData.firstName,
+        lastName: registrationFormData.lastName,
+        profileInfo: arrayFieldFactory(
+          registrationFormData.role,
+          registrationFormData
+        ),
+      };
+
+      dispatchSetAuthUser(userRegistrationData);
+     
     }
   };
 
@@ -92,7 +130,9 @@ const RegisterForm = () => {
   return (
     <>
       <Form noValidate validated={validated} onSubmit={handleSubmit}>
-        <h3 className={[style["fadeIn"], style["first"]].join(" ")}>Register</h3>
+        <h3 className={[style["fadeIn"], style["first"]].join(" ")}>
+          Register
+        </h3>
         {renderRegistrationStep()}
       </Form>
     </>
