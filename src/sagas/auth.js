@@ -1,4 +1,4 @@
-import { all, call, put, takeLatest } from "@redux-saga/core/effects"
+import { all, call, put, takeLatest } from "@redux-saga/core/effects";
 import {
   clearAuthUser,
   fetchLoginUser,
@@ -6,47 +6,45 @@ import {
   fetchRegisteredUser,
   setAuthUserByLogin,
   setAuthUserByRegister,
-} from "../reducers/auth"
-import authService from "../services/authentication-service"
+} from "../reducers/auth";
+import authService from "../services/authentication-service";
 
-import { setMessages } from "../reducers/messageDispatcher"
-import { getToken } from "../utils/getToken"
+import { setMessages } from "../reducers/messageDispatcher";
+import { getToken } from "../utils/getToken";
 
 function* onRegister(action) {
   try {
-    const user = yield call(authService.register, action.payload)
-
-    yield put(setAuthUserByRegister(user))
-    yield put(setMessages({ type: "", text: "Вие се регистрирахте успешно " }))
+    const user = yield call(authService.register, action.payload);
+    yield put(setMessages({ type: "", text: "Вие се регистрирахте успешно " }));
+    yield put(setAuthUserByRegister(user));
   } catch (error) {
-    yield put(setMessages({ type: "error", text: error.response.data.error }))
+    yield put(setMessages({ type: "error", text: error.response.data.error }));
   }
 }
 
 function* onLogin(action) {
   try {
-    const user = yield call(authService.login, action.payload)
-
-    yield put(setAuthUserByLogin(user))
-    yield put(setMessages({ type: "", text: "Успешно влизане" }))
+    const user = yield call(authService.login, action.payload);
+    yield put(setMessages({ type: "", text: "Успешно влизане" }));
+    yield put(setAuthUserByLogin(user));
   } catch (error) {
-    yield put(setMessages({ type: "error", text: error.response.data.error }))
+    yield put(setMessages({ type: "error", text: error.response.data.error }));
   }
 }
 
 function* onLogout() {
   try {
-    const accessToken = getToken()
+    const accessToken = getToken();
 
     if (!accessToken) {
-      return
+      return;
     }
-    yield all([call(authService.logout), put(clearAuthUser())])
+    yield all([call(authService.logout), put(clearAuthUser())]);
 
-    yield put(setMessages({ type: "", text: "Вие излязохте успешно" }))
+    yield put(setMessages({ type: "", text: "Вие излязохте успешно" }));
   } catch (error) {
-    console.log(error)
-    yield put(setMessages({ type: "error", text: error.message }))
+    console.log(error);
+    yield put(setMessages({ type: "error", text: error.message }));
   }
 }
 
@@ -55,5 +53,5 @@ export default function* authSaga() {
     takeLatest(fetchRegisteredUser, onRegister),
     takeLatest(fetchLoginUser, onLogin),
     takeLatest(fetchLogoutUser, onLogout),
-  ])
+  ]);
 }

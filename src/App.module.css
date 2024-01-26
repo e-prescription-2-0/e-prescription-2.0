@@ -27,7 +27,6 @@ body {
   font-size: 16px;
   line-height: 1.5;
   position: relative;
-
 }
 
 /* Remove the default button styling */
@@ -47,6 +46,7 @@ form {
 *::before,
 *::after {
   box-sizing: border-box;
+  font-family: "Nunito", sans-serif;
 }
 
 .main-content {
@@ -55,6 +55,6 @@ form {
   flex-direction: column;
   justify-content: flex-start;
 }
-html{
+html {
   height: 100%;
 }

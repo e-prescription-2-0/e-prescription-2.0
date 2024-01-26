@@ -65,7 +65,6 @@
 @media (max-width: 900px) {
   .navigation {
     height: 60px;
-    justify-content: space-between;
   }
   .navigation-list {
     display: none; /* Hide the navigation links for small screens */
