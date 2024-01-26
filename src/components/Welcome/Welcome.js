@@ -7,7 +7,6 @@ import DemoSteps from "./DemoSteps/DemoSteps"
 import Hero from "./Hero/Hero"
 import Passion from "./Passion/Passion"
 import style from "./Welcome.module.css"
-import { useNavigate } from "react-router-dom";
 import PageNotFound from "../PageNotFound/PageNotFound";
 
 export const Welcome = () => {
