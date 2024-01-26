@@ -7,9 +7,10 @@ import { useReduxState } from "../../../hooks/useReduxState";
 import { useMediaQuery } from "react-responsive";
 
 const PrescriptionCard = ({ prescription }) => {
-  const setOpenPrescription = useReduxAction(prescriptionsSlice.actions.setOpenPrescription)
-  const openPrescription = useReduxState((state)=>state.prescriptions.openPrescription)
+  const setOpenPrescription = useReduxAction(prescriptionsSlice.actions.setPrescription)
+  const openPrescription = useReduxState((state)=>state.prescriptions.prescription)
 
+  const getPrescription = useReduxAction(prescriptionsSlice.actions.fetchPrescription)
 
   const isDesktop = useMediaQuery({ minWidth: 1501 });
 
@@ -21,19 +22,20 @@ const PrescriptionCard = ({ prescription }) => {
 
 
   const onCLickSetThisPrescriptionToOpenPrescription = () => {
+    getPrescription(prescription._id)
     setOpenPrescription(prescription)
-    console.log(openPrescription)
   };
 
-  const { _id, prescribedBy, prescribedTo, validPeriod } = prescription
+  const { prescriptionId, prescribedBy, prescribedTo, validPeriod } = prescription
+
   return (
     <li className={[style["prescriptions-list-item"], isOpen && style['prescriptions-list-item-open']].join(" ")} onClick={onCLickSetThisPrescriptionToOpenPrescription}>
       <div className={style["prescriptions-list-item-content"]}>
         <p className={style["prescriptions-list-item-content-item"]}>
-          <span>Rp №:</span> {_id}
+          <span>Rp №:</span> {prescriptionId}
         </p>
         <p className={style["prescriptions-list-item-content-item"]}>
-          <span>От:</span> {`${prescribedBy["name"]} ${prescribedBy["lastName"]}`}
+          <span>От:</span> {`${prescribedBy["firstName"]} ${prescribedBy["lastName"]}`}
         </p>
         <p className={style["prescriptions-list-item-content-item"]}>
           <span>За:</span> {`${prescribedTo.firstName} ${prescribedTo.lastName}`}

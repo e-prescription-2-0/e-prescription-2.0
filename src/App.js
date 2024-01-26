@@ -13,14 +13,37 @@ import store from "./redux";
 import Messages from "./components/Messages/Messages";
 
 const App = () => {
+  const { pathname } = useLocation()
+  const pathsWithoutDashboardNavigation = [
+    "/",
+    "/login",
+    "/register",
+    "/logout",
+  ]
+  const shouldShowDashboardNavigation =
+    !pathsWithoutDashboardNavigation.includes(pathname)
+
   return (
     <Provider store={store}>
       <Messages />
 
-      <main className={style["main-content"]}>
-        <Header />
+      <Header />
+
+      <main
+        className={[
+          style["main-content"],
+          style[
+            shouldShowDashboardNavigation
+              ? "flexDirectionRow"
+              : "flexDirectionColumn"
+          ],
+        ].join(" ")}
+      >
+        {shouldShowDashboardNavigation ? <DashboardNavigation /> : null}
         <Routes>
           <Route path="/:action?" element={<Welcome />} />
+
+          <Route path="/profile" element={<UserProfile />} />
           <Route path="/prescriptions" element={<MainDashboard />} />
           <Route path="/create-prescription" element={<CreatePrescription />} />
           <Route
@@ -35,21 +58,11 @@ const App = () => {
             path="/search/prescriptions"
             element={<SearchPage searchType={"prescriptions"} />}
           />
-          {/* <Route
-            path="/login"
-            element={<AuthenticationPage link={"login"} />}
-          />
-          <Route
-            path="/register"
-            element={<AuthenticationPage link={"register"} />}
-          /> */}
           <Route path="/logout" element={<Logout />} />
         </Routes>
-
-        <Footer />
       </main>
     </Provider>
-  );
-};
+  )
+}
 
-export default App;
+export default App

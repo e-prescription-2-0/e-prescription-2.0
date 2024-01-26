@@ -6,7 +6,7 @@ import { Accordion } from "react-bootstrap";
 
 const MedicineList = () => {
   const currentPrescription = useReduxState(
-    (state) => state.prescriptions.openPrescription
+    (state) => state.prescriptions.prescription
   );
   return (
     <div className={style["div-articles"]}>
@@ -16,7 +16,7 @@ const MedicineList = () => {
         id={style["div-articles-accordion"]}
       >
         {currentPrescription.medicines.map((medicine, index) => (
-          <MedicineAccordion medicine={medicine} index={index} />
+          <MedicineAccordion key={medicine._id} medicine={medicine} index={index} />
         ))}
       </Accordion>
     </div>

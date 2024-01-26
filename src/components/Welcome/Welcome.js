@@ -1,11 +1,12 @@
-import { useParams } from "react-router";
-import Benefits from "./Benefits/Benefits";
-import DemoSteps from "./DemoSteps/DemoSteps";
-import Hero from "./Hero/Hero";
-import Passion from "./Passion/Passion";
-import style from "./Welcome.module.css";
-import AuthenticationPage from "../AuthenticationPage/AuthenticationPage";
-import { useSelector } from "react-redux";
+import { useSelector } from "react-redux"
+import { useNavigate, useParams } from "react-router"
+import AuthenticationPage from "../AuthenticationPage/AuthenticationPage"
+import { Footer } from "../Footer/Footer"
+import Benefits from "./Benefits/Benefits"
+import DemoSteps from "./DemoSteps/DemoSteps"
+import Hero from "./Hero/Hero"
+import Passion from "./Passion/Passion"
+import style from "./Welcome.module.css"
 import { useNavigate } from "react-router-dom";
 import PageNotFound from "../PageNotFound/PageNotFound";
 
@@ -23,6 +24,7 @@ export const Welcome = () => {
     console.log("i come heree");
     return <PageNotFound/>;
   }
+
   return (
     <div className={style["main"]}>
       {!email && <AuthenticationPage link={action} />}
@@ -33,6 +35,7 @@ export const Welcome = () => {
       <DemoSteps />
 
       <Benefits />
+      <Footer />
     </div>
-  );
-};
+  )
+}

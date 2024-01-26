@@ -50,11 +50,20 @@ form {
 }
 
 .main-content {
-  min-height: 100vh;
   display: flex;
-  flex-direction: column;
   justify-content: flex-start;
 }
-html {
+
+.flexDirectionRow {
+  flex-direction: row;
+  margin: 2rem 5rem;
+  height: 88vh;
+}
+
+.flexDirectionColumn {
+  flex-direction: column;
+}
+
+html  {
   height: 100%;
 }

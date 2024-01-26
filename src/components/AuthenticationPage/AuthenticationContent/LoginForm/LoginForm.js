@@ -19,11 +19,6 @@ const LoginForm = () => {
   const navigate = useNavigate()
   const messageState = useSelector((state) => state.messages)
   const { isMessage, messages } = messageState
-  useEffect(() => {
-    if (isMessage && messages.type === "") {
-      navigate("/")
-    }
-  }, [isMessage, messages.type, navigate])
 
   const handleSubmit = (event) => {
     event.preventDefault()
@@ -36,7 +31,6 @@ const LoginForm = () => {
     }
 
     dispatchSetAuthUser({ loginEmail, loginPassword })
-
     setInvalidLoginForm(false)
   }
 
@@ -47,6 +41,12 @@ const LoginForm = () => {
       [name]: value,
     })
   }
+
+  useEffect(() => {
+    if (isMessage && messages.type === "") {
+      navigate("/")
+    }
+  }, [isMessage, messages.type, navigate])
 
   return (
     <>
