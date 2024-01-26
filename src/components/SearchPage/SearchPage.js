@@ -13,7 +13,7 @@ const SearchPage = ({ searchType }) => {
 
   return (
     <section className={style["main-search-doctors-section"]}>
-      <DashboardNavigation />
+      
       <SearchContent
         searchType={searchType}
       />

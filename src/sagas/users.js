@@ -3,14 +3,14 @@ import { usersSlice } from "../reducers/users";
 import usersService from "../services/users-service";
 import { searchSlice } from "../reducers/search";
 import { setMessages } from "../reducers/messageDispatcher";
-import { setAuthUserByLogin } from "../reducers/auth";
+import { setAuthUser } from "../reducers/auth";
 
 function* onFetchProfile(action) {
   try {
     const result = yield call(usersService.getProfile, {
       id: action.payload,
     })
-    console.log(result)
+   
 
     yield put(usersSlice.actions.setProfile(result))
   } catch (error) {
@@ -51,7 +51,7 @@ function* onFetchPatientListAdd(action) {
     
     
 
-    yield put(setAuthUserByLogin(updatedUser))
+    yield put(setAuthUser(updatedUser))
    
   
   } catch (error) {

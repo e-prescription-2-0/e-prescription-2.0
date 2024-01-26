@@ -67,7 +67,11 @@ useEffect(() => {
                 <tbody className={styles['tbody-list']}>
 
 
-                    {myList.map(p => <PatientData key={p._id} {...p} hidePatientList={hidePatientList} searchType={searchType} isPrescriptionCreateMode={isPrescriptionCreateMode} />)
+                    {myList.map(p => <PatientData key={p._id} {...p}
+                     hidePatientList={hidePatientList}
+                      searchType={searchType} 
+                      isPrescriptionCreateMode={isPrescriptionCreateMode} 
+                      isMyPatientsChecked={isMyPatientsChecked}/>)
                     }
                 </tbody>
             </Table>

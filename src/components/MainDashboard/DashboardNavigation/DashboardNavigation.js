@@ -8,7 +8,7 @@ import DashboardNavigationItem from "./DashboardNavigationItem"
 const DashboardNavigation = () => {
   const role = "doctor" // coming and depend of redux/context state;
   const currentActiveLink = useReduxState((state) => state.dashboard.activeLink)
-  console.log(currentActiveLink)
+ 
 
   return (
     <Navbar expand="xl" className={style["aside-navigation-container"]}>

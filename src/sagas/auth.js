@@ -4,19 +4,18 @@ import {
   fetchLoginUser,
   fetchLogoutUser,
   fetchRegisteredUser,
-  setAuthUserByLogin,
-  setAuthUserByRegister,
+  setAuthUser,
 } from "../reducers/auth"
-import authService from "../services/authentication-service"
+import authService, { requestLogout } from "../services/authentication-service"
 
 import { setMessages } from "../reducers/messageDispatcher"
-import { getToken } from "../utils/getToken"
+
 
 function* onRegister(action) {
   try {
     const user = yield call(authService.register, action.payload)
 
-    yield put(setAuthUserByRegister(user))
+    yield put(setAuthUser(user))
     yield put(setMessages({ type: "", text: "Вие се регистрирахте успешно " }))
   } catch (error) {
     yield put(setMessages({ type: "error", text: error.response.data.error }))
@@ -26,9 +25,10 @@ function* onRegister(action) {
 function* onLogin(action) {
   try {
     const user = yield call(authService.login, action.payload)
-
-    yield put(setAuthUserByLogin(user))
-    yield put(setMessages({ type: "", text: "Успешно влизане" }))
+    console.log(user);
+  
+     yield put(setAuthUser(user))
+     yield put(setMessages({ type: "", text: "Успешно влизане" }))
   } catch (error) {
     yield put(setMessages({ type: "error", text: error.response.data.error }))
   }
@@ -36,19 +36,16 @@ function* onLogin(action) {
 
 function* onLogout() {
   try {
-    const user = JSON.parse(localStorage.getItem("authUser"))
-    const accessToken = getToken();
-    console.log(user);
+   
+  
 
-    if (!accessToken) {
-      return
-    }
-    yield all([call(authService.logout), put(clearAuthUser())])
+    
+    yield all([call(requestLogout), put(clearAuthUser())])
 
     yield put(setMessages({ type: "", text: "Вие излязохте успешно" }))
   } catch (error) {
    
-    yield put(setMessages({ type: "error", text: error.message }))
+   console.log(error);
   }
 }
 

@@ -4,7 +4,7 @@ import Moment from 'react-moment';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {faCirclePlus,faUserCheck} from "@fortawesome/free-solid-svg-icons";
+import {faCirclePlus,faUserCheck,faUserSlash} from "@fortawesome/free-solid-svg-icons";
 import { useReduxAction } from '../../../hooks/useReduxAction';
 import { usersSlice } from '../../../reducers/users';
 
@@ -24,7 +24,8 @@ const PatientData = (
      isCompleted, 
      hidePatientList,
      searchType,
-     isPrescriptionCreateMode}) => {
+     isPrescriptionCreateMode,
+     isMyPatientsChecked}) => {
 
 const {_id:doctorId,patients} = useSelector(state => state.auth.authUser);
 const navigate = useNavigate();
@@ -39,7 +40,7 @@ const addCurrentPatientToMyList = (e,patientId) => {
 
 }
 
-
+const patientView = !isMyPatientsChecked ? <FontAwesomeIcon icon={faUserCheck} style={{color: "#3c6e71",}} size="lg" />:<FontAwesomeIcon icon={faUserSlash}style={{color: "red",}} size="lg" />
 
 return (
   <tr className={styles['table-row']} onClick={() => navigate(`/${searchType}/${_id}`)}>
@@ -53,7 +54,7 @@ return (
           <td>{patientId}</td>
           <td>
             {!patientCheck(_id) ? <FontAwesomeIcon icon={faCirclePlus} style={{color: "#3c6e71",}} size='lg' onClick={(e) => addCurrentPatientToMyList(e,_id)}/> :
-             <FontAwesomeIcon icon={faUserCheck} style={{color: "#3c6e71",}} size="lg" />
+           patientView
              }
            
             </td>
