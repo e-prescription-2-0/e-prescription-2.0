@@ -1,129 +1,127 @@
 .section-open-prescription {
-    background-color: #D9D9D9;
-    padding: 2em;
-    width: 700px;
-    border-radius: 10px;
-    height: 40rem;
-
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #d9d9d9;
+  padding: 2em;
+  width: 45rem;
+  min-width: 35rem;
+  border-radius: 10px;
+  height: 48.4rem;
+  min-height: 40rem;
 }
 
 .div-main-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    height: 100%;
-    max-height: 900px;
-    background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+  max-height: 900px;
+  background-color: #ffffff;
 }
 
-.div-header{
-    width: 100%;
-    border-bottom: 1px solid black;
-    text-align: center;
+.div-header {
+  width: 100%;
+  border-bottom: 1px solid black;
+  text-align: center;
 }
 
 .div-header-main-title {
-    text-transform: uppercase;
+  text-transform: uppercase;
 }
 
 .div-header-title {
-    font-size: 27px;
-    font-weight: 200;
+  font-size: 27px;
+  font-weight: 200;
 }
 
-.div-articles{
-    width: 100%;
-    border-bottom: 1px solid black;
-    max-height: 500px;
-    overflow: scroll;
+.div-articles {
+  width: 100%;
+  border-bottom: 1px solid black;
+  max-height: 500px;
+  overflow: scroll;
 }
 .div-articles::-webkit-scrollbar {
-    display: none;
-  }
+  display: none;
+}
 
 #div-articles-accordion {
-    width: 100%;
+  width: 100%;
 }
 
-.div-articles-accordion-item-span{
-    font-size: 20px;
-    font-weight: bold;
-    margin-right: 7px;
+.div-articles-accordion-item-span {
+  font-size: 20px;
+  font-weight: bold;
+  margin-right: 7px;
 }
 
-.div-articles-accordion-item-content{
-    margin-left: 12px;
+.div-articles-accordion-item-content {
+  margin-left: 12px;
 }
 
-.div-userInfo{
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    padding: 10px 15px 10px 15px;
+.div-userInfo {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 10px 15px 10px 15px;
 }
 
 .center-div {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .delete-btn {
-    width: 100px;
-    height: 40px;
-    border-radius: 10px;
-    color: #ffffff;
-    background-color: rgba(178, 1, 1, 0.818);
-    align-self: center;
-    margin-top: 5px;
-    
+  width: 100px;
+  height: 40px;
+  border-radius: 10px;
+  color: #ffffff;
+  background-color: rgba(178, 1, 1, 0.818);
+  align-self: center;
+  margin-top: 5px;
 }
 
 #prescription-completed {
-    font-size: 30px;
-    background-color: green;
-    width: 50px;
-    text-align: center;
-    align-self: center;
-    
+  font-size: 30px;
+  background-color: green;
+  width: 50px;
+  text-align: center;
+  align-self: center;
 }
 
 .isCompleted-btn-yes {
-    width: 100px;
-    height: 40px;
-    border-radius: 10px;
-    color: #ffffff;
-    background-color: green;
-    align-self: center;
-    margin-top: 5px;
+  width: 100px;
+  height: 40px;
+  border-radius: 10px;
+  color: #ffffff;
+  background-color: green;
+  align-self: center;
+  margin-top: 5px;
 }
 
-.div-no-prescription-content{
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+.div-no-prescription-content {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
-.div-no-prescription-content img{
-    height: 15rem;
+.div-no-prescription-content img {
+  height: 15rem;
 }
 
+@media (max-width: 768px) {
+  .section-open-prescription {
+    border-block: solid 5px #12486b;
+    padding: 0;
 
-@media (max-width: 768px){
-    .section-open-prescription{
-        border-block: solid 5px #12486B;
-        padding: 0;
-        
-        width: 100%;
-        border-radius: 0;
-    }
-    .div-no-prescription-content{
-        padding-block: 4rem;
-    }
-    
-  
+    width: 100%;
+    border-radius: 0;
   }
-  
+  .div-no-prescription-content {
+    padding-block: 4rem;
+  }
+}

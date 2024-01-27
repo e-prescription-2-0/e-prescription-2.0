@@ -39,6 +39,6 @@ const PrescriptionsList = ({}) => {
     }
   }, [getPrescriptions, loading])
 
-  return loading ? <LoadingCircle /> : <div>{prescriptionList()}</div>
+  return loading ? <LoadingCircle /> : prescriptionList()
 }
 export default PrescriptionsList

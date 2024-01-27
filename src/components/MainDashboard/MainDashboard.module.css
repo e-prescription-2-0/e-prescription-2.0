@@ -5,7 +5,7 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
-  align-items: stretch;
+  align-items: normal;
   column-gap: 4.5em;
   height: 90vh;
 }
@@ -13,7 +13,8 @@
 .main-dashboard-section-content {
   display: flex;
   column-gap: 1em;
-  align-items: center;
+  align-items: flex-start;
+  justify-content: space-evenly;
 }
 
 body {

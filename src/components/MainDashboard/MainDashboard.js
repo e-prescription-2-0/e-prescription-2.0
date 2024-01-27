@@ -4,12 +4,10 @@ import PrescriptionsList from "./PrescriptionsList/PrescriptionsList"
 
 const MainDashboard = () => {
   return (
-    <section className={style["main-dashboard-section"]}>
-      <div className={style["main-dashboard-section-content"]}>
-        <PrescriptionsList />
-        <Prescription />
-      </div>
-    </section>
+    <div className={style["main-dashboard-section-content"]}>
+      <PrescriptionsList />
+      <Prescription />
+    </div>
   )
 }
 
