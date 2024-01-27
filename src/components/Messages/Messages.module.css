@@ -1,7 +1,7 @@
 .message-banner {
     background-color: #4caf50; 
     color: #fff; 
-   position: absolute;
+    position: absolute;
     border-radius: 15px; 
     min-width: 25em;
     min-height: 7em;
@@ -16,6 +16,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    z-index: 1000000;
   
   
   }

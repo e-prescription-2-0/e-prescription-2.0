@@ -38,7 +38,7 @@ export const dashBoardNavData = {
       icon: <FontAwesomeIcon icon={faUser} />,
     },
     {
-      linkTo: "/prescription",
+      linkTo: "/search/prescriptions",
       text: "Рецепти",
       icon: <FontAwesomeIcon icon={faFilePrescription} />,
     },
@@ -61,7 +61,7 @@ export const dashBoardNavData = {
       icon: <FontAwesomeIcon icon={faUser} />,
     },
     {
-      linkTo: "/prescriptions",
+      linkTo: "/search/prescriptions",
       text: "Рецепти",
       icon: <FontAwesomeIcon icon={faFilePrescription} />,
     },

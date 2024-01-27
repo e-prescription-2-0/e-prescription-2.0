@@ -12,6 +12,7 @@ import UserProfile from "./components/UserProfile/UserProfile"
 import { Welcome } from "./components/Welcome/Welcome"
 import store from "./redux"
 import RouteDoctorGuard from "./components/RouteGuards/RouteDoctorGuard"
+import RouteAuthGuard from "./components/RouteGuards/RouteAuthGuard"
 
 const App = () => {
   const { pathname } = useLocation()
@@ -32,35 +33,35 @@ const App = () => {
         className={[
           style["main-content"],
           style[
-            shouldShowDashboardNavigation
-              ? "flexDirectionRow"
-              : "flexDirectionColumn"
+          shouldShowDashboardNavigation
+            ? "flexDirectionRow"
+            : "flexDirectionColumn"
           ],
         ].join(" ")}
       >
         {shouldShowDashboardNavigation ? <DashboardNavigation /> : null}
         <Routes>
           <Route path="/:action?" element={<Welcome />} />
-
-          <Route path="/profile" element={<UserProfile />} />
-          <Route path="/prescriptions" element={<MainDashboard />} />
-          {/* Route DOctor Guard */}
-            <Route element={<RouteDoctorGuard/>}>
-               <Route path="/create-prescription" element={<CreatePrescription />} />
+          <Route element={<RouteAuthGuard />}>
+            <Route path="/profile" element={<UserProfile />} />
+            <Route path="/prescriptions" element={<MainDashboard />} />
+            <Route element={<RouteDoctorGuard />}>
+              <Route path="/create-prescription" element={<CreatePrescription />} />
             </Route>
-          <Route
-          // ---------------------
-            path="/search/doctors"
-            element={<SearchPage searchType={"doctors"} />}
-          />
-          <Route
-            path="/search/patients"
-            element={<SearchPage searchType={"patients"} />}
-          />
-          <Route
-            path="/search/prescriptions"
-            element={<SearchPage searchType={"prescriptions"} />}
-          />
+            <Route
+
+              path="/search/doctors"
+              element={<SearchPage searchType={"doctors"} />}
+            />
+            <Route
+              path="/search/patients"
+              element={<SearchPage searchType={"patients"} />}
+            />
+            <Route
+              path="/search/prescriptions"
+              element={<SearchPage searchType={"prescriptions"} />}
+            />
+          </Route>
           <Route path="/logout" element={<Logout />} />
         </Routes>
       </main>

@@ -6,7 +6,7 @@ import { useReduxAction } from "../../hooks/useReduxAction";
 
 
 
-const RouteDoctorGuard = ({
+const RouteAuthGuard = ({
     children,
 }) => {
     const dispatchError = useReduxAction(setMessages)
@@ -15,16 +15,14 @@ const RouteDoctorGuard = ({
     
 
    
-       if (user && user.role !== 'doctor') {
-           dispatchError({type:'error', text:'Нямате права за достъп до този ресурс'});
-           return <Navigate to="/" />;
-       }
-
-   
     
+    if (!user) {
+        dispatchError({type:'error', text:'Моля, впишете се или се регистрирайте'});
+        return <Navigate to="/login" />;
+    }
   
 
     return children ? children : <Outlet />
 };
 
-export default RouteDoctorGuard
+export default RouteAuthGuard
