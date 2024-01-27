@@ -68,6 +68,7 @@ function* onFetchPrescription(action) {
 function* onCreatePrescription(action) {
   try {
     const prescription = yield call(prescriptionsService.createPrescription, action.payload);
+    console.log(prescription);
 
     yield put(prescriptionsSlice.actions.setCreatedPrescription(prescription));
   } catch (error) {

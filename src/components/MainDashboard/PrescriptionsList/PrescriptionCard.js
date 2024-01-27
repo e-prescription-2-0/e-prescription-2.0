@@ -26,7 +26,9 @@ const PrescriptionCard = ({ prescription }) => {
     setOpenPrescription(prescription)
   };
 
-  const { prescriptionId, prescribedBy, prescribedTo, validPeriod } = prescription
+  const { prescriptionId, prescribedBy, prescribedTo, validPeriod } = prescription;
+
+  console.log(prescription);
 
   return (
     <li className={[style["prescriptions-list-item"], isOpen && style['prescriptions-list-item-open']].join(" ")} onClick={onCLickSetThisPrescriptionToOpenPrescription}>

@@ -7,15 +7,16 @@ import style from "../Prescription.module.css";
 const PrescriptionFooter = () => {
   const completePrescription = useReduxAction(prescriptionsSlice.actions.completePrescription)
   const deletePrescription = useReduxAction(prescriptionsSlice.actions.deletePrescription)
+  const user = useReduxState((state) => state.auth.authUser)
 
   const currentPrescription = useReduxState(
     (state) => state.prescriptions.prescription
   );
 
-  let user = {
-    role: "pharmacist",
-    id: "658f0b9d1a1925a19548cc8e"
-  }
+  // let user = {
+  //   role: "doctor",
+  //   id: "658f0b9d1a1925a19548cc8e"
+  // }
 
   const onCompleteBtnClick = () => {
     completePrescription(currentPrescription._id)
@@ -32,7 +33,7 @@ const PrescriptionFooter = () => {
   const isOwner = () => {
     //when we have saved user in redux, take the user from there
     
-    return user.id === currentPrescription.prescribedBy._id
+    return user._id === currentPrescription.prescribedBy._id
   }
 
   return (
