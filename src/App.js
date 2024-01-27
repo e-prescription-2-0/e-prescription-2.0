@@ -3,11 +3,11 @@ import { Route, Routes, useLocation } from "react-router-dom"
 import "./App.module.css"
 import style from "./App.module.css"
 import CreatePrescription from "./components/CreatePrescription/CreatePrescription"
-import Header from "./components/Header/Header"
 import Logout from "./components/Logout/Logout"
 import DashboardNavigation from "./components/MainDashboard/DashboardNavigation/DashboardNavigation"
 import MainDashboard from "./components/MainDashboard/MainDashboard"
 import Messages from "./components/Messages/Messages"
+import { Navigation } from "./components/Navigation/Navigation"
 import SearchPage from "./components/SearchPage/SearchPage"
 import UserProfile from "./components/UserProfile/UserProfile"
 import { Welcome } from "./components/Welcome/Welcome"
@@ -29,7 +29,7 @@ const App = () => {
     <Provider store={store}>
       <Messages />
 
-      <Header />
+      <Navigation />
 
       <main
         className={[
