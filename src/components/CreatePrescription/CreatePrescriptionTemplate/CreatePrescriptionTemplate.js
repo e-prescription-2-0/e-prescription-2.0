@@ -4,6 +4,8 @@ import CreatePerscriptionTemplateItem from "./CreatePerscriptionTemplateItem";
 import style from "./CreatePrescriptionTemplate.module.css";
 import Accordion from 'react-bootstrap/Accordion';
 import Button from 'react-bootstrap/Button';
+import Moment from "react-moment";
+import moment, { now } from "moment";
 
 
 const CreatePrescriptionTemplate = ({
@@ -18,6 +20,12 @@ const CreatePrescriptionTemplate = ({
 
 const authUser = useSelector(state => state.auth.authUser);
 const{firstName,lastName,doctorId,hospitalName} = authUser;
+
+const ageDiff = currentPatient?.dateOfBirth
+? moment().diff(moment(currentPatient.dateOfBirth), 'years', true)
+: null;
+
+const roundedAge = ageDiff !== null ? Math.ceil(ageDiff) : 'NA';
 
 
 
@@ -48,8 +56,9 @@ const{firstName,lastName,doctorId,hospitalName} = authUser;
                 <div className={style["div-userInfo"]}>
                 <Button className={style['prescription-btn']} onClick={showPatientList}>Обратно към списъка с пациенти</Button>
                     <p>Пациент: {`${currentPatient?.firstName || ''} ${currentPatient?.lastName || ''} `}</p>
-                    <p>Възраст: {currentPatient?.age}</p>
+                    <p> Възраст: {roundedAge}</p>
                     <p>Специфики: {currentPatient?.specifics && currentPatient?.specifics.length > 0 ? currentPatient.specifics.join(',') : 'няма'}</p>
+                  
                 </div>
             </div>
         </ section>

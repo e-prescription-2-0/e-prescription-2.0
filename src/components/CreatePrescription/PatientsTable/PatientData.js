@@ -16,6 +16,7 @@ const PatientData = (
      firstName,
      lastName,
      patientId,
+     dateOfBirth,
      email,
      specialty,
      hospitalName,
@@ -70,7 +71,7 @@ return (
           {(isPrescriptionCreateMode && patientCheck(_id)) ?  
 
          <td>
-         <Button onClick={(e) => {e.stopPropagation(); hidePatientList({_id, firstName, lastName, patientId})}}>
+         <Button onClick={(e) => {e.stopPropagation(); hidePatientList({_id, firstName, lastName, patientId,dateOfBirth})}}>
            Изпиши
          </Button> </td>: <td></td>
      
