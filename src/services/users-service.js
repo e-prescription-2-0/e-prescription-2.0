@@ -56,4 +56,15 @@ export default {
       "Access-Control-Allow-Origin": "*",
     },
   }),
+  removeFromMyPatients: serviceBind({
+    url: "/api/auth/{doctorId}/patients/remove/{patientId}",
+    method: METHODS.DELETE,
+    headers: {
+      "Content-Type": HEADER_FORMATS.JSON,
+      Accept: HEADER_FORMATS.JSON,
+      "Access-Control-Allow-Origin": "*",
+    },
+  }),
 }
+
+

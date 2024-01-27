@@ -13,6 +13,7 @@ export const usersSlice = createSlice({
     fetchProfile: (state, action) => {},
     fetchPatientProfile: (state, action) => {},
     fetchSetToPatientList: (state, action) => {},
+    fetchRemoveFromPatientList: (state, action) => {},
     setUserRole: (state, action) => {
       state.role = action.payload;
     },

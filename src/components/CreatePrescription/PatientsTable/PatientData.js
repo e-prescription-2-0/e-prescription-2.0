@@ -30,6 +30,7 @@ const PatientData = (
 const {_id:doctorId,patients} = useSelector(state => state.auth.authUser);
 const navigate = useNavigate();
 const dispatchSetPatientToList = useReduxAction(usersSlice.actions.fetchSetToPatientList)
+const dispatchRemoveFromPatientList = useReduxAction(usersSlice.actions.fetchRemoveFromPatientList)
 
 const patientCheck = (id) => {return patients.some( e=> e === id)}
 
@@ -39,8 +40,16 @@ const addCurrentPatientToMyList = (e,patientId) => {
   dispatchSetPatientToList({doctorId, patientId})
 
 }
+const removeCurrentFromMyPatientList = (e,patientId) => {
+  e.stopPropagation()
+   
+  dispatchRemoveFromPatientList({doctorId,patientId})
+ 
+ }
 
-const patientView = !isMyPatientsChecked ? <FontAwesomeIcon icon={faUserCheck} style={{color: "#3c6e71",}} size="lg" />:<FontAwesomeIcon icon={faUserSlash}style={{color: "red",}} size="lg" />
+const patientView = !isMyPatientsChecked ? 
+        <FontAwesomeIcon icon={faUserCheck} style={{color: "#3c6e71",}} size="lg" />
+        :<FontAwesomeIcon icon={faUserSlash}style={{color: "#dc3545",}} size="lg" onClick={e=>removeCurrentFromMyPatientList(e,_id) }/>
 
 return (
   <tr className={styles['table-row']} onClick={() => navigate(`/${searchType}/${_id}`)}>

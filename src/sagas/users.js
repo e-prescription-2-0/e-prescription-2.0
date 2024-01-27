@@ -48,12 +48,24 @@ function* onFetchPatientListAdd(action) {
 
   try {
     const updatedUser = yield call(usersService.setToMyPatients,{doctorId,patientId})
-    
-    
-
     yield put(setAuthUser(updatedUser))
+  } catch (error) {
    
-  
+    console.log(error);
+   
+    yield put(setMessages({ type: "error", text: error.message }))
+  }
+}
+
+function* onFetchPatientListRemove(action) {
+
+  const doctorId = action.payload.doctorId
+  const patientId = action.payload.patientId
+ 
+
+  try {
+    const updatedUser = yield call(usersService.removeFromMyPatients,{doctorId,patientId})
+    yield put(setAuthUser(updatedUser))
   } catch (error) {
    
     console.log(error);
@@ -67,5 +79,6 @@ export default function* usersSaga() {
     takeLatest(usersSlice.actions.fetchProfile, onFetchProfile),
     takeLatest(usersSlice.actions.fetchPatientProfile, onFetchPatientProfile),
     takeLatest(usersSlice.actions.fetchSetToPatientList, onFetchPatientListAdd),
+    takeLatest(usersSlice.actions.fetchRemoveFromPatientList, onFetchPatientListRemove),
   ]);
 }
