@@ -40,11 +40,19 @@ function* onLogin(action) {
 function* onLogout() {
   try {
     const accessToken = getToken();
+    console.log(accessToken);
 
     if (!accessToken) {
       return;
     }
-    yield all([call(authService.logout), put(clearAuthUser())]);
+    yield all([
+      call(
+        authService.logout,
+        {},
+        { additionalHeaders: { "X-Authorization": accessToken } }
+      ),
+      put(clearAuthUser()),
+    ]);
 
     yield put(setMessages({ type: "", text: "Вие излязохте успешно" }));
   } catch (error) {

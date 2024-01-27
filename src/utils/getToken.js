@@ -1,6 +1,7 @@
 export const getToken = () => {
-  const user = JSON.parse(localStorage.getItem("authUser"))
+  const user = JSON.parse(localStorage.getItem("authUser"));
   if (user) {
-    return user["access-token"]
+    console.log(user["accessToken"]);
+    return user["accessToken"];
   }
-}
+};
