@@ -1,14 +1,16 @@
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react";
-import { NavLink, useNavigate } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import { navLinkConfig } from "../../../constants/navigation";
 import style from "./Navigation.module.css";
 import { useSelector } from "react-redux";
 import { useMediaQuery } from "react-responsive";
 
 export const Navigation = () => {
-  const { role, email, firstName } = useSelector((state) => state.auth.authUser) ?? {
+  const { role, email, firstName } = useSelector(
+    (state) => state.auth.authUser
+  ) ?? {
     role: "guest",
   };
 
@@ -59,7 +61,11 @@ export const Navigation = () => {
           ) : null
         )}
       </ul>
-      {email && isDesktop && <p style={{ color: "white" }}>Здравейте, {firstName}</p>}
+      {email && isDesktop && (
+        <p style={{ color: "white" }}>
+          Здравейте, <Link className={style['user-name-link-to-profile']} to={"/profile"}>{firstName}</Link>
+        </p>
+      )}
     </nav>
   );
 };

@@ -20,6 +20,7 @@ const App = () => {
     "/login",
     "/register",
     "/logout",
+    "/forgotPassword"
   ]
   const shouldShowDashboardNavigation =
     !pathsWithoutDashboardNavigation.includes(pathname)

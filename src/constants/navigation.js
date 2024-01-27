@@ -25,19 +25,13 @@ export const navLinkConfig = [
   //   onClick: () => { }
   // },
   {
-    linkName: "Dashboard",
+    linkName: "Табло",
     id: "9",
     hideFor: ["guest"],
     onClick: () => {},
     linkTo: "/prescriptions",
   },
-  {
-    linkName: "Help",
-    id: "5",
-    hideFor: [],
-    onClick: () => {},
-    linkTo: "/help",
-  },
+
   {
     linkName: "Login",
     id: "6",
@@ -52,21 +46,14 @@ export const navLinkConfig = [
     onClick: () => {},
     linkTo: "/register",
   },
-  {
-    linkName: "Profile",
-    id: "8",
-    hideFor: ["guest"],
-    onClick: () => {},
-    linkTo: "/profile",
-  },
 
   {
-    linkName: "Logout",
+    linkName: "Излез",
     id: "10",
     hideFor: ["guest"],
     onClick: () => {},
     linkTo: "/logout",
   },
-]
+];
 
-const userRolesConfig = ["doctor", "pharmacist", "patient", "guest"]
+const userRolesConfig = ["doctor", "pharmacist", "patient", "guest"];
