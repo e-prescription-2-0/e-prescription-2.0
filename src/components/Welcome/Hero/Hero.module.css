@@ -6,7 +6,7 @@
   align-items: center;
   width: 100%;
   min-height: 100vh;
-  padding-top: 2rem;
+  padding: 2rem 2rem 2rem 6rem;
   background: linear-gradient(
       180deg,
       rgba(40, 75, 99, 0.38) 52.6%,

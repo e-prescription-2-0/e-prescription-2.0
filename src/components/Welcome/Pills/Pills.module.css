@@ -1,0 +1,6 @@
+.pills-wrapper {
+  flex: 1;
+  height: 610px;
+  width: 665px;
+  z-index: 90;
+}

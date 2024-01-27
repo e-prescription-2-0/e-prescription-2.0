@@ -1,9 +1,8 @@
-import { Link } from "react-router-dom";
-import style from "./Hero.module.css";
-import { useSelector } from "react-redux";
+import { Link } from "react-router-dom"
+import Pills from "../Pills/Pills"
+import style from "./Hero.module.css"
 
-const Hero = ({email}) => {
-
+const Hero = ({ email }) => {
   // const email  = "";
 
   return (
@@ -36,11 +35,12 @@ const Hero = ({email}) => {
           </div>
         </div>
         <div className={style["hero-content-pills"]}>
-          <img src="pills.png" alt="pills"></img>
+          <Pills />
+          {/* <img src="pills.png" alt="pills"></img> */}
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default Hero;
+export default Hero
