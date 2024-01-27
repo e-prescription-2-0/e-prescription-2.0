@@ -25,7 +25,7 @@ function* onRegister(action) {
 function* onLogin(action) {
   try {
     const user = yield call(authService.login, action.payload)
-    console.log(user);
+ 
   
      yield put(setAuthUser(user))
      yield put(setMessages({ type: "", text: "Успешно влизане" }))
