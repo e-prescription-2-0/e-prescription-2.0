@@ -24,6 +24,8 @@ const RegisterForm = () => {
     role: "patient",
     gender: "male",
   })
+
+  
   const dispatchSetAuthUser = useReduxAction(fetchRegisteredUser)
   const navigate = useNavigate()
 

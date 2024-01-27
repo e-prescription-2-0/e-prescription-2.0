@@ -1,10 +1,11 @@
-import { createSlice } from "@reduxjs/toolkit"
+import { createSlice } from "@reduxjs/toolkit";
 
-const storedUser = localStorage.getItem("authUser")
+const storedUser = localStorage.getItem("authUser");
 
 const initialState = {
   authUser: storedUser ? JSON.parse(storedUser) : null,
-}
+  loading: false,
+};
 
 export const authSlice = createSlice({
   name: "auth",
@@ -12,21 +13,24 @@ export const authSlice = createSlice({
   reducers: {
     fetchRegisteredUser: () => {},
     setAuthUserByRegister: (state, action) => {
-      localStorage.setItem("authUser", JSON.stringify(action.payload))
-      state.authUser = action.payload
+      localStorage.setItem("authUser", JSON.stringify(action.payload));
+      state.authUser = action.payload;
     },
     fetchLoginUser: () => {},
     setAuthUserByLogin: (state, action) => {
-      localStorage.setItem("authUser", JSON.stringify(action.payload))
-      state.authUser = action.payload
+      localStorage.setItem("authUser", JSON.stringify(action.payload));
+      state.authUser = action.payload;
     },
     fetchLogoutUser: () => {},
     clearAuthUser(state) {
-      localStorage.removeItem("authUser")
-      state.authUser = null
+      localStorage.removeItem("authUser");
+      state.authUser = null;
+    },
+    setLoading: (state, action) => {
+      state.loading = action.payload;
     },
   },
-})
+});
 
 export const {
   setAuthUserByRegister,
@@ -35,4 +39,5 @@ export const {
   fetchRegisteredUser,
   fetchLoginUser,
   fetchLogoutUser,
-} = authSlice.actions
+  setLoading,
+} = authSlice.actions;

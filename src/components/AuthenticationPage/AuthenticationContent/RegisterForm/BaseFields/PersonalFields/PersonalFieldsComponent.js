@@ -1,10 +1,11 @@
-import { Button } from "react-bootstrap"
-import style from "../../../../AuthenticationPage.module.css"
-import FieldBuilder from "../../../helpers/FieldBuilder"
-import { doctorFields } from "./doctorFields"
-import { nameFields } from "./namesFields"
-import { patientFields } from "./patientFields"
-import { pharmacistFields } from "./pharmacistFields"
+import { Button, Spinner } from "react-bootstrap";
+import style from "../../../../AuthenticationPage.module.css";
+import FieldBuilder from "../../../helpers/FieldBuilder";
+import { doctorFields } from "./doctorFields";
+import { nameFields } from "./namesFields";
+import { patientFields } from "./patientFields";
+import { pharmacistFields } from "./pharmacistFields";
+import { useSelector } from "react-redux";
 
 // Functional component for handling personal information fields
 const PersonalFieldsComponent = ({
@@ -17,10 +18,13 @@ const PersonalFieldsComponent = ({
     patient: patientFields,
     doctor: doctorFields,
     pharmacist: pharmacistFields,
-  }
+  };
 
   // Combining name fields with profile-specific fields based on the selected profile type
-  const fields = nameFields.concat(ProfileFields[registrationFormData?.role])
+  const fields = nameFields.concat(ProfileFields[registrationFormData?.role]);
+
+  // Loading for the request
+  const loading = useSelector((state) => state.auth.loading);
 
   // Rendering the combined fields along with associated handlers and styles
   return (
@@ -57,11 +61,15 @@ const PersonalFieldsComponent = ({
             style["popup-form-button"],
           ].join(" ")}
         >
-          Register
+          {loading ? (
+            <Spinner animation="border" size="sm" variant="light" />
+          ) : (
+            "Register"
+          )}
         </Button>
       </div>
     </>
-  )
-}
+  );
+};
 
-export default PersonalFieldsComponent
+export default PersonalFieldsComponent;

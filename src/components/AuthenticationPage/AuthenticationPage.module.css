@@ -124,6 +124,7 @@ html, body {
   -ms-transition: all 0.3s ease-in-out;
   -o-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
+  width: 13rem;
 }
 .popup-form-button:hover{
   background-color: #6DA9E4;
