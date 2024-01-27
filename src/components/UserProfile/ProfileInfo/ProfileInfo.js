@@ -9,7 +9,7 @@ const ProfileInfo = ({
         <>
             {
                 info.map((user, index) => {
-                    console.log(index);
+                    
                     return (
                         user[1] !== "" &&
                         <div className={ index % 2 === 0? style["content-item"] : style['content-item-bold']}>

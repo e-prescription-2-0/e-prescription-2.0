@@ -20,7 +20,6 @@ export const Welcome = () => {
     
   }
   if (action && !correctParams.includes(action)) {
-    console.log("i come heree");
     return <PageNotFound/>;
   }
 

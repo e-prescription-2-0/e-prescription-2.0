@@ -15,8 +15,6 @@ const DashboardNavigation = () => {
     role = user.role
   }
 
-  console.log(currentActiveLink)
-
   return (
     <Navbar expand="xl" className={style["aside-navigation-container"]}>
       <Container className={style["boostrap-container-div-container"]}>

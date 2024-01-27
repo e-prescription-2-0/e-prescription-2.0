@@ -85,7 +85,7 @@ const CreatePrescription = () => {
   }
 
   const hidePatientList = (data) => {
-  console.log(data);
+  
     if (data._id) {
       setCurrentPatient(data)
     }

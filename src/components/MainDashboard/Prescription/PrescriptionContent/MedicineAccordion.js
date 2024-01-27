@@ -2,7 +2,6 @@ import style from "../Prescription.module.css";
 import Accordion from "react-bootstrap/Accordion";
 
 const MedicineAccordion = ({ medicine, index }) => {
-  console.log(medicine);
   return (
     <Accordion.Item
       eventKey={index}

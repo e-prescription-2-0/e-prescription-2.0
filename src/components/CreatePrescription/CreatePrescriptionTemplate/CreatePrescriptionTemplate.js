@@ -34,7 +34,6 @@ const CreatePrescriptionTemplate = ({
 
         createPrescription(data);
         navigate("/prescriptions")
-        console.log(medicineItems);
     }
     return (
         <section className={style["section-openPerscription"]} >
