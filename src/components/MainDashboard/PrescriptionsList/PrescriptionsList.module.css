@@ -38,7 +38,7 @@
   justify-content: space-between;
   align-items: center;
   margin-bottom: 15px;
-  border: solid 5px #12476b9b;
+  border: solid 1px #4e8d91;
   transition: all 0.6s ease;
 }
 
@@ -92,7 +92,7 @@
 
 .prescriptions-list-item-open {
   background-color: #cfe2ff;
-  border: solid 5px #78d6c6;
+  border: solid 1px #3f779d;
   box-shadow: #cfe2ff 0px 0px 0px 3px;
 }
 
@@ -102,7 +102,7 @@
 }
 
 .prescriptions-list-item-open svg {
-  color: #78d6c6;
+  color: #4e8d91;
 }
 
 .prescriptions-list-mobile-container .prescriptions-list-item svg {

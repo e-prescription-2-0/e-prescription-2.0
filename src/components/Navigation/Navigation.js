@@ -1,34 +1,23 @@
 import { faBars } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import { useSelector } from "react-redux"
-import { NavLink, useNavigate } from "react-router-dom"
+import { useMediaQuery } from "react-responsive"
+import { Link, NavLink, useNavigate } from "react-router-dom"
 import { navLinkConfig } from "../../constants/navigation"
-import { useReduxAction } from "../../hooks/useReduxAction"
-import { clearMessages } from "../../reducers/messageDispatcher"
-import Messages from "../Messages/Messages"
 import style from "./Navigation.module.css"
 
 export const Navigation = () => {
-  const { role, email } = useSelector((state) => state.auth.authUser) ?? {
+  const { role, email, firstName } = useSelector(
+    (state) => state.auth.authUser
+  ) ?? {
     role: "guest",
   }
-  const messageState = useSelector((state) => state.messages)
-  const { isMessage, messages } = messageState
 
-  const dispatchClearMessageAction = useReduxAction(clearMessages)
+  const isDesktop = useMediaQuery({ minWidth: 900 })
+
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false)
   const navigate = useNavigate()
-
-  useEffect(() => {
-    if (isMessage) {
-      const timeoutId = setTimeout(() => {
-        dispatchClearMessageAction()
-      }, 2000)
-
-      return () => clearTimeout(timeoutId)
-    }
-  }, [isMessage, dispatchClearMessageAction])
 
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!isMobileMenuOpen)
@@ -51,7 +40,6 @@ export const Navigation = () => {
         className={style["mobile-menu-icon"]}
         onClick={toggleMobileMenu}
       />
-      {isMessage && <Messages messages={messages} />}
       <ul
         className={`${style["navigation-list"]} ${
           isMobileMenuOpen ? style["open"] : ""
@@ -73,7 +61,14 @@ export const Navigation = () => {
           ) : null
         )}
       </ul>
-      <p style={{ color: "white" }}>{email}</p>
+      {email && isDesktop && (
+        <p style={{ color: "white" }}>
+          Здравейте,{" "}
+          <Link className={style["user-name-link-to-profile"]} to={"/profile"}>
+            {firstName}
+          </Link>
+        </p>
+      )}
     </nav>
   )
 }

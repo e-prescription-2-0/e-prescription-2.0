@@ -25,12 +25,12 @@ export const dashBoardNavData = {
       icon: <FontAwesomeIcon icon={faFilePen} />,
     },
     {
-      linkTo: "/patients",
+      linkTo: "/search/patients",
       text: "Пациенти",
       icon: <FontAwesomeIcon icon={faBedPulse} />,
     },
     {
-      linkTo: "/doctors",
+      linkTo: "/search/doctors",
       text: "Доктори",
       icon: <FontAwesomeIcon icon={faUserDoctor} />,
     },
@@ -53,7 +53,7 @@ export const dashBoardNavData = {
     },
 
     {
-      linkTo: "/doctors",
+      linkTo: "/search/doctors",
       text: "Доктори",
       icon: <FontAwesomeIcon icon={faUserDoctor} />,
     },
@@ -70,7 +70,7 @@ export const dashBoardNavData = {
       icon: <FontAwesomeIcon icon={faFilePrescription} />,
     },
     {
-      linkTo: "/doctors",
+      linkTo: "/search/doctors",
       text: "Доктори",
       icon: <FontAwesomeIcon icon={faUserDoctor} />,
     },
