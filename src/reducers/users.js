@@ -3,7 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
   role: "",
   profile: {},
-  loading: true,
+  loading: false,
 };
 
 export const usersSlice = createSlice({

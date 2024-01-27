@@ -14,16 +14,17 @@ import DashboardNavigation from "./components/MainDashboard/DashboardNavigation/
 import UserProfile from "./components/UserProfile/UserProfile";
 
 const App = () => {
-  const { pathname } = useLocation()
+  const { pathname } = useLocation();
   const pathsWithoutDashboardNavigation = [
     "/",
     "/login",
     "/register",
     "/logout",
-    "/forgotPassword"
-  ]
-  const shouldShowDashboardNavigation =
-    !pathsWithoutDashboardNavigation.includes(pathname)
+    "/forgotPassword",
+  ];
+  const shouldShowDashboardNavigation = !pathsWithoutDashboardNavigation.includes(
+    pathname
+  );
 
   return (
     <Provider store={store}>
@@ -44,8 +45,9 @@ const App = () => {
         {shouldShowDashboardNavigation ? <DashboardNavigation /> : null}
         <Routes>
           <Route path="/:action?" element={<Welcome />} />
-
           <Route path="/profile" element={<UserProfile />} />
+
+          <Route path="/profile/:profileId" element={<UserProfile />} />
           <Route path="/prescriptions" element={<MainDashboard />} />
           <Route path="/create-prescription" element={<CreatePrescription />} />
           <Route
@@ -64,7 +66,7 @@ const App = () => {
         </Routes>
       </main>
     </Provider>
-  )
-}
+  );
+};
 
-export default App
+export default App;

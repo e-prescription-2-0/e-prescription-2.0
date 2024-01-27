@@ -1,10 +1,10 @@
-import { HEADER_FORMATS, METHODS } from "../constants/services"
-import serviceBind from "./helper"
+import { HEADER_FORMATS, METHODS } from "../constants/services";
+import serviceBind from "./helper";
 
 export default {
   // Patient endpoints
   getProfile: serviceBind({
-    url: "/api/profile/{id}",
+    url: "/api/auth/profile/{id}",
     method: METHODS.GET,
     headers: {
       "Content-Type": HEADER_FORMATS.JSON,
@@ -20,7 +20,7 @@ export default {
       Accept: HEADER_FORMATS.JSON,
     },
   }),
- 
+
   getPatientPrescriptions: serviceBind({
     url: "/api/patients/{patientId}/persriptions",
     method: METHODS.GET,
@@ -29,7 +29,7 @@ export default {
       Accept: HEADER_FORMATS.JSON,
     },
   }),
- 
+
   // Pharmacist endpoint
   getPharmacists: serviceBind({
     url: "/api/pharmacists",
@@ -47,4 +47,4 @@ export default {
       Accept: HEADER_FORMATS.JSON,
     },
   }),
-}
+};
