@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   allMyPrescriptions: [],
-  prescription: {}
+  prescription: {},
 };
 
 export const prescriptionsSlice = createSlice({
@@ -13,18 +13,21 @@ export const prescriptionsSlice = createSlice({
     setMyPrescriptions: (state, action) => {
       state.allMyPrescriptions = [...action.payload];
     },
-    fetchPrescription: () =>  {},
+    fetchPrescription: () => {},
     setPrescription: (state, action) => {
-      state.prescription = action.payload
+      state.prescription = action.payload;
     },
     completePrescription: () => {},
+    completePartialPrescription:  (state, action) => {},
     fetchCreatePrescription: () => {},
     setCreatedPrescription: (state, action) => {
-      state.allMyPrescriptions = [...state.allMyPrescriptions, action.payload]
+      state.allMyPrescriptions = [...state.allMyPrescriptions, action.payload];
     },
     deletePrescription: () => {},
     removeDeletedPrescription: (state, action) => {
-      state.allMyPrescriptions = state.allMyPrescriptions.filter(x => x._id !== action.payload._id)
+      state.allMyPrescriptions = state.allMyPrescriptions.filter(
+        (x) => x._id !== action.payload._id
+      );
     },
     fetchActivePrescription: () => {},
     fetchCompletedPrescription: () => {},
