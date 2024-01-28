@@ -26,7 +26,7 @@ const PrescriptionFooter = () => {
     let res = window.confirm("Are you sure you want to delete this prescription?")
 
     if(res){
-      deletePrescription(currentPrescription._id)
+      deletePrescription(currentPrescription._id);
     }
   }
 

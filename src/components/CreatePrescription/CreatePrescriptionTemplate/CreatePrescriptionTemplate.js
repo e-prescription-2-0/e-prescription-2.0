@@ -20,7 +20,10 @@ const CreatePrescriptionTemplate = ({
     }) => {
     const createPrescription = useReduxAction(prescriptionsSlice.actions.fetchCreatePrescription);
     const navigate = useNavigate()
-    const currentDoctor = useReduxState((state) => state.auth.authUser)
+    const currentDoctor = useReduxState((state) => state.auth.authUser);
+    const getPrescriptions = useReduxAction(
+        prescriptionsSlice.actions.fetchMyPrescriptions
+      )
 
     const onSaveBtnClick = () => {
         const prescribedBy = currentDoctor._id;
@@ -33,6 +36,7 @@ const CreatePrescriptionTemplate = ({
         }
 
         createPrescription(data);
+        getPrescriptions()
         navigate("/prescriptions")
     }
     return (

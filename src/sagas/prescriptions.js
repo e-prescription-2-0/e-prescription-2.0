@@ -69,8 +69,10 @@ function* onCreatePrescription(action) {
   try {
     const prescription = yield call(prescriptionsService.createPrescription, action.payload);
     console.log(prescription);
+    //server return prescription with prescribedBy, prescribedTo and medicines like ID, thats why we can`t save the prescription direct in all prescription in redux
 
-    yield put(prescriptionsSlice.actions.setCreatedPrescription(prescription));
+
+    // yield put(prescriptionsSlice.actions.setCreatedPrescription(prescription));
   } catch (error) {
     console.log(error);
   }

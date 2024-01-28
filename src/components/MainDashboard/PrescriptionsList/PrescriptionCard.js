@@ -13,6 +13,7 @@ const PrescriptionCard = ({ prescription }) => {
   const getPrescription = useReduxAction(prescriptionsSlice.actions.fetchPrescription)
 
   const isDesktop = useMediaQuery({ minWidth: 1501 });
+  console.log(prescription);
 
   const isOpen = openPrescription._id === prescription._id
 
