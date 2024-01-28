@@ -14,7 +14,7 @@
   /* overflow-x: visible;
   overflow-y: auto; */
   width: 350px;
-  height: 40rem;
+  height: 100%;
 }
 
 .prescriptions-list-div::-webkit-scrollbar {
@@ -115,7 +115,7 @@
   width: 350px;
   background-color: #d9d9d9;
   border-radius: 10px;
-  height: 40rem;
+  height: 100%;
 }
 
 .div-prescription-list-no-content img {
