@@ -8,7 +8,7 @@
   display: flex;
   flex-direction: column;
   background-color: #d9d9d9;
-  border-radius: 10px;
+  border-radius: 20px;
   height: auto;
   gap: 10px;
   max-height: fit-content;
@@ -23,6 +23,7 @@
   padding: 1.5rem;
   width: 350px;
   height: 42.9rem;
+  border-top: 1px solid white;
 }
 
 .prescriptions-list-ul::-webkit-scrollbar {
@@ -122,7 +123,8 @@
   justify-content: center;
   width: 350px;
   background-color: #d9d9d9;
-  border-radius: 10px;
+  border-radius: 20px;
+  height: auto;
 }
 
 .div-prescription-list-no-content img {
