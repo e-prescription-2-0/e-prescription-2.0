@@ -12,6 +12,7 @@ import store from "./redux";
 import Messages from "./components/Messages/Messages";
 import DashboardNavigation from "./components/MainDashboard/DashboardNavigation/DashboardNavigation";
 import UserProfile from "./components/UserProfile/UserProfile";
+import SinglePrescriptionsPage from "./components/SinglePrescriptionPage/SinglePrescriptions";
 
 const App = () => {
   const { pathname } = useLocation();
@@ -49,6 +50,11 @@ const App = () => {
 
           <Route path="/profile/:profileId" element={<UserProfile />} />
           <Route path="/prescriptions" element={<MainDashboard />} />
+          <Route
+            path="/prescriptions/:prescriptionId"
+            element={<SinglePrescriptionsPage />}
+          />
+
           <Route path="/create-prescription" element={<CreatePrescription />} />
           <Route
             path="/search/doctors"

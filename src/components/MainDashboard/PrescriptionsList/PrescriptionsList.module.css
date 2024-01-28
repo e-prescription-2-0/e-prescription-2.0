@@ -115,6 +115,7 @@
   width: 350px;
   background-color: #d9d9d9;
   border-radius: 10px;
+  height: 40rem;
 }
 
 .div-prescription-list-no-content img {
@@ -132,29 +133,26 @@
 }
 .prescriptions-list-header-container button {
   border: transparent 3px solid;
-  padding: 0.5rem 1rem ;
+  padding: 0.5rem 1rem;
   border-radius: 8px;
   color: #12476b9b;
   font-weight: bold;
 }
 
-
-.prescriptions-list-header-container .completed{
+.prescriptions-list-header-container .completed {
   border-color: #ee9322;
 }
-.prescriptions-list-header-container .completed:hover{
+.prescriptions-list-header-container .completed:hover {
   color: white;
   background-color: #ee9322;
-
 }
 
-.prescriptions-list-header-container .active{
-  border-color: #D83F31;
+.prescriptions-list-header-container .active {
+  border-color: #d83f31;
 }
-.prescriptions-list-header-container .active:hover{
+.prescriptions-list-header-container .active:hover {
   color: white;
-  background-color: #D83F31;
-
+  background-color: #d83f31;
 }
 
 .prescriptions-list-header-container h5 {

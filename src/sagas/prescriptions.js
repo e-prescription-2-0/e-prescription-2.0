@@ -1,20 +1,21 @@
-import { all, put, call, takeLatest } from "@redux-saga/core/effects"
-import { prescriptionsData } from "../mockData"
-import { prescriptionsSlice } from "../reducers/prescriptions"
+import { all, put, call, takeLatest } from "@redux-saga/core/effects";
+import { prescriptionsData } from "../mockData";
+import { prescriptionsSlice } from "../reducers/prescriptions";
 import prescriptionsService from "../services/prescriptions-service";
 
 const user = {
   role: "doctor",
-  userId: "658f0b9d1a1925a19548cc8e"
-}
+  userId: "658f0b9d1a1925a19548cc8e",
+};
 
 function* onFetchMyPrescriptions() {
   try {
-    let typeOfRole = '';
+    yield put(prescriptionsSlice.actions.setPrescription({}));
+
     let result = yield call(prescriptionsService.getPrescriptions);
 
     // TO GET THE PRESCRIPTION OF THE CURRENT USER
-    
+
     // if (user.role !== "pharmacist") {
     //   if (user.role === "doctor") {
     //     typeOfRole = "prescribedBy";
@@ -24,18 +25,20 @@ function* onFetchMyPrescriptions() {
     //   result = result.filter(prescription => prescription.typeOfRole === user.userId);
     // }
 
-    yield put(prescriptionsSlice.actions.setMyPrescriptions(result.prescriptions))
+    yield put(
+      prescriptionsSlice.actions.setMyPrescriptions(result.prescriptions)
+    );
   } catch (error) {
-    console.log(error)
+    console.log(error);
   }
 }
 
 function* onFetchActivePrescription() {
   try {
-      let result = yield call(prescriptionsService.getPrescriptions)
-      result = result.prescriptions.filter(x => x.isCompleted === false);
+    let result = yield call(prescriptionsService.getPrescriptions);
+    result = result.prescriptions.filter((x) => x.isCompleted === false);
 
-      yield put(prescriptionsSlice.actions.setMyPrescriptions(result))
+    yield put(prescriptionsSlice.actions.setMyPrescriptions(result));
   } catch (error) {
     console.log(error);
   }
@@ -43,23 +46,26 @@ function* onFetchActivePrescription() {
 
 function* onFetchCompletedPrescription() {
   try {
-      let result = yield call(prescriptionsService.getPrescriptions)
-      result = result.prescriptions.filter(x => x.isCompleted === true);
+    yield put(prescriptionsSlice.actions.setLoading(true));
 
-      yield put(prescriptionsSlice.actions.setMyPrescriptions(result))
+    let result = yield call(prescriptionsService.getPrescriptions);
+    result = result.prescriptions.filter((x) => x.isCompleted === true);
+
+    yield put(prescriptionsSlice.actions.setMyPrescriptions(result));
+    yield put(prescriptionsSlice.actions.setLoading(false));
   } catch (error) {
     console.log(error);
   }
 }
 
 function* onFetchPrescription(action) {
-  const prescriptionId = action.payload
+  const prescriptionId = action.payload;
   try {
     const result = yield call(prescriptionsService.getPrescription, {
-      prescriptionId
-    })
+      prescriptionId,
+    });
 
-    yield put(prescriptionsSlice.actions.setPrescription(result))
+    yield put(prescriptionsSlice.actions.setPrescription(result));
   } catch (error) {
     console.log(error);
   }
@@ -67,7 +73,10 @@ function* onFetchPrescription(action) {
 
 function* onCreatePrescription(action) {
   try {
-    const prescription = yield call(prescriptionsService.createPrescription, action.payload);
+    const prescription = yield call(
+      prescriptionsService.createPrescription,
+      action.payload
+    );
 
     yield put(prescriptionsSlice.actions.setCreatedPrescription(prescription));
   } catch (error) {
@@ -76,13 +85,13 @@ function* onCreatePrescription(action) {
 }
 
 function* onCompletePrescription(action) {
-  const prescriptionId = action.payload
+  const prescriptionId = action.payload;
   try {
     const result = yield call(prescriptionsService.completePrescription, {
-      prescriptionId
+      prescriptionId,
     });
 
-    yield put(prescriptionsSlice.actions.setPrescription(result))
+    yield put(prescriptionsSlice.actions.setPrescription(result));
   } catch (error) {
     console.log(error);
   }
@@ -90,27 +99,47 @@ function* onCompletePrescription(action) {
 
 function* onDeletePrescription(action) {
   try {
-    const prescriptionId = action.payload
+    const prescriptionId = action.payload;
     const result = yield call(prescriptionsService.deletePrescription, {
-      prescriptionId
-    })
+      prescriptionId,
+    });
 
-    yield put(prescriptionsSlice.actions.removeDeletedPrescription(result))
+    yield put(prescriptionsSlice.actions.removeDeletedPrescription(result));
     console.log(result);
   } catch (error) {
     console.log(error);
   }
 }
 
-
 export default function* prescriptionsSaga() {
   yield all([
-    takeLatest(prescriptionsSlice.actions.fetchMyPrescriptions, onFetchMyPrescriptions),
-    takeLatest(prescriptionsSlice.actions.fetchCreatePrescription, onCreatePrescription),
-    takeLatest(prescriptionsSlice.actions.fetchPrescription, onFetchPrescription),
-    takeLatest(prescriptionsSlice.actions.completePrescription, onCompletePrescription),
-    takeLatest(prescriptionsSlice.actions.deletePrescription, onDeletePrescription),
-    takeLatest(prescriptionsSlice.actions.fetchActivePrescription, onFetchActivePrescription),
-    takeLatest(prescriptionsSlice.actions.fetchCompletedPrescription, onFetchCompletedPrescription)
-  ])
+    takeLatest(
+      prescriptionsSlice.actions.fetchMyPrescriptions,
+      onFetchMyPrescriptions
+    ),
+    takeLatest(
+      prescriptionsSlice.actions.fetchCreatePrescription,
+      onCreatePrescription
+    ),
+    takeLatest(
+      prescriptionsSlice.actions.fetchPrescription,
+      onFetchPrescription
+    ),
+    takeLatest(
+      prescriptionsSlice.actions.completePrescription,
+      onCompletePrescription
+    ),
+    takeLatest(
+      prescriptionsSlice.actions.deletePrescription,
+      onDeletePrescription
+    ),
+    takeLatest(
+      prescriptionsSlice.actions.fetchActivePrescription,
+      onFetchActivePrescription
+    ),
+    takeLatest(
+      prescriptionsSlice.actions.fetchCompletedPrescription,
+      onFetchCompletedPrescription
+    ),
+  ]);
 }

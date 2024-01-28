@@ -55,11 +55,7 @@ const UserProfile = () => {
   //     changeMode();
   //   };
 
-  const loader = (
-    <div className={style["search-collection-loader"]}>
-      <LoadingCircle />
-    </div>
-  );
+  const loader = <LoadingCircle />;
 
   return loading ? (
     loader
