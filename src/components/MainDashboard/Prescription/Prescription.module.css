@@ -1,9 +1,13 @@
 .section-open-prescription {
   background-color: #d9d9d9;
   padding: 2em;
-  width: 700px;
+  width: 45rem;
   border-radius: 10px;
   height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
 }
 
 .div-main-content {

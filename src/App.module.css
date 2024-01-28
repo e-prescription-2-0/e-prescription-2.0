@@ -51,7 +51,7 @@ form {
 
 .main-content {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
 }
 
@@ -65,6 +65,6 @@ form {
   flex-direction: column;
 }
 
-html  {
+html {
   height: 100%;
 }

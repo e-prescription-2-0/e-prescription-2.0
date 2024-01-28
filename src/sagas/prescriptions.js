@@ -46,8 +46,6 @@ function* onFetchActivePrescription() {
 
 function* onFetchCompletedPrescription() {
   try {
-    yield put(prescriptionsSlice.actions.setLoading(true));
-
     let result = yield call(prescriptionsService.getPrescriptions);
     result = result.prescriptions.filter((x) => x.isCompleted === true);
 
@@ -66,6 +64,7 @@ function* onFetchPrescription(action) {
     });
 
     yield put(prescriptionsSlice.actions.setPrescription(result));
+    yield put(prescriptionsSlice.actions.setLoading(false));
   } catch (error) {
     console.log(error);
   }

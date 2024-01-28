@@ -10,12 +10,22 @@ import LoadingCircle from "../Loadings/LoadingCircle/LoadingCircle";
 const SinglePrescriptionsPage = () => {
   const { prescriptionId } = useParams();
   const loading = useReduxState((state) => state.prescriptions.loading);
+  const prescription = useReduxState(
+    (state) => state.prescriptions.prescription
+  );
+  const setLoading = useReduxAction(prescriptionsSlice.actions.setLoading);
   const fetchPrescriptionById = useReduxAction(
     prescriptionsSlice.actions.fetchPrescription
   );
+  console.log(loading);
 
   useEffect(() => {
-    fetchPrescriptionById(prescriptionId);
+    if (prescription?._id !== prescriptionId) {
+      setLoading(true);
+    }
+    if (loading === true) {
+      fetchPrescriptionById(prescriptionId);
+    }
   }, [fetchPrescriptionById, loading, prescriptionId]);
   return loading ? <LoadingCircle /> : <Prescription />;
 };
