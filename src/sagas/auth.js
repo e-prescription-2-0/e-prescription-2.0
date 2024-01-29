@@ -21,8 +21,9 @@ function* onRegister(action) {
     yield put(setAuthUserByRegister(user));
   } catch (error) {
     yield put(setMessages({ type: "error", text: error.response.data.error }));
+  } finally {
+    yield put(setLoading(false));
   }
-  yield put(setLoading(false));
 }
 
 function* onLogin(action) {

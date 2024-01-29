@@ -32,12 +32,12 @@ export const validationRegex = {
     errorMessage: "Identification number is not valid",
   },
   pharmacyName: {
-    validation: /^[a-zA-Z]{3,}$/,
+    validation: /^[a-zA-Z\s]{3,}$/,
     errorMessage: "Pharmacy name is not a valid",
   },
 
   hospitalName: {
-    validation: /^[a-zA-Z]{3,}$/,
+    validation: /^[a-zA-Z\s]{3,}$/,
     errorMessage: "Hospital name is not a valid",
   },
   doctorId: {
