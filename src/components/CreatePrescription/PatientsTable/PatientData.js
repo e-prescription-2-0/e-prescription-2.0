@@ -53,7 +53,7 @@ const patientView = !isMyPatientsChecked ?
         :<FontAwesomeIcon icon={faUserSlash}style={{color: "#dc3545",}} size="lg" onClick={e=>removeCurrentFromMyPatientList(e,_id) }/>
 
 return (
-  <tr className={styles['table-row']} onClick={() => navigate(`/${searchType}/${_id}`)}>
+  <tr className={styles['table-row']} onClick={() => navigate(`/${searchType !== 'prescriptions'?'profile':'prescriptions'}/${_id}`)}>
     
   {searchType !== 'prescriptions' ? (
     <>

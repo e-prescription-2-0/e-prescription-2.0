@@ -46,16 +46,16 @@ const App = () => {
             <Route path="/profile" element={<UserProfile />} />
             <Route path="/prescriptions" element={<MainDashboard />} />
             <Route element={<RouteDoctorGuard />}>
+            <Route
+            path="/search/patients"
+            element={<SearchPage searchType={"patients"} />}
+            />
               <Route path="/create-prescription" element={<CreatePrescription />} />
             </Route>
             <Route
 
               path="/search/doctors"
               element={<SearchPage searchType={"doctors"} />}
-            />
-            <Route
-              path="/search/patients"
-              element={<SearchPage searchType={"patients"} />}
             />
             <Route
               path="/search/prescriptions"
