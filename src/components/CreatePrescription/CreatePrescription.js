@@ -1,10 +1,9 @@
-import { useEffect, useState } from "react"
+import { useState } from "react"
+import { formFieldCheckFn } from "../../utils/formFieldsCheck"
+import SearchContent from "../SearchPage/SearchContent"
 import CreatePrescriptionTemplate from "./CreatePrescriptionTemplate/CreatePrescriptionTemplate"
 import style from "./CreatePresscription.module.css"
 import CreateMedicineForPrescriptionPopUp from "./NewMedicinePopUpForm/CreateMedicineForPrescriptionPopUp"
-import PatientTable from "./PatientsTable/PatientsTable"
-import { formFieldCheckFn } from "../../utils/formFieldsCheck"
-import SearchContent from "../SearchPage/SearchContent"
 
 const CreatePrescription = () => {
   const [isPatientChooseMode, setisPatientChooseMode] = useState(true)
@@ -13,8 +12,8 @@ const CreatePrescription = () => {
   const [editIndex, setEditIndex] = useState(-1)
   const [showPopUpForm, setShowPopUpForm] = useState(false)
   const [patientsList, setPatientsList] = useState([])
-  const [currentPatient, setCurrentPatient] = useState({});
-  const isPrescriptionCreateMode = true;
+  const [currentPatient, setCurrentPatient] = useState({})
+  const isPrescriptionCreateMode = true
 
   const [formValues, setFormaValues] = useState({
     _id: "",
@@ -25,8 +24,6 @@ const CreatePrescription = () => {
     admissionType: "",
     instructions: "",
   })
-
-
 
   const showPopUpModal = () => {
     setFormaValues({
@@ -45,8 +42,8 @@ const CreatePrescription = () => {
   }
 
   const addMedicineHandler = (e) => {
-    e.preventDefault();
-    if(formFieldCheckFn(formValues)) return
+    e.preventDefault()
+    if (formFieldCheckFn(formValues)) return
 
     if (isEditMode) {
       setMedicineItems((prevState) =>
@@ -85,7 +82,7 @@ const CreatePrescription = () => {
   }
 
   const hidePatientList = (data) => {
-  console.log(data);
+    console.log(data)
     if (data._id) {
       setCurrentPatient(data)
     }
@@ -100,13 +97,11 @@ const CreatePrescription = () => {
   }
 
   return isPatientChooseMode ? (
-   
-
     <SearchContent
-        searchType={'patients'}
-        hidePatientList={hidePatientList}
-        isPrescriptionCreateMode={isPrescriptionCreateMode}
-      />
+      searchType={"patients"}
+      hidePatientList={hidePatientList}
+      isPrescriptionCreateMode={isPrescriptionCreateMode}
+    />
   ) : (
     <div className={style["create-prescription-container"]}>
       <CreatePrescriptionTemplate
