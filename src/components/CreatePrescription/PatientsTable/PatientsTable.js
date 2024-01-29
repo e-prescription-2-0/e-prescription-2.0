@@ -1,7 +1,7 @@
-import Table from "react-bootstrap/Table";
-import styles from "./PatientsTable.module.css";
+import Table from "react-bootstrap/Table"
+import styles from "./PatientsTable.module.css"
 
-import PatientData from "./PatientData";
+import PatientData from "./PatientData"
 
 const PatientTable = ({
   hidePatientList,
@@ -56,6 +56,6 @@ const PatientTable = ({
         </tbody>
       </Table>
     </div>
-  );
-};
-export default PatientTable;
+  )
+}
+export default PatientTable
