@@ -1,7 +1,7 @@
 import { OrbitControls, useGLTF } from "@react-three/drei"
 import { Canvas } from "@react-three/fiber"
 import { Suspense } from "react"
-import PillsFallback from "./PillsFallback"
+import CanvasLoader from "./CanvasLoader"
 
 const Pills = () => {
   const pills = useGLTF("./pills/scene.gltf")
@@ -35,7 +35,7 @@ const PillsCanvas = () => {
       gl={{ preserveDrawingBuffer: true }}
       camera={{ fov: 45, near: 0.1, far: 200, position: [-4, 3, 6] }}
     >
-      <Suspense fallback={<PillsFallback />}>
+      <Suspense fallback={<CanvasLoader />}>
         <OrbitControls
           autoRotate
           enableZoom={false}
