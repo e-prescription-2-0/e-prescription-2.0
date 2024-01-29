@@ -26,8 +26,7 @@ export default {
     url: "/api/auth/logout",
     method: METHODS.POST,
     headers :{ 
-      credentials: 'include',
-      'X-Authorization': getToken()
+      credentials: 'include'
     }
   }),
 }
@@ -35,7 +34,7 @@ export default {
 
 
 
- export const requestLogout = async () => await request.post('http://localhost:3030/api/auth/logout')
+ //export const requestLogout = async () => await request.post('http://localhost:3030/api/auth/logout')
 
 
 

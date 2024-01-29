@@ -6,9 +6,10 @@ import {
   fetchRegisteredUser,
   setAuthUser,
 } from "../reducers/auth"
-import authService, { requestLogout } from "../services/authentication-service"
+import authService from "../services/authentication-service"
 
 import { setMessages } from "../reducers/messageDispatcher"
+import { getToken } from "../utils/getToken"
 
 
 function* onRegister(action) {
@@ -37,10 +38,14 @@ function* onLogin(action) {
 function* onLogout() {
   try {
    
+    const accessToken = getToken();
+    if (!accessToken) {
+      return;
+    }
   
-
-    
-    yield all([call(requestLogout), put(clearAuthUser())])
+    yield all([call(authService.logout, {},  
+            { additionalHeaders: { "X-Authorization": accessToken } })
+            , put(clearAuthUser())])
 
     yield put(setMessages({ type: "", text: "Вие излязохте успешно" }))
   } catch (error) {
