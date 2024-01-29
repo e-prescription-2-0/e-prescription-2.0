@@ -13,6 +13,7 @@ import { Welcome } from "./components/Welcome/Welcome"
 import store from "./redux"
 import RouteDoctorGuard from "./components/RouteGuards/RouteDoctorGuard"
 import RouteAuthGuard from "./components/RouteGuards/RouteAuthGuard"
+import RouteLoggedUserGuard from "./components/RouteGuards/RouteLoggedUserGuard"
 
 const App = () => {
   const { pathname } = useLocation()
@@ -41,7 +42,10 @@ const App = () => {
       >
         {shouldShowDashboardNavigation ? <DashboardNavigation /> : null}
         <Routes>
+        
           <Route path="/:action?" element={<Welcome />} />
+       
+         
           <Route element={<RouteAuthGuard />}>
             <Route path="/profile" element={<UserProfile />} />
             <Route path="/prescriptions" element={<MainDashboard />} />

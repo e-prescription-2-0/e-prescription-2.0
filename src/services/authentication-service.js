@@ -1,7 +1,5 @@
 import { HEADER_FORMATS, METHODS } from "../constants/services"
-import { getToken } from "../utils/getToken"
 import serviceBind from "./helper";
-import * as request from '../utils/requester'
 
 export default {
   register: serviceBind({
