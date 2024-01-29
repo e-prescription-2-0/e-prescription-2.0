@@ -1,7 +1,8 @@
 import style from "./ProfileInfo.module.css";
 
-const ProfileInfo = ({ userInfo={} }) => {
+const ProfileInfo = ({ userInfo = {} }) => {
   let info = Object.entries(userInfo);
+  console.log(info);
 
   return (
     <>

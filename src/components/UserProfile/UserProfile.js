@@ -19,25 +19,46 @@ const UserProfile = () => {
 
   const { profileId } = useParams();
 
-  const {
-    firstName,
-    lastName,
-    gender,
-    email,
-    createdOn,
-    dateOfBirth,
-    role,
-  } = profileId ? otherProfile : myProfile;
-  console.log(otherProfile);
-  const profile = {
-    Име: firstName,
-    Фамилия: lastName,
-    Пол: gender,
-    "Дата на раждане": moment(dateOfBirth).format("MMM Do YY"),
-    Роля: role,
-    Емейл: email,
-    Създаден: moment(createdOn).format("MMM Do YY"),
-  };
+  const userInformation = profileId ? otherProfile : myProfile;
+  let profile;
+
+  switch (userInformation.role) {
+    case "patient":
+      profile = {
+        Име: userInformation.firstName,
+        Фамилия: userInformation.lastName,
+        Пол: userInformation.gender,
+        "Дата на раждане": moment(userInformation.dateOfBirth).format(
+          "MMM Do YY"
+        ),
+        Емейл: userInformation.email,
+        Роля: userInformation.role,
+
+        Създаден: moment(userInformation.createdOn).format("MMM Do YY"),
+      };
+      break;
+    case "pharmacist":
+      profile = {
+        Име: userInformation.firstName,
+        Фамилия: userInformation.lastName,
+        Емейл: userInformation.email,
+        Аптека: userInformation.pharmacyName,
+        УИН: userInformation.pharmacistId,
+        Роля: userInformation.role,
+        Създаден: moment(userInformation.createdOn).format("MMM Do YY"),
+      };
+      break;
+    case "doctor":
+      profile = {
+        Име: userInformation.firstName,
+        Фамилия: userInformation.lastName,
+        Емейл: userInformation.email,
+        Болница: userInformation.hospitalName,
+        УИН: userInformation.doctorId,
+        Роля: userInformation.role,
+        Създаден: moment(userInformation.createdOn).format("MMM Do YY"),
+      };
+  }
 
   useEffect(() => {
     console.log(profileId && otherProfile?._id !== profileId);
