@@ -1,5 +1,4 @@
 import { useState } from "react"
-import { Container } from "react-bootstrap"
 import { useSearchParams } from "react-router-dom"
 import { useReduxAction } from "../../hooks/useReduxAction"
 import { useReduxState } from "../../hooks/useReduxState"
@@ -72,7 +71,7 @@ const SearchContent = ({
       break
   }
   return (
-    <Container className={style["main-search-doctors-container"]}>
+    <div className={style["main-search-doctors-container"]}>
       <h1 className="text-center">{titlePage}</h1>
 
       <BaseSearchFields
@@ -93,7 +92,7 @@ const SearchContent = ({
         searchType={searchType}
         isPrescriptionCreateMode={isPrescriptionCreateMode}
       />
-    </Container>
+    </div>
   )
 }
 

@@ -22,7 +22,7 @@ const PatientTable = ({
           <tr>
             {searchType !== "prescriptions" ? (
               <>
-                <th>Собствено Име</th>
+                <th>Име</th>
                 <th>Фамилия</th>
                 {searchType === "patients" && <th>ЕГН</th>}
                 {searchType === "doctors" && (

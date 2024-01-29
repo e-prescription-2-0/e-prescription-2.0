@@ -8,7 +8,7 @@ import DashboardNavigation from "./components/MainDashboard/DashboardNavigation/
 import MainDashboard from "./components/MainDashboard/MainDashboard"
 import Messages from "./components/Messages/Messages"
 import { Navigation } from "./components/Navigation/Navigation"
-import SearchPage from "./components/SearchPage/SearchPage"
+import SearchContent from "./components/SearchPage/SearchContent"
 import UserProfile from "./components/UserProfile/UserProfile"
 import { Welcome } from "./components/Welcome/Welcome"
 import store from "./redux"
@@ -63,15 +63,15 @@ const App = () => {
               />
               <Route
                 path="/search/doctors"
-                element={<SearchPage searchType={"doctors"} />}
+                element={<SearchContent searchType={"doctors"} />}
               />
               <Route
                 path="/search/patients"
-                element={<SearchPage searchType={"patients"} />}
+                element={<SearchContent searchType={"patients"} />}
               />
               <Route
                 path="/search/prescriptions"
-                element={<SearchPage searchType={"prescriptions"} />}
+                element={<SearchContent searchType={"prescriptions"} />}
               />
               <Route path="/logout" element={<Logout />} />
             </Routes>
