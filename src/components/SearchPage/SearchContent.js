@@ -48,14 +48,14 @@ const SearchContent = ({ searchType, hidePatientList,isPrescriptionCreateMode })
     case "doctors":
       collection = collectionDoctors;
       fetchCollection = fetchDoctors;
-      placeholderText = "Търси по имейла на доктора";
+      placeholderText = "Търси по имейл на лекар";
       titlePage = "Търси Доктори";
       break;
     case "prescriptions":
       collection = collectionAllPrescriptions;
       fetchCollection = fetchAllPrescriptions;
 
-      placeholderText = "Търси по номера на рецептата";
+      placeholderText = "Търси по номер на рецепта";
       titlePage = "Търси Рецепта";
       break;
     case "patients":
@@ -66,7 +66,7 @@ const SearchContent = ({ searchType, hidePatientList,isPrescriptionCreateMode })
         collection = collectionAllPatients;
         fetchCollection = fetchAllPatients;
       // }
-      placeholderText = "Търси по ЕГН на пациента";
+      placeholderText = "Търси по ЕГН на пациент";
       titlePage = "Търси Пациенти";
 
       break;

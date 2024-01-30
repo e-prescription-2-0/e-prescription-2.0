@@ -13,7 +13,8 @@ import { Welcome } from "./components/Welcome/Welcome"
 import store from "./redux"
 import RouteDoctorGuard from "./components/RouteGuards/RouteDoctorGuard"
 import RouteAuthGuard from "./components/RouteGuards/RouteAuthGuard"
-import RouteLoggedUserGuard from "./components/RouteGuards/RouteLoggedUserGuard"
+import RouteNotDoctorGuard from "./components/RouteGuards/RouteNotDoctorGuard"
+import RoutePharmacistGuard from "./components/RouteGuards/RoutePharmacistGuard"
 
 const App = () => {
   const { pathname } = useLocation()
@@ -50,22 +51,28 @@ const App = () => {
             <Route path="/profile" element={<UserProfile />} />
             <Route path="/prescriptions" element={<MainDashboard />} />
             <Route element={<RouteDoctorGuard />}>
-            <Route
-            path="/search/patients"
-            element={<SearchPage searchType={"patients"} />}
-            />
-              <Route path="/create-prescription" element={<CreatePrescription />} />
+                <Route
+                path="/search/patients"
+                element={<SearchPage searchType={"patients"} />}
+                />
+                <Route path="/create-prescription" element={<CreatePrescription />} />
             </Route>
-            <Route
 
-              path="/search/doctors"
-              element={<SearchPage searchType={"doctors"} />}
-            />
-            <Route
-              path="/search/prescriptions"
-              element={<SearchPage searchType={"prescriptions"} />}
-            />
-          </Route>
+            <Route element={<RouteNotDoctorGuard/>}>
+                <Route
+                path="/search/doctors"
+                element={<SearchPage searchType={"doctors"} />}
+                />
+            </Route>
+
+            <Route element={<RoutePharmacistGuard/>}>
+                <Route
+                path="/search/prescriptions"
+                element={<SearchPage searchType={"prescriptions"} />}
+                />
+            </Route>
+
+            </Route>
           <Route path="/logout" element={<Logout />} />
         </Routes>
       </main>
