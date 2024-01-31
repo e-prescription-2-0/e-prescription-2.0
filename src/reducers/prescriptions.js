@@ -4,6 +4,7 @@ const initialState = {
   allMyPrescriptions: [],
   prescription: {},
   loading: false,
+  prescriptionsFilter: 'altogether'
 };
 
 export const prescriptionsSlice = createSlice({
@@ -33,6 +34,9 @@ export const prescriptionsSlice = createSlice({
     fetchCompletedPrescription: () => {},
     setLoading: (state, action) => {
       state.loading = action.payload;
+    },
+    setPrescriptionsFilter: (state, action) => {
+      state.prescriptionsFilter = action.payload;
     },
   },
 });

@@ -17,12 +17,37 @@ const PrescriptionsList = ({}) => {
     prescriptionsSlice.actions.fetchMyPrescriptions
   );
 
-  const prescriptions = useReduxState(
+  const allMyPrescriptions = useReduxState(
     (state) => state.prescriptions.allMyPrescriptions
   );
+  console.log(allMyPrescriptions);
+  const prescriptionsFilter = useReduxState(
+    (state) => state.prescriptions.prescriptionsFilter
+  );
+
+  let prescriptions;
+
+  switch (prescriptionsFilter) {
+    case "completed":
+      prescriptions = allMyPrescriptions.filter(
+        (prescription) => prescription.isCompleted === true
+      );
+      // code block
+      break;
+    case "active":
+      prescriptions = allMyPrescriptions.filter(
+        (prescription) => prescription.isCompleted === false
+      );
+      // code block
+      break;
+
+    default:
+      prescriptions = allMyPrescriptions;
+    // code block
+  }
 
   const prescriptionList = useCallback(() => {
-    if (prescriptions.length === 0) {
+    if (allMyPrescriptions.length === 0) {
       return <EmptyPrescriptionsList />;
     }
     if (!isDesktop) {
@@ -30,7 +55,7 @@ const PrescriptionsList = ({}) => {
     } else {
       return <DesktopPrescriptionsList prescriptions={prescriptions} />;
     }
-  }, [prescriptions, isDesktop]);
+  }, [allMyPrescriptions, isDesktop, prescriptions, prescriptionsFilter]);
 
   useEffect(() => {
     if (loading) {

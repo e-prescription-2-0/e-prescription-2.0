@@ -2,6 +2,7 @@ import { all, put, call, takeLatest } from "@redux-saga/core/effects";
 import { prescriptionsData } from "../mockData";
 import { prescriptionsSlice } from "../reducers/prescriptions";
 import prescriptionsService from "../services/prescriptions-service";
+import { getToken } from "../utils/getToken";
 
 const user = {
   role: "doctor",
@@ -10,24 +11,23 @@ const user = {
 
 function* onFetchMyPrescriptions() {
   try {
+    const accessToken = getToken();
+
     yield put(prescriptionsSlice.actions.setPrescription({}));
 
-    let result = yield call(prescriptionsService.getPrescriptions);
+    // let result = yield call(prescriptionsService.getPrescriptions);
 
-    // TO GET THE PRESCRIPTION OF THE CURRENT USER
+    if (!accessToken) {
+      return;
+    }
 
-    // if (user.role !== "pharmacist") {
-    //   if (user.role === "doctor") {
-    //     typeOfRole = "prescribedBy";
-    //   } else if (user.role === "patient") {
-    //     typeOfRole = "prescribedTo";
-    //   }
-    //   result = result.filter(prescription => prescription.typeOfRole === user.userId);
-    // }
-
-    yield put(
-      prescriptionsSlice.actions.setMyPrescriptions(result.prescriptions)
+    let result = yield call(
+      prescriptionsService.getMyPrescriptions,
+      {},
+      { additionalHeaders: { "X-Authorization": accessToken } }
     );
+
+    yield put(prescriptionsSlice.actions.setMyPrescriptions(result));
   } catch (error) {
     console.log(error);
   }
