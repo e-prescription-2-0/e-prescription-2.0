@@ -84,3 +84,36 @@ form {
 html {
   height: 100vh;
 }
+
+#root {
+  height: 100vh;
+
+  background-color: aqua;
+}
+
+@media only screen and (max-width: 768px) {
+  .flexDirectionRow {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: flex-start;
+    margin: 0;
+    height: 94vh;
+    background-color: salmon;
+  }
+
+  .main-content-wrapper {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: flex-start;
+    align-items: stretch;
+    /* max-width: 768px; */
+    /* height: 100%; */
+  }
+
+  .dashboard-content {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    width: 16rem;
+  }
+}
