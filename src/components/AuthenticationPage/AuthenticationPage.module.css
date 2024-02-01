@@ -11,7 +11,7 @@ html, body {
 }
 
 .page-pop-up {
-  height: 100vh;
+  height: 100%;
   background-color: rgba(0, 0, 0, 0.8) ;
   display: flex;
   position: fixed;
@@ -19,7 +19,7 @@ html, body {
   padding: 0;
   margin: 0;
   width: 100%;
-  z-index: 200;
+  z-index: 100;
   top: 0;
   left: 0;
   
@@ -124,6 +124,7 @@ html, body {
   -ms-transition: all 0.3s ease-in-out;
   -o-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
+  width: 13rem;
 }
 .popup-form-button:hover{
   background-color: #6DA9E4;

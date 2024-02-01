@@ -7,20 +7,21 @@ import DemoSteps from "./DemoSteps/DemoSteps"
 import Hero from "./Hero/Hero"
 import Passion from "./Passion/Passion"
 import style from "./Welcome.module.css"
+import PageNotFound from "../PageNotFound/PageNotFound";
 
 export const Welcome = () => {
-  const { action } = useParams()
+  const { action } = useParams();
+  const authUser = useSelector((state) => state.auth.authUser);
+  const { email } = authUser || "";
   const navigate = useNavigate()
-  const authUser = useSelector((state) => state.auth.authUser)
-  const { email } = authUser || ""
-
-  const correctParams = ["login", "register", "forgotPassword"]
-  if (email && correctParams.includes(action)) {
-    navigate("/")
+  const correctParams =  ["login", "register", "forgotPassword"];
+  if (email && correctParams.includes(action)){
+    navigate('/')
+    
   }
-
   if (action && !correctParams.includes(action)) {
-    return <h1>404 - Page not Found</h1>
+    console.log("i come heree");
+    return <PageNotFound/>;
   }
 
   return (

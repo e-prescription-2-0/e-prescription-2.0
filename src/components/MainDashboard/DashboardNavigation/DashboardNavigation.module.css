@@ -9,6 +9,7 @@
   padding: 1rem;
   justify-content: center;
   align-items: self-start;
+  height: 100%;
 }
 .boostrap-container-div-container {
   padding: 0 !important;

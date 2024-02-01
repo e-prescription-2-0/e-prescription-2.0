@@ -65,6 +65,9 @@ width: 20rem;
 }
 
 @media only screen and (max-width:  768px) {
+  .steps-demo-div-content{
+    width: 100%;
+  }
   .steps-demo-section {
     padding:0;
   }

@@ -1,9 +1,3 @@
-export const  getToken = () => {
- 
- return  JSON.parse(localStorage.getItem('accessToken'));
-
-
-  
+export const getToken = () => {
+  return JSON.parse(localStorage.getItem("accessToken"))
 }
-
- 

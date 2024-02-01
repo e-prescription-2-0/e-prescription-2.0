@@ -2,41 +2,70 @@ import { useEffect, useState } from "react";
 import { useReduxAction } from "../../../hooks/useReduxAction";
 import { prescriptionsSlice } from "../../../reducers/prescriptions";
 import style from "./PrescriptionsList.module.css";
+import { useReduxState } from "../../../hooks/useReduxState";
 
 const PrescriptionListHeader = () => {
-  const completedPrescription = useReduxAction(prescriptionsSlice.actions.fetchCompletedPrescription);
-  const activePrescription = useReduxAction(prescriptionsSlice.actions.fetchActivePrescription);
+  const setPrescriptionsFilter = useReduxAction(
+    prescriptionsSlice.actions.setPrescriptionsFilter
+  );
 
-  const [prescriptionType, setPrescriptionType] = useState("completed");
+  const prescriptionFilter = useReduxState(
+    (state) => state.prescriptions.prescriptionsFilter
+  );
 
-  const onCompletedBtnClick = () => {
-    setPrescriptionType("completed")
-    activePrescription()
-  }
-  const onActiveBtnClick = () => {
-    setPrescriptionType("active")
-    completedPrescription()
-  }
-  return (
-    <div className={style["prescriptions-list-header-container"]}>
-      <h5>
-        {prescriptionType === "active" ? "Active" : "Completed"} prescriptions
-      </h5>
-      {prescriptionType === "active" ? (
-        <button
-          className={style["completed"]}
-          onClick={onCompletedBtnClick}
-        >
-          Completed
-        </button>
-      ) : (
+  // const [prescriptionType, setPrescriptionType] = useState("altogether");
+
+  const onBtnClick = (type) => {
+    setPrescriptionsFilter(type);
+  };
+
+  let button;
+  console.log(prescriptionFilter)
+  switch (prescriptionFilter) {
+    case "active":
+      button = (
         <button
           className={style["active"]}
-          onClick={onActiveBtnClick}
+          onClick={() => {
+            onBtnClick("completed");
+          }}
         >
           Active
         </button>
-      )}
+      );
+      break;
+    case "completed":
+      button = (
+        <button
+          className={style["completed"]}
+          onClick={() => {
+            onBtnClick("altogether");
+          }}
+        >
+          Completed
+        </button>
+      );
+
+      break;
+
+    default:
+      button = (
+        <button
+          className={style["altogether"]}
+          onClick={() => {
+            onBtnClick("active");
+          }}
+        >
+          Altogether
+        </button>
+      );
+    // code block
+  }
+
+  return (
+    <div className={style["prescriptions-list-header-container"]}>
+      <h5>Prescriptions</h5>
+      {button}
     </div>
   );
 };

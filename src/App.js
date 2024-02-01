@@ -7,14 +7,15 @@ import Header from "./components/Header/Header"
 import Logout from "./components/Logout/Logout"
 import DashboardNavigation from "./components/MainDashboard/DashboardNavigation/DashboardNavigation"
 import MainDashboard from "./components/MainDashboard/MainDashboard"
+import Messages from "./components/Messages/Messages"
+import RouteAuthGuard from "./components/RouteGuards/RouteAuthGuard"
+import RouteDoctorGuard from "./components/RouteGuards/RouteDoctorGuard"
+import RouteNotDoctorGuard from "./components/RouteGuards/RouteNotDoctorGuard"
+import RoutePharmacistGuard from "./components/RouteGuards/RoutePharmacistGuard"
 import SearchPage from "./components/SearchPage/SearchPage"
 import UserProfile from "./components/UserProfile/UserProfile"
 import { Welcome } from "./components/Welcome/Welcome"
 import store from "./redux"
-import RouteDoctorGuard from "./components/RouteGuards/RouteDoctorGuard"
-import RouteAuthGuard from "./components/RouteGuards/RouteAuthGuard"
-import RouteNotDoctorGuard from "./components/RouteGuards/RouteNotDoctorGuard"
-import RoutePharmacistGuard from "./components/RouteGuards/RoutePharmacistGuard"
 
 const App = () => {
   const { pathname } = useLocation()
@@ -23,56 +24,59 @@ const App = () => {
     "/login",
     "/register",
     "/logout",
+    "/forgotPassword",
   ]
   const shouldShowDashboardNavigation =
     !pathsWithoutDashboardNavigation.includes(pathname)
 
   return (
     <Provider store={store}>
+      <Messages />
+
       <Header />
 
       <main
         className={[
           style["main-content"],
           style[
-          shouldShowDashboardNavigation
-            ? "flexDirectionRow"
-            : "flexDirectionColumn"
+            shouldShowDashboardNavigation
+              ? "flexDirectionRow"
+              : "flexDirectionColumn"
           ],
         ].join(" ")}
       >
         {shouldShowDashboardNavigation ? <DashboardNavigation /> : null}
         <Routes>
-        
           <Route path="/:action?" element={<Welcome />} />
-       
-         
+
           <Route element={<RouteAuthGuard />}>
             <Route path="/profile" element={<UserProfile />} />
             <Route path="/prescriptions" element={<MainDashboard />} />
             <Route element={<RouteDoctorGuard />}>
-                <Route
+              <Route
                 path="/search/patients"
                 element={<SearchPage searchType={"patients"} />}
-                />
-                <Route path="/create-prescription" element={<CreatePrescription />} />
+              />
+              <Route
+                path="/create-prescription"
+                element={<CreatePrescription />}
+              />
             </Route>
 
-            <Route element={<RouteNotDoctorGuard/>}>
-                <Route
+            <Route element={<RouteNotDoctorGuard />}>
+              <Route
                 path="/search/doctors"
                 element={<SearchPage searchType={"doctors"} />}
-                />
+              />
             </Route>
 
-            <Route element={<RoutePharmacistGuard/>}>
-                <Route
+            <Route element={<RoutePharmacistGuard />}>
+              <Route
                 path="/search/prescriptions"
                 element={<SearchPage searchType={"prescriptions"} />}
-                />
+              />
             </Route>
-
-            </Route>
+          </Route>
           <Route path="/logout" element={<Logout />} />
         </Routes>
       </main>

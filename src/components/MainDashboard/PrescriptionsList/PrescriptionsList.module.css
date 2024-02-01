@@ -14,7 +14,7 @@
   /* overflow-x: visible;
   overflow-y: auto; */
   width: 350px;
-  height: 40rem;
+  height: 100%;
 }
 
 .prescriptions-list-div::-webkit-scrollbar {
@@ -115,6 +115,7 @@
   width: 350px;
   background-color: #d9d9d9;
   border-radius: 10px;
+  height: 100%;
 }
 
 .div-prescription-list-no-content img {
@@ -123,7 +124,7 @@
 
 .prescriptions-list-header-container {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   padding: 1rem 0.5rem;
   /* background-color: #78d6c6;
@@ -132,29 +133,34 @@
 }
 .prescriptions-list-header-container button {
   border: transparent 3px solid;
-  padding: 0.5rem 1rem ;
+  padding: 0.5rem 1rem;
   border-radius: 8px;
   color: #12476b9b;
   font-weight: bold;
 }
 
-
-.prescriptions-list-header-container .completed{
+.prescriptions-list-header-container .completed {
   border-color: #ee9322;
 }
-.prescriptions-list-header-container .completed:hover{
+.prescriptions-list-header-container .completed:hover {
   color: white;
   background-color: #ee9322;
-
 }
 
-.prescriptions-list-header-container .active{
-  border-color: #D83F31;
+.prescriptions-list-header-container .active {
+  border-color: #d83f31;
 }
-.prescriptions-list-header-container .active:hover{
+.prescriptions-list-header-container .active:hover {
   color: white;
-  background-color: #D83F31;
+  background-color: #d83f31;
+}
 
+.prescriptions-list-header-container .altogether {
+  border-color: #12486B;
+}
+.prescriptions-list-header-container .altogether:hover {
+  color: white;
+  background-color: #12486B;
 }
 
 .prescriptions-list-header-container h5 {

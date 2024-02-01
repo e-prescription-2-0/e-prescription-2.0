@@ -46,11 +46,13 @@ form {
 *::before,
 *::after {
   box-sizing: border-box;
+  font-family: "Nunito", sans-serif;
 }
 
 .main-content {
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .flexDirectionRow {

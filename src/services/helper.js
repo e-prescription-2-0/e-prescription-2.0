@@ -18,7 +18,7 @@ const serviceBind = (service) => {
   return (params = {}, options = {}) => {
     let { method, url, headers } = service
     let pathParams = []
-
+    console.log(options)
     headers = {
       ...headers,
       ...options.additionalHeaders,
@@ -46,7 +46,6 @@ const serviceBind = (service) => {
 
     // Build the absolute URL
     url = `${baseUrl}${url}`
-    
 
     return axios(url, {
       method,
