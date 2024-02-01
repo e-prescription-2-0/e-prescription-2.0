@@ -1,5 +1,6 @@
 .container-404 {
   height: 100vh;
+  width: 100%;
   font-weight: bolder;
   display: flex;
   justify-content: center;
@@ -7,8 +8,7 @@
   flex-direction: column;
 }
 
-
-.container-404 button{
-    color: black;
-    text-decoration: underline;
+.container-404 button {
+  color: black;
+  text-decoration: underline;
 }

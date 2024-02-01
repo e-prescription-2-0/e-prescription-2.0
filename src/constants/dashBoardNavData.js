@@ -16,7 +16,7 @@ export const dashBoardNavData = {
     },
     {
       linkTo: "/prescriptions",
-      text: "Рецепти",
+      text: "Изписани Рецепти",
       icon: <FontAwesomeIcon icon={faFilePrescription} />,
     },
     {
@@ -25,15 +25,11 @@ export const dashBoardNavData = {
       icon: <FontAwesomeIcon icon={faFilePen} />,
     },
     {
-      linkTo: "/patients",
+      linkTo: "/search/patients",
       text: "Пациенти",
       icon: <FontAwesomeIcon icon={faBedPulse} />,
-    },
-    {
-      linkTo: "/doctors",
-      text: "Доктори",
-      icon: <FontAwesomeIcon icon={faUserDoctor} />,
-    },
+    }
+    
   ],
   pharmacist: [
     {
@@ -42,7 +38,7 @@ export const dashBoardNavData = {
       icon: <FontAwesomeIcon icon={faUser} />,
     },
     {
-      linkTo: "/prescription",
+      linkTo: "/search/prescriptions",
       text: "Рецепти",
       icon: <FontAwesomeIcon icon={faFilePrescription} />,
     },
@@ -52,11 +48,6 @@ export const dashBoardNavData = {
       icon: <FontAwesomeIcon icon={faFilePen} />,
     },
 
-    {
-      linkTo: "/doctors",
-      text: "Доктори",
-      icon: <FontAwesomeIcon icon={faUserDoctor} />,
-    },
   ],
   patient: [
     {
@@ -65,12 +56,12 @@ export const dashBoardNavData = {
       icon: <FontAwesomeIcon icon={faUser} />,
     },
     {
-      linkTo: "/prescriptions",
+      linkTo: "/search/prescriptions",
       text: "Рецепти",
       icon: <FontAwesomeIcon icon={faFilePrescription} />,
     },
     {
-      linkTo: "/doctors",
+      linkTo: "/search/doctors",
       text: "Доктори",
       icon: <FontAwesomeIcon icon={faUserDoctor} />,
     },

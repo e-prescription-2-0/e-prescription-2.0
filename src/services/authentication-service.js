@@ -1,14 +1,12 @@
 import { HEADER_FORMATS, METHODS } from "../constants/services"
-import { getToken } from "../utils/getToken"
-import serviceBind from "./helper";
-import * as request from '../utils/requester'
+import serviceBind from "./helper"
 
 export default {
   register: serviceBind({
     url: "/api/auth/register",
     method: METHODS.POST,
     headers: {
-      credentials: 'include',
+      credentials: "include",
       "Content-Type": HEADER_FORMATS.JSON,
       Accept: HEADER_FORMATS.JSON,
     },
@@ -17,7 +15,7 @@ export default {
     url: "/api/auth/login",
     method: METHODS.POST,
     headers: {
-      credentials: 'include',
+      credentials: "include",
       "Content-Type": HEADER_FORMATS.JSON,
       Accept: HEADER_FORMATS.JSON,
     },
@@ -25,24 +23,8 @@ export default {
   logout: serviceBind({
     url: "/api/auth/logout",
     method: METHODS.POST,
-    headers :{ 
-      credentials: 'include',
-      'X-Authorization': getToken()
-    }
+    headers: {
+      credentials: "include",
+    },
   }),
 }
-
-
-// export const requestLogin = async (loginData) => {
-
-  
-//   const result = await request.post('http://localhost:3030/api/auth/login', loginData);
-
-//   return result;
-// };
-
-
-// export const requestLogout = async () => await request.post('http://localhost:3030/api/auth/logout')
-
-
-

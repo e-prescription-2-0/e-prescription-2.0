@@ -18,6 +18,8 @@ min-width: 60em;
     background-color: #3c6e71;
     color: #fff;
     border: none;
+    text-align: center;
+    font-size: 0.7em;
 }
 
 .search-container{

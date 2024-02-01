@@ -7,11 +7,11 @@ import DashboardNavigationItem from "./DashboardNavigationItem"
 
 const DashboardNavigation = () => {
   // const role = "doctor" // coming and depend of redux/context state;
-  let role = 'patient'
+  let role = "patient"
   const currentActiveLink = useReduxState((state) => state.dashboard.activeLink)
-  const user = useReduxState((state) => state.auth.authUser);
+  const user = useReduxState((state) => state.auth.authUser)
 
-  if(user){
+  if (user) {
     role = user.role
   }
 

@@ -3,7 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
   role: "",
   profile: {},
-  loading: true,
+  loading: false,
 };
 
 export const usersSlice = createSlice({
@@ -12,6 +12,8 @@ export const usersSlice = createSlice({
   reducers: {
     fetchProfile: (state, action) => {},
     fetchPatientProfile: (state, action) => {},
+    fetchSetToPatientList: (state, action) => {},
+    fetchRemoveFromPatientList: (state, action) => {},
     setUserRole: (state, action) => {
       state.role = action.payload;
     },
