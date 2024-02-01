@@ -18,11 +18,9 @@ const BaseSearchFields = ({
 
   const onChangeSwitch = (e) => {
     setIsMyPatientsChecked(!isMyPatientsChecked);
+   
   };
-  console.log(
-    "params",
-    searchType === "patients" && searchParams.get("search")
-  );
+  
   return (
     <>
       <InputGroup className="mb-3">

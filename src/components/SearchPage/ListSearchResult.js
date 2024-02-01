@@ -1,17 +1,20 @@
 import InfiniteScroll from "react-infinite-scroll-component";
-import ResultCard from "./ResultCard";
-import { useEffect, useState } from "react";
-import { Spinner } from "react-bootstrap";
+import { useEffect } from "react";
 import { isEmpty } from "ramda";
 import style from "./SearchPage.module.css";
-import styles from '../CreatePrescription/PatientsTable/PatientsTable.module.css';
 
-import Table from 'react-bootstrap/Table';
-import PatientData from "../CreatePrescription/PatientsTable/PatientData";
 import PatientTable from "../CreatePrescription/PatientsTable/PatientsTable";
+import { useSelector } from "react-redux";
+import SpinnerP from "../SpinnerP/SpinnerP";
 
 
-const ListSearchResult = ({ collection, fetchCollection, searchParams,hidePatientList,searchType,isPrescriptionCreateMode }) => {
+const ListSearchResult = ({ 
+  collection, fetchCollection,
+   searchParams,
+   hidePatientList,
+   searchType,
+   isPrescriptionCreateMode,
+   isMyPatientsChecked }) => {
   const search = searchParams.get("search") || "";
 
   const collectionByPages = collection?.[search]?.collection || {};
@@ -22,26 +25,31 @@ const ListSearchResult = ({ collection, fetchCollection, searchParams,hidePatien
   const currentPage = Object.keys(collectionByPages).length;
 
   const hasMore = currentPage < collection?.[search]?.numberPages || 0;
+  const {_id:doctorId} = useSelector(state => state.auth.authUser);
+
+ 
 
   const loader = (
     <div className={style["search-collection-loader"]}>
-      <Spinner animation="border" variant="primary" />
+      <SpinnerP />
     </div>
   );
   const initialLoad = isEmpty(collectionByPages);
 
   const fetchMoreData = async () => {
     const nextPage = currentPage + 1;
-    const pageParams = { search, page: nextPage, initialLoad };
+    const pageParams = { search, page: nextPage, initialLoad ,doctorId};
     await fetchCollection(pageParams);
   };
   useEffect(() => {
+    
     if (initialLoad) {
       fetchMoreData();
     }
   }, [fetchMoreData, initialLoad]);
 
-  
+
+
 
   return (
     <InfiniteScroll
@@ -52,7 +60,11 @@ const ListSearchResult = ({ collection, fetchCollection, searchParams,hidePatien
       as="ul"
       className={style["search-collection-list"]}
     >
-    <PatientTable hidePatientList={hidePatientList} patientsList ={collectionData} searchType={searchType} isPrescriptionCreateMode={isPrescriptionCreateMode}/>
+    <PatientTable hidePatientList={hidePatientList}
+     patientsList ={collectionData}
+      searchType={searchType}
+       isPrescriptionCreateMode={isPrescriptionCreateMode}
+       isMyPatientsChecked={isMyPatientsChecked}/>
       {/* {collectionData.map((data) => (
         <ResultCard key={data._id} data={data} />
       ))} */}

@@ -1,43 +1,43 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit"
 
-const storedUser = localStorage.getItem("authUser");
+const storedUser = localStorage.getItem("authUser")
 
 const initialState = {
   authUser: storedUser ? JSON.parse(storedUser) : null,
   loading: false,
-};
+}
 
 export const authSlice = createSlice({
   name: "auth",
   initialState,
   reducers: {
     fetchRegisteredUser: () => {},
-    setAuthUserByRegister: (state, action) => {
-      localStorage.setItem("authUser", JSON.stringify(action.payload));
-      state.authUser = action.payload;
+    setAuthUser: (state, action) => {
+      const { accessToken, ...loggedUser } = action.payload
+      if (accessToken) {
+        localStorage.setItem("accessToken", JSON.stringify(accessToken))
+      }
+      localStorage.setItem("authUser", JSON.stringify(loggedUser))
+      state.authUser = action.payload
     },
     fetchLoginUser: () => {},
-    setAuthUserByLogin: (state, action) => {
-      localStorage.setItem("authUser", JSON.stringify(action.payload));
-      state.authUser = action.payload;
-    },
     fetchLogoutUser: () => {},
     clearAuthUser(state) {
-      localStorage.removeItem("authUser");
-      state.authUser = null;
+      localStorage.removeItem("authUser")
+      localStorage.removeItem("accessToken")
+      state.authUser = null
     },
     setLoading: (state, action) => {
-      state.loading = action.payload;
+      state.loading = action.payload
     },
   },
-});
+})
 
 export const {
-  setAuthUserByRegister,
-  setAuthUserByLogin,
+  setAuthUser,
   clearAuthUser,
   fetchRegisteredUser,
   fetchLoginUser,
   fetchLogoutUser,
   setLoading,
-} = authSlice.actions;
+} = authSlice.actions

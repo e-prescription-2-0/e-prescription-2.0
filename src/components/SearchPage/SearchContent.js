@@ -7,6 +7,9 @@ import { useReduxState } from "../../hooks/useReduxState";
 import { useReduxAction } from "../../hooks/useReduxAction";
 import { searchSlice } from "../../reducers/search";
 import { useState } from "react";
+import { useSelector } from "react-redux";
+
+
 
 const SearchContent = ({ searchType, hidePatientList,isPrescriptionCreateMode }) => {
   const [searchParams, setSearchParams] = useSearchParams({});
@@ -45,25 +48,25 @@ const SearchContent = ({ searchType, hidePatientList,isPrescriptionCreateMode })
     case "doctors":
       collection = collectionDoctors;
       fetchCollection = fetchDoctors;
-      placeholderText = "Търси по имейла на доктора";
+      placeholderText = "Търси по имейл на лекар";
       titlePage = "Търси Доктори";
       break;
     case "prescriptions":
       collection = collectionAllPrescriptions;
       fetchCollection = fetchAllPrescriptions;
 
-      placeholderText = "Търси по номера на рецептата";
+      placeholderText = "Търси по номер на рецепта";
       titlePage = "Търси Рецепта";
       break;
     case "patients":
-      if (isMyPatientsChecked) {
-        collection = collectionMyPatients;
-        fetchCollection = fetchMyPatients;
-      } else {
+      // if (isMyPatientsChecked) {
+      //   collection = collectionMyPatients;
+      //   fetchCollection = fetchMyPatients;
+      // } else {
         collection = collectionAllPatients;
         fetchCollection = fetchAllPatients;
-      }
-      placeholderText = "Търси по ЕГН на пациента";
+      // }
+      placeholderText = "Търси по ЕГН на пациент";
       titlePage = "Търси Пациенти";
 
       break;
@@ -89,6 +92,7 @@ const SearchContent = ({ searchType, hidePatientList,isPrescriptionCreateMode })
         hidePatientList={hidePatientList}
         searchType={searchType}
         isPrescriptionCreateMode={isPrescriptionCreateMode}
+        isMyPatientsChecked = {isMyPatientsChecked}
 
      
 

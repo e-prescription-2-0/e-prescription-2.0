@@ -12,7 +12,7 @@ export default {
     },
   }),
   getMyPatients: serviceBind({
-    url: "/api/user/{doctorId}/patients?search={search}&page={page}",
+    url: "/api/auth/{doctorId}/patients?search={search}&page={page}",
     method: METHODS.GET,
     headers: {
       "Content-Type": HEADER_FORMATS.JSON,

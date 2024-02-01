@@ -1,51 +1,51 @@
-import axios from "axios";
-import { isEmpty, omit, type } from "ramda";
+import axios from "axios"
+import { isEmpty, omit, type } from "ramda"
 
-const baseUrl = "http://localhost:3030";
+const baseUrl = "https://e-prescriptions-server.onrender.com"
+//const baseUrl = "http://localhost:3030"
 
 const formatParams = (params) => {
   if (!isEmpty(params)) {
     if (typeof params === "object") {
-      return JSON.stringify(params);
+      return JSON.stringify(params)
     }
   }
 
-  return params;
-};
+  return params
+}
 
 const serviceBind = (service) => {
   return (params = {}, options = {}) => {
-    let { method, url, headers } = service;
-    let pathParams = [];
-    console.log(options);
+    let { method, url, headers } = service
+    let pathParams = []
+    console.log(options)
     headers = {
       ...headers,
       ...options.additionalHeaders,
-    };
+    }
 
     url = url.replace(/\{([^\s\:\}]+)?\}/g, function (match, key, format) {
-      let value = params[key];
+      let value = params[key]
 
       if (type(value) === "Array") {
-        value = value.join(",");
+        value = value.join(",")
       }
 
-      pathParams.push(key);
+      pathParams.push(key)
 
-      return encodeURIComponent(value);
-    });
+      return encodeURIComponent(value)
+    })
 
     if (pathParams.length > 0) {
-      params = omit(pathParams, params);
+      params = omit(pathParams, params)
     }
 
     if (options.handleQuery) {
-      url = url + options.handleQuery(params);
+      url = url + options.handleQuery(params)
     }
 
     // Build the absolute URL
-    url = `${baseUrl}${url}`;
-    console.log(url);
+    url = `${baseUrl}${url}`
 
     return axios(url, {
       method,
@@ -59,8 +59,8 @@ const serviceBind = (service) => {
             : response.data
         )
       )
-      .catch((error) => Promise.reject(error));
-  };
-};
+      .catch((error) => Promise.reject(error))
+  }
+}
 
-export default serviceBind;
+export default serviceBind
