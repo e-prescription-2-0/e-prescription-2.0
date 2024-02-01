@@ -13,6 +13,7 @@ const PrescriptionCard = ({ prescription }) => {
   const getPrescription = useReduxAction(prescriptionsSlice.actions.fetchPrescription)
 
   const isDesktop = useMediaQuery({ minWidth: 1501 });
+  console.log(prescription);
 
   const isOpen = openPrescription._id === prescription._id
 
@@ -26,7 +27,7 @@ const PrescriptionCard = ({ prescription }) => {
     setOpenPrescription(prescription)
   };
 
-  const { prescriptionId, prescribedBy, prescribedTo, validPeriod } = prescription
+  const { prescriptionId, prescribedBy, prescribedTo, validPeriod } = prescription;
 
   return (
     <li className={[style["prescriptions-list-item"], isOpen && style['prescriptions-list-item-open']].join(" ")} onClick={onCLickSetThisPrescriptionToOpenPrescription}>

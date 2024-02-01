@@ -4,13 +4,16 @@ import style from "./DashboardNavigation.module.css"
 import { Container, Nav, Navbar } from "react-bootstrap"
 import { useReduxState } from "../../../hooks/useReduxState"
 import DashboardNavigationItem from "./DashboardNavigationItem"
-import { useSelector } from "react-redux"
 
 const DashboardNavigation = () => {
-  const user = useSelector(state => state.auth.authUser) || {};
-  const role = user.role || '';
+  // const role = "doctor" // coming and depend of redux/context state;
+  let role = "patient"
   const currentActiveLink = useReduxState((state) => state.dashboard.activeLink)
- 
+  const user = useReduxState((state) => state.auth.authUser)
+
+  if (user) {
+    role = user.role
+  }
 
   return (
     <Navbar expand="xl" className={style["aside-navigation-container"]}>
