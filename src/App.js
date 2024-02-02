@@ -12,7 +12,6 @@ import RouteDoctorGuard from "./components/RouteGuards/RouteDoctorGuard"
 import RouteNotDoctorGuard from "./components/RouteGuards/RouteNotDoctorGuard"
 import RoutePharmacistGuard from "./components/RouteGuards/RoutePharmacistGuard"
 import SearchContent from "./components/SearchPage/SearchContent"
-import SearchPage from "./components/SearchPage/SearchPage"
 import SinglePrescriptionsPage from "./components/SinglePrescriptionPage/SinglePrescriptions"
 import UserProfile from "./components/UserProfile/UserProfile"
 import { Welcome } from "./components/Welcome/Welcome"
@@ -71,7 +70,7 @@ const App = () => {
                 <Route element={<RouteDoctorGuard />}>
                   <Route
                     path="/search/patients"
-                    element={<SearchPage searchType={"patients"} />}
+                    element={<SearchContent searchType={"patients"} />}
                   />
                   <Route
                     path="/create-prescription"
@@ -95,14 +94,14 @@ const App = () => {
                 <Route element={<RouteNotDoctorGuard />}>
                   <Route
                     path="/search/doctors"
-                    element={<SearchPage searchType={"doctors"} />}
+                    element={<SearchContent searchType={"doctors"} />}
                   />
                 </Route>
 
                 <Route element={<RoutePharmacistGuard />}>
                   <Route
                     path="/search/prescriptions"
-                    element={<SearchPage searchType={"prescriptions"} />}
+                    element={<SearchContent searchType={"prescriptions"} />}
                   />
                 </Route>
               </Route>

@@ -55,7 +55,7 @@ const ListSearchResult = ({
           dataLength={dataLength}
           next={fetchMoreData}
           hasMore={initialLoad ? false : hasMore}
-          loader={loader}
+          // loader={loader}
           as="ul"
           className={style["search-collection-list"]}
         >

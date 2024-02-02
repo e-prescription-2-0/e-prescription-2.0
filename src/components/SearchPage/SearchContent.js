@@ -58,13 +58,13 @@ const SearchContent = ({
       titlePage = "Търси Рецепта"
       break
     case "patients":
-      // if (isMyPatientsChecked) {
-      //   collection = collectionMyPatients;
-      //   fetchCollection = fetchMyPatients;
-      // } else {
-      collection = collectionAllPatients
-      fetchCollection = fetchAllPatients
-      // }
+      if (isMyPatientsChecked) {
+        collection = collectionMyPatients
+        fetchCollection = fetchMyPatients
+      } else {
+        collection = collectionAllPatients
+        fetchCollection = fetchAllPatients
+      }
       placeholderText = "Търси по ЕГН на пациент"
       titlePage = "Търси Пациенти"
 
