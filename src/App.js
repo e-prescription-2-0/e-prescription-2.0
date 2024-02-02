@@ -16,6 +16,7 @@ import SearchPage from "./components/SearchPage/SearchPage"
 import UserProfile from "./components/UserProfile/UserProfile"
 import { Welcome } from "./components/Welcome/Welcome"
 import store from "./redux"
+import SinglePrescriptionsPage from "./components/SinglePrescriptionPage/SinglePrescriptions"
 
 const App = () => {
   const { pathname } = useLocation()
@@ -52,6 +53,8 @@ const App = () => {
           <Route element={<RouteAuthGuard />}>
             <Route path="/profile" element={<UserProfile />} />
             <Route path="/prescriptions" element={<MainDashboard />} />
+            <Route path="/prescriptions/:prescriptionId" element={<SinglePrescriptionsPage />} />
+
             <Route element={<RouteDoctorGuard />}>
               <Route
                 path="/search/patients"
@@ -75,6 +78,7 @@ const App = () => {
                 path="/search/prescriptions"
                 element={<SearchPage searchType={"prescriptions"} />}
               />
+              
             </Route>
           </Route>
           <Route path="/logout" element={<Logout />} />
