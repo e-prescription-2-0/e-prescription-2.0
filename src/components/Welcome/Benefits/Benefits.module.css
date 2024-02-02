@@ -45,7 +45,7 @@ ul {
 .section-head h4 {
   position: relative;
   padding: 0;
-  color: #78d6c6;
+  color: #4e8d91;
   line-height: 1;
   letter-spacing: 0.3px;
   font-size: 34px;
@@ -58,7 +58,7 @@ ul {
   content: "";
   width: 60px;
   height: 3px;
-  background: #78d6c6;
+  background: #4e8d91;
   position: absolute;
   left: 0px;
   bottom: -10px;
@@ -122,7 +122,7 @@ p.awesome_line {
   height: 90%;
 }
 .item:hover {
-  background: #78d6c6;
+  background: #3c6e71;
   box-shadow: 0 8px 20px 0px rgba(0, 0, 0, 0.2);
   -webkit-transition: all 0.5s ease 0;
   transition: all 0.5s ease 0;
@@ -130,6 +130,7 @@ p.awesome_line {
 }
 .item:hover .item,
 .item:hover span.icon {
+  color: #3f779d;
   background: #fff;
   border-radius: 10px;
   -webkit-transition: all 0.5s ease 0;
@@ -146,13 +147,12 @@ p.awesome_line {
 .item .icon {
   font-size: 40px;
   margin-bottom: 25px;
-  color: #78d6c6;
   width: 90px;
   height: 90px;
   line-height: 96px;
   border-radius: 50px;
-  background: rgb(246, 252, 207, 0.8);
-  color: #78d6c6;
+  background: #4e8d91;
+  color: #ffffff;
 }
 .item .feature_box_col_two {
   background: rgba(255, 77, 28, 0.15);

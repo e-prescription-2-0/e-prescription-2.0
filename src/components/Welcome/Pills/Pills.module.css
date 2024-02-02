@@ -1,0 +1,13 @@
+.pills-wrapper {
+  flex: 1;
+  height: 610px;
+  width: 665px;
+  z-index: 90;
+}
+
+@media only screen and (max-width: 768px) {
+  .pills-wrapper {
+    height: 305px;
+    width: 335px;
+  }
+}
