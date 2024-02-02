@@ -56,7 +56,7 @@ export const dashBoardNavData = {
       icon: <FontAwesomeIcon icon={faUser} />,
     },
     {
-      linkTo: "/search/prescriptions",
+      linkTo: "/prescriptions",
       text: "Рецепти",
       icon: <FontAwesomeIcon icon={faFilePrescription} />,
     },
