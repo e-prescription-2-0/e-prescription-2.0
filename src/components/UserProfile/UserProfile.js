@@ -17,8 +17,8 @@ const UserProfile = () => {
 
   const { profileId } = useParams()
 
-  const { firstName, lastName, gender, email, createdOn, dateOfBirth, role } =
-    profileId ? otherProfile : myProfile
+  // const { firstName, lastName, gender, email, createdOn, dateOfBirth, role } =
+  //   profileId ? otherProfile : myProfile
 
   const userInformation = profileId ? otherProfile : myProfile
   let profile
