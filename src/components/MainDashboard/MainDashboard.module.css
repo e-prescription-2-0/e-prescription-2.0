@@ -15,6 +15,7 @@
   column-gap: 1em;
   align-items: flex-start;
   justify-content: space-evenly;
+  height: 100%;
 }
 
 body {
