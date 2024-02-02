@@ -63,64 +63,27 @@ const App = () => {
               <Route path="/:action?" element={<Welcome />} />
 
           <Route element={<RouteAuthGuard />}>
-            <Route path="/profile" element={<UserProfile />} />
-            <Route path="/profile/:profileId" element={<UserProfile />} />
-            
-            <Route path="/prescriptions" element={<MainDashboard />} />
-            <Route element={<RouteDoctorGuard />}>
-              <Route
-                path="/search/patients"
-                element={<SearchPage searchType={"patients"} />}
-              />
-              <Route
-                path="/create-prescription"
-                element={<CreatePrescription />}
-              />
-            </Route>
-              <Route element={<RouteAuthGuard />}>
                 <Route path="/profile" element={<UserProfile />} />
+                <Route path="/profile/:profileId" element={<UserProfile />} />
+                <Route path="/prescriptions/:prescriptionId" element={<SinglePrescriptionsPage />}/>         
                 <Route path="/prescriptions" element={<MainDashboard />} />
-                <Route
-                  path="/prescriptions/:prescriptionId"
-                  element={<SinglePrescriptionsPage />}
-                />
-
-                <Route element={<RouteDoctorGuard />}>
-                  <Route
-                    path="/search/patients"
-                    element={<SearchContent searchType={"patients"} />}
-                  />
-                  <Route
-                    path="/create-prescription"
-                    element={<CreatePrescription />}
-                  />
-                  {/*  */}
-                  <Route
-                    path="/search/doctors"
-                    element={<SearchContent searchType={"doctors"} />}
-                  />
-                  <Route
-                    path="/search/patients"
-                    element={<SearchContent searchType={"patients"} />}
-                  />
-                  <Route
-                    path="/search/prescriptions"
-                    element={<SearchContent searchType={"prescriptions"} />}
-                  />
-                </Route>
-
-                <Route element={<RouteNotDoctorGuard />}>
-                  <Route
-                    path="/search/doctors"
-                    element={<SearchContent searchType={"doctors"} />}
-                  />
-                </Route>
+            <Route element={<RouteDoctorGuard />}>
+                <Route path="/search/patients" element={<SearchContent searchType={"patients"} />}/>
+                <Route path="/create-prescription" element={<CreatePrescription />}/>
+            </Route>
+            <Route element={<RouteNotDoctorGuard/>}>
+                  <Route path="/search/prescriptions" element={<SearchContent searchType={"prescriptions"} />}/>
+                  <Route path="/search/doctors" element={<SearchContent searchType={"doctors"} />}/>
+            </Route>
+             
+            
+                <Route path="/profile" element={<UserProfile />} />
+                  
+                 
+                
 
                 <Route element={<RoutePharmacistGuard />}>
-                  <Route
-                    path="/search/prescriptions"
-                    element={<SearchContent searchType={"prescriptions"} />}
-                  />
+                  <Route path="/search/prescriptions" element={<SearchContent searchType={"prescriptions"} />}                 />
                 </Route>
               </Route>
 
