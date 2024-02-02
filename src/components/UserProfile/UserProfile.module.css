@@ -135,3 +135,20 @@
   justify-content: center;
   align-items: center;
 }
+
+@media only screen and (max-width: 768px) {
+  .profile-content-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    /* border: 2px solid #3c6e71; */
+    border-radius: 20px;
+    background-color: #d9d9d9;
+    margin: 0 1rem 6rem 1rem;
+    /* margin: 0 auto; */
+    /* margin-top: 10px; */
+    /* overflow: scroll; */
+  }
+}

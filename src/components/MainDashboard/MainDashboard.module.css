@@ -43,6 +43,19 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
+    max-width: 40rem;
     width: 100%;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .main-dashboard-section-content {
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: flex-start;
+    max-width: 40rem;
+    width: 100%;
+    /* margin-bottom: 5rem; */
+    background-color: red;
   }
 }

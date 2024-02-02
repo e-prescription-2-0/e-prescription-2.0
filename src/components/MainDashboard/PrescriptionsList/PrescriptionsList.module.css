@@ -171,13 +171,22 @@
 
 @media only screen and (max-width: 1500px) {
   .prescriptions-list-item {
-    height: auto;
-    width: 15rem;
-    margin-bottom: 0;
+    height: 8rem;
+    width: 20rem;
+    margin: 0;
   }
   .div-prescription-list-no-content {
     width: 100%;
     border-radius: 0;
     margin-block: 2rem;
+  }
+
+  .prescriptions-list-mobile-container {
+    display: flex;
+    justify-content: center;
+    margin-block: 0;
+    gap: 1rem;
+    width: auto;
+    align-items: center;
   }
 }
