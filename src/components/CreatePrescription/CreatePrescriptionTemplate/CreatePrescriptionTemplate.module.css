@@ -80,5 +80,5 @@
 .prescription-btn:hover {
   background-color: rgb(246, 252, 207, 0.8);
   color: #284b63;
-  border: 1px solid #3c6e71;
+  box-shadow: #3c6e71 0px 1px 3px 0px, #3c6e71 0px 0px 0px 1px;
 }

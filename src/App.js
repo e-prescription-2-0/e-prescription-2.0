@@ -62,6 +62,8 @@ const App = () => {
 
               <Route element={<RouteAuthGuard />}>
                 <Route path="/profile" element={<UserProfile />} />
+                <Route path="/profile/:profileId" element={<UserProfile />} />
+
                 <Route path="/dashboard" element={<MainDashboard />} />
                 <Route
                   path="/prescriptions/:prescriptionId"

@@ -13,7 +13,10 @@
   background-color: #d9d9d9;
   border-radius: 20px;
   margin-left: 1rem;
+  overflow: scroll;
 }
+
+
 
 .main-search-doctors-container ul {
   border-radius: 2px;
@@ -223,4 +226,8 @@ input[type="checkbox"]:not(:checked) ~ .label-switch.off {
 
 .switch-and-title-box h4 {
   color: #3c6e71;
+}
+
+.search-collection-list {
+  overflow: scroll;
 }

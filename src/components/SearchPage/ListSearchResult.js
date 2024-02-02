@@ -54,7 +54,7 @@ const ListSearchResult = ({
         <InfiniteScroll
           dataLength={dataLength}
           next={fetchMoreData}
-          hasMore={initialLoad ? false : hasMore}
+          hasMore={hasMore+1}
           // loader={loader}
           as="ul"
           className={style["search-collection-list"]}

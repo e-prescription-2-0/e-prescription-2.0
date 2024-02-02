@@ -39,7 +39,7 @@ const CreatePrescriptionTemplate = ({
 
     createPrescription(data)
     getPrescriptions()
-    navigate("/prescriptions")
+    navigate("/dashboard")
   }
   const authUser = useSelector((state) => state.auth.authUser)
   const { firstName, lastName, doctorId, hospitalName } = authUser
