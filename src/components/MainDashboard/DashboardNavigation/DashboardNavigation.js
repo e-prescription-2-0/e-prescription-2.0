@@ -25,6 +25,7 @@ const DashboardNavigation = () => {
           id={style["aside-navbar-toggle"]}
           aria-controls="basic-navbar-nav"
         />
+
         <Navbar.Collapse>
           <Nav className={style["aside-nav-list"]}>
             {dashBoardNavData[role]?.map((x, index) => (

@@ -1,23 +1,32 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
 
-.prescriptions-list-div p {
+.prescriptions-list-ul p {
   margin: 0;
 }
 
-.prescriptions-list-div {
+.prescriptions-list-wrapper {
+  display: flex;
+  flex-direction: column;
   background-color: #d9d9d9;
-  display: inline-block;
+  border-radius: 20px;
+  height: auto;
   gap: 10px;
-  padding: 20px;
-  border-radius: 10px;
-  overflow: scroll;
-  /* overflow-x: visible;
-  overflow-y: auto; */
-  width: 350px;
-  height: 100%;
+  max-height: fit-content;
 }
 
-.prescriptions-list-div::-webkit-scrollbar {
+.prescriptions-list-ul {
+  display: flex;
+  flex-direction: column;
+  overflow: scroll;
+  overflow-x: visible;
+  overflow-y: auto;
+  padding: 1.5rem;
+  width: 350px;
+  height: 42.9rem;
+  border-top: 1px solid white;
+}
+
+.prescriptions-list-ul::-webkit-scrollbar {
   display: none;
 }
 
@@ -30,7 +39,7 @@
   justify-content: space-between;
   align-items: center;
   margin-bottom: 15px;
-  border: solid 5px #12476b9b;
+  border: solid 1px #4e8d91;
   transition: all 0.6s ease;
 }
 
@@ -84,7 +93,7 @@
 
 .prescriptions-list-item-open {
   background-color: #cfe2ff;
-  border: solid 5px #78d6c6;
+  border: solid 1px #3f779d;
   box-shadow: #cfe2ff 0px 0px 0px 3px;
 }
 
@@ -94,7 +103,7 @@
 }
 
 .prescriptions-list-item-open svg {
-  color: #78d6c6;
+  color: #4e8d91;
 }
 
 .prescriptions-list-mobile-container .prescriptions-list-item svg {
@@ -114,8 +123,8 @@
   justify-content: center;
   width: 350px;
   background-color: #d9d9d9;
-  border-radius: 10px;
-  height: 100%;
+  border-radius: 20px;
+  height: auto;
 }
 
 .div-prescription-list-no-content img {
@@ -156,11 +165,11 @@
 }
 
 .prescriptions-list-header-container .altogether {
-  border-color: #12486B;
+  border-color: #12486b;
 }
 .prescriptions-list-header-container .altogether:hover {
   color: white;
-  background-color: #12486B;
+  background-color: #12486b;
 }
 
 .prescriptions-list-header-container h5 {
@@ -170,13 +179,22 @@
 
 @media only screen and (max-width: 1500px) {
   .prescriptions-list-item {
-    height: auto;
-    width: 15rem;
-    margin-bottom: 0;
+    height: 8rem;
+    width: 20rem;
+    margin: 0;
   }
   .div-prescription-list-no-content {
     width: 100%;
     border-radius: 0;
     margin-block: 2rem;
+  }
+
+  .prescriptions-list-mobile-container {
+    display: flex;
+    justify-content: center;
+    margin-block: 0;
+    gap: 1rem;
+    width: auto;
+    align-items: center;
   }
 }

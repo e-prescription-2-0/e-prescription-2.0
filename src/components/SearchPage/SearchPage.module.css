@@ -1,20 +1,20 @@
-.main-search-doctors-section {
-  padding: 1em 0;
-  margin: 0 0;
-  margin-left: 5rem;
-  max-width: 1700px;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: stretch;
-  column-gap: 4.5em;
-  flex-grow: 1;
-}
-
 .doctor-card-list-item {
   border-top-width: thin !important;
   padding: 0;
 }
+
+.main-search-doctors-container {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  height: -webkit-fill-available;
+  background-color: #d9d9d9;
+  border-radius: 20px;
+  margin-left: 1rem;
+}
+
 .main-search-doctors-container ul {
   border-radius: 2px;
 }
@@ -27,8 +27,9 @@
 .main-search-input-for-single-patient {
   background-color: #ffebeb;
 }
-.main-search-input-from-user-patients {
-  background-color: rgb(246, 252, 207, 0.8);
+.main-search-input-form {
+  background-color: #ffffff;
+  width: 50%;
 }
 
 .main-search-doctors-container input:focus {
@@ -40,7 +41,7 @@
 .main-search-input-for-single-patient:focus {
   background-color: #d9d9d9;
 }
-.main-search-input-from-user-patients:focus {
+.main-search-input-form:focus {
   background-color: #f2f2f2;
 }
 
@@ -78,7 +79,6 @@
 .main-search-doctors-container button:active,
 .main-search-doctors-container button:focus {
   background-color: rgb(246, 252, 207, 0.8);
-  border: 1px solid #3c6e71;
 }
 
 .search-doctors-loading-container {
@@ -125,9 +125,9 @@
 }
 .delete-search-query-button svg {
   color: #497174;
-  height: 1.6rem;
-  width: 2rem;
-  height: 2rem;
+  /* height: 1.6rem; */
+  width: 1.5rem;
+  height: 1.5rem;
 }
 .delete-search-query-button svg:hover {
   background-color: #eff5f5;
@@ -153,7 +153,7 @@
     grid-template-columns: 1fr 1fr;
   }
 
-  .main-search-doctors-section {
+  .main-search-section {
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
@@ -170,7 +170,7 @@
 input[type="checkbox"] {
   position: relative;
   appearance: none;
-  width: 120px;
+  width: 165px;
   height: 50px;
   background-color: #3c6e71;
   border-radius: 20px;
@@ -194,7 +194,7 @@ input[type="checkbox"]::after {
   transition: all 0.4s;
 }
 input:checked[type="checkbox"]::after {
-  left: 75px;
+  left: 120px;
 }
 .label-switch {
   position: absolute;

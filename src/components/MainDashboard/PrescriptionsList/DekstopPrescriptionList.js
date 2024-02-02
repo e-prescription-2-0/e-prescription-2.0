@@ -1,16 +1,17 @@
-import style from "./PrescriptionsList.module.css";
-import PrescriptionCard from "./PrescriptionCard";
-import PrescriptionListHeader from "./PrescriptionListHeader";
+import PrescriptionCard from "./PrescriptionCard"
+import PrescriptionListHeader from "./PrescriptionListHeader"
+import style from "./PrescriptionsList.module.css"
 
 const DesktopPrescriptionsList = ({ prescriptions }) => {
   return (
-    <ul className={style["prescriptions-list-div"]}>
+    <div className={style["prescriptions-list-wrapper"]}>
       <PrescriptionListHeader />
-
-      {prescriptions.map((data) => {
-        return <PrescriptionCard key={data._id} prescription={data} />;
-      })}
-    </ul>
-  );
-};
-export default DesktopPrescriptionsList;
+      <ul className={style["prescriptions-list-ul"]}>
+        {prescriptions.map((data) => {
+          return <PrescriptionCard key={data._id} prescription={data} />
+        })}
+      </ul>
+    </div>
+  )
+}
+export default DesktopPrescriptionsList

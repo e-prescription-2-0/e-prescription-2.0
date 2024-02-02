@@ -1,7 +1,7 @@
-import { Form, InputGroup } from "react-bootstrap";
-import style from "../SearchPage.module.css";
-import { faXmark } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faXmark } from "@fortawesome/free-solid-svg-icons"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { Form, InputGroup } from "react-bootstrap"
+import style from "../SearchPage.module.css"
 
 const BaseSearchFields = ({
   setSearchParams,
@@ -12,26 +12,24 @@ const BaseSearchFields = ({
   searchType,
 }) => {
   const onChangeSearch = (e) => {
-    const value = e.target.value;
-    value ? setSearchParams({ search: value }) : setSearchParams({});
-  };
+    const value = e.target.value
+    value ? setSearchParams({ search: value }) : setSearchParams({})
+  }
 
   const onChangeSwitch = (e) => {
-    setIsMyPatientsChecked(!isMyPatientsChecked);
-   
-  };
-  
+    setIsMyPatientsChecked(!isMyPatientsChecked)
+  }
+
   return (
     <>
-      <InputGroup className="mb-3">
+      <InputGroup className="mb-3" style={{ width: "70%" }}>
         <Form.Control
           name="search"
           id="searchInput"
           placeholder={placeholderText}
           aria-label="Search text"
           aria-describedby="basic-addon2"
-          className={style["main-search-input-from-user-patients"]}
-          // defaultValue={searchParams.get("search") || ""}
+          className={style["main-search-input-form"]}
           onChange={onChangeSearch}
           value={searchParams.get("search") || ""}
           autoComplete="off"
@@ -45,6 +43,7 @@ const BaseSearchFields = ({
           </button>
         )}
       </InputGroup>
+
       {searchType === "patients" && (
         <div className={style["switch-and-title-box"]}>
           <div className={style["toggle"]}>
@@ -54,18 +53,18 @@ const BaseSearchFields = ({
               onChange={onChangeSwitch}
             />
             <label className={[style["label-switch"], style["off"]].join(" ")}>
-              ALL
+              ВСИЧКИ
             </label>
             <label className={[style["label-switch"], style["on"]].join(" ")}>
-              MY
+              МОИТЕ
             </label>
           </div>
 
-          <h4>PATIENTS</h4>
+          <h4>ПАЦИЕНТИ</h4>
         </div>
       )}
     </>
-  );
-};
+  )
+}
 
-export default BaseSearchFields;
+export default BaseSearchFields

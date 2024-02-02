@@ -14,7 +14,7 @@ const LoadingPill = () => {
         <div className={style["loaderPill-floor"]}>
           <div className={style["loaderPill-floor-shadow"]}></div>
         </div>
-        <div className={style["loaderPill-text"]}>Loading your RX</div>
+        <div className={style["loaderPill-text"]}>Loading...</div>
       </div>
     </div>
   )

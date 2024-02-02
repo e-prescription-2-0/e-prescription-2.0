@@ -28,8 +28,7 @@ export const dashBoardNavData = {
       linkTo: "/search/patients",
       text: "Пациенти",
       icon: <FontAwesomeIcon icon={faBedPulse} />,
-    }
-    
+    },
   ],
   pharmacist: [
     {
