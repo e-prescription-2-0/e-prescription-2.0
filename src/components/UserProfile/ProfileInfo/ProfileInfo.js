@@ -11,20 +11,12 @@ const ProfileInfo = ({ userInfo = {} }) => {
           src="https://robohash.org/hicveldicta.png"
         />
       </div>
-      {info.map((user, index) => {
+      {info.map((user) => {
         return (
-          user[1] !== "" && (
-            <div
-              className={
-                index % 2 === 0
-                  ? style["content-item"]
-                  : style["content-item-bold"]
-              }
-            >
-              <span>{user[0]}</span>
-              <p>{user[1]}</p>
-            </div>
-          )
+          <div className={style["content-item"]}>
+            <span>{user[0]}</span>
+            <p>{user[1]}</p>
+          </div>
         )
       })}
     </div>
