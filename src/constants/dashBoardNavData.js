@@ -4,8 +4,8 @@ import {
   faFilePrescription,
   faUser,
   faUserDoctor,
-} from "@fortawesome/free-solid-svg-icons"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+} from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export const dashBoardNavData = {
   doctor: [
@@ -15,8 +15,8 @@ export const dashBoardNavData = {
       icon: <FontAwesomeIcon icon={faUser} />,
     },
     {
-      linkTo: "/prescriptions",
-      text: "Изписани Рецепти",
+      linkTo: "/dashboard",
+      text: "Табло",
       icon: <FontAwesomeIcon icon={faFilePrescription} />,
     },
     {
@@ -37,14 +37,19 @@ export const dashBoardNavData = {
       icon: <FontAwesomeIcon icon={faUser} />,
     },
     {
-      linkTo: "/search/prescriptions",
-      text: "Рецепти",
+      linkTo: "/dashboard",
+      text: "Табло",
       icon: <FontAwesomeIcon icon={faFilePrescription} />,
     },
     {
       linkTo: "/prescription/complete",
       text: "Изпълни рецепта",
       icon: <FontAwesomeIcon icon={faFilePen} />,
+    },
+    {
+      linkTo: "/search/doctors",
+      text: "Доктори",
+      icon: <FontAwesomeIcon icon={faUserDoctor} />,
     },
   ],
   patient: [
@@ -54,8 +59,8 @@ export const dashBoardNavData = {
       icon: <FontAwesomeIcon icon={faUser} />,
     },
     {
-      linkTo: "/search/prescriptions",
-      text: "Рецепти",
+      linkTo: "/dashboard",
+      text: "Табло",
       icon: <FontAwesomeIcon icon={faFilePrescription} />,
     },
     {
@@ -64,4 +69,4 @@ export const dashBoardNavData = {
       icon: <FontAwesomeIcon icon={faUserDoctor} />,
     },
   ],
-}
+};
