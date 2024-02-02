@@ -47,25 +47,25 @@ const SearchContent = ({
     case "doctors":
       collection = collectionDoctors
       fetchCollection = fetchDoctors
-      placeholderText = "Търси по имейла на доктора"
+      placeholderText = "Търси по имейл на лекар"
       titlePage = "Търси Доктори"
       break
     case "prescriptions":
       collection = collectionAllPrescriptions
       fetchCollection = fetchAllPrescriptions
 
-      placeholderText = "Търси по номера на рецептата"
+      placeholderText = "Търси по номер на рецепта"
       titlePage = "Търси Рецепта"
       break
     case "patients":
-      if (isMyPatientsChecked) {
-        collection = collectionMyPatients
-        fetchCollection = fetchMyPatients
-      } else {
-        collection = collectionAllPatients
-        fetchCollection = fetchAllPatients
-      }
-      placeholderText = "Търси по ЕГН на пациента"
+      // if (isMyPatientsChecked) {
+      //   collection = collectionMyPatients;
+      //   fetchCollection = fetchMyPatients;
+      // } else {
+      collection = collectionAllPatients
+      fetchCollection = fetchAllPatients
+      // }
+      placeholderText = "Търси по ЕГН на пациент"
       titlePage = "Търси Пациенти"
 
       break
@@ -91,6 +91,7 @@ const SearchContent = ({
         hidePatientList={hidePatientList}
         searchType={searchType}
         isPrescriptionCreateMode={isPrescriptionCreateMode}
+        isMyPatientsChecked={isMyPatientsChecked}
       />
     </div>
   )

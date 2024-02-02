@@ -16,7 +16,7 @@ export const dashBoardNavData = {
     },
     {
       linkTo: "/prescriptions",
-      text: "Рецепти",
+      text: "Изписани Рецепти",
       icon: <FontAwesomeIcon icon={faFilePrescription} />,
     },
     {
@@ -29,11 +29,6 @@ export const dashBoardNavData = {
       text: "Пациенти",
       icon: <FontAwesomeIcon icon={faBedPulse} />,
     },
-    {
-      linkTo: "/search/doctors",
-      text: "Доктори",
-      icon: <FontAwesomeIcon icon={faUserDoctor} />,
-    },
   ],
   pharmacist: [
     {
@@ -42,7 +37,7 @@ export const dashBoardNavData = {
       icon: <FontAwesomeIcon icon={faUser} />,
     },
     {
-      linkTo: "/prescription",
+      linkTo: "/search/prescriptions",
       text: "Рецепти",
       icon: <FontAwesomeIcon icon={faFilePrescription} />,
     },
@@ -50,12 +45,6 @@ export const dashBoardNavData = {
       linkTo: "/prescription/complete",
       text: "Изпълни рецепта",
       icon: <FontAwesomeIcon icon={faFilePen} />,
-    },
-
-    {
-      linkTo: "/search/doctors",
-      text: "Доктори",
-      icon: <FontAwesomeIcon icon={faUserDoctor} />,
     },
   ],
   patient: [
@@ -65,7 +54,7 @@ export const dashBoardNavData = {
       icon: <FontAwesomeIcon icon={faUser} />,
     },
     {
-      linkTo: "/prescriptions",
+      linkTo: "/search/prescriptions",
       text: "Рецепти",
       icon: <FontAwesomeIcon icon={faFilePrescription} />,
     },

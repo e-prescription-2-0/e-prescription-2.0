@@ -20,14 +20,45 @@ const UserProfile = () => {
   const { firstName, lastName, gender, email, createdOn, dateOfBirth, role } =
     profileId ? otherProfile : myProfile
 
-  const profile = {
-    Име: firstName,
-    Фамилия: lastName,
-    Пол: gender,
-    "Дата на раждане": moment(dateOfBirth).format("DD.MM.YYYY"),
-    Роля: role,
-    Имейл: email,
-    "Създаден на": moment(createdOn).format("DD.MM.YYYY"),
+  const userInformation = profileId ? otherProfile : myProfile
+  let profile
+
+  switch (userInformation.role) {
+    case "patient":
+      profile = {
+        Име: userInformation.firstName,
+        Фамилия: userInformation.lastName,
+        Пол: userInformation.gender,
+        "Дата на раждане": moment(userInformation.dateOfBirth).format(
+          "MMM Do YY"
+        ),
+        Емейл: userInformation.email,
+        Роля: userInformation.role,
+
+        Създаден: moment(userInformation.createdOn).format("MMM Do YY"),
+      }
+      break
+    case "pharmacist":
+      profile = {
+        Име: userInformation.firstName,
+        Фамилия: userInformation.lastName,
+        Емейл: userInformation.email,
+        Аптека: userInformation.pharmacyName,
+        УИН: userInformation.pharmacistId,
+        Роля: userInformation.role,
+        Създаден: moment(userInformation.createdOn).format("MMM Do YY"),
+      }
+      break
+    case "doctor":
+      profile = {
+        Име: userInformation.firstName,
+        Фамилия: userInformation.lastName,
+        Емейл: userInformation.email,
+        Болница: userInformation.hospitalName,
+        УИН: userInformation.doctorId,
+        Роля: userInformation.role,
+        Създаден: moment(userInformation.createdOn).format("MMM Do YY"),
+      }
   }
 
   useEffect(() => {
@@ -36,19 +67,6 @@ const UserProfile = () => {
       fetchProfile(profileId)
     }
   }, [profileId, otherProfile, fetchProfile])
-
-  //   const changeMode = () => {
-  //     setEditMode((state) => !state);
-  //   };
-
-  //   const onEditSubmit = (data) => {
-  //     setUserInfo(data);
-  //     changeMode();
-  //   };
-
-  // const loader = (
-
-  // )
 
   return (
     <div className={style["profile-content-wrapper"]}>

@@ -51,7 +51,8 @@ form {
 
 .main-content {
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-around;
+  align-items: normal;
 }
 
 .flexDirectionRow {

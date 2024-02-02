@@ -1,7 +1,5 @@
-import { HEADER_FORMATS, METHODS } from "../constants/services";
-import { getToken } from "../utils/getToken";
-import serviceBind from "./helper";
-import * as request from "../utils/requester";
+import { HEADER_FORMATS, METHODS } from "../constants/services"
+import serviceBind from "./helper"
 
 export default {
   register: serviceBind({
@@ -29,13 +27,4 @@ export default {
       credentials: "include",
     },
   }),
-};
-
-// export const requestLogin = async (loginData) => {
-
-//   const result = await request.post('http://localhost:3030/api/auth/login', loginData);
-
-//   return result;
-// };
-
-// export const requestLogout = async () => await request.post('http://localhost:3030/api/auth/logout')
+}

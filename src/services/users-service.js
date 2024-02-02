@@ -1,5 +1,5 @@
-import { HEADER_FORMATS, METHODS } from "../constants/services";
-import serviceBind from "./helper";
+import { HEADER_FORMATS, METHODS } from "../constants/services"
+import serviceBind from "./helper"
 
 export default {
   // Patient endpoints
@@ -47,4 +47,22 @@ export default {
       Accept: HEADER_FORMATS.JSON,
     },
   }),
-};
+  setToMyPatients: serviceBind({
+    url: "/api/auth/{doctorId}/patients/add/{patientId}",
+    method: METHODS.POST,
+    headers: {
+      "Content-Type": HEADER_FORMATS.JSON,
+      Accept: HEADER_FORMATS.JSON,
+      "Access-Control-Allow-Origin": "*",
+    },
+  }),
+  removeFromMyPatients: serviceBind({
+    url: "/api/auth/{doctorId}/patients/remove/{patientId}",
+    method: METHODS.DELETE,
+    headers: {
+      "Content-Type": HEADER_FORMATS.JSON,
+      Accept: HEADER_FORMATS.JSON,
+      "Access-Control-Allow-Origin": "*",
+    },
+  }),
+}

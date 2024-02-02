@@ -6,8 +6,14 @@ import { useReduxState } from "../../../hooks/useReduxState"
 import DashboardNavigationItem from "./DashboardNavigationItem"
 
 const DashboardNavigation = () => {
-  const role = "doctor" // coming and depend of redux/context state;
+  // const role = "doctor" // coming and depend of redux/context state;
+  let role = "patient"
   const currentActiveLink = useReduxState((state) => state.dashboard.activeLink)
+  const user = useReduxState((state) => state.auth.authUser)
+
+  if (user) {
+    role = user.role
+  }
 
   return (
     <Navbar expand="xl" className={style["aside-navigation-container"]}>

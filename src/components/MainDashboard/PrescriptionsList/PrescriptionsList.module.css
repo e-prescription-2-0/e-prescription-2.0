@@ -133,7 +133,7 @@
 
 .prescriptions-list-header-container {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   padding: 1rem 0.5rem;
   /* background-color: #78d6c6;
@@ -162,6 +162,14 @@
 .prescriptions-list-header-container .active:hover {
   color: white;
   background-color: #d83f31;
+}
+
+.prescriptions-list-header-container .altogether {
+  border-color: #12486b;
+}
+.prescriptions-list-header-container .altogether:hover {
+  color: white;
+  background-color: #12486b;
 }
 
 .prescriptions-list-header-container h5 {

@@ -11,7 +11,7 @@ const Logout = () => {
     const dispatchClearAuthUser = useReduxAction(fetchLogoutUser) 
    
     useEffect(() => {
-       
+      
         dispatchClearAuthUser()
             
     }, [dispatchClearAuthUser])

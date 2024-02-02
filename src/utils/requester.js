@@ -1,6 +1,7 @@
+import { getToken } from "./getToken";
 
 
-const buildOptions = (data) => {
+const buildOptions =  (data) => {
     const options = {};
 
     if (data) {
@@ -11,10 +12,8 @@ const buildOptions = (data) => {
     }
 
     
-    const user = JSON.parse(localStorage.getItem('authUser'));
-    if(user) {
-        const token = user['access-token']
-    
+    const token =  getToken()
+   
     
         if (token) {
             options.headers = {
@@ -23,7 +22,7 @@ const buildOptions = (data) => {
             };
         }
     
-    }
+    
     
     
 

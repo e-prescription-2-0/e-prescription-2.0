@@ -8,7 +8,7 @@ const ProfileEdit = ({
 }) => {
     const { values, changeHandler, onSubmit } = useForm(userInfo, onEditSubmit);
     let editInfo = Object.entries(userInfo);
-    console.log(editInfo);
+
     return (
         <form className={style["form"]} onSubmit={onSubmit}>
             {

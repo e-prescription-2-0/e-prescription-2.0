@@ -25,7 +25,6 @@ const RegisterForm = () => {
     gender: "male",
   })
 
-  
   const dispatchSetAuthUser = useReduxAction(fetchRegisteredUser)
   const navigate = useNavigate()
 
@@ -50,9 +49,7 @@ const RegisterForm = () => {
       setRegistrationStep(2)
       setValidated(false)
     }
-    if (registrationStep === 2) {
-      if (validated) return
-
+    if (registrationStep === 2 && form.checkValidity() === true) {
       const userRegistrationData = {
         email: registrationFormData.email,
         password: registrationFormData.password,
