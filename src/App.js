@@ -83,10 +83,10 @@ const App = () => {
                   />
                   {/*  */}
 
-                  <Route
+                  {/* <Route
                     path="/search/patients"
                     element={<SearchContent searchType={"patients"} />}
-                  />
+                  /> */}
                   <Route
                     path="/search/prescriptions"
                     element={<SearchContent searchType={"prescriptions"} />}

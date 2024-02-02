@@ -25,9 +25,9 @@ export const dashBoardNavData = {
       icon: <FontAwesomeIcon icon={faFilePen} />,
     },
     {
-      linkTo: "/search/patients",
-      text: "Пациенти",
-      icon: <FontAwesomeIcon icon={faBedPulse} />,
+      linkTo: "/search/doctors",
+      text: "Доктори",
+      icon: <FontAwesomeIcon icon={faUserDoctor} />,
     },
   ],
   pharmacist: [
