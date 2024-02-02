@@ -16,6 +16,9 @@ import SearchPage from "./components/SearchPage/SearchPage"
 import UserProfile from "./components/UserProfile/UserProfile"
 import { Welcome } from "./components/Welcome/Welcome"
 import store from "./redux"
+import Prescription from "./components/MainDashboard/Prescription/Prescription"
+import PrescriptionContent from "./components/MainDashboard/Prescription/PrescriptionContent/PrescriptionContent"
+import PrescriptionCard from "./components/MainDashboard/PrescriptionsList/PrescriptionCard"
 
 const App = () => {
   const { pathname } = useLocation()
@@ -51,6 +54,8 @@ const App = () => {
 
           <Route element={<RouteAuthGuard />}>
             <Route path="/profile" element={<UserProfile />} />
+            <Route path="/profile/:profileId" element={<UserProfile />} />
+            
             <Route path="/prescriptions" element={<MainDashboard />} />
             <Route element={<RouteDoctorGuard />}>
               <Route

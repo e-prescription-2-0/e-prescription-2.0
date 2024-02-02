@@ -42,11 +42,12 @@ export const dashBoardNavData = {
       text: "Рецепти",
       icon: <FontAwesomeIcon icon={faFilePrescription} />,
     },
+  
     {
-      linkTo: "/prescription/complete",
-      text: "Изпълни рецепта",
-      icon: <FontAwesomeIcon icon={faFilePen} />,
-    },
+      linkTo: "/search/doctors",
+      text: "Доктори",
+      icon: <FontAwesomeIcon icon={faUserDoctor} />,
+    }
 
   ],
   patient: [
