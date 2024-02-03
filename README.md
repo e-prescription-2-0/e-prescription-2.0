@@ -9,9 +9,49 @@ e-Prescription 2.0 is a React application designed to streamline medicine servic
 ## Table of Contents
 
 - [Installation](#installation)
+- [Technologies](#technologies used)
 - [Usage](#usage)
 - [Contributing](#contributing)
 - [License](#license)
+
+# e-prescription 2.0
+
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE.md)
+
+## Technologies Used
+
+- **Frontend:**
+  - React
+  - Redux
+  - Redux Saga
+  - HTML5
+  - CSS3
+ 
+- **Backend:**
+  - Node.js
+  - Express 
+
+- **Database:**
+  - MongoDB 
+
+- **Authentication:**
+  - JWT (JSON Web Tokens)
+
+- **Version Control:**
+  - Git
+  - GitHub (or any version control and hosting platform you use)
+
+- **Other Tools and Libraries:**
+  - npm (Node Package Manager)
+  - Axios (or any HTTP client library you use)
+  - React bootstrap
+
+## Description
+
+The e-prescription 2.0 app simplifies medicine services...
+
+<!-- Rest of your README content -->
+
 
 
 ## Key Features
