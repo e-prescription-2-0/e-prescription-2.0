@@ -46,29 +46,31 @@ const ListSearchResult = ({
     }
   }, [fetchMoreData, initialLoad])
 
+  console.log(initialLoad);
+
   return (
     <>
-      {initialLoad ? (
-        <LoadingPill />
-      ) : (
-        <InfiniteScroll
-          dataLength={dataLength}
-          next={fetchMoreData}
-          hasMore={initialLoad ? false : hasMore}
-          // loader={loader}
-          as="ul"
-          className={style["search-collection-list"]}
-        >
-          <PatientTable
-            hidePatientList={hidePatientList}
-            patientsList={collectionData}
-            searchType={searchType}
-            isPrescriptionCreateMode={isPrescriptionCreateMode}
-            isMyPatientsChecked={isMyPatientsChecked}
-          />
-        </InfiniteScroll>
-      )}
-    </>
+    {initialLoad ? (
+      <LoadingPill />
+    ) : (
+      <InfiniteScroll
+        dataLength={dataLength}
+        next={fetchMoreData}
+        hasMore={hasMore+1}
+        // loader={loader}
+        as="ul"
+        className={style["search-collection-list"]}
+      >
+        <PatientTable
+          hidePatientList={hidePatientList}
+          patientsList={collectionData}
+          searchType={searchType}
+          isPrescriptionCreateMode={isPrescriptionCreateMode}
+          isMyPatientsChecked={isMyPatientsChecked}
+        />
+      </InfiniteScroll>
+    )}
+  </>
   )
 }
 

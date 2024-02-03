@@ -65,14 +65,21 @@ useEffect(() => {
                     </tr>
                 </thead>
                 <tbody className={styles['tbody-list']}>
+                {myList.length === 0 ? (
+                <tr style={{fontWeight:'700', }}>
+                <td colSpan={20}>
+                    Няма намерени резултати по посочения критерий
+                </td>
+                </tr>
+                ) :  (     
 
-
-                    {myList.map(p => <PatientData key={p._id} {...p}
+                    myList.map(p => <PatientData key={p._id} {...p}
                      hidePatientList={hidePatientList}
                       searchType={searchType} 
                       isPrescriptionCreateMode={isPrescriptionCreateMode} 
-                      isMyPatientsChecked={isMyPatientsChecked}/>)
+                      isMyPatientsChecked={isMyPatientsChecked}/>))
                     }
+                
                 </tbody>
             </Table>
         </div>
