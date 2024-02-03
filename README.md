@@ -54,13 +54,6 @@ e-Prescription 2.0 is a React application designed to streamline medicine servic
   - moment
   - fontawesome
 
-## Description
-
-The e-prescription 2.0 app simplifies medicine services...
-
-<!-- Rest of your README content -->
-
-
 
 ## Key Features
 
