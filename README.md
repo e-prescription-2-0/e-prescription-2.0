@@ -143,4 +143,14 @@ If you encounter any issues during the installation process, refer to the troubl
 
 Feel free to customize the instructions based on the actual functionality and flow of your "e-prescription 2.0" app. Include any additional details that would help users make the most of the application.
 
+# e-prescription 2.0
+
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE.md)
+
+## Contributing
+
+We welcome contributions from the community to improve and enhance the e-prescription 2.0 app. 
+
+
+
 
