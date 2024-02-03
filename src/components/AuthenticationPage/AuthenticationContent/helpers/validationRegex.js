@@ -1,51 +1,53 @@
 export const validationRegex = {
   email: {
     validation: /^(?=.*[A-Za-zА-Яа-я])(?=.*\d?).{8,}$/,
-    errorMessage: "Email is not a valid",
+    errorMessage: "Невалиден имейл",
   },
   password: {
     validation: /^(?=.*[A-Za-zА-Яа-я])(?=.*\d?).{8,}$/,
-    errorMessage: "Password should be at least 8 characters and digits",
+    // errorMessage: "Password should be at least 8 characters and digits",
+    errorMessage:
+      "Паролата трябва да е с дължина поне 8 символа и да включва цифри",
   },
 
   repeatPassword: {
     validation: /^(?=.*[A-Za-zА-Яа-я])[A-Za-zА-Яа-я\d]{8,}$/,
-    errorMessage: "Passwords do not match",
+    errorMessage: "Несъвпадащи пароли",
   },
   firstName: {
     validation: /^[A-Za-zА-Яа-я]{2,}$/,
-    errorMessage: "First name is not a valid",
+    errorMessage: "Невалидно име",
   },
   lastName: {
     validation: /^[A-Za-zА-Яа-я]{2,}$/,
-    errorMessage: "Last name is not a valid",
+    errorMessage: "Невалидна фамилия",
   },
 
-  dateOfBirth: { validation: /.+/, errorMessage: "Date of birth is required" },
+  dateOfBirth: { validation: /.+/, errorMessage: "Изисква се дата на раждане" },
   patientId: {
     validation: /^\d{10}$/,
-    errorMessage: "Identification number is not valid",
+    errorMessage: "Индентификационният номер е невалиден",
   },
 
   pharmacistId: {
     validation: /^\d{10}$/,
-    errorMessage: "Identification number is not valid",
+    errorMessage: "Индентификационният номер е невалиден",
   },
   pharmacyName: {
     validation: /^[a-zA-Z\s]{3,}$/,
-    errorMessage: "Pharmacy name is not a valid",
+    errorMessage: "Невалидно име на аптека",
   },
 
   hospitalName: {
     validation: /^[a-zA-Z\s]{3,}$/,
-    errorMessage: "Hospital name is not a valid",
+    errorMessage: "Невалидно име на здравно заведение",
   },
   doctorId: {
     validation: /^\d{10}$/,
-    errorMessage: "Identification number is not valid",
+    errorMessage: "Индентификационният номер е невалиден",
   },
   specialty: {
-    validation: /^[a-zA-Z]{3,}$/,
-    errorMessage: "Specialty is not a valid",
+    validation: /^[a-zA-Z\s]{3,}$/,
+    errorMessage: "Невалидна специалност",
   },
-};
+}
