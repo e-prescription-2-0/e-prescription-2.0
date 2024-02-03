@@ -74,7 +74,6 @@ const PatientTable = ({
             </tr>
           ) : (
             myList.map((p) => {
-              console.log("what is p", p)
               return (
                 <PatientData
                   key={p._id}

@@ -4,10 +4,6 @@ import { medicinesSlice } from "../reducers/medinices"
 
 function* onFetchMedicines() {
   try {
-    //Preform api call here
-    // const response = yield call("/mockData/medicines")
-    // console.log("medicinesData", medicinesData)
-
     yield put(medicinesSlice.actions.setMedicines(medicinesData))
   } catch (error) {
     console.log(error)

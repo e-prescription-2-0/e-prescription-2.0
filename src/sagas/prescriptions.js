@@ -104,7 +104,6 @@ function* onDeletePrescription(action) {
     })
 
     yield put(prescriptionsSlice.actions.removeDeletedPrescription(result))
-    console.log(result)
   } catch (error) {
     console.log(error)
   }

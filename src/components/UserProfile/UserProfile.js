@@ -16,10 +16,6 @@ const UserProfile = () => {
   const fetchProfile = useReduxAction(usersSlice.actions.fetchProfile)
 
   const { profileId } = useParams()
-
-  // const { firstName, lastName, gender, email, createdOn, dateOfBirth, role } =
-  //   profileId ? otherProfile : myProfile
-
   const userInformation = profileId ? otherProfile : myProfile
   let profile
 
@@ -62,7 +58,6 @@ const UserProfile = () => {
   }
 
   useEffect(() => {
-    console.log(profileId && otherProfile?._id !== profileId)
     if (profileId && otherProfile?._id !== profileId) {
       fetchProfile(profileId)
     }

@@ -20,7 +20,7 @@ const PrescriptionsList = ({}) => {
   const allMyPrescriptions = useReduxState(
     (state) => state.prescriptions.allMyPrescriptions
   )
-  console.log(allMyPrescriptions)
+
   const prescriptionsFilter = useReduxState(
     (state) => state.prescriptions.prescriptionsFilter
   )

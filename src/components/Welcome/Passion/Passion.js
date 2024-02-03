@@ -41,9 +41,9 @@ function Passion() {
     <section className={style["passion-section"]}>
       <div className={style["main"]}>
         <Carousel fade className={style["carusel"]}>
-          {configPassionCards.map((data) => {
+          {configPassionCards.map((data, index) => {
             return (
-              <Carousel.Item>
+              <Carousel.Item key={index}>
                 <PassionCard data={data} />
               </Carousel.Item>
             )

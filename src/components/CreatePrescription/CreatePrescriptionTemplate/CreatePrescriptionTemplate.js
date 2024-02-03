@@ -1,4 +1,5 @@
 import moment from "moment"
+import { isEmpty } from "ramda"
 import Accordion from "react-bootstrap/Accordion"
 import Button from "react-bootstrap/Button"
 import { useSelector } from "react-redux"
@@ -35,6 +36,10 @@ const CreatePrescriptionTemplate = ({
       prescribedBy,
       prescribedTo,
       medicines,
+    }
+
+    if (isEmpty(medicines)) {
+      return
     }
 
     createPrescription(data)
