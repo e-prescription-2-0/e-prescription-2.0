@@ -4,8 +4,8 @@ import {
   faFilePrescription,
   faUser,
   faUserDoctor,
-} from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+} from "@fortawesome/free-solid-svg-icons"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
 export const dashBoardNavData = {
   doctor: [
@@ -25,9 +25,9 @@ export const dashBoardNavData = {
       icon: <FontAwesomeIcon icon={faFilePen} />,
     },
     {
-      linkTo: "/search/doctors",
-      text: "Доктори",
-      icon: <FontAwesomeIcon icon={faUserDoctor} />,
+      linkTo: "/search/patients",
+      text: "Пациенти",
+      icon: <FontAwesomeIcon icon={faBedPulse} />,
     },
   ],
   pharmacist: [
@@ -69,4 +69,4 @@ export const dashBoardNavData = {
       icon: <FontAwesomeIcon icon={faUserDoctor} />,
     },
   ],
-};
+}

@@ -1,11 +1,11 @@
 .patient-table-container {
   min-width: 60em;
   margin: 20px;
-  padding: 3em;
-  background-color: #3c6e71;
+  /* padding: 3em; */
+  background-color: #fff;
   text-align: center;
   color: #fff;
-  border-radius: 10px;
+  /* border-radius: 10px; */
 }
 
 .patient-table-container h2 {
@@ -23,7 +23,7 @@
   max-width: 30em;
   margin: 0 auto;
 }
-.table-row{
+.table-row {
   min-height: 5vh;
 }
 .table-row button:hover {
@@ -41,4 +41,9 @@
   font-size: 2em;
   text-align: center;
   width: 100%;
+}
+
+.tbody-list {
+  /* height: 35rem; */
+  /* overflow: hidden; */
 }

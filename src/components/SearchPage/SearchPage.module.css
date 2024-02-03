@@ -15,8 +15,6 @@
   margin-left: 1rem;
 }
 
-
-
 .main-search-doctors-container ul {
   border-radius: 2px;
 }
@@ -228,5 +226,6 @@ input[type="checkbox"]:not(:checked) ~ .label-switch.off {
 }
 
 .search-collection-list {
+  /* height: 35rem; */
   overflow: scroll;
 }

@@ -1,13 +1,10 @@
 import { isEmpty } from "ramda"
 import { useEffect } from "react"
 import InfiniteScroll from "react-infinite-scroll-component"
-import PatientTable from "../CreatePrescription/PatientsTable/PatientsTable"
+import { useSelector } from "react-redux"
+import PatientTable from "../CreatePrescription/PatientsTable/PatientTable"
 import LoadingPill from "../Loadings/LoadingPill/LoadingPill"
 import style from "./SearchPage.module.css"
-
-import { useSelector } from "react-redux"
-import SpinnerP from "../SpinnerP/SpinnerP"
-
 const ListSearchResult = ({
   collection,
   fetchCollection,
@@ -25,14 +22,8 @@ const ListSearchResult = ({
   const dataLength = collectionData.length
   const currentPage = Object.keys(collectionByPages).length
 
-  const hasMore = currentPage < collection?.[search]?.numberPages || 0
+  const hasMore = currentPage < collection?.[search]?.numberPages
   const { _id: doctorId } = useSelector((state) => state.auth.authUser)
-
-  const loader = (
-    <div className={style["search-collection-loader"]}>
-      <SpinnerP />
-    </div>
-  )
   const initialLoad = isEmpty(collectionByPages)
 
   const fetchMoreData = async () => {
@@ -40,35 +31,33 @@ const ListSearchResult = ({
     const pageParams = { search, page: nextPage, initialLoad, doctorId }
     await fetchCollection(pageParams)
   }
+
   useEffect(() => {
-    if (initialLoad) {
+    if (initialLoad || hasMore) {
       fetchMoreData()
     }
-  }, [fetchMoreData, initialLoad])
+  }, [fetchMoreData, initialLoad, hasMore])
 
-  return (
-    <>
-      {initialLoad ? (
-        <LoadingPill />
-      ) : (
-        <InfiniteScroll
-          dataLength={dataLength}
-          next={fetchMoreData}
-          hasMore={hasMore+1}
-          // loader={loader}
-          as="ul"
-          className={style["search-collection-list"]}
-        >
-          <PatientTable
-            hidePatientList={hidePatientList}
-            patientsList={collectionData}
-            searchType={searchType}
-            isPrescriptionCreateMode={isPrescriptionCreateMode}
-            isMyPatientsChecked={isMyPatientsChecked}
-          />
-        </InfiniteScroll>
-      )}
-    </>
+  return initialLoad ? (
+    <LoadingPill />
+  ) : (
+    <InfiniteScroll
+      dataLength={collectionData.length}
+      next={fetchMoreData}
+      hasMore={hasMore}
+      // loader={<LoadingPill />}
+      as="ul"
+      className={style["search-collection-list"]}
+      height={580}
+    >
+      <PatientTable
+        hidePatientList={hidePatientList}
+        patientsList={collectionData}
+        searchType={searchType}
+        isPrescriptionCreateMode={isPrescriptionCreateMode}
+        isMyPatientsChecked={isMyPatientsChecked}
+      />
+    </InfiniteScroll>
   )
 }
 

@@ -88,8 +88,6 @@ html {
 
 #root {
   height: 100vh;
-
-  background-color: aqua;
 }
 
 @media only screen and (max-width: 1024px) {
@@ -129,7 +127,6 @@ html {
     justify-content: flex-start;
     margin: 0;
     height: 94vh;
-    background-color: salmon;
   }
 
   .main-content-wrapper {
@@ -150,7 +147,6 @@ html {
     /* max-height: 50rem; */
     height: 100%;
     margin-bottom: 0;
-    background-color: aqua;
   }
 
   html {
