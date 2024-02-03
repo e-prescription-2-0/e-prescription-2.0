@@ -94,7 +94,7 @@ If you encounter any issues during the installation process, refer to the troubl
 ### Doctors
 
 1. **Log In:** or **Register**
-   - Visit the [e-prescription 2.0](https://your-e-prescription-app-url.com) website.
+   - Visit the [e-prescription 2.0]((http:localhost:3000)) website.
    - Log in using your credentials.
 
 2. **Create a Prescription:**
@@ -109,7 +109,7 @@ If you encounter any issues during the installation process, refer to the troubl
 ### Pharmacists
 
 1. **Log In:** or **Register**
-   - Visit the [e-prescription 2.0](https://your-e-prescription-app-url.com) website.
+   - Visit the [e-prescription 2.0]((http:localhost:3000)) website.
    - Log in using your credentials.
 
 2. **Process Prescriptions:**
@@ -124,7 +124,7 @@ If you encounter any issues during the installation process, refer to the troubl
 ### Patients
 
 1. **Log In:** or **Register**
-   - Visit the [e-prescription 2.0](https://your-e-prescription-app-url.com) website.
+   - Visit the [e-prescription 2.0](http:localhost:3000) website.
    - Log in using your credentials.
 
 2. **View Prescriptions:**
