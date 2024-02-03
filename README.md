@@ -47,7 +47,47 @@ To get started with e-Prescription 2.0, follow the installation instructions in 
 
 ## Installation
 
-1. Clone the repository:
+## Installation
 
-```bash
-git clone https://github.com/your-username/your-react-app.git
+To run e.Prescription 2.0 locally on your machine, follow these steps:
+
+1. **Clone the repository:**
+
+    ```bash
+    git clone https://github.com/e-prescription-2-0/e-prescription-2.0.git
+    ```
+
+2. **Navigate to the project directory:**
+
+    ```bash
+    cd e-prescription-2.0
+    ```
+
+3. **Install dependencies:**
+
+    ```bash
+    npm install
+    ```
+
+4. **Start the application:**
+
+    ```bash
+    npm start
+    ```
+
+   This will launch the application locally. Open [http://localhost:3000](http://localhost:3000) in your web browser to access e.Prescription 2.0.
+
+5. **Set up the backend:**
+
+   If your application has a backend, follow the instructions in the `backend/README.md` (or a similar) file to set up and run the server.
+
+6.
+
+7. **Open the Application:**
+
+   Once the installation is complete, open your browser and go to [http://localhost:3000](http://localhost:3000) to start using e.Prescription 2.0.
+
+**Note:** Make sure you have Node.js and npm installed on your machine before proceeding with the installation.
+
+If you encounter any issues during the installation process, refer to the troubleshooting section in the README or check for additional instructions in the project documentation.
+
