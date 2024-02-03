@@ -54,13 +54,6 @@ e-Prescription 2.0 is a React application designed to streamline medicine servic
   - moment
   - fontawesome
 
-## Description
-
-The e-prescription 2.0 app simplifies medicine services...
-
-<!-- Rest of your README content -->
-
-
 
 ## Key Features
 
@@ -123,13 +116,7 @@ To run e.Prescription 2.0 locally on your machine, follow these steps:
 
    This will launch the application locally. Open [http://localhost:3000](http://localhost:3000) in your web browser to access e.Prescription 2.0.
 
-5. **Set up the backend:**
-
-   If your application has a backend, follow the instructions in the `backend/README.md` (or a similar) file to set up and run the server.
-
-6.
-
-7. **Open the Application:**
+5. **Open the Application:**
 
    Once the installation is complete, open your browser and go to [http://localhost:3000](http://localhost:3000) to start using e.Prescription 2.0.
 
