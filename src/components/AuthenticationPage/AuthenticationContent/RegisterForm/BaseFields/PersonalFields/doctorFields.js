@@ -1,16 +1,14 @@
-
 export const doctorFields = [
   {
     name: "doctorId",
-    placeholder: "Doctor ID",
+    placeholder: "УИН на доктор",
     classes: ["fadeIn", "second"],
     autoComplete: "off",
     fieldType: "text",
-    
   },
   {
     name: "hospitalName",
-    placeholder: "Hospital Name",
+    placeholder: "Име на здравно заведение",
     classes: ["fadeIn", "second"],
     autoComplete: "off",
 
@@ -18,9 +16,9 @@ export const doctorFields = [
   },
   {
     name: "specialty",
-    placeholder: "Specialty",
+    placeholder: "Специалност",
     classes: ["fadeIn", "second"],
     autoComplete: "off",
     fieldType: "text",
   },
-];
+]

@@ -1,7 +1,7 @@
 export const pharmacistFields = [
   {
     name: "pharmacistId",
-    placeholder: "Pharmacist ID",
+    placeholder: "УИН на фармацевт",
     classes: ["fadeIn", "second"],
     fieldType: "text",
 
@@ -11,7 +11,7 @@ export const pharmacistFields = [
   },
   {
     name: "pharmacyName",
-    placeholder: "Pharmacy Name",
+    placeholder: "Име на аптека",
     classes: ["fadeIn", "second"],
     fieldType: "text",
 
@@ -19,4 +19,4 @@ export const pharmacistFields = [
 
     option: undefined,
   },
-];
+]

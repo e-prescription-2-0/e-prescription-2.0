@@ -1,18 +1,17 @@
-
 export const patientFields = [
   {
     name: "patientId",
-    placeholder: "Patient ID",
+    placeholder: "ЕГН",
     classes: ["fadeIn", "second"],
     fieldType: "text",
-    
+
     autoComplete: "off",
 
     option: undefined,
   },
   {
     name: "gender",
-    placeholder: "Gender",
+    placeholder: "Пол",
     classes: ["form-select", "fadeIn", "second"],
     fieldType: "select",
     autoComplete: "off",
@@ -24,7 +23,7 @@ export const patientFields = [
   },
   {
     name: "dateOfBirth",
-    placeholder: "Date Of Birth",
+    placeholder: "Дата на раждане",
     classes: ["fadeIn", "second"],
 
     autoComplete: "off",
@@ -32,4 +31,4 @@ export const patientFields = [
     fieldType: "date",
     option: undefined,
   },
-];
+]

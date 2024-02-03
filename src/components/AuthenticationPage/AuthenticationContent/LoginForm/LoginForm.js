@@ -1,53 +1,53 @@
-import { useEffect, useState } from "react";
-import Form from "react-bootstrap/Form";
-import { useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
-import { useReduxAction } from "../../../../hooks/useReduxAction";
-import { fetchLoginUser } from "../../../../reducers/auth";
-import style from "../../AuthenticationPage.module.css";
-import FieldBuilder from "../helpers/FieldBuilder";
-import { LoginFields } from "./LoginFields";
-import { Spinner } from "react-bootstrap";
+import { useEffect, useState } from "react"
+import { Spinner } from "react-bootstrap"
+import Form from "react-bootstrap/Form"
+import { useSelector } from "react-redux"
+import { useNavigate } from "react-router-dom"
+import { useReduxAction } from "../../../../hooks/useReduxAction"
+import { fetchLoginUser } from "../../../../reducers/auth"
+import style from "../../AuthenticationPage.module.css"
+import FieldBuilder from "../helpers/FieldBuilder"
+import { LoginFields } from "./LoginFields"
 
 const LoginForm = () => {
-  const [invalidLoginForm, setInvalidLoginForm] = useState(false);
+  const [invalidLoginForm, setInvalidLoginForm] = useState(false)
   const [loginFormData, setLoginFormData] = useState({
     email: "",
     password: "",
-  });
+  })
 
-  const dispatchSetAuthUser = useReduxAction(fetchLoginUser);
-  const navigate = useNavigate();
-  const { isMessage, messages } = useSelector((state) => state.messages);
-  const loading = useSelector((state) => state.auth.loading);
+  const dispatchSetAuthUser = useReduxAction(fetchLoginUser)
+  const navigate = useNavigate()
+  const { isMessage, messages } = useSelector((state) => state.messages)
+  const loading = useSelector((state) => state.auth.loading)
 
   const handleSubmit = (event) => {
-    event.preventDefault();
+    event.preventDefault()
 
-    const { loginEmail, loginPassword } = loginFormData;
+    const { loginEmail, loginPassword } = loginFormData
 
     if (!loginEmail || !loginPassword) {
-      setInvalidLoginForm(true);
-      return;
+      setInvalidLoginForm(true)
+      return
     }
 
-    dispatchSetAuthUser({ loginEmail, loginPassword });
-    setInvalidLoginForm(false);
-  };
+    dispatchSetAuthUser({ loginEmail, loginPassword })
+    setInvalidLoginForm(false)
+  }
 
   const handleChange = (event) => {
-    const { name, value } = event.target;
+    const { name, value } = event.target
     setLoginFormData({
       ...loginFormData,
       [name]: value,
-    });
-  };
+    })
+  }
 
   useEffect(() => {
     if (isMessage && messages.type === "") {
-      navigate("/");
+      navigate("/")
     }
-  }, [isMessage, messages.type, navigate]);
+  }, [isMessage, messages.type, navigate])
 
   return (
     <>
@@ -55,7 +55,7 @@ const LoginForm = () => {
 
       <Form noValidate onSubmit={handleSubmit}>
         {invalidLoginForm && (
-          <div className={style["error"]}>Invalid Email or password</div>
+          <div className={style["error"]}>Невалидни имейл или парола</div>
         )}
         {LoginFields.map((fieldData) => (
           <FieldBuilder
@@ -86,11 +86,11 @@ const LoginForm = () => {
           className={style["underlineHover"]}
           onClick={() => navigate("/forgotPassword")}
         >
-          Forgot Password?
+          Забравена парола?
         </p>
       </div>
     </>
-  );
-};
+  )
+}
 
-export default LoginForm;
+export default LoginForm

@@ -1,18 +1,17 @@
-
 export const credentialsFields = [
   {
     name: "email",
-    placeholder: "Email Address",
+    placeholder: "Имейл адрес",
     classes: ["fadeIn", "first", "col"],
-   
+
     autoComplete: "email",
-   
+
     fieldType: "text",
     option: undefined,
   },
   {
     name: "password",
-    placeholder: "Password",
+    placeholder: "Парола",
     classes: ["fadeIn", "second", "col"],
 
     autoComplete: "new-password",
@@ -22,11 +21,11 @@ export const credentialsFields = [
   },
   {
     name: "repeatPassword",
-    placeholder: "Confirm Password",
+    placeholder: "Потвърди парола",
     classes: ["fadeIn", "third", "col"],
-    
+
     autoComplete: "new-password",
-    
+
     fieldType: "password",
     option: undefined,
   },
@@ -34,14 +33,14 @@ export const credentialsFields = [
     name: "role",
     placeholder: "profileType",
     classes: ["fadeIn", "fourth", "form-select"],
-   
+
     autoComplete: "off",
-   
+
     fieldType: "select",
     options: [
-      { text: "Patient", value: "patient" },
-      { text: "Pharmacist", value: "pharmacist" },
-      { text: "Doctor", value: "doctor" },
+      { text: "Пациент", value: "patient" },
+      { text: "Фармацевт", value: "pharmacist" },
+      { text: "Доктор", value: "doctor" },
     ],
   },
-];
+]
