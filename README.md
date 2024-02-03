@@ -47,8 +47,6 @@ To get started with e-Prescription 2.0, follow the installation instructions in 
 
 ## Installation
 
-## Installation
-
 To run e.Prescription 2.0 locally on your machine, follow these steps:
 
 1. **Clone the repository:**
@@ -90,4 +88,59 @@ To run e.Prescription 2.0 locally on your machine, follow these steps:
 **Note:** Make sure you have Node.js and npm installed on your machine before proceeding with the installation.
 
 If you encounter any issues during the installation process, refer to the troubleshooting section in the README or check for additional instructions in the project documentation.
+# Usage
+## Usage
+
+### Doctors
+
+1. **Log In:** or **Register**
+   - Visit the [e-prescription 2.0](https://your-e-prescription-app-url.com) website.
+   - Log in using your credentials.
+
+2. **Create a Prescription:**
+   - Navigate to the "Create Prescription" section.
+   - Fill in the required details, including medications, dosages, and patient information.
+   - Submit the prescription.
+
+3. **View Prescription History:**
+   - Access the "Prescription History" section to view a list of all created prescriptions.
+   - Track the status of each prescription.
+
+### Pharmacists
+
+1. **Log In:** or **Register**
+   - Visit the [e-prescription 2.0](https://your-e-prescription-app-url.com) website.
+   - Log in using your credentials.
+
+2. **Process Prescriptions:**
+   - Head to the "Prescription Queue" section.
+   - Review and process incoming prescriptions.
+   - Update the status of each prescription accordingly.
+
+3. **Fulfill Prescriptions:**
+   - Once processed, fulfill prescriptions by preparing the medications.
+   - Update the status.
+
+### Patients
+
+1. **Log In:** or **Register**
+   - Visit the [e-prescription 2.0](https://your-e-prescription-app-url.com) website.
+   - Log in using your credentials.
+
+2. **View Prescriptions:**
+   - Access the "My Prescriptions" section.
+   - View a list of your prescriptions, including details like medications and dosage.
+
+3. **Medication Adherence:**
+   - Stay informed about your medication schedule and adhere to the prescribed regimen.
+
+
+
+### General Tips
+
+- Ensure that you have the latest version of the app to access new features and improvements.
+- If you encounter any issues or have questions, refer to the [FAQ](#link-to-faq) section or contact our support team.
+
+Feel free to customize the instructions based on the actual functionality and flow of your "e-prescription 2.0" app. Include any additional details that would help users make the most of the application.
+
 
