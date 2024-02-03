@@ -39,12 +39,18 @@ e-Prescription 2.0 is a React application designed to streamline medicine servic
 
 - **Version Control:**
   - Git
-  - GitHub (or any version control and hosting platform you use)
+  - GitHub
+  - You tracker
 
 - **Other Tools and Libraries:**
   - npm (Node Package Manager)
-  - Axios (or any HTTP client library you use)
+  - Axios 
   - React bootstrap
+  - react-router-dom
+  - framer-motion
+  - ramda
+  - moment
+  - fontawesome
 
 ## Description
 
