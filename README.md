@@ -42,7 +42,7 @@ e-Prescription 2.0 is a React application designed to streamline medicine servic
 
 # Getting Started
 
-To get started with MedConnect, follow the installation instructions in the README.md file.
+To get started with e-Prescription 2.0, follow the installation instructions in the README.md file.
 
 
 ## Installation
