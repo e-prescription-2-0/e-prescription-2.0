@@ -1,34 +1,33 @@
-import { Provider } from "react-redux";
-import { Route, Routes, useLocation } from "react-router-dom";
-import style from "./App.module.css";
-import CreatePrescription from "./components/CreatePrescription/CreatePrescription";
-import Logout from "./components/Logout/Logout";
-import DashboardNavigation from "./components/MainDashboard/DashboardNavigation/DashboardNavigation";
-import MainDashboard from "./components/MainDashboard/MainDashboard";
-import Messages from "./components/Messages/Messages";
-import { Navigation } from "./components/Navigation/Navigation";
-import RouteAuthGuard from "./components/RouteGuards/RouteAuthGuard";
-import RouteDoctorGuard from "./components/RouteGuards/RouteDoctorGuard";
-import RouteNotDoctorGuard from "./components/RouteGuards/RouteNotDoctorGuard";
-import RoutePharmacistGuard from "./components/RouteGuards/RoutePharmacistGuard";
-import SearchContent from "./components/SearchPage/SearchContent";
-import SinglePrescriptionsPage from "./components/SinglePrescriptionPage/SinglePrescriptions";
-import UserProfile from "./components/UserProfile/UserProfile";
-import { Welcome } from "./components/Welcome/Welcome";
-import store from "./redux";
+import { Provider } from "react-redux"
+import { Route, Routes, useLocation } from "react-router-dom"
+import style from "./App.module.css"
+import CreatePrescription from "./components/CreatePrescription/CreatePrescription"
+import Logout from "./components/Logout/Logout"
+import DashboardNavigation from "./components/MainDashboard/DashboardNavigation/DashboardNavigation"
+import MainDashboard from "./components/MainDashboard/MainDashboard"
+import Messages from "./components/Messages/Messages"
+import { Navigation } from "./components/Navigation/Navigation"
+import RouteAuthGuard from "./components/RouteGuards/RouteAuthGuard"
+import RouteDoctorGuard from "./components/RouteGuards/RouteDoctorGuard"
+import RouteNotDoctorGuard from "./components/RouteGuards/RouteNotDoctorGuard"
+import RoutePharmacistGuard from "./components/RouteGuards/RoutePharmacistGuard"
+import SearchContent from "./components/SearchPage/SearchContent"
+import SinglePrescriptionsPage from "./components/SinglePrescriptionPage/SinglePrescriptions"
+import UserProfile from "./components/UserProfile/UserProfile"
+import { Welcome } from "./components/Welcome/Welcome"
+import store from "./redux"
 
 const App = () => {
-  const { pathname } = useLocation();
+  const { pathname } = useLocation()
   const pathsWithoutDashboardNavigation = [
     "/",
     "/login",
     "/register",
     "/logout",
     "/forgotPassword",
-  ];
-  const shouldShowDashboardNavigation = !pathsWithoutDashboardNavigation.includes(
-    pathname
-  );
+  ]
+  const shouldShowDashboardNavigation =
+    !pathsWithoutDashboardNavigation.includes(pathname)
 
   return (
     <Provider store={store}>
@@ -83,12 +82,7 @@ const App = () => {
                     path="/create-prescription"
                     element={<CreatePrescription />}
                   />
-                  {/*  */}
 
-                  {/* <Route
-                    path="/search/patients"
-                    element={<SearchContent searchType={"patients"} />}
-                  /> */}
                   <Route
                     path="/search/prescriptions"
                     element={<SearchContent searchType={"prescriptions"} />}
@@ -116,7 +110,7 @@ const App = () => {
         </section>
       </main>
     </Provider>
-  );
-};
+  )
+}
 
-export default App;
+export default App
