@@ -1,0 +1,49 @@
+.patient-table-container {
+  min-width: 60em;
+  margin: 20px;
+  /* padding: 3em; */
+  background-color: #fff;
+  text-align: center;
+  color: #fff;
+  /* border-radius: 10px; */
+}
+
+.patient-table-container h2 {
+  padding: 0.2em;
+}
+
+.table-row button {
+  background-color: #3c6e71;
+  color: #fff;
+  border: none;
+}
+
+.search-container {
+  display: flex;
+  max-width: 30em;
+  margin: 0 auto;
+}
+.table-row {
+  min-height: 5vh;
+}
+.table-row button:hover {
+  background-color: rgb(246, 252, 207, 0.8);
+  color: #000;
+}
+
+.table-row:hover {
+  cursor: pointer;
+}
+
+.no-found-results {
+  margin: 0 auto;
+  color: white;
+  font-size: 2em;
+  text-align: center;
+  width: 100%;
+}
+
+.tbody-list {
+  /* height: 35rem; */
+  /* overflow: hidden; */
+}

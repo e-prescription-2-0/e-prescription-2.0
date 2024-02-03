@@ -1,0 +1,23 @@
+.message-banner {
+  background-color: #4caf50;
+  color: #fff;
+  position: fixed; /* Change to fixed */
+  border-radius: 15px;
+  min-width: 25em;
+  min-height: 7em;
+  margin: 0 auto;
+  text-align: center;
+  top: 20%; /* Adjust as needed */
+  left: 50%;
+  z-index: 200;
+  transform: translate(-50%, -50%);
+  font-size: 1.2em;
+  font-weight: 900;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.message-banner.error {
+  background-color: #f44336; /* Red background for error */
+}

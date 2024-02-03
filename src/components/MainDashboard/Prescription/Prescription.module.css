@@ -1,0 +1,164 @@
+.section-open-prescription {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #d9d9d9;
+  padding: 2em;
+  width: 45rem;
+  min-width: 35rem;
+  border-radius: 20px;
+  height: 100%;
+}
+
+.div-main-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+  max-height: 900px;
+  background-color: #ffffff;
+  border-radius: 10px;
+}
+
+.div-header {
+  width: 95%;
+  border-bottom: 1px solid black;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.div-header-main-title {
+  text-transform: uppercase;
+}
+
+.div-header-title {
+  font-size: 27px;
+  font-weight: 200;
+}
+
+.div-articles {
+  flex: 1;
+  width: 95%;
+  border-bottom: 1px solid black;
+  max-height: 500px;
+  overflow: scroll;
+}
+.div-articles::-webkit-scrollbar {
+  display: none;
+}
+
+#div-articles-accordion {
+  width: 100%;
+}
+
+.div-articles-accordion-item-span {
+  font-size: 20px;
+  font-weight: bold;
+  margin-right: 7px;
+}
+
+.div-articles-accordion-item-content {
+  margin-left: 12px;
+}
+
+.div-userInfo {
+  display: flex;
+  justify-content: space-between;
+  width: 95%;
+  padding: 10px 15px 10px 15px;
+}
+
+.center-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.delete-btn {
+  width: 100px;
+  height: 40px;
+  border-radius: 10px;
+  color: #ffffff;
+  background-color: rgba(178, 1, 1, 0.818);
+  align-self: center;
+  margin-top: 5px;
+}
+
+#prescription-completed {
+  font-size: 30px;
+  background-color: green;
+  width: 50px;
+  text-align: center;
+  align-self: center;
+}
+
+.isCompleted-btn-yes {
+  width: 100px;
+  height: 40px;
+  border-radius: 10px;
+  color: #ffffff;
+  background-color: green;
+  align-self: center;
+  margin-top: 5px;
+}
+
+.div-no-prescription-content {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.div-no-prescription-content img {
+  height: 15rem;
+}
+
+@media (max-width: 768px) {
+  .section-open-prescription {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-block: solid 5px #12486b;
+    background-color: #d9d9d9;
+    padding: 2em;
+    border-radius: 20px;
+    width: 200px;
+    /* max-width: 20rem; */
+    /* width: 100%; */
+    /* height: 400px; */
+    /* width: 45rem; */
+    /* min-width: 35rem; */
+    /* height: 48.4rem; */
+    /* min-height: 40rem; */
+
+    width: 200px;
+    height: 500px;
+  }
+
+  .div-main-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    /* width: 100%; */
+    max-height: 50rem;
+    height: 400px;
+    background-color: #ffffff;
+    border-radius: 10px;
+  }
+
+  .div-no-prescription-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    max-height: 40rem;
+    height: 100%;
+    padding-block: 4rem;
+  }
+  .div-no-prescription-content img {
+    height: 5rem;
+  }
+}

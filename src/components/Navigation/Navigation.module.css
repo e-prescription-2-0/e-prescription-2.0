@@ -1,0 +1,116 @@
+/* Colors */
+.dummy {
+  color: #3c6e71;
+  color: #ffffff;
+  color: #4e8d91;
+  color: #3f779d;
+}
+.navigation {
+  padding: 1rem;
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  height: 60px;
+  background-color: #3c6e71;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+}
+.navigation-logo-name {
+  padding-inline: 1rem;
+  font-family: "Kaushan Script", cursive;
+  color: #ffffff;
+}
+/* #3f779d */
+.navigation-logo-name:hover {
+  color: #4e8d91;
+  cursor: pointer;
+}
+
+.navigation-list {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  list-style: none;
+  height: 100%;
+}
+
+.navigation-list-item {
+  color: #ffffff;
+  font-size: 18px;
+}
+.navigation-list-item a {
+  display: block;
+  padding: 0.5rem;
+  color: #ffffff;
+  border-radius: 10px;
+}
+
+.navigation-list-item a:hover {
+  background: #4e8d91;
+  cursor: pointer;
+}
+
+.nav-active {
+  cursor: pointer;
+  color: #ffffff;
+  border-radius: 20px;
+}
+
+/* Add this to your existing CSS */
+.mobile-menu-icon {
+  display: none; /* Initially hide the mobile menu icon */
+  color: #ffffff;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 18px;
+}
+.mobile-menu-icon:hover {
+  /* background: rgb(246, 252, 207, 0.8); */
+  color: #3f779d;
+}
+
+@media (max-width: 900px) {
+  .navigation {
+    height: 60px;
+  }
+  .navigation-list {
+    display: none; /* Hide the navigation links for small screens */
+    flex-direction: column;
+    position: absolute;
+    gap: 0;
+
+    width: 100%;
+    background-color: #3c6e71;
+    height: auto;
+    top: 60px;
+  }
+  .navigation-list li {
+    width: 100%;
+    text-align: center;
+  }
+  .navigation-list li:hover {
+    /* background: rgb(246, 252, 207, 0.8); */
+    color: #3f779d;
+    border-radius: 20px;
+  }
+
+  .navigation-list.open {
+    display: flex; /* Show the navigation links when the mobile menu is open */
+  }
+
+  .mobile-menu-icon {
+    display: block; /* Show the mobile menu icon for small screens */
+  }
+}
+
+.user-name-link-to-profile {
+  color: #ffffff;
+}
+.user-name-link-to-profile:hover {
+  color: #4e8d91;
+  cursor: pointer;
+}

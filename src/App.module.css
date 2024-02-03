@@ -1,0 +1,155 @@
+/* Reset some default browser styles */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+margin,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove default list styles */
+ul,
+ol {
+  padding: 0;
+  list-style: none;
+}
+
+/* Set base font size and remove font size inheritance */
+body {
+  font-size: 16px;
+  line-height: 1.5;
+  position: relative;
+}
+
+/* Remove the default button styling */
+button {
+  border: 0;
+  padding: 0;
+  background: none;
+}
+
+/* Remove default form styles */
+form {
+  margin: 0;
+}
+
+/* Standardize box sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  font-family: "Nunito", sans-serif;
+}
+
+.main-content {
+  display: flex;
+  justify-content: space-around;
+  align-items: normal;
+}
+
+.flexDirectionRow {
+  flex: 1;
+  justify-content: center;
+  flex-direction: row;
+  margin: 2rem 5rem;
+  height: 85%;
+}
+
+.flexDirectionColumn {
+  flex-direction: column;
+}
+
+.main-content-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: stretch;
+  height: auto;
+}
+
+.dashboard-content {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  width: 70rem;
+}
+
+html {
+  height: 100vh;
+}
+
+#root {
+  height: 100vh;
+}
+
+@media only screen and (max-width: 1024px) {
+  .flexDirectionRow {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: flex-start;
+    margin: 2rem 2rem;
+
+    height: 94vh;
+    background-color: salmon;
+  }
+
+  .main-content-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: normal;
+    /* max-width: 768px; */
+    height: 100%;
+  }
+
+  .dashboard-content {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    max-width: 40rem;
+    width: 100%;
+    margin-bottom: 10rem;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .flexDirectionRow {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: flex-start;
+    margin: 0;
+    height: 94vh;
+  }
+
+  .main-content-wrapper {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+    /* max-width: 768px; */
+    height: 100vh;
+  }
+
+  .dashboard-content {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    /* max-width: 40rem; */
+    width: 100%;
+    /* max-height: 50rem; */
+    height: 100%;
+    margin-bottom: 0;
+  }
+
+  html {
+    height: auto;
+  }
+}

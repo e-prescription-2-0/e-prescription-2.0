@@ -1,0 +1,231 @@
+.doctor-card-list-item {
+  border-top-width: thin !important;
+  padding: 0;
+}
+
+.main-search-doctors-container {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  min-height: -webkit-fill-available;
+  background-color: #d9d9d9;
+  border-radius: 20px;
+  margin-left: 1rem;
+}
+
+.main-search-doctors-container ul {
+  border-radius: 2px;
+}
+.main-search-doctors-container input {
+  border: none;
+  border-bottom: 2px solid #3c6e7184;
+  border-radius: 0;
+  transition: all 0.5s ease;
+}
+.main-search-input-for-single-patient {
+  background-color: #ffebeb;
+}
+.main-search-input-form {
+  background-color: #ffffff;
+  width: 50%;
+}
+
+.main-search-doctors-container input:focus {
+  border-bottom-color: #3c6e71;
+  border-top-color: #3c6e71;
+  border-left-color: #fff;
+}
+
+.main-search-input-for-single-patient:focus {
+  background-color: #d9d9d9;
+}
+.main-search-input-form:focus {
+  background-color: #f2f2f2;
+}
+
+.main-search-doctors-container button {
+  background-color: #3c6e71;
+  border: none;
+  width: 5rem;
+}
+
+.main-search-doctors-container h1 {
+  color: #3c6e71;
+  margin-block: 1rem;
+}
+
+.doctor-card-information-link {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  justify-content: space-between;
+
+  padding: 1rem;
+}
+.doctor-card-information-link:hover,
+.doctor-card-information-link:focus {
+  background-color: #cfe2ff;
+  transition: all 1s ease;
+}
+
+.search-doctors-pagination {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.main-search-doctors-container button:hover,
+.main-search-doctors-container button:active,
+.main-search-doctors-container button:focus {
+  background-color: rgb(246, 252, 207, 0.8);
+}
+
+.search-doctors-loading-container {
+  height: 90vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.search-no-doctors-found {
+  height: 70vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #474bff;
+}
+
+.search-no-doctors-found svg {
+  height: 4rem;
+}
+
+.main-search-select-from-user-patients {
+  width: 15% !important;
+  flex: none !important;
+}
+
+.search-collection-loader {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.delete-search-query-button {
+  position: absolute;
+  top: 55%;
+  right: 0rem;
+  width: auto !important;
+  transform: translate(-50%, -50%);
+  background-color: transparent !important;
+}
+.delete-search-query-button svg {
+  color: #497174;
+  /* height: 1.6rem; */
+  width: 1.5rem;
+  height: 1.5rem;
+}
+.delete-search-query-button svg:hover {
+  background-color: #eff5f5;
+  color: #497174;
+  border-radius: 10rem;
+}
+
+.search-switch-for-patients-div {
+  display: flex;
+  justify-content: space-between;
+}
+.search-switch-for-patients-div input {
+  position: relative !important;
+}
+@media (max-width: 1199px) {
+  .main-search-select-from-user-patients {
+    width: 25% !important;
+    flex: none !important;
+  }
+
+  .doctor-card-information-link {
+    gap: 0.4rem;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .main-search-section {
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    margin: 0;
+  }
+}
+
+.toggle {
+  position: relative;
+  overflow: hidden;
+  display: block;
+}
+input[type="checkbox"] {
+  position: relative;
+  appearance: none;
+  width: 165px;
+  height: 50px;
+  background-color: #3c6e71;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.4s;
+  border: none;
+}
+input:checked[type="checkbox"] {
+  background-color: #12486b;
+}
+input[type="checkbox"]::after {
+  position: absolute;
+  content: "";
+  left: 5px;
+  top: 50%;
+  width: 40px;
+  height: 40px;
+  background-color: #fff;
+  border-radius: 50%;
+  transform: translateY(-50%);
+  transition: all 0.4s;
+}
+input:checked[type="checkbox"]::after {
+  left: 120px;
+}
+.label-switch {
+  position: absolute;
+  pointer-events: none;
+  color: #fff;
+  transition: all 0.4s;
+}
+input:checked[type="checkbox"] ~ .label-switch.on {
+  top: 50%;
+  transform: translateY(-50%);
+  left: 10px;
+}
+input[type="checkbox"]:not(:checked) ~ .label-switch.off {
+  top: 50%;
+  transform: translateY(-50%);
+  right: 10px;
+}
+
+.switch-and-title-box {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  justify-content: center;
+  font-size: 1.5rem;
+}
+
+.switch-and-title-box h4 {
+  color: #3c6e71;
+}
+
+.search-collection-list {
+  /* height: 35rem; */
+  overflow: scroll;
+}

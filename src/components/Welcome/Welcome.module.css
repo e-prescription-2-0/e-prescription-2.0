@@ -1,0 +1,10 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #ffffff;
+  background: -webkit-linear-gradient(0deg, #ffffff 0%, #d9d9d9 100%);
+  background: linear-gradient(0deg, #ffffff 0%, #d9d9d9 100%);
+  width: 100%;
+}

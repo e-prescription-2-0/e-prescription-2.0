@@ -1,0 +1,200 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
+
+.prescriptions-list-ul p {
+  margin: 0;
+}
+
+.prescriptions-list-wrapper {
+  display: flex;
+  flex-direction: column;
+  background-color: #d9d9d9;
+  border-radius: 20px;
+  height: 100%;
+  gap: 10px;
+  max-height: fit-content;
+}
+
+.prescriptions-list-ul {
+  display: flex;
+  flex-direction: column;
+  overflow: scroll;
+  overflow-x: visible;
+  overflow-y: auto;
+  padding: 1.5rem;
+  width: 350px;
+  height: 100%;
+  border-top: 1px solid white;
+}
+
+.prescriptions-list-ul::-webkit-scrollbar {
+  display: none;
+}
+
+.prescriptions-list-item {
+  background-color: white;
+  padding: 0.5rem 0.25rem;
+  border-radius: 10px;
+  color: #12486b;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  border: solid 1px #4e8d91;
+  transition: all 0.6s ease;
+}
+
+.prescriptions-list-item:hover {
+  cursor: pointer;
+  background-color: #ffffffc9;
+}
+
+.prescriptions-list-item-content-item {
+  font-size: 1rem;
+}
+
+.prescriptions-list-item span {
+  overflow: hidden;
+  color: #12486b;
+  text-align: justify;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  text-transform: capitalize;
+}
+
+.prescriptions-list-item svg {
+  color: #12486b;
+  width: 1.5rem;
+  height: 1.5rem;
+  cursor: pointer;
+}
+
+.prescriptions-list-mobile-container {
+  display: flex;
+  justify-content: center;
+  margin-block: 2rem;
+  gap: 1rem;
+  width: auto;
+  align-items: center;
+}
+
+.prescriptions-list-mobile-svg {
+  height: 3rem;
+  color: #12486b;
+}
+
+.prescriptions-list-mobile-svg:hover {
+  color: #78d6c6;
+  cursor: pointer;
+}
+
+.prescriptions-list-item-open {
+  background-color: #cfe2ff;
+  border: solid 1px #3f779d;
+  box-shadow: #cfe2ff 0px 0px 0px 3px;
+}
+
+.prescriptions-list-item:hover {
+  background-color: #cfe2ff7a;
+  cursor: pointer;
+}
+
+.prescriptions-list-item-open svg {
+  color: #4e8d91;
+}
+
+.prescriptions-list-mobile-container .prescriptions-list-item svg {
+  width: 2rem;
+  height: 2rem;
+}
+
+.prescriptions-list-item-open:hover {
+  background-color: #cfe2ff;
+  cursor: default;
+}
+
+.div-prescription-list-no-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 350px;
+  background-color: #d9d9d9;
+  border-radius: 20px;
+  height: 100%;
+}
+
+.div-prescription-list-no-content img {
+  height: 15rem;
+}
+
+.prescriptions-list-header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0.5rem;
+  /* background-color: #78d6c6;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px; */
+}
+.prescriptions-list-header-container button {
+  border: transparent 3px solid;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  color: #12476b9b;
+  font-weight: bold;
+}
+
+.prescriptions-list-header-container .completed {
+  border-color: #ee9322;
+}
+.prescriptions-list-header-container .completed:hover {
+  color: white;
+  background-color: #ee9322;
+}
+
+.prescriptions-list-header-container .active {
+  border-color: #d83f31;
+}
+.prescriptions-list-header-container .active:hover {
+  color: white;
+  background-color: #d83f31;
+}
+
+.prescriptions-list-header-container .altogether {
+  border-color: #12486b;
+}
+.prescriptions-list-header-container .altogether:hover {
+  color: white;
+  background-color: #12486b;
+}
+
+.prescriptions-list-header-container h5 {
+  /* font-family: "Kaushan Script", cursive; */
+  color: #12486b;
+}
+
+@media only screen and (max-width: 1500px) {
+  .prescriptions-list-item {
+    height: 8rem;
+    width: 20rem;
+    margin: 0;
+  }
+  .div-prescription-list-no-content {
+    width: 100%;
+    border-radius: 0;
+    margin-block: 2rem;
+  }
+
+  .prescriptions-list-mobile-container {
+    display: flex;
+    justify-content: center;
+    margin-block: 0;
+    gap: 1rem;
+    width: auto;
+    align-items: center;
+  }
+}

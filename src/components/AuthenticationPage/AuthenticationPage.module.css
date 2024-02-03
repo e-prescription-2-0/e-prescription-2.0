@@ -1,0 +1,566 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins");
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Mina&family=Miniver&family=PT+Sans&family=Roboto:wght@400;500;900&display=swap');
+
+/* BASIC */
+
+html, body {
+  padding: 0;
+  margin: 0 ;
+  position: relative;
+  min-height: 100vh;
+}
+
+.page-pop-up {
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8) ;
+  display: flex;
+  position: fixed;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  
+}
+
+.page-pop-up .underlineHover {
+  color: #12486B;
+  display: inline-block;
+  text-decoration: none !important;
+  font-weight: 400;
+}
+
+.page-pop-up h2 {
+  text-align: center;
+  font-size: 16px;
+  font-weight: 600;
+  text-transform: uppercase;
+  display: inline-block;
+  margin: 40px 8px 10px 8px;
+  color: #cccccc;
+}
+.page-pop-up h3{
+  font-size: 40px;
+  margin-bottom: 40px;
+
+  color: #23b499;
+  margin-top: 40px;
+  font-family: Kaushan Script;
+
+}
+
+/* STRUCTURE */
+
+.page-pop-up .wrapper {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  min-height: 100%;
+  padding: 20px;
+  position: absolute;
+}
+
+#formContent {
+  -webkit-border-radius: 10px 10px 10px 10px;
+  border-radius: 10px 10px 10px 10px;
+  background: white;
+  padding: 30px;
+  width: 90%;
+  max-width: 450px;
+  position: relative;
+  padding: 0px;
+  -webkit-box-shadow: 0 30px 60px 0 rgba(0, 0, 0, 0.3);
+  box-shadow: 0 30px 60px 0 rgba(0, 0, 0, 0.3);
+  text-align: center;
+  overflow: hidden;
+
+  
+}
+
+#formFooter {
+  background-color: #f6f6f6;
+  border-top: 1px solid #dce8f1;
+  padding: 25px;
+  text-align: center;
+  -webkit-border-radius: 0 0 10px 10px;
+  border-radius: 0 0 10px 10px;
+}
+
+/* TABS */
+
+.page-pop-up h2.inactive {
+  color: #cccccc;
+}
+
+.page-pop-up h2.active {
+  color: #0d0d0d;
+  border-bottom: 2px solid #6DA9E4;
+}
+
+/* FORM TYPOGRAPHY*/
+
+.popup-form-button{
+  font-weight: bold;
+  background-color: #12486B;
+  border: none;
+  color: white;
+  padding: 15px 80px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  text-transform: uppercase;
+  font-size: 13px;
+  -webkit-box-shadow: 0 10px 30px 0 #6da8e476;
+  box-shadow: 0 10px 30px 0 #6da8e476;
+  -webkit-border-radius: 5px 5px 5px 5px;
+  border-radius: 5px 5px 5px 5px;
+  margin: 5px 20px 40px 20px;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  width: 13rem;
+}
+.popup-form-button:hover{
+  background-color: #6DA9E4;
+  color: #FFEBEB;
+}
+
+/* input[type="button"]:active,
+input[type="submit"]:active,
+input[type="reset"]:active {
+  -moz-transform: scale(0.95);
+  -webkit-transform: scale(0.95);
+  -o-transform: scale(0.95);
+  -ms-transform: scale(0.95);
+  transform: scale(0.95);
+} */
+
+.page-pop-up input[type="text"],.page-pop-up input[type="email"], .page-pop-up input[type="date"], .page-pop-up input[type="password"] {
+  background-color: white;
+  border: none;
+  color: #0d0d0d;
+  padding: 25px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 5px;
+  width: 85%;
+  border: 2px solid #dce8f1;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -ms-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  -webkit-border-radius: 5px 5px 5px 5px;
+  border-radius: 5px 5px 5px 5px;
+}
+
+input[type="text"]::placeholder, input[type="password"]::placeholder, input[type="email"]::placeholder{
+  color: #12476bab
+
+  ;
+}
+
+
+
+
+
+/* ANIMATIONS */
+
+/* Simple CSS3 Fade-in-down Animation */
+.fadeInDown {
+  -webkit-animation-name: fadeInDown;
+  animation-name: fadeInDown;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+.page-pop-up select{
+  border: none;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 5px;
+  width: 85%;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -ms-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  -webkit-border-radius: 5px 5px 5px 5px;
+  border-radius: 5px 5px 5px 5px;
+}
+.page-pop-up option{
+  padding: 0;
+  color: #12476bab;
+}
+
+@-webkit-keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
+/* Simple CSS3 Fade-in Animation */
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-moz-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+
+
+.fadeIn {
+  opacity: 0;
+  -webkit-animation: fadeIn ease-in 1;
+  -moz-animation: fadeIn ease-in 1;
+  animation: fadeIn ease-in 1;
+
+  -webkit-animation-fill-mode: forwards;
+  -moz-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+
+  -webkit-animation-duration: 1s;
+  -moz-animation-duration: 1s;
+  animation-duration: 1s;
+}
+
+.fadeIn.first {
+  -webkit-animation-delay: 0.4s;
+  -moz-animation-delay: 0.4s;
+  animation-delay: 0.4s;
+}
+
+.fadeIn.second {
+  -webkit-animation-delay: 0.6s;
+  -moz-animation-delay: 0.6s;
+  animation-delay: 0.6s;
+}
+
+.fadeIn.third {
+  -webkit-animation-delay: 0.8s;
+  -moz-animation-delay: 0.8s;
+  animation-delay: 0.8s;
+}
+
+.fadeIn.fourth {
+  -webkit-animation-delay: 1s;
+  -moz-animation-delay: 1s;
+  animation-delay: 1s;
+}
+
+/* Simple CSS3 Fade-in Animation */
+.page-pop-up .underlineHover:after {
+  display: block;
+  left: 0;
+  bottom: -10px;
+  width: 0;
+  height: 2px;
+  background-color: #6DA9E4;
+  content: "";
+  transition: width 0.2s;
+}
+
+.page-pop-up .underlineHover:hover:after {
+  width: 100%;
+
+}
+.page-pop-up .underlineHover:hover{
+  color: #6DA9E4;
+  cursor: pointer;
+}
+
+/* OTHERS */
+
+.page-pop-up *:focus {
+  outline: none;
+}
+
+#icon {
+  width: 60%;
+}
+
+* {
+  box-sizing: border-box;
+}
+.page-pop-up select {
+  /* Your existing styles */
+
+  /* Center options text */
+  text-align: center;
+}
+.page-pop-up select option{
+  margin: 0;
+  padding: 0;
+}
+
+.page-pop-up .welcomePart {
+  flex-direction: column;
+  text-align: center;
+}
+.page-pop-up .welcomePart h1 {
+  flex-shrink: 0;
+  color: #fff;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  font-family: Miniver;
+  font-size: 82px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.page-pop-up .welcomePart h2 {
+  color: #fff;
+
+  text-align: center;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.707);
+  font-family: Mina;
+  font-size: 26px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.page-pop-up .welcomePart button {
+  width: 300px;
+  height: 57px;
+  flex-shrink: 0;
+  border-radius: 20px;
+  background: #d9d9d9;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  color: #759fa5;
+
+  text-align: center;
+  font-family: Poppins;
+  font-size: 21px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+
+
+.popup-form-button-next, .popup-form-button-back{
+  background-color: white;
+  border: solid 2px #12486B;
+  color: #12486B;
+
+}
+.popup-form-button-back{
+  margin-bottom: 10px;
+}
+.popup-form-button-holder{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.popup-form-button-holder button{
+  margin-bottom: 10px;
+  width: 40%;
+  padding: 15px 10px;
+  margin-bottom: 40px;
+
+
+
+}
+.popup-form-button-next:hover, .popup-form-button-back:hover{
+  background-color: #6DA9E4;
+  border: solid 2px #6DA9E4;
+}
+.page-pop-up .hideFields{
+  display: none;
+}
+.page-pop-up .closeIcon{
+  position: absolute;
+
+
+  padding: 0.4rem;
+  
+  right: 0;
+  top: 0;
+  /* border-top-right-radius: 30%; */
+  color: #12486B;
+  background-color: #f6f6f6;
+  border-bottom: solid 3px #12486B;
+  border-left: solid 3px #12486B;
+
+
+
+  
+}
+.page-pop-up .closeIcon:hover{
+  color: white;
+  background-color: #6DA9E4;
+  border-bottom: solid 3px #6DA9E4;
+  border-left: solid 3px #6DA9E4;
+  cursor: pointer;
+  
+}
+@media only screen and (max-width:600px){
+
+  .page-pop-up{
+    flex-direction: column;
+    justify-content: center;
+    margin: 0px auto;
+  }
+  
+}
+select{
+  text-align: center;
+
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  outline: 0;
+  box-shadow: none;
+  border: 0!important;
+  background: #dce8f1;
+  background-image: none;
+  flex: 1;
+  padding: 0 .5em;
+  color: #12476bab;
+  cursor: pointer;
+  font-size: 1em;
+  font-family: 'Open Sans', sans-serif;
+
+  position: relative;
+  display: flex;
+  width: 20em;
+  padding: 15px ;
+  overflow: hidden;
+}
+
+
+
+/* select::after {
+  content: '\25BC';
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0 1em;
+  background: #2b2e2e;
+  cursor: pointer;
+  pointer-events: none;
+  transition: .25s all ease;
+}
+
+select:hover::after {
+  color: #23b499;
+} */
+
+
+.page-pop-up .error{
+  position: absolute;
+  color: #dc3545;
+  top: -20px;
+  width: 100%;
+  font-size: 80%;
+
+
+}
+.page-pop-up form{
+  position: relative;
+}
+.page-pop-up .input-group{
+  padding-bottom: 10px;
+  position: relative;
+}
+.page-pop-up .input-group .register-form-error{
+  position: absolute;
+  top: -20px;
+}
+
+
+.password-field-eye-icon{
+  position: absolute;
+  height: 1.3rem;
+  right: 6.5%;
+  top: 44%;
+  transform: translate(-50%, -50%);
+  color: #12476bab;
+
+}
+.password-field-eye-icon-slash{
+  right: 6%;
+}
+
+.password-field-eye-icon:hover, .password-field-eye-icon-slash:hover{
+  color: rgba(0,123,255,.25);
+  cursor: pointer;
+
+}
+
+
+input{
+  background-image: none !important;
+}
+
+.form-forgot-password h4{
+  color: #6DA9E4;
+  margin-top: 40px;
+  margin-bottom: 20px;
+
+
+}
+
+.form-forgot-password p{
+  padding-inline: 30px;
+
+}
+
+.send-email-again-span{
+  color: #6DA9E4;
+  margin-bottom: 10px;
+
+}
+.send-email-again-span:hover{
+  color: rgba(0,123,255,.25);
+}
