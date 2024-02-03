@@ -23,7 +23,9 @@
   max-width: 30em;
   margin: 0 auto;
 }
-
+.table-row{
+  min-height: 5vh;
+}
 .table-row button:hover {
   background-color: rgb(246, 252, 207, 0.8);
   color: #000;
