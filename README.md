@@ -29,14 +29,16 @@ e-Prescription 2.0 is a React application designed to streamline medicine servic
  
 - **Backend:**
   - Node.js
-  - Express 
+  - Express
+  - bcrypt
+  - mongoose
 
 - **Database:**
   - MongoDB 
 
 - **Authentication:**
   - JWT (JSON Web Tokens)
-
+  
 - **Version Control:**
   - Git
   - GitHub
